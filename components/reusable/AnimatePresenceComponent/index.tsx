@@ -1,7 +1,13 @@
+// styles
+import animatePresenceComponentStyles from "./AnimatePresenceComponent.module.css";
+
+// modules
 import { motion, AnimatePresence } from "framer-motion";
 
 export function AnimatePresenceComponent(props: {
   presence: boolean;
+  marginRightAuto?: boolean;
+  delayAppearanceTime?: number;
   children: any;
 }) {
   return (
@@ -11,7 +17,11 @@ export function AnimatePresenceComponent(props: {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.2, delay: props.delayAppearanceTime }}
+          className={`${
+            props.marginRightAuto &&
+            `${animatePresenceComponentStyles.marginRightAuto}`
+          }`}
         >
           {props.children}
         </motion.div>
@@ -19,3 +29,7 @@ export function AnimatePresenceComponent(props: {
     </AnimatePresence>
   );
 }
+
+AnimatePresenceComponent.defaultProps = {
+  delayAppearanceTime: 0,
+};

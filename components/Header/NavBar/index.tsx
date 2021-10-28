@@ -1,12 +1,20 @@
+// styles
 import navBarStyles from "./NavBar.module.css";
 
-export default function NavBar() {
-    return (
-        <div id={navBarStyles.navBarContainer}>
-            <div id={navBarStyles.navBar} className="container">
-                
+// data
+import { menuContent } from "../../../data/MenuContent";
 
-            </div>
-        </div>
-    )
+export default function NavBar() {
+  return (
+    <div id={navBarStyles.navBarContainer}>
+      <div
+        id={navBarStyles.navBar}
+        className="container"
+      >
+        {menuContent.map((item, index) => (
+          <div id={navBarStyles.navBarItem} key={index}>{item.content}</div>
+        ))}
+      </div>
+    </div>
+  );
 }

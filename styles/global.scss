@@ -1,11 +1,45 @@
-/* html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+/* Nunito */
+
+@font-face {
+  font-family: "Nunito Regular";
+  src: url("../assets/fonts/nunito/Nunito-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Nunito Medium";
+  src: url("../assets/fonts/nunito/Nunito-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito Bold";
+  src: url("../assets/fonts/nunito/Nunito-Bold.ttf") format("truetype");
+}
+
+/* Nunito sans */
+
+@font-face {
+  font-family: "Nunito Sans Regular";
+  src: url("../assets/fonts/nunito-sans/NunitoSans-Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito Sans Semi Bold";
+  src: url("../assets/fonts/nunito-sans/NunitoSans-SemiBold.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito Sans Bold";
+  src: url("../assets/fonts/nunito-sans/NunitoSans-Bold.ttf") format("truetype");
+}
+
+// html,
+// body {
+//   font-family: Nunito Bold;
+// }
+
+/*
 a {
   color: inherit;
   text-decoration: none;
@@ -20,7 +54,7 @@ a {
   --main-colour-light: #1c88ed;
   --main-colour-very-light: #effbff;
   --grey: #505971;
-  --grey2: #666; 
+  --text-colour: #666;
   --border-colour: #d5d9d9;
   --border-radius: 0.25rem;
   --time: 200ms;

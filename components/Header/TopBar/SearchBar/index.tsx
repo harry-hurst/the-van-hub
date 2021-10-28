@@ -1,18 +1,32 @@
 // react
-import { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { TopBarContext } from "../../../../context/TopBarContext";
 
 // styles
 import searchBarStyles from "./SearchBar.module.css";
 
 export default function SearchBar() {
+  // state
+  const [open, setOpen] = useState();
+
   // context
   const { searchState, changeSearchState } = useContext(TopBarContext);
+
+  // effect
+  useEffect(() => {
+    if (searchState === true) {
+      setTimeout(() => {
+        setOpen(searchState);
+      }, 200);
+    } else {
+      setOpen(searchState);
+    }
+  }, [searchState]);
 
   return (
     <div
       id={searchBarStyles.searchBarContainer}
-      className={`${searchState && `${searchBarStyles.searchOpen}`}`}
+      className={`${open && `${searchBarStyles.searchOpen}`}`}
     >
       <div
         id={searchBarStyles.searchButton}
@@ -33,7 +47,7 @@ export default function SearchBar() {
         </svg>
       </div>
 
-      {searchState && (
+      {open && (
         <>
           <input
             type="text"

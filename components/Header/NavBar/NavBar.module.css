@@ -5,7 +5,30 @@
 }
 
 #navBar {
+  gap: 0.5rem;
   height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#navBarItem {
+  display: flex;
+  flex-shrink: 0;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 15px;
+  align-items: center;
+  font-family: Nunito Medium;
+  color: var(--main-colour-light);
+  transition: all var(--time) ease;
+  background: var(--main-colour-very-light);
+  border: 1px solid var(--main-colour-light);
+}
+
+#navBarItem:hover {
+  background: white;
+  box-shadow: var(--v-h-offset-shadow-blue);
 }
 
 @media screen and (min-width: 576px) {

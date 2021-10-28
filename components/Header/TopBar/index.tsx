@@ -7,6 +7,7 @@ import BasketIcon from "./BasketIcon";
 import SearchBar from "./SearchBar";
 
 import TopBarContextComponent from "../../../context/TopBarContext";
+import { LogoComponent } from "./LogoComponent";
 
 export default function TopBar() {
   return (
@@ -14,6 +15,7 @@ export default function TopBar() {
       <div id={topBarStyles.topBar} className="container">
         <TopBarContextComponent>
           <BurgerIcon />
+          <LogoComponent />
           <SearchBar />
           <BasketIcon />
         </TopBarContextComponent>

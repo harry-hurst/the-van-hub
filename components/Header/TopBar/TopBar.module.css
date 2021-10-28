@@ -1,0 +1,14 @@
+#topBarContainer {
+  height: 60px;
+  background: var(--main-colour-dark);
+}
+
+#topBar {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0.5rem; */
+  gap: 0.5rem;
+}

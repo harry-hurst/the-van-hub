@@ -1,0 +1,16 @@
+#navBarContainer {
+  height: 40px;
+  background: white;
+  box-shadow: var(--v-offset-shadow-blue);
+}
+
+#navBar {
+  height: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  #navBarContainer {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}

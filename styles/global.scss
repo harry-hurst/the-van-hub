@@ -1,0 +1,75 @@
+/* html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+} */
+
+:root {
+  --main-colour-dark: #263241;
+  --main-colour-light: #1c88ed;
+  --main-colour-very-light: #effbff;
+  --grey: #505971;
+  --grey2: #666; 
+  --border-colour: #d5d9d9;
+  --border-radius: 0.25rem;
+  --time: 200ms;
+  // h-offset v-offset blur spread colour
+  --v-offset-shadow-blue: 0 2px 5px 1px rgb(65 129 185 / 16%);
+  --v-h-offset-shadow-blue: 2px 2px 5px 1px rgb(65 129 185 / 16%);
+}
+
+// BOOTSTRAP //////////////////////////////////////////////////////////////////
+
+// set colours
+$primary: #1c88ed;
+$secondary: #263241;
+
+// breadcrumbs
+$breadcrumb-font-size: 0.8rem;
+
+// buttons
+// $btn-padding-x: 0.65em;
+// $btn-padding-y: 0.35em;
+
+$btn-disabled-opacity: 1;
+
+// button close
+$btn-close-padding-x: 1em;
+$btn-close-padding-y: 1em;
+
+// $btn-border-radius: 100px;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/spinners";
+@import "../node_modules/bootstrap/scss/breadcrumb";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/close";
+@import "../node_modules/bootstrap/scss/badge";
+
+// Helpers
+// @import "../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../node_modules/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack

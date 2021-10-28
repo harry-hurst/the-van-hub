@@ -1,0 +1,67 @@
+/* Basket icon containing div */
+
+#basketIconContainer {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  color: white;
+  border-radius: 8px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--time) ease;
+  border: 1px solid yellow;
+}
+
+.relocated {
+  top: 60px;
+  right: 15px;
+  position: fixed !important;
+  box-sizing: content-box;
+  color: var(--main-colour-light) !important;
+  background: var(--main-colour-very-light);
+  box-shadow: 0 2px 5px 1px rgb(38 50 65 / 16%);
+}
+
+.expanded {
+  padding: 1rem;
+  box-sizing: border-box;
+  flex-direction: column;
+  width: calc(100vw - 30px) !important;
+  height: calc(100vh - 75px) !important;
+}
+
+.expanded > svg {
+  display: none;
+}
+
+.expanded > span {
+  display: none;
+}
+
+/* Basket count indicator span */
+
+#basketCount {
+  top: 0;
+  right: 0;
+  color: white;
+  padding: 0 0.3rem;
+  font-size: 0.9rem;
+  position: absolute;
+  border-radius: 4px;
+  transform: translate(30%, -30%);
+  background: var(--main-colour-light);
+}
+
+#dropdownArrow {
+  left: 50%;
+  z-index: 1;
+  padding: 6px;
+  position: absolute;
+  top: calc(100% + 4px);
+  background-color: white;
+  border: 1px solid white;
+  transform: translateX(-50%) rotate(45deg);
+  border-left: 1px solid var(--border-colour);
+  border-top: 1px solid var(--border-colour);
+}

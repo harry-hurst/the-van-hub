@@ -1,10 +1,11 @@
 import Head from "next/head";
-import TopBar from "../Header/TopBar";
-import NavBar from "../Header/NavBar";
 
-// import Footer from "../Footer";
-
+// styles
 import layoutStyles from "./Layout.module.css";
+
+// components
+import Header from "../Header";
+import Footer from "../Footer";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -19,13 +20,12 @@ export default function Layout(props: LayoutProps) {
       </Head>
 
       <header>
-        <TopBar />
-        <NavBar />
+        <Header />
       </header>
       <main>{props.children}</main>
-      {/* <footer>
-          <Footer />
-        </footer> */}
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

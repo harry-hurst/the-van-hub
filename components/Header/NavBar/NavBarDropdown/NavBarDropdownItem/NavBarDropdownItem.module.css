@@ -1,0 +1,28 @@
+#container {
+  height: 40px;
+  display: flex;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--border-radius);
+  border: 1px solid green;
+}
+
+#thumbnailContainer {
+  width: 45px;
+  height: 30px;
+  flex-shrink: 0;
+  position: relative;
+  border: 1px solid green;
+}
+
+#content {
+  flex-shrink: 0;
+}
+
+#nextArrow,
+#previousArrow {
+  flex-shrink: 0;
+  color: var(--main-colour-light);
+}

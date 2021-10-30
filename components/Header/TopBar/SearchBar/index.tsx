@@ -1,6 +1,7 @@
 // react
 import { useState, useEffect, useContext } from "react";
-import { TopBarContext } from "../../../../context/TopBarContext";
+import { TopBarContext } from "../../../../context/TopBarContextComponent";
+
 
 // styles
 import searchBarStyles from "./SearchBar.module.css";
@@ -17,7 +18,7 @@ export default function SearchBar() {
     if (searchState === true) {
       setTimeout(() => {
         setOpen(searchState);
-      }, 200);
+      }, 400);
     } else {
       setOpen(searchState);
     }

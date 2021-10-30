@@ -36,7 +36,7 @@
   flex-shrink: 0;
   cursor: pointer;
   align-items: center;
-  border-radius: 14px;
+  border-radius: 12px;
   justify-content: center;
   transition: width var(--time) ease, height var(--time) ease,
     margin var(--time) ease;
@@ -52,9 +52,23 @@
 
 #searchInput {
   width: 100%;
+  height: 100%;
   border: none;
   outline: none;
   margin: 0 0.5rem 0;
   background: inherit;
-  border: 1px solid red;
+}
+
+@media only screen and (max-width: 576px) {
+  #searchBarContainer {
+    height: 40px;
+  }
+
+  .centeredButton {
+    height: 34px;
+  }
+
+  .centeredButton:hover {
+    height: 38px;
+  }
 }

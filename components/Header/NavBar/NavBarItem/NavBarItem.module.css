@@ -1,0 +1,33 @@
+#navBarItem {
+  display: flex;
+  flex-shrink: 0;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  font-size: 0.8rem;
+  position: relative;
+  border-radius: 15px;
+  align-items: center;
+  font-family: Nunito Medium;
+  color: var(--main-colour-light);
+  transition: all var(--time) ease;
+  background: var(--main-colour-very-light);
+  border: 1px solid var(--main-colour-light);
+}
+
+#navBarItem:hover {
+  background: white;
+  box-shadow: var(--v-h-offset-shadow-blue);
+}
+
+#dropdownArrow {
+  left: 50%;
+  z-index: 2;
+  padding: 6px;
+  position: absolute;
+  top: calc(100%);
+  background-color: white;
+  border: 1px solid white;
+  transform: translateX(-50%) rotate(45deg);
+  border-left: 1px solid var(--border-colour);
+  border-top: 1px solid var(--border-colour);
+}

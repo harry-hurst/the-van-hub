@@ -1,0 +1,20 @@
+#footerContainer {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+}
+
+#footerSectionOne {
+  height: 40px;
+  background: var(--main-colour-dark);
+}
+
+#footerSectionTwo {
+  height: 30px;
+  display: flex;
+  font-size: 0.6rem;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  font-family: Nunito Regular;
+}

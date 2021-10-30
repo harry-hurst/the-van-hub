@@ -1,14 +1,22 @@
 #dropdownMenuContainer {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  position: fixed;
 }
 
 #dropdownMenu {
-    border: 1px solid var(--border-colour);
-    border-radius: var(--border-radius);
-    background: white;
-    position: relative;
+  padding: 0.5rem;
+  position: relative;
+  background: white;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-colour);
 }
 
+.positionedHigh {
+  top: 62px;
+}
+
+.positionedLow {
+  top: 91px;
+}

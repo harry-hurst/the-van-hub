@@ -4,6 +4,7 @@
   width: 40px;
   height: 40px;
   display: flex;
+  flex-shrink: 0;
   color: white;
   cursor: pointer;
   border-radius: 8px;
@@ -11,6 +12,7 @@
   align-items: center;
   justify-content: center;
   transition: all var(--time) ease;
+  border: 1px solid orange;
 }
 
 .relocated {
@@ -53,24 +55,3 @@
   transform: translate(30%, -30%);
   background: var(--main-colour-light);
 }
-
-#dropdownArrow {
-  left: 50%;
-  padding: 7px;
-  position: absolute;
-  top: calc(100% + 9px);
-  background-color: white;
-  transform: translateX(-50%) rotate(45deg);
-  box-shadow: var(--modal);
-}
-
-/* #dropdownArrowCover {
-  left: 50%;
-  width: 27px;
-  height: 14px;
-  position: absolute;
-  top: calc(100% + 16px);
-  background-color: white;
-  transform: translateX(-50%);
-} */
-

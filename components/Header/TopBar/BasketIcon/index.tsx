@@ -5,9 +5,6 @@ import { HeaderContext } from "../../../../context/HeaderContextComponent";
 // styles
 import basketIconStyles from "./BasketIcon.module.css";
 
-// modules
-import { motion, AnimatePresence } from "framer-motion";
-
 export default function BasketIcon() {
   // useState
   const [relocated, setRelocated] = useState<boolean>(false);
@@ -81,18 +78,6 @@ export default function BasketIcon() {
             />
           </g>
         </svg>
-
-        <AnimatePresence>
-          {headerMenusState.basketMenu && !relocated && (
-            <motion.i
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              id={basketIconStyles.dropdownArrow}
-            />
-          )}
-        </AnimatePresence>
       </div>
     </div>
   );

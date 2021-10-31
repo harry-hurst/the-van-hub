@@ -10,9 +10,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function BurgerIcon() {
   // useContext
-  const { searchState } =
+  const { searchState } = useContext(HeaderContext);
+  const { headerMenusState, changeHeaderMenusState } =
     useContext(HeaderContext);
-  const { headerMenusState, changeHeaderMenusState} = useContext(HeaderContext);
 
   return (
     <AnimatePresence initial={false}>
@@ -25,7 +25,6 @@ export default function BurgerIcon() {
           id={burgerIconStyles.burgerIconContainer}
           onClick={() => {
             changeHeaderMenusState("burgerMenu", !headerMenusState.burgerMenu);
-
           }}
         >
           {headerMenusState.burgerMenu ? (
@@ -54,18 +53,6 @@ export default function BurgerIcon() {
               />
             </svg>
           )}
-
-          <AnimatePresence>
-            {headerMenusState.burgerMenu && (
-              <motion.i
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                id={burgerIconStyles.dropdownArrow}
-              />
-            )}
-          </AnimatePresence>
         </motion.div>
       )}
     </AnimatePresence>

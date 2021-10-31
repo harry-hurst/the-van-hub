@@ -1,6 +1,7 @@
 #topBarContainer {
   height: 60px;
   background: var(--main-colour-dark);
+  border-bottom: 2px solid var(--main-colour-light);
 }
 
 #topBar {

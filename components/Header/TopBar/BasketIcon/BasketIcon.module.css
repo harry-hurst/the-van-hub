@@ -1,7 +1,7 @@
 /* Basket icon containing div */
 
 #basketIconContainer {
-  width: 50px;
+  width: 40px;
   height: 40px;
   display: flex;
   color: white;
@@ -11,7 +11,6 @@
   align-items: center;
   justify-content: center;
   transition: all var(--time) ease;
-  border: 1px solid orange;
 }
 
 .relocated {
@@ -57,13 +56,21 @@
 
 #dropdownArrow {
   left: 50%;
-  z-index: 2;
-  padding: 6px;
+  padding: 7px;
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 9px);
   background-color: white;
-  border: 1px solid white;
   transform: translateX(-50%) rotate(45deg);
-  border-left: 1px solid var(--border-colour);
-  border-top: 1px solid var(--border-colour);
+  box-shadow: var(--modal);
 }
+
+/* #dropdownArrowCover {
+  left: 50%;
+  width: 27px;
+  height: 14px;
+  position: absolute;
+  top: calc(100% + 16px);
+  background-color: white;
+  transform: translateX(-50%);
+} */
+

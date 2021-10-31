@@ -1,5 +1,6 @@
 // react
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { HeaderContext } from "../../../../context/HeaderContextComponent";
 
 // styles
 import basketIconStyles from "./BasketIcon.module.css";
@@ -8,8 +9,12 @@ import basketIconStyles from "./BasketIcon.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function BasketIcon() {
+  // useState
   const [relocated, setRelocated] = useState<boolean>(false);
 
+  // useContext
+  const { headerMenusState, changeHeaderMenusState } =
+    useContext(HeaderContext);
 
   // relocate
   useEffect(() => {
@@ -32,18 +37,14 @@ export default function BasketIcon() {
     <div
       id={basketIconStyles.basketIconContainer}
       className={`${relocated && `${basketIconStyles.relocated}`} 
-          ${
-            relocated &&
-            false &&
-            `${basketIconStyles.expanded}`
-          }`}
+          ${relocated && false && `${basketIconStyles.expanded}`}`}
       onClick={() => {
-
+        changeHeaderMenusState("basketMenu", !headerMenusState.basketMenu);
       }}
     >
       <div>
         <span id={basketIconStyles.basketCount}>0</span>
-        <svg viewBox="0 0 84.836929 73.094193" height="27px" width="35px">
+        <svg viewBox="0 0 84.836929 73.094193" height="24px" width="31px">
           <g transform="translate(-12.065909,-105.65407)">
             <path
               fill="none"
@@ -82,7 +83,7 @@ export default function BasketIcon() {
         </svg>
 
         <AnimatePresence>
-          {false && !relocated && (
+          {headerMenusState.basketMenu && !relocated && (
             <motion.i
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

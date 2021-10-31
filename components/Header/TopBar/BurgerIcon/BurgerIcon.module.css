@@ -8,17 +8,16 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  border: 1px solid orange;
 }
 
 #dropdownArrow {
   left: 50%;
-  z-index: 2;
-  padding: 6px;
+  padding: 8px;
   position: absolute;
-  top: calc(100% + 5px);
+  top: calc(100% + 8px);
   background-color: white;
   transform: translateX(-50%) rotate(45deg);
+  box-shadow: var(--modal);
 }
 
 @media only screen and (min-width: 576px) {

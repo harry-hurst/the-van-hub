@@ -1,17 +1,17 @@
 import ShopifyContextComponent from "../../context/ShopifyContextComponent";
+import HeaderContextComponent from "../../context/HeaderContextComponent";
 
 // components
 import TopBar from "./TopBar";
-import NavBar from "./NavBar";
-import NavBarContextComponent from "../../context/NavBarContextComponent";
+import Modal from "./Modal";
 
 export default function Header() {
   return (
     <ShopifyContextComponent>
-      <NavBarContextComponent>
+      <HeaderContextComponent>
         <TopBar />
-        <NavBar />
-      </NavBarContextComponent>
+        <Modal />
+      </HeaderContextComponent>
     </ShopifyContextComponent>
   );
 }

@@ -1,6 +1,6 @@
 // react
 import { useContext } from "react";
-import { TopBarContext } from "../../../../context/TopBarContextComponent"
+import { HeaderContext } from "../../../../context/HeaderContextComponent"
 
 // styles
 import logoComponentStyles from "./LogoComponent.module.css";
@@ -15,7 +15,7 @@ import Link from "next/link";
 export default function LogoComponent() {
 
   // useContext
-  const { searchState } = useContext(TopBarContext);
+  const { searchState } = useContext(HeaderContext);
 
   return (
     <AnimatePresence initial={false}>

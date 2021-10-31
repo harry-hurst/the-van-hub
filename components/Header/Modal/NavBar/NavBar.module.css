@@ -1,27 +1,13 @@
-#navBarContainer {
-  height: 30px;
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow-blue);
-  transition: height var(--time) ease;
-}
-
 #navBar {
-  height: 30px;
+  width: 100%;
   gap: 0.5rem;
+  height: 27px;
   display: flex;
   overflow: auto;
+  padding: 0 0.5rem;
   align-items: center;
-  border: 1px solid blue;
   transition: height var(--time) ease;
-}
-
-.expanded {
-  height: calc(100vh - 130px) !important;
-}
-
-#mobileMenu {
-  border: 1px solid blue;
-  padding: 0.5rem;
+  /* background: pink; */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -33,13 +19,6 @@
 #navBar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-}
-
-@media screen and (min-width: 576px) {
-
-  #mobileMenu {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 576px) {

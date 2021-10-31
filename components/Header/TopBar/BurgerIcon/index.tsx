@@ -1,7 +1,6 @@
 // react
 import { useContext } from "react";
-import { TopBarContext } from "../../../../context/TopBarContextComponent";
-import { NavBarContext } from "../../../../context/NavBarContextComponent";
+import { HeaderContext } from "../../../../context/HeaderContextComponent";
 
 // styles
 import burgerIconStyles from "./BurgerIcon.module.css";
@@ -11,9 +10,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function BurgerIcon() {
   // useContext
-  const { searchState, burgerIconState, changeBurgerIconState } =
-    useContext(TopBarContext);
-  const { navBarExpanded, changeNavBarExpanded } = useContext(NavBarContext);
+  const { searchState } =
+    useContext(HeaderContext);
+  const { headerMenusState, changeHeaderMenusState} = useContext(HeaderContext);
 
   return (
     <AnimatePresence initial={false}>
@@ -25,11 +24,11 @@ export default function BurgerIcon() {
           transition={{ duration: 0.2, delay: 0.2 }}
           id={burgerIconStyles.burgerIconContainer}
           onClick={() => {
-            changeBurgerIconState(!burgerIconState);
-            changeNavBarExpanded(!navBarExpanded);
+            changeHeaderMenusState("burgerMenu", !headerMenusState.burgerMenu);
+
           }}
         >
-          {burgerIconState ? (
+          {headerMenusState.burgerMenu ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -57,7 +56,7 @@ export default function BurgerIcon() {
           )}
 
           <AnimatePresence>
-            {burgerIconState && (
+            {headerMenusState.burgerMenu && (
               <motion.i
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

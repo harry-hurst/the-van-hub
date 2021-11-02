@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { HeaderContext } from "../../../../context/HeaderContextComponent";
 
 // styles
@@ -7,34 +7,15 @@ import basketIconStyles from "./BasketIcon.module.css";
 
 export default function BasketIcon() {
   // useState
-  const [relocated, setRelocated] = useState<boolean>(false);
+
 
   // useContext
   const { headerMenusState, changeHeaderMenusState } =
     useContext(HeaderContext);
 
-  // relocate
-  useEffect(() => {
-    function relocate() {
-      if (window.innerWidth > 415) {
-        setRelocated(false);
-      } else {
-        setRelocated(true);
-      }
-    }
-
-    relocate();
-
-    window.addEventListener("resize", relocate);
-
-    return () => window.removeEventListener("resize", relocate);
-  }, []);
-
   return (
     <div
       id={basketIconStyles.basketIconContainer}
-      className={`${relocated && `${basketIconStyles.relocated}`} 
-          ${relocated && false && `${basketIconStyles.expanded}`}`}
       onClick={() => {
         changeHeaderMenusState("basketMenu", !headerMenusState.basketMenu);
       }}

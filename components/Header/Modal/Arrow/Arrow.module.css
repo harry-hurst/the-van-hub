@@ -1,0 +1,24 @@
+#dropdownArrowContainer {
+  top: 0;
+  position: absolute;
+  transition: all var(--time) ease;
+}
+
+#dropdownArrow {
+  padding: 7px;
+  display: block;
+  position: absolute;
+  box-shadow: var(--modal);
+  background-color: white;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.left {
+  left: 20px;
+}
+.middle {
+  left: 50%;
+}
+.right {
+  left: calc(100% - 20px);
+}

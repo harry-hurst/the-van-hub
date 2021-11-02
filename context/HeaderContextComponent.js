@@ -3,13 +3,29 @@ export const HeaderContext = React.createContext();
 
 export default function HeaderContextComponent(props) {
   
+  // useState
+
   const [searchState, setSearchState] = useState(false);
 
   const [headerMenusState, setHeaderMenusState] = useState({
-    burgerMenu: false,
+    mobileMenu: false,
     searchMenu: false,
     basketMenu: false,
+    navMenu: false,
   });
+
+  const [currentCollectionId, setCurrentCollectionId] = useState();
+
+
+
+
+
+
+
+
+
+
+  // helper functions
 
   const changeSearchState = (newState) => {
     setSearchState(newState);
@@ -18,12 +34,17 @@ export default function HeaderContextComponent(props) {
   const changeHeaderMenusState = (menu, newState) => {
     setHeaderMenusState({
       ...{
-        burgerMenu: false,
+        mobileMenu: false,
         searchMenu: false,
         basketMenu: false,
+        navMenu: false,
       },
       [menu]: newState,
     });
+  };
+
+  const changeCurrentCollectionId = (newMenu) => {
+    setCurrentCollectionId(newMenu);
   };
 
   return (
@@ -36,6 +57,10 @@ export default function HeaderContextComponent(props) {
         // state of topbar menus
         headerMenusState,
         changeHeaderMenusState,
+
+        // hold a current collection id to use in navMenu
+        currentCollectionId,
+        changeCurrentCollectionId,
       }}
     >
       {props.children}

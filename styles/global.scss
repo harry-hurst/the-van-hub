@@ -34,20 +34,22 @@
   src: url("../assets/fonts/nunito-sans/NunitoSans-Bold.ttf") format("truetype");
 }
 
-// html,
-// body {
-//   font-family: Nunito Bold;
-// }
+body {
+  margin: 0;
 
-/*
-a {
-  color: inherit;
-  text-decoration: none;
+  font-family: Nunito Regular;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-} */
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
 
 :root {
   --main-colour-dark: #263241;
@@ -60,7 +62,6 @@ a {
   --border-radius-large: 8px;
   --time: 200ms;
 
-
   // h-offset v-offset blur spread colour
 
   // blue tint
@@ -72,8 +73,6 @@ a {
 
   // black tint
   --modal: 0 0 5px 1px rgb(65 129 185 / 50%);
-  --hover-box-shadow: 15px 15px 32px rgb(159 164 194 / 40%);
-
 }
 
 // BOOTSTRAP //////////////////////////////////////////////////////////////////
@@ -103,7 +102,7 @@ $btn-close-padding-y: 1em;
 @import "../node_modules/bootstrap/scss/utilities";
 
 @import "../node_modules/bootstrap/scss/root";
-@import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/reboot";
 // @import "../node_modules/bootstrap/scss/type";
 
 @import "../node_modules/bootstrap/scss/grid";

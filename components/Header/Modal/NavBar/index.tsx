@@ -6,48 +6,41 @@ import { HeaderContext } from "../../../../context/HeaderContextComponent";
 // styles
 import navBarStyles from "./NavBar.module.css";
 
-// components
-import NavBarItem from "./NavBarItem";
-
-// modules
-import { motion, AnimatePresence } from "framer-motion";
-
 export default function NavBar() {
+
   // useState
   const [collections, setCollections] = useState<any[]>();
 
   // useContext
   const { client } = useContext(ShopifyContext);
-  const { headerMenusState } = useContext(HeaderContext);
+  const { changeHeaderMenusState, changeCurrentCollectionId } =
+    useContext(HeaderContext);
 
   // useEffect
   useEffect(() => {
-    loadCollections();
+    client.collection
+      .fetchAllWithProducts()
+      .then((collections: { products: any }[]) => {
+        // Do something with the collections
+        setCollections(collections);
+      });
   }, []);
 
-  async function loadCollections() {
-    const collections = await client.collection.fetchAllWithProducts();
-    setCollections(collections);
-  }
-
   return (
-    <AnimatePresence>
-      {!(headerMenusState.burgerMenu ||
-        headerMenusState.searchMenu ||
-        headerMenusState.basketMenu) && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          id={navBarStyles.navBar}
-        >
-          {collections &&
-            collections.map((collection: { title: string }, index: number) => (
-              <NavBarItem productTitle={collection.title} key={index} />
-            ))}
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <div id={navBarStyles.navBarContainer}>
+      {collections &&
+        collections.map((collection, index) => (
+          <div
+            id={navBarStyles.navBarItem}
+            key={index}
+            onClick={() => {
+              changeHeaderMenusState("navMenu", true);
+              changeCurrentCollectionId(collection.id);
+            }}
+          >
+            {collection.title.toUpperCase()}
+          </div>
+        ))}
+    </div>
   );
 }

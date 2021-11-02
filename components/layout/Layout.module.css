@@ -1,4 +1,6 @@
-#layoutContainer {
-  overflow: hidden;
-  min-height: 100vh;
+#mainContentContainer {
+  margin-top: 60px;
+  position: relative;
+  padding-bottom: 70px;
+  min-height: calc(100vh - 60px);
 }

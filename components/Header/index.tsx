@@ -1,3 +1,6 @@
+// styles
+import headerStyles from "./Header.module.css";
+
 import ShopifyContextComponent from "../../context/ShopifyContextComponent";
 import HeaderContextComponent from "../../context/HeaderContextComponent";
 
@@ -7,11 +10,13 @@ import Modal from "./Modal";
 
 export default function Header() {
   return (
-    <ShopifyContextComponent>
-      <HeaderContextComponent>
-        <TopBar />
-        <Modal />
-      </HeaderContextComponent>
-    </ShopifyContextComponent>
+    <div id={headerStyles.headerContainer}>
+      <ShopifyContextComponent>
+        <HeaderContextComponent>
+          <TopBar />
+          <Modal />
+        </HeaderContextComponent>
+      </ShopifyContextComponent>
+    </div>
   );
 }

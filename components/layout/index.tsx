@@ -13,19 +13,21 @@ export interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
   return (
-    <div id={layoutStyles.layoutContainer}>
+    // <body> ---> <div id="__next"> --->
+    <>
       <Head>
         <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
-        <Header />
-      </header>
-      <main>{props.children}</main>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+      <Header />
+
+      <main>
+        <div id={layoutStyles.mainContentContainer}>
+          {props.children}
+          <Footer />
+        </div>
+      </main>
+    </>
   );
 }

@@ -1,28 +1,41 @@
-#navBar {
-  width: 100%;
-  gap: 0.5rem;
-  height: 27px;
+#navBarContainer {
+  gap: 4px;
+  height: 30px;
   display: flex;
   overflow: auto;
-  padding: 0 0.5rem;
+  flex-shrink: 0;
+  padding: 0 4px;
   align-items: center;
-  transition: height var(--time) ease;
-  /* background: pink; */
-}
+  border-radius: var(--border-radius);
+  /* background-color: var(--main-colour-very-light); */
+  /* border: 1px solid var(--border-colour); */
+  box-shadow: inset var(--modal);
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-#navBar::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-#navBar {
+  /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
-@media screen and (max-width: 576px) {
-  #navBar {
+/* Hide scrollbar for Chrome, Safari and Opera */
+#navBarContainer::-webkit-scrollbar {
+  display: none;
+}
+
+#navBarItem {
+  flex-shrink: 0;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 1px 5px;
+  background-color: white;
+  color: var(--main-colour-dark);
+  border-radius: 3px;
+  border: 1px solid var(--main-colour-dark);
+}
+
+@media only screen and (max-width: 576px) {
+
+  #navBarContainer {
     display: none;
   }
+  
 }

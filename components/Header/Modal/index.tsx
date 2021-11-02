@@ -1,67 +1,83 @@
 // react
-import { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { HeaderContext } from "../../../context/HeaderContextComponent";
 
 // styles
 import modalStyles from "./Modal.module.css";
 
 // components
+import Arrow from "./Arrow";
 import NavBar from "./NavBar";
-import MobileMenu from "./MobileMenu";
-
-// modules
-import { motion, AnimatePresence } from "framer-motion";
+import NavMenu from "./NavMenu";
 
 export default function Modal() {
+  // useState
+  const [open, setOpen] = useState<boolean>(false);
+  const [collapsed, setCollapsed] = useState<boolean>();
+
+  // useContext
   const { headerMenusState } = useContext(HeaderContext);
+
+  // useEffect
+  useEffect(() => {
+    if (
+      headerMenusState.mobileMenu ||
+      headerMenusState.searchMenu ||
+      headerMenusState.basketMenu ||
+      headerMenusState.navMenu
+    ) {
+      setOpen(true);
+    } else {
+      setTimeout(() => {
+        setOpen(false);
+      }, 400);
+    }
+  }, [headerMenusState]);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth > 576) {
+        setCollapsed(false);
+      } else {
+        setCollapsed(true);
+      }
+    }
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div id={modalStyles.modalContainer}>
       <div className="container">
         <div
           id={modalStyles.modal}
-          className={`${
-            (headerMenusState.burgerMenu ||
-              headerMenusState.searchMenu ||
-              headerMenusState.basketMenu) &&
-            `${modalStyles.modalExpanded}`
-          }`}
+          className={`
+            
+            ${open && `${modalStyles.modalExpanded}`}
+
+            ${collapsed && !open && `${modalStyles.modalCollapsed}`}
+      
+          `}
         >
-          <AnimatePresence>
-            {(headerMenusState.burgerMenu ||
-              headerMenusState.searchMenu ||
-              headerMenusState.basketMenu) && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={{ duration: 0.2 }}
-                id={modalStyles.dropdownArrowContainer}
-                className={`
-
-${headerMenusState.burgerMenu && `${modalStyles.left}`}
-${headerMenusState.searchMenu && `${modalStyles.middle}`}
-${headerMenusState.basketMenu && `${modalStyles.right}`}
-
-`}
-              >
-                <i id={modalStyles.dropdownArrow} />
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <Arrow />
 
           <div
             id={modalStyles.modalInner}
-            className={`${
-              (headerMenusState.burgerMenu ||
-                headerMenusState.searchMenu ||
-                headerMenusState.basketMenu) &&
-              `${modalStyles.modalInnerExpanded}`
-            }`}
+            className={`
+            
+            ${open && `${modalStyles.modalInnerExpanded}`}
+
+            ${collapsed && !open && `${modalStyles.modalInnerCollapsed}`}
+            
+            `}
           >
             {/* <NavBar />
-            <MobileMenu /> */}
-            test
+
+            {headerMenusState.navMenu && <NavMenu />} */}
           </div>
         </div>
       </div>

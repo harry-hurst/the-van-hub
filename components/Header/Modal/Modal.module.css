@@ -1,3 +1,4 @@
+/* modal container */
 #modalContainer {
   left: 0;
   right: 0;
@@ -5,57 +6,38 @@
   position: fixed;
 }
 
+/* modal */
 #modal {
-  height: 40px;
+  height: 50px;
   position: relative;
+  box-shadow: var(--modal);
   border-radius: var(--border-radius);
   transition: all var(--time) ease;
 }
 
 .modalExpanded {
-  box-shadow: var(--modal);
-  height: calc(100vh - 140px) !important;
+  height: calc(100vh - 70px) !important;
 }
 
+.modalCollapsed {
+  height: 0 !important;
+  box-shadow: none !important;
+}
+
+/* modal inner */
 #modalInner {
+  gap: 10px;
   height: 100%;
+  display: flex;
+  padding: 10px;
   position: relative;
   background: white;
-  transition: all var(--time) ease;
+  flex-direction: column;
   border-radius: var(--border-radius);
 }
 
-.modalInnerExpanded {
-  padding: 0.5rem;
-}
-
-
-
-/* indicator arrow */
-
-#dropdownArrowContainer {
-  position: absolute;
-  top: 0;
-  transition: all var(--time) ease;
-}
-
-#dropdownArrow {
-  position: absolute;
-  display: block;
-  padding: 7px;
-  box-shadow: var(--modal);
-  background-color: white;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.left {
-  left: 20px;
-}
-.middle {
-  left: 50%;
-}
-.right {
-  left: calc(100% - 20px);
+.modalInnerCollapsed {
+  padding: 0 !important;
 }
 
 @media only screen and (max-width: 576px) {

@@ -1,44 +1,43 @@
 // react
 import { useState, useEffect, useContext } from "react";
-import { ShopifyContext } from "../../../../context/ShopifyContextComponent";
 import { HeaderContext } from "../../../../context/HeaderContextComponent";
+import { ShopifyContext } from "../../../../context/ShopifyContextComponent";
 
 // styles
 import navBarStyles from "./NavBar.module.css";
 
 export default function NavBar() {
+  // useContext
+  const { headerMenusState, changeHeaderMenusState } =
+    useContext(HeaderContext);
+  const { client } = useContext(ShopifyContext);
 
   // useState
-  const [collections, setCollections] = useState<any[]>();
-
-  // useContext
-  const { client } = useContext(ShopifyContext);
-  const { changeHeaderMenusState, changeCurrentCollectionId } =
-    useContext(HeaderContext);
+  const [collections, setCollections] = useState<any>();
 
   // useEffect
   useEffect(() => {
+    // run once on first component mount
     client.collection
       .fetchAllWithProducts()
-      .then((collections: { products: any }[]) => {
-        // Do something with the collections
-        setCollections(collections);
+      .then((retrievedCollections: any) => {
+        // save to state
+        setCollections(retrievedCollections);
       });
   }, []);
 
   return (
     <div id={navBarStyles.navBarContainer}>
       {collections &&
-        collections.map((collection, index) => (
+        collections.map((collection: { title: string }, index: number) => (
           <div
             id={navBarStyles.navBarItem}
             key={index}
             onClick={() => {
               changeHeaderMenusState("navMenu", true);
-              changeCurrentCollectionId(collection.id);
             }}
           >
-            {collection.title.toUpperCase()}
+            {collection.title}
           </div>
         ))}
     </div>

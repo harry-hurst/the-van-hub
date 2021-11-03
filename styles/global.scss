@@ -1,6 +1,11 @@
 /* Nunito */
 
 @font-face {
+  font-family: "Nunito Light";
+  src: url("../assets/fonts/nunito/Nunito-Light.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "Nunito Regular";
   src: url("../assets/fonts/nunito/Nunito-Regular.ttf") format("truetype");
 }
@@ -36,8 +41,8 @@
 
 body {
   margin: 0;
-
   font-family: Nunito Regular;
+  color: var(--main-colour-dark);
 }
 
 *,

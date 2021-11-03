@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 export const HeaderContext = React.createContext();
 
 export default function HeaderContextComponent(props) {
@@ -16,15 +16,6 @@ export default function HeaderContextComponent(props) {
 
   const [currentCollectionId, setCurrentCollectionId] = useState();
 
-
-
-
-
-
-
-
-
-
   // helper functions
 
   const changeSearchState = (newState) => {
@@ -32,6 +23,7 @@ export default function HeaderContextComponent(props) {
   };
 
   const changeHeaderMenusState = (menu, newState) => {
+    console.log("changeHeaderMenusState");
     setHeaderMenusState({
       ...{
         mobileMenu: false,
@@ -63,7 +55,9 @@ export default function HeaderContextComponent(props) {
         changeCurrentCollectionId,
       }}
     >
+      <div style={{ border: "1px solid red"}}>
       {props.children}
+      </div>
     </HeaderContext.Provider>
   );
 }

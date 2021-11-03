@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useContext } from "react";
 import { HeaderContext } from "../../../context/HeaderContextComponent";
 
 // styles
@@ -7,8 +7,8 @@ import modalStyles from "./Modal.module.css";
 
 // components
 import Arrow from "./Arrow";
-
 import NavBar from "./NavBar";
+import NavMenu from "./NavMenu";
 
 export default function Modal() {
   // useState
@@ -16,8 +16,7 @@ export default function Modal() {
   const [collapsed, setCollapsed] = useState<boolean>();
 
   // useContext
-  const { headerMenusState, changeHeaderMenusState } =
-    useContext(HeaderContext);
+  const { headerMenusState, modal } = useContext(HeaderContext);
 
   // useEffect
   useEffect(() => {
@@ -51,38 +50,6 @@ export default function Modal() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // click away listener
-
-  // useRef
-  const modal = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (
-      !(
-        headerMenusState.mobileMenu ||
-        headerMenusState.searchMenu ||
-        headerMenusState.basketMenu ||
-        headerMenusState.navMenu
-      )
-    )
-      return;
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, [
-    headerMenusState.mobileMenu ||
-      headerMenusState.searchMenu ||
-      headerMenusState.basketMenu ||
-      headerMenusState.navMenu,
-  ]);
-
-  function handleClick(event: any) {
-    console.log("click");
-
-    if (modal.current && !modal.current.contains(event.target)) {
-      changeHeaderMenusState("navMenu", false);
-    }
-  }
-
   return (
     <div id={modalStyles.modalContainer}>
       <div className="container">
@@ -103,6 +70,7 @@ export default function Modal() {
             `}
           >
             <NavBar />
+            <NavMenu />
           </div>
         </div>
       </div>

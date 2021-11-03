@@ -1,10 +1,10 @@
 // styles
 import headerStyles from "./Header.module.css";
 
+// components
 import ShopifyContextComponent from "../../context/ShopifyContextComponent";
 import HeaderContextComponent from "../../context/HeaderContextComponent";
 
-// components
 import TopBar from "./TopBar";
 import Modal from "./Modal";
 

@@ -1,8 +1,11 @@
 #navBarContainer {
+  
+  background-color: pink;
   gap: 10px;
   height: 30px;
   display: flex;
   overflow: auto;
+  flex-shrink: 0;
   align-items: center;
   /* background-color: pink; */
   justify-content: space-between;
@@ -15,8 +18,8 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 #navBarContainer {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 #navBarItem {
@@ -30,4 +33,10 @@
 
 #navBarItem:hover {
   color: var(--main-colour-light);
+}
+
+@media only screen and (max-width: 576px) {
+  #navBarContainer {
+    display: none;
+  }
 }

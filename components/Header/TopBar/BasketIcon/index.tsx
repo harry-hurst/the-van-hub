@@ -1,5 +1,5 @@
 // react
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { HeaderContext } from "../../../../context/HeaderContextComponent";
 
 // styles
@@ -9,18 +9,14 @@ export default function BasketIcon() {
   // useState
 
   // useContext
-  const { headerMenusState, changeHeaderMenusState } =
+  const { headerMenusState, changeHeaderMenusState, basketIcon } =
     useContext(HeaderContext);
-
-  // useRef
-  const basketIcon = useRef<HTMLDivElement>(null);
 
   return (
     <div
       id={basketIconStyles.basketIconContainer}
       onClick={() => {
         changeHeaderMenusState("basketMenu", !headerMenusState.basketMenu);
-        alert("clicked basketIcon");
       }}
       ref={basketIcon}
     >

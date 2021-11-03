@@ -10,8 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function BurgerIcon() {
   // useContext
-  const { searchState } = useContext(HeaderContext);
-  const { headerMenusState, changeHeaderMenusState } =
+  const { searchState, headerMenusState, changeHeaderMenusState, burgerIcon } =
     useContext(HeaderContext);
 
   return (
@@ -26,6 +25,7 @@ export default function BurgerIcon() {
           onClick={() => {
             changeHeaderMenusState("mobileMenu", !headerMenusState.mobileMenu);
           }}
+          ref={burgerIcon}
         >
           {headerMenusState.mobileMenu ? (
             <svg

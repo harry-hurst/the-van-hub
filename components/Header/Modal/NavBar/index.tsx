@@ -8,7 +8,7 @@ import navBarStyles from "./NavBar.module.css";
 
 export default function NavBar() {
   // useContext
-  const { headerMenusState, changeHeaderMenusState } =
+  const { headerMenusState, changeHeaderMenusState, currentCollectionId, changeCurrentCollectionId } =
     useContext(HeaderContext);
   const { client } = useContext(ShopifyContext);
 
@@ -29,16 +29,21 @@ export default function NavBar() {
   return (
     <div id={navBarStyles.navBarContainer}>
       {collections &&
-        collections.map((collection: { title: string }, index: number) => (
+        collections.map((collection: { title: string, id: any }, index: number) => (
+
+
           <div
             id={navBarStyles.navBarItem}
             key={index}
             onClick={() => {
-              changeHeaderMenusState("navMenu", true);
+              changeHeaderMenusState("navMenu", true)
+              changeCurrentCollectionId(`${collection.id}`)
             }}
           >
             {collection.title}
           </div>
+
+
         ))}
     </div>
   );

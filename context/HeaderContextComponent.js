@@ -7,13 +7,32 @@ export default function HeaderContextComponent(props) {
   const [searchState, setSearchState] = useState(false);
 
   const [headerMenusState, setHeaderMenusState] = useState({
-    mobileMenu: false,
+    navComponent: false,
     searchMenu: false,
     basketMenu: false,
     navMenu: false,
   });
 
   const [currentCollectionId, setCurrentCollectionId] = useState();
+
+  // window width
+  const [small, setSmall] = useState();
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth > 576) {
+        setSmall(false);
+      } else {
+        setSmall(true);
+      }
+    }
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // useRef
 
@@ -24,7 +43,7 @@ export default function HeaderContextComponent(props) {
   useEffect(() => {
     if (
       !(
-        headerMenusState.mobileMenu ||
+        headerMenusState.navComponent ||
         headerMenusState.searchMenu ||
         headerMenusState.basketMenu ||
         headerMenusState.navMenu
@@ -58,7 +77,7 @@ export default function HeaderContextComponent(props) {
   const changeHeaderMenusState = (menu, newState) => {
     setHeaderMenusState({
       ...{
-        mobileMenu: false,
+        navComponent: false,
         searchMenu: false,
         basketMenu: false,
         navMenu: false,
@@ -90,6 +109,9 @@ export default function HeaderContextComponent(props) {
         modal,
         basketIcon,
         burgerIcon,
+
+        // window width
+        small,
       }}
     >
       {props.children}

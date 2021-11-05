@@ -43,7 +43,7 @@ export default function ShopifyContextComponent(props) {
   }
 
   return (
-    <ShopifyContext.Provider value={{ client, basket }}>
+    <ShopifyContext.Provider value={{  client, basket }}> 
       {props.children}
     </ShopifyContext.Provider>
   );

@@ -13,6 +13,7 @@
   box-shadow: var(--modal);
   border-radius: var(--border-radius);
   transition: all var(--time) ease;
+
 }
 
 .modalExpanded {
@@ -28,8 +29,8 @@
 #modalInner {
   gap: 10px;
   height: 100%;
-  display: flex;
   padding: 10px;
+  display: flex;
   position: relative;
   background: white;
   flex-direction: column;
@@ -40,8 +41,3 @@
   padding: 0 !important;
 }
 
-@media only screen and (max-width: 576px) {
-  #modal {
-    height: 0;
-  }
-}

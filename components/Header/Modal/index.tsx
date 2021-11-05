@@ -7,21 +7,21 @@ import modalStyles from "./Modal.module.css";
 
 // components
 import Arrow from "./Arrow";
-import NavBar from "./NavBar";
+
 import NavMenu from "./NavMenu";
+import NavComponent from "./NavComponent";
 
 export default function Modal() {
   // useState
   const [open, setOpen] = useState<boolean>(false);
-  const [collapsed, setCollapsed] = useState<boolean>();
 
   // useContext
-  const { headerMenusState, modal } = useContext(HeaderContext);
+  const { headerMenusState, modal, small } = useContext(HeaderContext);
 
   // useEffect
   useEffect(() => {
     if (
-      headerMenusState.mobileMenu ||
+      headerMenusState.navComponent ||
       headerMenusState.searchMenu ||
       headerMenusState.basketMenu ||
       headerMenusState.navMenu
@@ -34,22 +34,6 @@ export default function Modal() {
     }
   }, [headerMenusState]);
 
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth > 576) {
-        setCollapsed(false);
-      } else {
-        setCollapsed(true);
-      }
-    }
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <div id={modalStyles.modalContainer}>
       <div className="container">
@@ -57,7 +41,7 @@ export default function Modal() {
           id={modalStyles.modal}
           className={`
             ${open && `${modalStyles.modalExpanded}`}
-            ${collapsed && !open && `${modalStyles.modalCollapsed}`}
+            ${small && !open && `${modalStyles.modalCollapsed}`}
           `}
           ref={modal}
         >
@@ -66,10 +50,10 @@ export default function Modal() {
             id={modalStyles.modalInner}
             className={`
             ${open && `${modalStyles.modalInnerExpanded}`}
-            ${collapsed && !open && `${modalStyles.modalInnerCollapsed}`}
+            ${small && !open && `${modalStyles.modalInnerCollapsed}`}
             `}
           >
-            <NavBar />
+            <NavComponent />
             <NavMenu />
           </div>
         </div>

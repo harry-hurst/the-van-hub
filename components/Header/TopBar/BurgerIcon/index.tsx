@@ -23,11 +23,11 @@ export default function BurgerIcon() {
           transition={{ duration: 0.2, delay: 0.2 }}
           id={burgerIconStyles.burgerIconContainer}
           onClick={() => {
-            changeHeaderMenusState("mobileMenu", !headerMenusState.mobileMenu);
+            changeHeaderMenusState("navComponent", !headerMenusState.navComponent);
           }}
           ref={burgerIcon}
         >
-          {headerMenusState.mobileMenu ? (
+          {headerMenusState.navComponent ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"

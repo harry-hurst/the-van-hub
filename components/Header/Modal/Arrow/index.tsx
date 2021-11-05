@@ -8,14 +8,12 @@ import arrowStyles from "./Arrow.module.css";
 // modules
 import { motion, AnimatePresence } from "framer-motion";
 
-
 export default function Arrow() {
-
-const { headerMenusState } = useContext(HeaderContext)
+  const { headerMenusState } = useContext(HeaderContext);
 
   return (
     <AnimatePresence>
-      {(headerMenusState.mobileMenu ||
+      {(headerMenusState.navComponent ||
         headerMenusState.searchMenu ||
         headerMenusState.basketMenu) && (
         <motion.div
@@ -26,7 +24,7 @@ const { headerMenusState } = useContext(HeaderContext)
           id={arrowStyles.dropdownArrowContainer}
           className={`
 
-${headerMenusState.mobileMenu && `${arrowStyles.left}`}
+${headerMenusState.navComponent && `${arrowStyles.left}`}
 ${headerMenusState.searchMenu && `${arrowStyles.middle}`}
 ${headerMenusState.basketMenu && `${arrowStyles.right}`}
 

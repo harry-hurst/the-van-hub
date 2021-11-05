@@ -1,0 +1,38 @@
+#container {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  /* background: pink; */
+  flex-grow: 1;
+}
+
+#item {
+  font-size: 14px;
+  min-height: 30px;
+  padding: 20px 10px;
+  flex-shrink: 0;
+  border: 1px solid var(--main-colour-light);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 576px) {
+  #container {
+    /* gap: 10px;
+    display: flex; */
+    flex-direction: row;
+    /* overflow: auto;
+    background: pink;*/
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  #item {
+    padding: 5px;
+  }
+}

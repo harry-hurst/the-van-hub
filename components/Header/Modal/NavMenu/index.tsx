@@ -38,6 +38,8 @@ export default function NavMenu() {
         // save to state
         setCollection(retrievedCollection);
       });
+      console.log("the current collection is");
+      console.log(collection);
   }, [currentCollectionId]);
 
   return (
@@ -53,8 +55,8 @@ export default function NavMenu() {
             id={navMenuStyles.container}
           >
             {collection &&
-              collection.products.map((product: { title: string, variants: any }, index: number) => (
-                <NavMenuItem key={index} title={product.title} imgSrc={product.variants[0].image.src}/>
+              collection.products.map((product: { title: string, variants: any, availableForSale: boolean, id: string }, index: number) => (
+                <NavMenuItem key={index} productId={product.id} stock={product.availableForSale} title={product.title} imgSrc={product.variants[0].image.src}/>
               ))}
           </motion.div>
         </AnimateSharedLayout>

@@ -83,8 +83,6 @@ export default function HeaderContextComponent(props) {
   };
 
   const changeHeaderMenusState = (menu, newState) => {
-console.log("changeHeaderMenusState run");
-console.log(menu + " being changed to " + newState);
     setHeaderMenusState({
       ...{
         searchMenu: false,

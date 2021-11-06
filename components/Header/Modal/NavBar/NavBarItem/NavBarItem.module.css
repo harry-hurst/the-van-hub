@@ -1,20 +1,20 @@
 #item {
+  padding: 5px;
   display: flex;
   flex-shrink: 0;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
   min-height: 30px;
-  padding: 5px;
   align-items: center;
   justify-content: center;
   background-color: white;
+  transition: var(--time) ease;
   color: var(--main-colour-dark);
   font-family: Nunito Sans Light;
   border-radius: var(--border-radius);
-  transition-property: border, box-shadow, transform;
-  transition: var(--time) ease;
   box-shadow: var(--nav-component-item);
   border: 1px solid var(--main-colour-medium);
+  transition-property: border, box-shadow, transform;
 }
 
 .currentItem {

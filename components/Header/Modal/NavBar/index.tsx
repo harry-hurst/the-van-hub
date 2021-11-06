@@ -59,8 +59,8 @@ export default function NavBar() {
           id={navComponentStyles.navBar}
         >
           {collections &&
-            collections.map((collection: { title: string; id: any }) => (
-              <NavBarItem title={collection.title} id={collection.id} />
+            collections.map((collection: { title: string; id: any }, index: number) => (
+              <NavBarItem key={index} title={collection.title} id={collection.id} />
             ))}
         </motion.div>
       )}

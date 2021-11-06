@@ -24,19 +24,17 @@ export default function Layout(props: LayoutProps) {
       </Head>
 
       <main>
-
         <ShopifyContextComponent>
           <HeaderContextComponent>
             <TopBar />
             <Modal />
           </HeaderContextComponent>
-        </ShopifyContextComponent>
 
-        <div id={layoutStyles.mainContentContainer}>
-          {props.children}
-          <Footer />
-        </div>
-        
+          <div id={layoutStyles.mainContentContainer}>
+            {props.children}
+            <Footer />
+          </div>
+        </ShopifyContextComponent>
       </main>
     </>
   );

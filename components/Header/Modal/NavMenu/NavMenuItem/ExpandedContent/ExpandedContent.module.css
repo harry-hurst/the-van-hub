@@ -1,17 +1,22 @@
 #expandedContent {
-  border: 1px solid red;
-  height: 30vh;
+  height: 100px;
   display: flex;
   gap: 10px;
 }
 
 #imageContainer {
-  border: 1px solid green;
   position: relative;
-  flex-grow: 1;
+  flex-grow: 3;
 }
 
 #infoContainer {
-  flex-grow: 2;
-  border: 1px solid green;
+  flex-grow: 1;
+}
+
+#button {
+flex-grow: 1;
+}
+
+#button:hover {
+  color: white;
 }

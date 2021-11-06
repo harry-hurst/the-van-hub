@@ -1,0 +1,21 @@
+#mobileMenu {
+  gap: 10px;
+  flex-grow: 1;
+  display: flex;
+  overflow: auto;
+  overflow-x: scroll;
+  padding-bottom: 2px;
+  flex-direction: column;
+  background-color: pink;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#mobileMenu::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#mobileMenu {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

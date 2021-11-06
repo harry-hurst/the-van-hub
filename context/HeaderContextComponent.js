@@ -4,19 +4,27 @@ export const HeaderContext = React.createContext();
 export default function HeaderContextComponent(props) {
   // useState
 
+
+
+
+
   const [searchState, setSearchState] = useState(false);
 
   const [headerMenusState, setHeaderMenusState] = useState({
-    navComponent: false,
     searchMenu: false,
     basketMenu: false,
     navMenu: false,
+    mobileMenu: false,
   });
 
   const [currentCollectionId, setCurrentCollectionId] = useState();
 
   // window width
   const [small, setSmall] = useState();
+
+
+
+
 
   useEffect(() => {
     function handleResize() {
@@ -43,7 +51,7 @@ export default function HeaderContextComponent(props) {
   useEffect(() => {
     if (
       !(
-        headerMenusState.navComponent ||
+        headerMenusState.mobileMenu ||
         headerMenusState.searchMenu ||
         headerMenusState.basketMenu ||
         headerMenusState.navMenu
@@ -75,12 +83,14 @@ export default function HeaderContextComponent(props) {
   };
 
   const changeHeaderMenusState = (menu, newState) => {
+console.log("changeHeaderMenusState run");
+console.log(menu + " being changed to " + newState);
     setHeaderMenusState({
       ...{
-        navComponent: false,
         searchMenu: false,
         basketMenu: false,
         navMenu: false,
+        mobileMenu: false,
       },
       [menu]: newState,
     });

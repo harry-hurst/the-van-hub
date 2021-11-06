@@ -1,66 +1,8 @@
 import type { NextPage } from "next";
 
-const HomePage = () => {
-  return (
-    <>
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-      <span>This is content for the home page.</span>
-      <br />
-    </>
-  );
-};
+// components
+import Carousal from "../components/HomePage/Carousel";
 
-export default HomePage;
+export default function HomePage() {
+  return <Carousal/>;
+}

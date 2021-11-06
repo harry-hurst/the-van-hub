@@ -4,8 +4,12 @@ import Head from "next/head";
 import layoutStyles from "./Layout.module.css";
 
 // components
-import Header from "../Header";
+
 import Footer from "../Footer";
+import ShopifyContextComponent from "../../context/ShopifyContextComponent";
+import HeaderContextComponent from "../../context/HeaderContextComponent";
+import TopBar from "../Header/TopBar";
+import Modal from "../Header/Modal";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -13,20 +17,26 @@ export interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
   return (
-    // <body> ---> <div id="__next"> --->
     <>
       <Head>
         <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-
       <main>
+
+        <ShopifyContextComponent>
+          <HeaderContextComponent>
+            <TopBar />
+            <Modal />
+          </HeaderContextComponent>
+        </ShopifyContextComponent>
+
         <div id={layoutStyles.mainContentContainer}>
           {props.children}
           <Footer />
         </div>
+        
       </main>
     </>
   );

@@ -23,6 +23,12 @@
 /* Nunito sans */
 
 @font-face {
+  font-family: "Nunito Sans Light";
+  src: url("../assets/fonts/nunito-sans/NunitoSans-Light.ttf")
+    format("truetype");
+}
+
+@font-face {
   font-family: "Nunito Sans Regular";
   src: url("../assets/fonts/nunito-sans/NunitoSans-Regular.ttf")
     format("truetype");
@@ -59,25 +65,19 @@ svg {
 :root {
   --main-colour-dark: #263241;
   --main-colour-light: #1c88ed;
+  --main-colour-medium: #6dafec;
   --main-colour-very-light: #effbff;
   --grey: #505971;
   --text-colour: #666;
   --border-colour: #d5d9d9;
   --border-radius: 0.25rem;
   --border-radius-large: 8px;
-  --time: 200ms;
+  --time: 400ms;
 
-  // h-offset v-offset blur spread colour
-
-  // blue tint
-  --card-box-shadow: 0px 0px 0px 1px rgb(65 129 185 / 40%);
-  --card-box-shadow-large: 0px 1px 2px 2px rgb(65 129 185 / 40%);
-
-  --v-offset-shadow-blue: 0 2px 5px 1px rgb(65 129 185 / 16%);
-  --v-h-offset-shadow-blue: -2px 2px 5px 1px rgb(65 129 185 / 16%);
-
-  // black tint
+ // box-shadow (x y blur spread)
   --modal: 0 0 5px 1px rgb(65 129 185 / 50%);
+  --nav-component-item: 0px 2px 2px rgb(207 211 231);
+  --nav-component-item-hover: 6px 6px 6px rgb(159 164 194 / 40%);
 }
 
 // BOOTSTRAP //////////////////////////////////////////////////////////////////

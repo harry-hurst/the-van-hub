@@ -13,7 +13,7 @@ export default function Arrow() {
 
   return (
     <AnimatePresence>
-      {(headerMenusState.navComponent ||
+      {(headerMenusState.mobileMenu ||
         headerMenusState.searchMenu ||
         headerMenusState.basketMenu) && (
         <motion.div
@@ -24,7 +24,7 @@ export default function Arrow() {
           id={arrowStyles.dropdownArrowContainer}
           className={`
 
-${headerMenusState.navComponent && `${arrowStyles.left}`}
+${headerMenusState.mobileMenu && `${arrowStyles.left}`}
 ${headerMenusState.searchMenu && `${arrowStyles.middle}`}
 ${headerMenusState.basketMenu && `${arrowStyles.right}`}
 

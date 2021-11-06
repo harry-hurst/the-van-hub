@@ -4,14 +4,17 @@ import { HeaderContext } from "../../../../context/HeaderContextComponent";
 import { ShopifyContext } from "../../../../context/ShopifyContextComponent";
 
 // styles
-import navComponentStyles from "./NavComponent.module.css";
+import mobileMenuStyles from "./MobileMenu.module.css";
+
+//components
+import MobileMenuItem from "./MobileMenuItem";
 
 // modules
 import { motion, AnimatePresence } from "framer-motion";
 
 const container = {
   hidden: {
-    y: "20%",
+    y: "10%",
   },
   visible: {
     y: 0,
@@ -24,26 +27,9 @@ const container = {
   },
 };
 
-const item = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.2,
-      type: "tween",
-    },
-  },
-};
-
 export default function MobileMenu() {
   // useContext
-  const {
-    headerMenusState,
-    changeHeaderMenusState,
-    small,
-    changeCurrentCollectionId,
-  } = useContext(HeaderContext);
+  const { headerMenusState, small } = useContext(HeaderContext);
   const { client } = useContext(ShopifyContext);
 
   // useState
@@ -62,34 +48,20 @@ export default function MobileMenu() {
 
   return (
     <AnimatePresence>
-      {((small && headerMenusState.navComponent) ||
-        (!small &&
-          !(
-            headerMenusState.searchMenu ||
-            headerMenusState.basketMenu 
-          ))) && (
+
+      {headerMenusState.mobileMenu && (
+        
         <motion.div
           variants={container}
           initial="hidden"
           animate="visible"
-          id={navComponentStyles.container}
+          exit={{ opacity: 0 }}
+          id={mobileMenuStyles.mobileMenu}
         >
           {collections &&
-            collections.map(
-              (collection: { title: string; id: any }, index: number) => (
-                <motion.div
-                  key={index}
-                  id={navComponentStyles.item}
-                  variants={item}
-                  onClick={() => {
-                    changeCurrentCollectionId(collection.id);
-                    changeHeaderMenusState("navMenu", true);
-                  }}
-                >
-                  {collection.title}
-                </motion.div>
-              )
-            )}
+            collections.map((collection: { title: string; id: any }) => (
+              <MobileMenuItem title={collection.title} id={collection.id} />
+            ))}
         </motion.div>
       )}
     </AnimatePresence>

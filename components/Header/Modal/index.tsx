@@ -8,8 +8,12 @@ import modalStyles from "./Modal.module.css";
 // components
 import Arrow from "./Arrow";
 
+import NavBar from "./NavBar";
 import NavMenu from "./NavMenu";
-import NavComponent from "./NavComponent";
+import MobileMenu from "./MobileMenu";
+
+// modules
+import { AnimateSharedLayout } from "framer-motion";
 
 export default function Modal() {
   // useState
@@ -21,7 +25,7 @@ export default function Modal() {
   // useEffect
   useEffect(() => {
     if (
-      headerMenusState.navComponent ||
+      headerMenusState.mobileMenu ||
       headerMenusState.searchMenu ||
       headerMenusState.basketMenu ||
       headerMenusState.navMenu
@@ -53,8 +57,11 @@ export default function Modal() {
             ${small && !open && `${modalStyles.modalInnerCollapsed}`}
             `}
           >
-            <NavComponent />
-            <NavMenu />
+            <AnimateSharedLayout>
+              <NavBar />
+              <MobileMenu />
+              <NavMenu />
+            </AnimateSharedLayout>
           </div>
         </div>
       </div>

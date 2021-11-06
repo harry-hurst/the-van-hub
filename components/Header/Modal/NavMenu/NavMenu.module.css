@@ -7,18 +7,3 @@
   overflow: auto;
 }
 
-#item {
-  display: flex;
-  cursor: pointer;
-  flex-direction: column;
-  flex-shrink: 0;
-  font-size: 14px;
-  min-height: 30px;
-  padding: 20px 10px;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--main-colour-light);
-  
-  background-color: white;
-}

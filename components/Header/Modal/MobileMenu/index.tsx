@@ -14,12 +14,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const container = {
   hidden: {
+    opacity: 0,
     y: "10%",
   },
   visible: {
+    opacity: 1,
     y: 0,
     transition: {
-      delay: 0.2,
+      // delay: 0.2,
       duration: 1,
       delayChildren: 0.2,
       staggerChildren: 0.1,
@@ -29,11 +31,23 @@ const container = {
 
 export default function MobileMenu() {
   // useContext
-  const { headerMenusState, small } = useContext(HeaderContext);
+  const { headerMenusState } = useContext(HeaderContext);
   const { client } = useContext(ShopifyContext);
 
   // useState
   const [collections, setCollections] = useState<any>();
+
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (headerMenusState.mobileMenu) {
+      setTimeout(() => {
+        setOpen(true);
+      }, 200);
+    } else {
+      setOpen(false);
+    }
+  }, [headerMenusState.mobileMenu]);
 
   // useEffect
   useEffect(() => {
@@ -49,7 +63,7 @@ export default function MobileMenu() {
   return (
     <AnimatePresence>
 
-      {headerMenusState.mobileMenu && (
+      {open && (
         
         <motion.div
           variants={container}

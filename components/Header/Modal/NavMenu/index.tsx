@@ -14,10 +14,16 @@ import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 const container = {
   hidden: {
-    // y: "30%",
+    opacity: 0,
+    y: "10%",
   },
   visible: {
-    // y: 0,
+    opacity: 1,
+    y: 0,
+    transition: {
+      // delay: 0.2,
+      duration: 1,
+    },
   },
 };
 
@@ -29,6 +35,18 @@ export default function NavMenu() {
   // useState
   const [collection, setCollection] = useState<any>();
 
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (headerMenusState.navMenu) {
+      setTimeout(() => {
+        setOpen(true);
+      }, 200);
+    } else {
+      setOpen(false);
+    }
+  }, [headerMenusState.navMenu]);
+
   // useEffect
   useEffect(() => {
     // run once on first component mount
@@ -38,13 +56,11 @@ export default function NavMenu() {
         // save to state
         setCollection(retrievedCollection);
       });
-      console.log("the current collection is");
-      console.log(collection);
   }, [currentCollectionId]);
 
   return (
     <AnimatePresence>
-      {headerMenusState.navMenu && (
+      {open && (
         <AnimateSharedLayout>
           <motion.div
             layout
@@ -55,16 +71,28 @@ export default function NavMenu() {
             id={navMenuStyles.container}
           >
             {collection &&
-              collection.products.map((product: { title: string, variants: any, availableForSale: boolean, id: string }, index: number) => (
-                <NavMenuItem key={index} productId={product.id} stock={product.availableForSale} title={product.title} imgSrc={product.variants[0].image.src}/>
-              ))}
+              collection.products.map(
+                (
+                  product: {
+                    title: string;
+                    variants: any;
+                    availableForSale: boolean;
+                    id: string;
+                  },
+                  index: number
+                ) => (
+                  <NavMenuItem
+                    key={index}
+                    productId={product.id}
+                    stock={product.availableForSale}
+                    title={product.title}
+                    imgSrc={product.variants[0].image.src}
+                  />
+                )
+              )}
           </motion.div>
         </AnimateSharedLayout>
       )}
     </AnimatePresence>
   );
 }
-
-
-
-

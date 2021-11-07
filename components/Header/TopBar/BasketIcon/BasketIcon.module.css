@@ -12,7 +12,6 @@
   align-items: center;
   justify-content: center;
   transition: all var(--time) ease;
-  border: 1px solid orange;
 }
 
 .relocated {

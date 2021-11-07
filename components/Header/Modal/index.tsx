@@ -11,9 +11,11 @@ import Arrow from "./Arrow";
 import NavBar from "./NavBar";
 import NavMenu from "./NavMenu";
 import MobileMenu from "./MobileMenu";
+import Basket from "./Basket";
 
 // modules
 import { AnimateSharedLayout } from "framer-motion";
+
 
 export default function Modal() {
   // useState
@@ -59,8 +61,12 @@ export default function Modal() {
           >
             <AnimateSharedLayout>
               <NavBar />
+              
               <MobileMenu />
+              <Basket />
               <NavMenu />
+
+              
             </AnimateSharedLayout>
           </div>
         </div>

@@ -4,7 +4,7 @@
 }
 
 #carousal {
-  height: calc(100vh - 500px);
+  height: calc(100vh - 400px);
   border-radius: 10px;
   background-color: var(--main-colour-very-light);
 }

@@ -12,7 +12,7 @@ export default function BasketIcon() {
   // useContext
   const { headerMenusState, changeHeaderMenusState, basketIcon } =
     useContext(HeaderContext);
-    const { basket } = useContext(ShopifyContext);
+  const { basket } = useContext(ShopifyContext);
 
   return (
     <div
@@ -23,7 +23,9 @@ export default function BasketIcon() {
       ref={basketIcon}
     >
       <div>
-        <span id={basketIconStyles.basketCount}>{basket.lineItems.length}</span>
+        <span id={basketIconStyles.basketCount}>
+          { (basket && basket.lineItems) ? basket.lineItems.length : 0}
+        </span>
         <svg viewBox="0 0 84.836929 73.094193" height="24px" width="31px">
           <g transform="translate(-12.065909,-105.65407)">
             <path

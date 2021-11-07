@@ -14,7 +14,6 @@
   box-shadow: var(--modal);
   border-radius: var(--border-radius);
   transition: all var(--time) ease;
-
 }
 
 .modalExpanded {

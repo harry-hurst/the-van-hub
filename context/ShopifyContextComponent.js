@@ -28,7 +28,6 @@ export default function ShopifyContextComponent(props) {
     client.checkout.create().then((checkout) => {
       // Do something with the checkout
       setBasket(checkout);
-      console.log(checkout);
       // localStorage.setItem("basket", JSON.stringify(checkout));
     });
 
@@ -60,8 +59,21 @@ export default function ShopifyContextComponent(props) {
       });
   }
 
+  async function updateBasket(productId) {
+    const checkoutId = basket.id; // ID of an existing checkout
+    const lineItemsToUpdate = [{ id: productId, quantity: 0 }];
+
+    client.checkout
+      .updateLineItems(checkoutId, lineItemsToUpdate)
+      .then((checkout) => {
+        setBasket(checkout); 
+      });
+  }
+
   return (
-    <ShopifyContext.Provider value={{ client, basket, addToBasket }}>
+    <ShopifyContext.Provider
+      value={{ client, basket, addToBasket, updateBasket }}
+    >
       {props.children}
     </ShopifyContext.Provider>
   );

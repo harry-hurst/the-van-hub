@@ -22,4 +22,5 @@
   font-family: Nunito Sans Regular;
 }
 #quantity {
+  flex-shrink: 0;
 }

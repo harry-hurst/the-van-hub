@@ -21,7 +21,7 @@ export default function BasketItem(props: {
         <div
           className="input-group input-group-sm"
           id={basketItemStyles.quantity}
-          style={{ width: "26px" }}
+          style={{ width: "26px"}}
         >
           <input
             type="text"

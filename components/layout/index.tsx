@@ -30,7 +30,7 @@ export default function Layout(props: LayoutProps) {
             <Modal />
           </HeaderContextComponent>
 
-          <div id={layoutStyles.mainContentContainer}>
+          <div id={layoutStyles.mainContentWrapper}>
             {props.children}
             <Footer />
           </div>

@@ -18,9 +18,9 @@ export default function ProductPage() {
   const { ProductTitle, productId } = router.query;
 
   const [product, setProduct] = useState<any>();
-  const [thumbnailIndex, setThumbnailIndex] = useState<number>();
+  const [thumbnailIndex, setThumbnailIndex] = useState<number>(0);
 
-  const { client } = useContext(ShopifyContext);
+  const { client, addToBasket } = useContext(ShopifyContext);
 
   useEffect(() => {
     fetchProduct();
@@ -36,7 +36,7 @@ export default function ProductPage() {
   }
 
   return (
-    <div className="container">
+    <div className="container" id={productPageStyles.container}>
       <BreadCrumbs productTitle={ProductTitle} />
 
       {product ? (
@@ -47,7 +47,7 @@ export default function ProductPage() {
 
           <div className="row">
             <div
-              className="col-sm-10 col-md-10 col-lg-7 p-2"
+              className="col-sm-12 col-md-10 col-lg-7 p-2"
               id={productPageStyles.firstColumn}
             >
               <div id={productPageStyles.mainImageContainer}>
@@ -61,7 +61,7 @@ export default function ProductPage() {
             </div>
 
             <div
-              className="col-sm-2 col-md-2 col-lg-1 p-2"
+              className="col-sm-12 col-md-2 col-lg-1 p-2"
               id={productPageStyles.secondColumn}
             >
               {product.images.map((image: any, index: number) => (
@@ -98,6 +98,19 @@ export default function ProductPage() {
             <div className="col-md-12 col-lg-4 p-2">
               <span>{product.description}</span>
             </div>
+          </div>
+
+          <div id={productPageStyles.callToActionContainer}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                addToBasket(product.variants[0].id);
+              }}
+              style={{ color: "white" }}
+            >
+              Add to Basket
+            </button>
           </div>
         </>
       ) : (

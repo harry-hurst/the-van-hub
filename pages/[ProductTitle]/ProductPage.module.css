@@ -1,6 +1,6 @@
-#pageContainer {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+#container {
+    padding-top: 10px;
+    padding-bottom: 30px;
   }
   
   #productTitle {
@@ -45,8 +45,14 @@
     padding-top: 80%;
     position: relative;
   }
+
+  #callToActionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
   
-  @media only screen and (max-width: 575px) {
+  @media only screen and (max-width: 768px) {
     #secondColumn {
       flex-direction: row;
     }

@@ -1,6 +1,7 @@
 // react
 import { useContext } from "react";
 import { HeaderContext } from "../../../../context/HeaderContextComponent";
+import { ShopifyContext } from "../../../../context/ShopifyContextComponent";
 
 // styles
 import basketIconStyles from "./BasketIcon.module.css";
@@ -11,6 +12,7 @@ export default function BasketIcon() {
   // useContext
   const { headerMenusState, changeHeaderMenusState, basketIcon } =
     useContext(HeaderContext);
+    const { basket } = useContext(ShopifyContext);
 
   return (
     <div
@@ -21,7 +23,7 @@ export default function BasketIcon() {
       ref={basketIcon}
     >
       <div>
-        <span id={basketIconStyles.basketCount}>0</span>
+        <span id={basketIconStyles.basketCount}>{basket.lineItems.length}</span>
         <svg viewBox="0 0 84.836929 73.094193" height="24px" width="31px">
           <g transform="translate(-12.065909,-105.65407)">
             <path

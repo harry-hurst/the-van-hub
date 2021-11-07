@@ -25,25 +25,43 @@ export default function ShopifyContextComponent(props) {
     // if (typeof localStorage.basket === "undefined") {
     //   alert("new checkout created from shopify");
 
-      client.checkout.create().then((checkout) => {
-        // Do something with the checkout
-        setBasket(checkout);
-        // localStorage.setItem("basket", JSON.stringify(checkout));
-      });
+    client.checkout.create().then((checkout) => {
+      // Do something with the checkout
+      setBasket(checkout);
+      console.log(checkout);
+      // localStorage.setItem("basket", JSON.stringify(checkout));
+    });
 
-      // not first time through
+    // not first time through
     // } else {
     //   alert("basket retrieved from localStorage");
 
-      // retrieve basket from localStorage
+    // retrieve basket from localStorage
     //   const basketFromStorage = JSON.parse(localStorage.basket);
 
     //   setBasket(basketFromStorage);
     // }
   }
 
+  async function addToBasket(variantId) {
+    const checkoutId = basket.id;
+    const lineItemsToAdd = [
+      {
+        variantId: variantId,
+        quantity: 1,
+      },
+    ];
+
+    // Add an item to the checkout
+    client.checkout
+      .addLineItems(checkoutId, lineItemsToAdd)
+      .then((checkout) => {
+        setBasket(checkout);
+      });
+  }
+
   return (
-    <ShopifyContext.Provider value={{  client, basket }}> 
+    <ShopifyContext.Provider value={{ client, basket, addToBasket }}>
       {props.children}
     </ShopifyContext.Provider>
   );

@@ -28,7 +28,7 @@ export default function LogoComponent() {
             transition={{ duration: 0.2, delay: 0.2 }}
             id={logoComponentStyles.logoContainer}
           >
-            <Image src="/images/logo.png" layout="fill" alt="Logo" />
+            <Image src="/images/logo.png" layout="fill" objectFit="contain" alt="Logo" />
           </motion.div>
         </Link>
       )}

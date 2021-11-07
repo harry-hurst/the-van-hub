@@ -1,13 +1,13 @@
-#mainContentContainer {
+#mainContentWrapper {
   margin-top: 60px;
   position: relative;
-  padding-bottom: 70px;
+  padding-bottom: 155px;
   min-height: calc(100vh - 60px);
   transition: margin-top var(--time) ease;
 }
 
 @media only screen and (min-width: 576px) {
-  #mainContentContainer {
+  #mainContentWrapper {
     margin-top: 120px;
     min-height: calc(100vh - 120px);
   }

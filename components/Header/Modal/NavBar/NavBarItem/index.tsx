@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { HeaderContext } from "../../../../../context/HeaderContextComponent";
 
 // styles
-import navBarItemStyles from "./navBarItem.module.css";
+import navBarItemStyles from "./NavBarItem.module.css";
 
 // modules
 import { motion } from "framer-motion";

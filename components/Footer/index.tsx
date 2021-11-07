@@ -6,7 +6,7 @@ export default function Footer() {
     <div id={footerStyles.container}>
       <div className="container">
         <div id={footerStyles.sectionOne}>
-          <a href="https://www.facebook.com/TheVanHub" target="_blank">
+          <a href="https://www.facebook.com/TheVanHub">
             <div className={footerStyles.iconContainer}>
               <svg
                 aria-hidden="true"
@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
           </a>
 
-          <a href="https://www.instagram.com/thevanhub/" target="_blank">
+          <a href="https://www.instagram.com/thevanhub/">
             <div className={footerStyles.iconContainer}>
               <svg
                 aria-hidden="true"

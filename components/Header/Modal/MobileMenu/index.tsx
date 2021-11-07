@@ -73,8 +73,8 @@ export default function MobileMenu() {
           id={mobileMenuStyles.mobileMenu}
         >
           {collections &&
-            collections.map((collection: { title: string; id: any }) => (
-              <MobileMenuItem title={collection.title} id={collection.id} />
+            collections.map((collection: { title: string; id: any }, index: number) => (
+              <MobileMenuItem key={index} title={collection.title} id={collection.id} />
             ))}
         </motion.div>
       )}

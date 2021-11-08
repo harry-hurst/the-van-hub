@@ -5,3 +5,12 @@
   cursor: pointer;
   position: relative;
 }
+
+#tm {
+  top: 0;
+  right: 0;
+  font-size: 8px;
+  color: white;
+  position: absolute;
+  transform: translateX(100%)
+}

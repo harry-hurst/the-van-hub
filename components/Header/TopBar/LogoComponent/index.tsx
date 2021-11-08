@@ -1,6 +1,6 @@
 // react
 import { useContext } from "react";
-import { HeaderContext } from "../../../../context/HeaderContextComponent"
+import { HeaderContext } from "../../../../context/HeaderContextComponent";
 
 // styles
 import logoComponentStyles from "./LogoComponent.module.css";
@@ -13,7 +13,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function LogoComponent() {
-
   // useContext
   const { searchState } = useContext(HeaderContext);
 
@@ -28,7 +27,13 @@ export default function LogoComponent() {
             transition={{ duration: 0.2, delay: 0.2 }}
             id={logoComponentStyles.logoContainer}
           >
-            <Image src="/images/logo.png" layout="fill" objectFit="contain" alt="Logo" />
+            <span id={logoComponentStyles.tm}>TM</span>
+            <Image
+              src="/images/logo.png"
+              layout="fill"
+              objectFit="contain"
+              alt="Logo"
+            />
           </motion.div>
         </Link>
       )}

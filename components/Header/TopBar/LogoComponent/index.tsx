@@ -14,11 +14,11 @@ import Link from "next/link";
 
 export default function LogoComponent() {
   // useContext
-  const { searchState } = useContext(HeaderContext);
+  const { searchBarState, windowSize } = useContext(HeaderContext);
 
   return (
     <AnimatePresence initial={false}>
-      {!searchState && (
+      {(!searchBarState || windowSize !== "small") && (
         <Link href="/">
           <motion.div
             initial={{ opacity: 0 }}

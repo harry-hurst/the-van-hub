@@ -7,32 +7,35 @@ import searchBarStyles from "./SearchBar.module.css";
 
 export default function SearchBar() {
   // useContext
-  const { searchState, changeSearchState } = useContext(HeaderContext);
+  const { searchBarState, changeSearchBarState, windowSize } =
+    useContext(HeaderContext);
 
   // useState
   const [open, setOpen] = useState(false);
 
   // useEffect
   useEffect(() => {
-    if (searchState === true) {
+    if (searchBarState) {
       setTimeout(() => {
         setOpen(true);
       }, 400);
     } else {
       setOpen(false);
     }
-  }, [searchState]);
+  }, [searchBarState]);
 
   return (
     <div
       id={searchBarStyles.searchBarContainer}
-      className={`${open && `${searchBarStyles.searchOpen}`}`}
+      className={`
+      ${(open || windowSize === "large") && `${searchBarStyles.searchOpen}`}
+    `}
     >
       <div
         id={searchBarStyles.searchButton}
         className={searchBarStyles.centeredButton}
         onClick={() => {
-          changeSearchState(true);
+          changeSearchBarState(true);
         }}
       >
         <svg
@@ -47,7 +50,7 @@ export default function SearchBar() {
         </svg>
       </div>
 
-      {open && (
+      {(open || windowSize === "large") && (
         <>
           <input
             type="text"
@@ -59,7 +62,7 @@ export default function SearchBar() {
             id={searchBarStyles.closeButton}
             className={searchBarStyles.centeredButton}
             onClick={() => {
-              changeSearchState(false);
+              changeSearchBarState(false);
             }}
           >
             {" "}

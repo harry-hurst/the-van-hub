@@ -29,7 +29,7 @@ const container = {
 
 export default function NavBar() {
   // useContext
-  const { headerMenusState, small } = useContext(HeaderContext);
+  const { headerMenusState, windowSize } = useContext(HeaderContext);
   const { client } = useContext(ShopifyContext);
 
   // useState
@@ -49,7 +49,7 @@ export default function NavBar() {
   return (
     <AnimatePresence>
 
-      {!small && !(headerMenusState.searchMenu || headerMenusState.basketMenu) && (
+      {!(windowSize === "small") && !(headerMenusState.searchMenu || headerMenusState.basketMenu) && (
 
         <motion.div
           variants={container}

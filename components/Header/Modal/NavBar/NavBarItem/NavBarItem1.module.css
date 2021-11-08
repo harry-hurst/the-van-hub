@@ -7,10 +7,9 @@
     min-height: 30px;
     align-items: center;
     justify-content: center;
-    background-color: white;
     transition: var(--time) ease;
     color: var(--main-colour-dark);
-    font-family: Nunito Sans Light;
+    font-family: Nunito Sans Regular;
     border-radius: var(--border-radius);
     box-shadow: var(--nav-component-item);
     border: 1px solid var(--main-colour-medium);

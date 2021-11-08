@@ -51,7 +51,7 @@ export default function NavMenu() {
   useEffect(() => {
     // run once on first component mount
     client.collection
-      .fetchWithProducts(currentCollectionId, { productsFirst: 10 })
+      .fetchWithProducts(currentCollectionId)
       .then((retrievedCollection: any) => {
         // save to state
         setCollection(retrievedCollection);

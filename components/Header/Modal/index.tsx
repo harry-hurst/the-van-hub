@@ -22,7 +22,7 @@ export default function Modal() {
   const [open, setOpen] = useState<boolean>(false);
 
   // useContext
-  const { headerMenusState, modal, small } = useContext(HeaderContext);
+  const { headerMenusState, modal, windowSize } = useContext(HeaderContext);
 
   // useEffect
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function Modal() {
           id={modalStyles.modal}
           className={`
             ${open && `${modalStyles.modalExpanded}`}
-            ${small && !open && `${modalStyles.modalCollapsed}`}
+            ${(windowSize === "small") && !open && `${modalStyles.modalCollapsed}`}
           `}
           ref={modal}
         >
@@ -56,7 +56,7 @@ export default function Modal() {
             id={modalStyles.modalInner}
             className={`
             ${open && `${modalStyles.modalInnerExpanded}`}
-            ${small && !open && `${modalStyles.modalInnerCollapsed}`}
+            ${(windowSize === "small") && !open && `${modalStyles.modalInnerCollapsed}`}
             `}
           >
             <AnimateSharedLayout>

@@ -5,22 +5,14 @@ import { HeaderContext } from "../../../../context/HeaderContextComponent";
 // styles
 import burgerIconStyles from "./BurgerIcon.module.css";
 
-// module
-import { motion, AnimatePresence } from "framer-motion";
-
 export default function BurgerIcon() {
   // useContext
-  const { searchState, headerMenusState, changeHeaderMenusState, burgerIcon } =
+  const { headerMenusState, changeHeaderMenusState, burgerIcon } =
     useContext(HeaderContext);
 
   return (
-    <AnimatePresence initial={false}>
-      {!searchState && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2, delay: 0.2 }}
+
+        <div
           id={burgerIconStyles.burgerIconContainer}
           onClick={() => {
             changeHeaderMenusState("mobileMenu", !headerMenusState.mobileMenu);
@@ -53,8 +45,7 @@ export default function BurgerIcon() {
               />
             </svg>
           )}
-        </motion.div>
-      )}
-    </AnimatePresence>
+        </div>
+
   );
 }

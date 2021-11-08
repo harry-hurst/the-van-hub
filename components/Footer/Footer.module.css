@@ -12,16 +12,28 @@
   font-size: 16px;
   margin-bottom: 10px;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
+  color: var(--icon-grey);
+
   background: var(--background-grey);
   border-radius: var(--border-radius-large);
-  
+}
+
+#tvh {
+  cursor: default;
+  padding: 1px 6px;
+  margin-right: auto;
+  letter-spacing: 2px;
+  font-size: 15px;
+  line-height: 21px;
+  align-self: flex-end;
+  font-family: Nunito Regular;
+  border: 1px solid currentColor;
+  border-radius: var(--border-radius);
 }
 
 .iconContainer {
   cursor: pointer;
-  color: var(--icon-grey);
+  align-self: flex-start;
 }
 
 .iconContainer:hover {

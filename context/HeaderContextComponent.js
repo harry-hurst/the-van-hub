@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 export const HeaderContext = React.createContext();
 
 export default function HeaderContextComponent(props) {
+
   // window width =======================================
   const [windowSize, setWindowSize] = useState();
 
@@ -35,7 +36,10 @@ export default function HeaderContextComponent(props) {
 
   // header menus state =================================
   const [headerMenusState, setHeaderMenusState] = useState({
+
+    // searchMenuComponent
     searchMenu: false,
+    // 
     basketMenu: false,
     navMenu: false,
     mobileMenu: false,

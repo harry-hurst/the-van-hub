@@ -1,0 +1,10 @@
+#container {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: rgb(184, 231, 184);
+    overflow: auto;
+  }
+  
+  

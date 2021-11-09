@@ -12,10 +12,10 @@ import NavBar from "./NavBar";
 import NavMenu from "./NavMenu";
 import MobileMenu from "./MobileMenu";
 import Basket from "./Basket";
+import SearchMenu from "./SearchMenu";
 
 // modules
 import { AnimateSharedLayout } from "framer-motion";
-
 
 export default function Modal() {
   // useState
@@ -65,6 +65,7 @@ export default function Modal() {
               <MobileMenu />
               <Basket />
               <NavMenu />
+              <SearchMenu />
 
               
             </AnimateSharedLayout>

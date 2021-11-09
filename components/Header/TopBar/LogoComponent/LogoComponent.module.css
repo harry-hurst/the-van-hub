@@ -4,6 +4,7 @@
   flex-shrink: 0;
   cursor: pointer;
   position: relative;
+  margin-right: 15px;
 }
 
 #tm {

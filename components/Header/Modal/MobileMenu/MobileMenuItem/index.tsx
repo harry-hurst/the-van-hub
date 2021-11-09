@@ -32,7 +32,6 @@ export default function MobileMenuItem(props: { title: string; id: string }) {
       key={props.id}
       id={mobileMenuItemStyles.item}
       variants={item}
-      whileTap={{scale: 1.1}}
       onClick={() => {
         changeCurrentCollectionId(props.id);
         changeHeaderMenusState("navMenu", true);

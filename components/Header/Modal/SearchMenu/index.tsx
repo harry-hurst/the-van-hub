@@ -7,7 +7,7 @@ import { ShopifyContext } from "../../../../context/ShopifyContextComponent";
 import searchMenuStyles from "./SearchMenu.module.css";
 
 // components
-import NavMenuItem from "./NavMenuItem";
+
 
 // modules
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";

@@ -9,7 +9,7 @@
 
 /* modal */
 #modal {
-  height: 50px;
+  height: 44px;
   position: relative;
   box-shadow: var(--modal);
   border-radius: var(--border-radius);

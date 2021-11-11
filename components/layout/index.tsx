@@ -17,7 +17,7 @@ export interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
   return (
-    <>
+    <div style={{ overflow: "hidden"}}>
       <Head>
         <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />
@@ -36,6 +36,6 @@ export default function Layout(props: LayoutProps) {
           </div>
         </ShopifyContextComponent>
       </main>
-    </>
+    </div>
   );
 }

@@ -1,10 +1,10 @@
 #item {
-    padding: 5px;
+    padding: 3px 6px;
     display: flex;
     flex-shrink: 0;
     cursor: pointer;
     font-size: 12px;
-    min-height: 30px;
+    /* min-height: 30px; */
     align-items: center;
     justify-content: center;
     transition: var(--time) ease;

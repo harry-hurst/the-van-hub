@@ -1,14 +1,16 @@
 #mainContentWrapper {
   margin-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 170px; /* offset the footer */
   position: relative;
-  padding-bottom: 155px;
+
   min-height: calc(100vh - 60px);
   transition: margin-top var(--time) ease;
 }
 
 @media only screen and (min-width: 576px) {
   #mainContentWrapper {
-    margin-top: 120px;
+    margin-top: 115px;
     min-height: calc(100vh - 120px);
   }
 }

@@ -24,7 +24,7 @@ export default function BasketIcon() {
     >
       <div>
         <span id={basketIconStyles.basketCount}>
-          { (basket && basket.lineItems) ? basket.lineItems.length : 0}
+          {basket && basket.lineItems ? basket.lineItems.length : 0}
         </span>
         <svg viewBox="0 0 84.836929 73.094193" height="24px" width="31px">
           <g transform="translate(-12.065909,-105.65407)">

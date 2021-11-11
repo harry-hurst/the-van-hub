@@ -1,0 +1,38 @@
+.sliderArrow {
+  height: 100%;
+  width: 10%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sliderArrowFaint {
+  height: 100%;
+  width: 10%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.sliderArrow:hover svg {
+  stroke-width: 3;
+}
+
+.sliderArrow svg {
+  transition: stroke-width 0.1s;
+}
+
+#leftArrow {
+  left: 0;
+  justify-content: left;
+}
+
+#rightArrow {
+  right: 0;
+  justify-content: right;
+}

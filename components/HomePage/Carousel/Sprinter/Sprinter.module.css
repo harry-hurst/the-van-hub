@@ -1,0 +1,62 @@
+#carouselContainer {
+    position: relative;
+    width: 100%;
+    padding-top: 46.7%;
+  }
+  
+  #sprinterContainer {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .imageContainer {
+    position: absolute;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .imageContainer div {
+    transition: all 0.2s;
+    display: block !important;
+  }
+  
+  .imageContainer:hover div {
+    transform: scale(1.1);
+  }
+  
+  .wheelContainer {
+    position: absolute;
+    animation: rotation 2s infinite linear;
+  }
+  
+  .wheelContainer div {
+    display: block !important;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  
+  #plugContainer {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-70%, -50%);
+    width: 11%;
+    display: none;
+  }
+  
+  .imageContainer:hover #plugContainer {
+    display: none !important;
+  }
+  

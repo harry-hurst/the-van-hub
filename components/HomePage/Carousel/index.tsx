@@ -30,6 +30,7 @@ export default function Carousel() {
           slideIndex={slideIndex}
           setSlideIndex={setSlideIndex}
         />
+        
       </div>
     </div>
   );

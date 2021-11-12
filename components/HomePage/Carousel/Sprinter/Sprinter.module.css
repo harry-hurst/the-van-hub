@@ -25,10 +25,6 @@
     display: block !important;
   }
   
-  .imageContainer:hover div {
-    transform: scale(1.1);
-  }
-  
   .wheelContainer {
     position: absolute;
     animation: rotation 2s infinite linear;

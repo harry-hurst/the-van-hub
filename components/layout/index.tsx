@@ -4,7 +4,6 @@ import Head from "next/head";
 import layoutStyles from "./Layout.module.css";
 
 // components
-
 import Footer from "../Footer";
 import ShopifyContextComponent from "../../context/ShopifyContextComponent";
 import HeaderContextComponent from "../../context/HeaderContextComponent";

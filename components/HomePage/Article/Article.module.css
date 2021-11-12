@@ -1,0 +1,39 @@
+#comparisonTable {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  
+  #comparisonTable > tbody > tr > td {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--grey2);
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  #comparisonTable > thead > tr > th {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    color: var(--grey2);
+  }
+  
+  #comparisonTable > tbody > tr {
+    border-bottom: 1px solid var(--border-colour);
+  }
+  
+  #lastRow {
+    border-bottom: none !important;
+  }
+  
+  .middleColumn {
+    border-left: 1px solid var(--border-colour);
+    border-right: 1px solid var(--border-colour);
+    font-size: 1rem !important;
+  }
+  
+  #colouredBackground {
+    background: var(--main-colour-very-light);
+    padding: 1rem 0;
+  }
+  

@@ -1,6 +1,6 @@
 #logoContainer {
-  width: 163px;
-  height: 45px;
+  width: 140px;
+  height: 40px;
   flex-shrink: 0;
   cursor: pointer;
   position: relative;
@@ -14,4 +14,13 @@
   color: white;
   position: absolute;
   transform: translateX(100%)
+}
+
+@media only screen and (min-width: 576px) {
+
+  #logoContainer {
+    width: 163px;
+    height: 45px;
+  }
+
 }

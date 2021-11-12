@@ -1,7 +1,8 @@
 #carousalContainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding-top: 50%;
   position: relative;
   border-radius: var(--border-radius-large);
   background-color: var(--main-colour-very-light);
-
 }

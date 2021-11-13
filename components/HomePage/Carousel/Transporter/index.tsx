@@ -24,11 +24,11 @@ export default function Transporter(props: { slideIndex: number }) {
             <Image
               src="/images/transporter.png"
               layout="fill"
-              quality={10}
+              objectFit="contain"
+              quality={20}
+              priority
               alt=""
             />
-
-
               <motion.div
                 className={transporterStyles.imageContainer}
                 style={{
@@ -42,7 +42,8 @@ export default function Transporter(props: { slideIndex: number }) {
                 <Image
                   src="/images/ip22.png"
                   layout="fill"
-                  quality={10}
+                  objectFit="contain"
+                  quality={20}
                   alt=""
                 />
               </motion.div>
@@ -62,7 +63,8 @@ export default function Transporter(props: { slideIndex: number }) {
                 <Image
                   src="/images/solar_controller_graphic.png"
                   layout="fill"
-                  quality={10}
+                  objectFit="contain"
+                  quality={20}
                   alt=""
                 />
               </motion.div>
@@ -82,7 +84,8 @@ export default function Transporter(props: { slideIndex: number }) {
                 <Image
                   src="/images/battery_graphic.png"
                   layout="fill"
-                  quality={10}
+                  objectFit="contain"
+                  quality={20}
                   alt=""
                 />
               </motion.div>
@@ -102,7 +105,8 @@ export default function Transporter(props: { slideIndex: number }) {
                 <Image
                   src="/images/solar_panel.png"
                   layout="fill"
-                  quality={10}
+                  objectFit="contain"
+                  quality={20}
                   alt=""
                 />
               </motion.div>
@@ -120,7 +124,8 @@ export default function Transporter(props: { slideIndex: number }) {
               <Image
                 src="/images/transporter-wheel.png"
                 layout="fill"
-                quality={10}
+                objectFit="contain"
+                quality={20}
                 alt=""
               />
             </div>
@@ -136,7 +141,8 @@ export default function Transporter(props: { slideIndex: number }) {
               <Image
                 src="/images/transporter-wheel-2.png"
                 layout="fill"
-                quality={10}
+                objectFit="contain"
+                quality={20}
                 alt=""
               />
             </div>

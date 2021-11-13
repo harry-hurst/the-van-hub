@@ -1,0 +1,24 @@
+#comparisonTable {
+  width: 100%;
+  margin: 3rem 0;
+  color: var(--grey);
+  border-collapse: collapse;
+}
+
+#comparisonTable > tbody > tr > td {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+#comparisonTable > thead > tr > th {
+  padding: 0.5rem;
+  font-size: clamp(14px, 3vw, 22px);
+  font-family: Nunito Sans Light;
+}
+
+.middleColumn {
+  font-size: 1rem !important;
+  border-left: 1px solid var(--border-colour);
+  border-right: 1px solid var(--border-colour);
+}

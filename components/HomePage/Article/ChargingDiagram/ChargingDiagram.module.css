@@ -1,0 +1,9 @@
+#container {
+  margin: 10vw auto;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  font-size: clamp(10px, 2vw, 22px);
+}

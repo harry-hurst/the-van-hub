@@ -1,15 +1,18 @@
-#mainContentWrapper {
-  margin-top: 70px;
-  padding-bottom: 170px; /* offset the footer */
-  position: relative;
-  min-height: calc(100vh - 60px);
-  transition: margin-top var(--time) ease;
-
+#appContainer {
+  overflow: hidden;
 }
 
-@media only screen and (min-width: 576px) {
+#mainContentWrapper {
+  margin-top: 70px; /* offset header */
+  position: relative;
+  min-height: calc(100vh - 60px);
+  padding-bottom: calc(175px + 5vw); /* offset footer */
+  transition: margin-top var(--time) ease;
+}
+
+@media screen and (min-width: 576px) {
   #mainContentWrapper {
-    margin-top: 120px;
+    margin-top: 120px; /* offset header */
     min-height: calc(100vh - 120px);
   }
 }

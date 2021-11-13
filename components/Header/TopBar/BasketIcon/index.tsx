@@ -16,7 +16,7 @@ export default function BasketIcon() {
 
   return (
     <div
-      id={basketIconStyles.basketIconContainer}
+      id={basketIconStyles.container}
       onClick={() => {
         changeHeaderMenusState("basketMenu", !headerMenusState.basketMenu);
       }}

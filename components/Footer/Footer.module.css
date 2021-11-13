@@ -1,7 +1,8 @@
 #container {
+  bottom: 0;
   width: 100%;
-  bottom: 15px;
   position: absolute;
+  padding: calc(15px + 5vw) 0 15px 0;
 }
 
 #sectionOne {
@@ -13,18 +14,17 @@
   margin-bottom: 10px;
   flex-direction: row;
   color: var(--icon-grey);
-
   background: var(--background-grey);
   border-radius: var(--border-radius-large);
 }
 
 #tvh {
+  font-size: 11px;
   cursor: default;
   padding: 1px 6px;
+  line-height: 17px;
   margin-right: auto;
   letter-spacing: 2px;
-  font-size: 11px;
-  line-height: 17px;
   align-self: flex-end;
   font-family: Nunito Regular;
   border: 1px solid currentColor;

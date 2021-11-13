@@ -1,6 +1,6 @@
 /* Basket icon containing div */
 
-#basketIconContainer {
+#container {
   width: 40px;
   height: 40px;
   display: flex;
@@ -13,35 +13,6 @@
   justify-content: center;
   transition: all var(--time) ease;
 }
-
-.relocated {
-  top: 60px;
-  z-index: 2;
-  right: 15px;
-  position: fixed !important;
-  box-sizing: content-box;
-  color: var(--main-colour-light) !important;
-  background: var(--main-colour-very-light);
-  box-shadow: 0 2px 5px 1px rgb(38 50 65 / 16%);
-}
-
-.expanded {
-  padding: 1rem;
-  box-sizing: border-box;
-  flex-direction: column;
-  width: calc(100vw - 30px) !important;
-  height: calc(100vh - 75px) !important;
-}
-
-.expanded > svg {
-  display: none;
-}
-
-.expanded > span {
-  display: none;
-}
-
-/* Basket count indicator span */
 
 #basketCount {
   top: 0;

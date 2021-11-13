@@ -7,8 +7,14 @@ import searchBarStyles from "./SearchBar.module.css";
 
 export default function SearchBar() {
   // useContext
-  const { searchBarState, changeSearchBarState, windowSize } =
-    useContext(HeaderContext);
+  const {
+    searchBarState,
+    changeSearchBarState,
+    windowSize,
+    changeHeaderMenusState,
+    searchBar,
+    changeSearchTerm
+  } = useContext(HeaderContext);
 
   // useState
   const [open, setOpen] = useState(false);
@@ -24,12 +30,24 @@ export default function SearchBar() {
     }
   }, [searchBarState]);
 
+  function filterSearchTerm(e: any) {
+
+    changeSearchTerm(e.target.value);
+
+    if (e.target.value !== "") {
+      changeHeaderMenusState("searchMenu", true);
+    } else {
+      changeHeaderMenusState("searchMenu", false);
+    }
+  }
+
   return (
     <div
       id={searchBarStyles.searchBarContainer}
       className={`
       ${(open || windowSize === "large") && `${searchBarStyles.searchOpen}`}
     `}
+    ref={searchBar}
     >
       <div
         id={searchBarStyles.searchButton}
@@ -43,7 +61,6 @@ export default function SearchBar() {
           width="18"
           height="18"
           fill="currentColor"
-          className="bi bi-search"
           viewBox="0 0 16 16"
         >
           <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -56,13 +73,21 @@ export default function SearchBar() {
             type="text"
             size={21}
             placeholder="what are you looking for?"
-            id={searchBarStyles.searchInput}
+            id="searchBarInput"
+            autoComplete="off"
+            autoCorrect="off"
+            className={searchBarStyles.searchInput}
+            onKeyUp={(e) => {
+              filterSearchTerm(e);
+            }}
+            
           />
           <div
             id={searchBarStyles.closeButton}
             className={searchBarStyles.centeredButton}
             onClick={() => {
               changeSearchBarState(false);
+              changeHeaderMenusState("searchMenu", false);
             }}
           >
             {" "}
@@ -71,7 +96,6 @@ export default function SearchBar() {
               width="27"
               height="27"
               fill="currentColor"
-              className="bi bi-x"
               viewBox="0 0 16 16"
             >
               <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />

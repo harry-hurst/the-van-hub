@@ -1,5 +1,3 @@
-import Head from "next/head";
-
 // styles
 import layoutStyles from "./Layout.module.css";
 
@@ -10,13 +8,12 @@ import HeaderContextComponent from "../../context/HeaderContextComponent";
 import TopBar from "../Header/TopBar";
 import Modal from "../Header/Modal";
 
-export interface LayoutProps {
-  children: React.ReactNode;
-}
+// next components
+import Head from "next/head";
 
-export default function Layout(props: LayoutProps) {
+export default function Layout(props: { children: React.ReactNode }) {
   return (
-    <div style={{ overflow: "hidden"}}>
+    <div id={layoutStyles.appContainer}>
       <Head>
         <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />

@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+// import type { NextPage } from "next";
 
 // components
 import Carousal from "../components/HomePage/Carousel";

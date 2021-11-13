@@ -1,0 +1,27 @@
+#item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    min-height: 30px;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--main-colour-medium);
+    background-color: white;
+    flex-shrink: 0;
+    gap: 10px;
+  }
+  
+  #title {
+    font-size: 16px;
+    flex-grow: 1;
+  }
+  #price {
+    font-family: Nunito Sans Regular;
+  }
+  #quantity {
+    flex-shrink: 0;
+  }
+  

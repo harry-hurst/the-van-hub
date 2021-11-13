@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 export const HeaderContext = React.createContext();
 
 export default function HeaderContextComponent(props) {
-
   // window width =======================================
   const [windowSize, setWindowSize] = useState();
 
@@ -34,12 +33,18 @@ export default function HeaderContextComponent(props) {
   };
   // ====================================================
 
+  // search term in search bar ==========================
+  const [searchTerm, setSearchTerm] = useState();
+
+  const changeSearchTerm = (newsearchTerm) => {
+    setSearchTerm(newsearchTerm);
+  }
+
+  // ====================================================
+
   // header menus state =================================
   const [headerMenusState, setHeaderMenusState] = useState({
-
-    // searchMenuComponent
     searchMenu: false,
-    // 
     basketMenu: false,
     navMenu: false,
     mobileMenu: false,
@@ -61,8 +66,8 @@ export default function HeaderContextComponent(props) {
   // current collection =================================
   const [currentCollectionId, setCurrentCollectionId] = useState();
 
-  const changeCurrentCollectionId = (newMenu) => {
-    setCurrentCollectionId(newMenu);
+  const changeCurrentCollectionId = (newId) => {
+    setCurrentCollectionId(newId);
   };
   // ====================================================
 
@@ -70,6 +75,7 @@ export default function HeaderContextComponent(props) {
   const modal = useRef();
   const basketIcon = useRef();
   const burgerIcon = useRef();
+  const searchBar = useRef();
 
   useEffect(() => {
     if (
@@ -92,10 +98,11 @@ export default function HeaderContextComponent(props) {
       !(
         modal.current.contains(event.target) ||
         basketIcon.current.contains(event.target) ||
-        burgerIcon.current.contains(event.target)
+        burgerIcon.current.contains(event.target) ||
+        searchBar.current.contains(event.target)
       )
     ) {
-      changeHeaderMenusState();
+      changeHeaderMenusState('searchMenu', false); // any menu sets all to false
     }
   }
   // ====================================================
@@ -110,6 +117,10 @@ export default function HeaderContextComponent(props) {
         searchBarState,
         changeSearchBarState,
 
+        // search term in search bar
+        searchTerm,
+        changeSearchTerm,
+
         // state of topbar menus
         headerMenusState,
         changeHeaderMenusState,
@@ -118,10 +129,11 @@ export default function HeaderContextComponent(props) {
         currentCollectionId,
         changeCurrentCollectionId,
 
-        // ref objects to pass down to be attached to dom nodes
+        // refs
         modal,
         basketIcon,
         burgerIcon,
+        searchBar
       }}
     >
       {props.children}

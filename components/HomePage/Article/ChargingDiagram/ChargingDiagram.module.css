@@ -5,5 +5,11 @@
 
 .label {
   position: absolute;
-  font-size: clamp(10px, 2vw, 22px);
+  font-size: clamp(10px, 2vw, 18px);
+}
+
+@media screen and (min-width: 576px) {
+  #container {
+    width: calc(100% - 20vw);
+  }
 }

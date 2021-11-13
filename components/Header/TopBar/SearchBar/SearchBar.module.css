@@ -38,8 +38,7 @@
   align-items: center;
   border-radius: 12px;
   justify-content: center;
-  transition: width var(--time) ease, height var(--time) ease,
-    margin var(--time) ease;
+  transition: width var(--time) ease, height var(--time) ease;
 }
 
 .centeredButton:hover {
@@ -50,7 +49,7 @@
 
 /* input */
 
-#searchInput {
+.searchInput {
   width: 100%;
   height: 100%;
   border: none;

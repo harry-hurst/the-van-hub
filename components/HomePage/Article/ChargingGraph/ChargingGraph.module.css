@@ -1,13 +1,19 @@
 #container {
-  margin: 10vw 0;
+  margin: 10vw auto;
   position: relative;
 }
 
 .label {
-  font-size: clamp(10px, 2vw, 22px);
+  font-size: clamp(10px, 2vw, 18px);
   position: absolute;
 }
 
 .translate {
   transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 576px) {
+  #container {
+    width: calc(100% - 20vw);
+  }
 }

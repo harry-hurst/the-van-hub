@@ -1,4 +1,4 @@
-#burgerIconContainer {
+#container {
   width: 40px;
   height: 40px;
   display: flex;
@@ -12,7 +12,7 @@
 }
 
 @media only screen and (min-width: 576px) {
-  #burgerIconContainer {
+  #container {
     display: none;
   }
 }

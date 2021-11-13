@@ -1,13 +1,13 @@
 // react
 import { useContext, useState, useEffect } from "react";
-import { HeaderContext } from "../../../../context/HeaderContextComponent";
 import { ShopifyContext } from "../../../../context/ShopifyContextComponent";
+import { HeaderContext } from "../../../../context/HeaderContextComponent";
 
 // styles
 import searchMenuStyles from "./SearchMenu.module.css";
 
 // components
-
+import SearchItem from "./SearchItem";
 
 // modules
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
@@ -29,62 +29,58 @@ const container = {
 
 export default function SearchMenu() {
   // useContext
+  const { client } = useContext(ShopifyContext);
   const { headerMenusState } = useContext(HeaderContext);
 
+  const [products, setProducts] = useState<any>();
 
-
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>();
 
   useEffect(() => {
     if (headerMenusState.searchMenu) {
       setTimeout(() => {
         setOpen(true);
-      }, 2000);
+      }, 200);
     } else {
       setOpen(false);
     }
   }, [headerMenusState.searchMenu]);
 
+  useEffect(() => {
+    client.product.fetchAll().then((fetchedProducts: any) => {
+      setProducts(fetchedProducts);
+    });
+  }, []);
 
   return (
     <AnimatePresence>
       {open && (
-        <AnimateSharedLayout>
-          <motion.div
-            layout
-            variants={container}
-            initial="hidden"
-            animate="visible"
-            exit={{ opacity: 0 }}
-            id={searchMenuStyles.container}
-          >
-
-
-            {/* {collection &&
-              collection.products.map(
-                (
-                  product: {
-                    title: string;
-                    variants: any;
-                    availableForSale: boolean;
-                    id: string;
-                  },
-                  index: number
-                ) => (
-                  <NavMenuItem
-                    key={index}
-                    productId={product.id}
-                    stock={product.availableForSale}
-                    title={product.title}
-                    imgSrc={product.variants[0].image.src}
-                  />
-                )
-              )} */}
-
-
-
-          </motion.div>
-        </AnimateSharedLayout>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          exit={{ opacity: 0 }}
+          id={searchMenuStyles.container}
+        >
+          {products &&
+            products.map(
+              (
+                product: {
+                  title: string;
+                  variants: any;
+                  availableForSale: boolean;
+                  id: string;
+                },
+                index: number
+              ) => (
+                <SearchItem
+                  key={index}
+                  productId={product.id}
+                  title={product.title}
+                />
+              )
+            )}
+        </motion.div>
       )}
     </AnimatePresence>
   );

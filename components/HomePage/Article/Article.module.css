@@ -1,5 +1,4 @@
 #lightBackground {
   padding: 1rem 0;
-  /* background: var(--main-colour-very-light); */
-  background-image: linear-gradient(to bottom right, var(--main-colour-very-light), white);
+  background: var(--main-colour-very-light);
 }

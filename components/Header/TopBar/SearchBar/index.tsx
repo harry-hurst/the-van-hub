@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { HeaderContext } from "../../../../context/HeaderContextComponent";
 
 // styles
@@ -13,7 +13,7 @@ export default function SearchBar() {
     windowSize,
     changeHeaderMenusState,
     searchBar,
-    changeSearchTerm
+    changeSearchTerm,
   } = useContext(HeaderContext);
 
   // useState
@@ -31,7 +31,6 @@ export default function SearchBar() {
   }, [searchBarState]);
 
   function filterSearchTerm(e: any) {
-
     changeSearchTerm(e.target.value);
 
     if (e.target.value !== "") {
@@ -41,13 +40,21 @@ export default function SearchBar() {
     }
   }
 
+  const searchInput = useRef<HTMLInputElement | null>(null);
+
+  function resetInput() {
+    if (searchInput !== null) {
+      searchInput.current.value = "";
+    }
+  }
+
   return (
     <div
       id={searchBarStyles.searchBarContainer}
       className={`
       ${(open || windowSize === "large") && `${searchBarStyles.searchOpen}`}
     `}
-    ref={searchBar}
+      ref={searchBar}
     >
       <div
         id={searchBarStyles.searchButton}
@@ -77,17 +84,17 @@ export default function SearchBar() {
             autoComplete="off"
             autoCorrect="off"
             className={searchBarStyles.searchInput}
-            onKeyUp={(e) => {
+            onChange={(e) => {
               filterSearchTerm(e);
             }}
-            
+            ref={searchInput}
           />
           <div
             id={searchBarStyles.closeButton}
             className={searchBarStyles.centeredButton}
             onClick={() => {
               changeSearchBarState(false);
-              changeHeaderMenusState("searchMenu", false);
+              resetInput();
             }}
           >
             {" "}

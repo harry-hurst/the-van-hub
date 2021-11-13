@@ -19,7 +19,7 @@ export default function SearchBar() {
   // useState
   const [open, setOpen] = useState(false);
 
-  // useEffect
+  // delay opening search menu
   useEffect(() => {
     if (searchBarState) {
       setTimeout(() => {
@@ -30,6 +30,7 @@ export default function SearchBar() {
     }
   }, [searchBarState]);
 
+  // toggle search menu
   function filterSearchTerm(e: any) {
     changeSearchTerm(e.target.value);
 
@@ -40,10 +41,11 @@ export default function SearchBar() {
     }
   }
 
-  const searchInput = useRef<HTMLInputElement | null>(null);
+  // reset search input
+  const searchInput = useRef<HTMLInputElement>(null);
 
   function resetInput() {
-    if (searchInput !== null) {
+    if (searchInput.current) {
       searchInput.current.value = "";
     }
   }

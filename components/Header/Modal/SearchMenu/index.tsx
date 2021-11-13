@@ -10,7 +10,7 @@ import searchMenuStyles from "./SearchMenu.module.css";
 import SearchItem from "./SearchItem";
 
 // modules
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const container = {
   hidden: {

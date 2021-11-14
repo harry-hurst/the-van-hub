@@ -5,7 +5,7 @@
 
 .label {
   position: absolute;
-  font-size: clamp(10px, 2vw, 18px);
+  font-size: clamp(0.6rem, 2vw, 1rem);
 }
 
 @media screen and (min-width: 576px) {

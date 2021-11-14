@@ -7,11 +7,11 @@ export default function ComparisonTable() {
       <thead>
         <tr>
           <th>
-            <span className="badge bg-secondary">Lead Acid</span>
+            <span className="badge bg-secondary">LEAD ACID</span>
           </th>
           <th></th>
           <th>
-            <span className="badge bg-secondary">Lithium Ion</span>
+            <span className="badge bg-secondary">LITHIUM ION</span>
           </th>
         </tr>
       </thead>

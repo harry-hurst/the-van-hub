@@ -96,6 +96,7 @@ export default function SearchBar() {
             className={searchBarStyles.centeredButton}
             onClick={() => {
               changeSearchBarState(false);
+              changeHeaderMenusState("searchMenu", false);
               resetInput();
             }}
           >

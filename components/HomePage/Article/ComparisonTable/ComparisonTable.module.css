@@ -13,7 +13,7 @@
 
 #comparisonTable > thead > tr > th {
   padding: 0.5rem;
-  font-size: clamp(14px, 3vw, 22px);
+  font-size: clamp(0.6rem, 2vw, 1rem);
   font-family: Nunito Sans Light;
 }
 

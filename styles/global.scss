@@ -106,6 +106,9 @@ $light: #effbff;
 // set border radius
 $border-radius: 4px;
 
+// badge
+$badge-font-size: 1em;
+
 // breadcrumbs
 $breadcrumb-font-size: 0.8rem;
 
@@ -127,8 +130,6 @@ $btn-close-padding-y: 1em;
 @import "../node_modules/bootstrap/scss/utilities";
 
 @import "../node_modules/bootstrap/scss/root";
-// @import "../node_modules/bootstrap/scss/reboot";
-// @import "../node_modules/bootstrap/scss/type";
 
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/containers";
@@ -139,9 +140,7 @@ $btn-close-padding-y: 1em;
 @import "../node_modules/bootstrap/scss/badge";
 @import "../node_modules/bootstrap/scss/forms";
 
-// Helpers
-// @import "../node_modules/bootstrap/scss/helpers";
 
 // Utilities
 @import "../node_modules/bootstrap/scss/utilities/api";
-// scss-docs-end import-stack
+

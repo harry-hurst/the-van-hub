@@ -30,7 +30,8 @@ const container = {
 export default function SearchMenu() {
   // useContext
   const { client } = useContext(ShopifyContext);
-  const { headerMenusState } = useContext(HeaderContext);
+
+  const { headerMenusState, searchTerm } = useContext(HeaderContext);
 
   const [products, setProducts] = useState<any>();
 
@@ -64,21 +65,26 @@ export default function SearchMenu() {
         >
           {products &&
             products.map(
-              (
-                product: {
-                  title: string;
-                  variants: any;
-                  availableForSale: boolean;
-                  id: string;
-                },
-                index: number
-              ) => (
-                <SearchItem
-                  key={index}
-                  productId={product.id}
-                  title={product.title}
-                />
-              )
+              (product: {
+                title: string;
+                variants: any;
+                availableForSale: boolean;
+                id: string;
+              }) => {
+                return (
+                  searchTerm !== "" &&
+                  product.title
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase()) && (
+                    <SearchItem
+                      key={product.id}
+                      productId={product.id}
+                      title={product.title}
+                      searchTerm={searchTerm}
+                    />
+                  )
+                );
+              }
             )}
         </motion.div>
       )}

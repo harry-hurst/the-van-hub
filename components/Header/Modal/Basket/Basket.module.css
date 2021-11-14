@@ -1,11 +1,9 @@
-
 #basket {
-  gap: 10px;
-  flex-grow: 1;
-  display: flex;
   overflow: auto;
   overflow-x: scroll;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

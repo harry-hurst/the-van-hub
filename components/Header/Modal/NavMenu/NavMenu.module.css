@@ -1,10 +1,10 @@
 #container {
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
   /* background: rgb(184, 231, 184); */
   overflow: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

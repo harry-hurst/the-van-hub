@@ -75,7 +75,7 @@ export default function Basket() {
                 )
               )}
               <BasketItem title="Total" price={basket.paymentDue} />
-              <a href={basket.webUrl} style={{ alignSelf: "flex-end" }}>
+              <a href={basket.webUrl} style={{ marginLeft: "auto" }}>
             <button type="button" className="btn btn-primary">
               Checkout
             </button>

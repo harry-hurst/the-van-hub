@@ -1,12 +1,7 @@
 #mobileMenu {
-  /* gap: 10px;
-  flex-grow: 1;
-  display: flex; */
   overflow: auto;
   overflow-x: scroll;
   padding-bottom: 2px;
-  /* flex-direction: column; */
-
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;

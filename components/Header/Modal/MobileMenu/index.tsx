@@ -62,9 +62,7 @@ export default function MobileMenu() {
 
   return (
     <AnimatePresence>
-
       {open && (
-        
         <motion.div
           variants={container}
           initial="hidden"

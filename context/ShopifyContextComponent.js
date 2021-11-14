@@ -5,17 +5,17 @@ export const ShopifyContext = React.createContext();
 // import client from shopify
 import Client from "shopify-buy";
 
-// create client object
+// Shopify buy SDK - https://shopify.github.io/js-buy-sdk/
 const client = Client.buildClient({
   domain: "the-van-hub.myshopify.com",
   storefrontAccessToken: "d69edb3953e7404359569864e924ef79",
 });
 
 export default function ShopifyContextComponent(props) {
-  // useState
+
   const [basket, setBasket] = useState();
 
-  // useEffect
+
   useEffect(() => {
     createBasket();
   }, []);

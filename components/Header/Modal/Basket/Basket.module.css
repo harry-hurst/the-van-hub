@@ -1,6 +1,7 @@
 
 #basket {
   gap: 10px;
+  grid-gap: 10px;
   flex-grow: 1;
   display: flex;
   overflow: auto;

@@ -28,7 +28,6 @@ const container = {
 };
 
 export default function Basket() {
-  // useContext
   const { headerMenusState } = useContext(HeaderContext);
   const { basket } = useContext(ShopifyContext);
 
@@ -75,11 +74,18 @@ export default function Basket() {
                   />
                 )
               )}
-              <BasketItem title="total" price={basket.paymentDue} />
+              <BasketItem title="Total" price={basket.paymentDue} />
+              <a href={basket.webUrl} style={{ alignSelf: "flex-end" }}>
+            <button type="button" className="btn btn-primary">
+              Checkout
+            </button>
+          </a>
             </>
           ) : (
             <span id={basketStyles.emptyBasket}>Basket empty</span>
           )}
+
+
         </motion.div>
       )}
     </AnimatePresence>

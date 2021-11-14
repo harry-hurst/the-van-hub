@@ -107,7 +107,6 @@ export default function ProductPage() {
               onClick={() => {
                 addToBasket(product.variants[0].id);
               }}
-              style={{ color: "white" }}
             >
               Add to Basket
             </button>

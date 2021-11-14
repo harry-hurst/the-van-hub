@@ -17,6 +17,7 @@ export default function Layout(props: { children: React.ReactNode }) {
       <Head>
         <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
 
       <main>

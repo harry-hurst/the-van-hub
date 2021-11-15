@@ -56,7 +56,7 @@ export default function NavBar() {
           initial="hidden"
           animate="visible"
           exit={{ opacity: 0 }}
-          id={navComponentStyles.navBar}
+          id={navComponentStyles.container}
         >
           {collections &&
             collections.map((collection: { title: string; id: any }, index: number) => (

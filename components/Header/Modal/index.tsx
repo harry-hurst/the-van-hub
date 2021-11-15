@@ -14,9 +14,6 @@ import MobileMenu from "./MobileMenu";
 import Basket from "./Basket";
 import SearchMenu from "./SearchMenu";
 
-// modules
-import { AnimateSharedLayout } from "framer-motion";
-
 export default function Modal() {
   // useState
   const [open, setOpen] = useState<boolean>(false);
@@ -47,7 +44,9 @@ export default function Modal() {
           id={modalStyles.modal}
           className={`
             ${open && `${modalStyles.modalExpanded}`}
-            ${(windowSize === "small") && !open && `${modalStyles.modalCollapsed}`}
+            ${
+              windowSize === "small" && !open && `${modalStyles.modalCollapsed}`
+            }
           `}
           ref={modal}
         >
@@ -56,19 +55,20 @@ export default function Modal() {
             id={modalStyles.modalInner}
             className={`
             ${open && `${modalStyles.modalInnerExpanded}`}
-            ${(windowSize === "small") && !open && `${modalStyles.modalInnerCollapsed}`}
+            ${
+              windowSize === "small" &&
+              !open &&
+              `${modalStyles.modalInnerCollapsed}`
+            }
             `}
           >
-            <AnimateSharedLayout>
+            <div style={{ height: "100%" }}>
               <NavBar />
-              
               <MobileMenu />
               <Basket />
               <NavMenu />
               <SearchMenu />
-
-              
-            </AnimateSharedLayout>
+            </div>
           </div>
         </div>
       </div>

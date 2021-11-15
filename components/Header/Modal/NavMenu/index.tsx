@@ -29,7 +29,8 @@ const container = {
 
 export default function NavMenu() {
   // useContext
-  const { headerMenusState, currentCollectionId } = useContext(HeaderContext);
+  const { headerMenusState, currentCollectionId, windowSize } =
+    useContext(HeaderContext);
   const { client } = useContext(ShopifyContext);
 
   // useState
@@ -69,6 +70,14 @@ export default function NavMenu() {
             animate="visible"
             exit={{ opacity: 0 }}
             id={navMenuStyles.container}
+            className={`
+            ${
+              !(windowSize === "small") &&
+              !(headerMenusState.searchMenu || headerMenusState.basketMenu) &&
+              `${navMenuStyles.small}`
+            }
+            
+            `}
           >
             {collection &&
               collection.products.map(

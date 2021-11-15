@@ -1,24 +1,18 @@
-#navBar {
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-  overflow-x: scroll;
-  /* background-color: pink; */
+#container {
+  display: grid;
+  height: 36px;
   overflow: auto;
-  flex-direction: row;
-  flex-grow: 0;
-  flex-shrink: 0;
-  padding-bottom: 10px;
-  margin-bottom: -10px;
+  grid-template-columns: repeat(11, 180px);
+  grid-gap: 10px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-#navBar::-webkit-scrollbar {
+#container::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-#navBar {
+#container {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }

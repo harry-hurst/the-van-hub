@@ -9,7 +9,7 @@
 
 /* modal */
 #modal {
-  height: 44px;
+  height: 46px;
   position: relative;
   box-shadow: var(--modal);
   border-radius: var(--border-radius);
@@ -27,17 +27,13 @@
 
 /* modal inner */
 #modalInner {
-  gap: 10px;
   height: 100%;
   padding: 10px;
-  display: flex;
   position: relative;
   background: white;
-  flex-direction: column;
   border-radius: var(--border-radius);
 }
 
 .modalInnerCollapsed {
   padding: 0 !important;
 }
-

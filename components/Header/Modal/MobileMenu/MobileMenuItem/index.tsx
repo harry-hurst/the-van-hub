@@ -21,11 +21,8 @@ const item = {
 };
 
 export default function MobileMenuItem(props: { title: string; id: string }) {
-  // useContext
-  const {
-    changeHeaderMenusState,
-    changeCurrentCollectionId,
-  } = useContext(HeaderContext);
+  const { changeHeaderMenusState, changeCurrentCollectionId } =
+    useContext(HeaderContext);
 
   return (
     <motion.div

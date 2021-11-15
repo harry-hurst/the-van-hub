@@ -16,7 +16,3 @@
 #button {
 flex-grow: 1;
 }
-
-#button:hover {
-  color: white;
-}

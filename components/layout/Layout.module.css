@@ -3,16 +3,16 @@
 }
 
 #mainContentWrapper {
-  margin-top: 70px; /* offset header */
+  padding-top: 70px; /* offset header */
   position: relative;
-  min-height: calc(100vh - 60px);
-  padding-bottom: calc(175px + 5vw); /* offset footer */
-  transition: margin-top var(--time) ease;
+  background-color: white;
+  min-height: 100vh;
+  padding-bottom: calc(170px + 5vw); /* offset footer */
+  transition: padding-top var(--time) ease;
 }
 
 @media screen and (min-width: 576px) {
   #mainContentWrapper {
-    margin-top: 120px; /* offset header */
-    min-height: calc(100vh - 120px);
+    padding-top: 120px; /* offset header */
   }
 }

@@ -1,41 +1,46 @@
 // react
 import { useState, useEffect, useContext } from "react";
-import { HeaderContext } from "../../../context/HeaderContextComponent";
+import { ScreenSizeContext } from "../../../context/ScreenSize";
+
+// redux
+import { useSelector } from "react-redux";
+import { RootState } from "../../../state/store";
 
 // styles
 import modalStyles from "./Modal.module.css";
 
 // components
 import Arrow from "./Arrow";
-
 import NavBar from "./NavBar";
 import NavMenu from "./NavMenu";
 import MobileMenu from "./MobileMenu";
 import Basket from "./Basket";
-import SearchMenu from "./SearchMenu";
+import SearchList from "./SearchList";
 
 export default function Modal() {
-  // useState
-  const [open, setOpen] = useState<boolean>(false);
+  // redux
+  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
-  // useContext
-  const { headerMenusState, modal, windowSize } = useContext(HeaderContext);
+  // global screen size variable.
+  const { windowSize } = useContext(ScreenSizeContext);
 
-  // useEffect
+  // modal can be expanded, collapsed or closed.
+  const [modalState, setModalState] = useState<string>();
+
+  // update modal state:
   useEffect(() => {
-    if (
-      headerMenusState.mobileMenu ||
-      headerMenusState.searchMenu ||
-      headerMenusState.basketMenu ||
-      headerMenusState.navMenu
-    ) {
-      setOpen(true);
+    if (activeMenu !== null) {
+      setModalState("expanded");
+    } else if (activeMenu === null && windowSize !== "small") {
+      setTimeout(() => {
+        setModalState("bar");
+      }, 500);
     } else {
       setTimeout(() => {
-        setOpen(false);
-      }, 400);
+        setModalState("collapsed");
+      }, 500);
     }
-  }, [headerMenusState]);
+  }, [activeMenu, windowSize]);
 
   return (
     <div id={modalStyles.modalContainer}>
@@ -43,31 +48,29 @@ export default function Modal() {
         <div
           id={modalStyles.modal}
           className={`
-            ${open && `${modalStyles.modalExpanded}`}
-            ${
-              windowSize === "small" && !open && `${modalStyles.modalCollapsed}`
-            }
+          ${modalState === "bar" && `${modalStyles.modalBar}`}
+            ${modalState === "expanded" && `${modalStyles.modalExpanded}`}
+            ${modalState === "collapsed" && `${modalStyles.modalCollapsed}`}
           `}
-          ref={modal}
         >
           <Arrow />
           <div
-            id={modalStyles.modalInner}
+            id={modalStyles.modalCover}
             className={`
-            ${open && `${modalStyles.modalInnerExpanded}`}
-            ${
-              windowSize === "small" &&
-              !open &&
-              `${modalStyles.modalInnerCollapsed}`
-            }
+            ${modalState === "collapsed" && `${modalStyles.noPadding}`}
             `}
           >
-            <div style={{ height: "100%" }}>
+            <div
+              id={modalStyles.modalInner}
+              className={`
+            ${modalState === "expanded" && `${modalStyles.overflowHidden}`}
+            `}
+            >
               <NavBar />
               <MobileMenu />
               <Basket />
               <NavMenu />
-              <SearchMenu />
+              <SearchList />
             </div>
           </div>
         </div>

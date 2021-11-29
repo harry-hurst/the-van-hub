@@ -1,0 +1,8 @@
+.productCard {
+    gap: 1rem;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-colour);
+  }

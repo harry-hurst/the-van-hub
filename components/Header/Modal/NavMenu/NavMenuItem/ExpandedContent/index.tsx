@@ -1,6 +1,4 @@
-// react
-import { useContext } from "react";
-import { HeaderContext } from "../../../../../../context/HeaderContextComponent";
+
 
 // styles
 import expandedContentStyles from "./ExpandedContent.module.css";
@@ -18,9 +16,6 @@ export default function ExpandedContent(props: {
   productId: string;
   title: string;
 }) {
-
-  // useContext
-  const { changeHeaderMenusState } = useContext(HeaderContext);
 
   return (
     <motion.div
@@ -50,7 +45,6 @@ export default function ExpandedContent(props: {
           type="button"
           className="btn btn-outline-primary"
           id={expandedContentStyles.button}
-          onClick={changeHeaderMenusState}
         >
           View Product
         </button>

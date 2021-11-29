@@ -1,14 +1,22 @@
+// styles
 import "../styles/global.scss";
 import type { AppProps } from "next/app";
 
+// components
 import Layout from "../components/layout";
 
-function MyApp({ Component, pageProps }: AppProps) {
+// redux
+import { Provider } from "react-redux";
+import store from "../state/store";
+
+function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   );
 }
 
-export default MyApp;
+export default App;

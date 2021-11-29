@@ -1,7 +1,15 @@
 // react
 import { useContext, useState, useEffect } from "react";
-import { HeaderContext } from "../../../../context/HeaderContextComponent";
-import { ShopifyContext } from "../../../../context/ShopifyContextComponent";
+import { ScreenSizeContext } from "../../../../context/ScreenSize";
+import { ShopifyContext } from "../../../../context/Shopify";
+
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import {
+  updateCollectionId,
+  clearCollectionId,
+} from "../../../../state/collectionIdSlice";
+import { RootState } from "../../../../state/store";
 
 // styles
 import navComponentStyles from "./NavComponent.module.css";
@@ -11,29 +19,18 @@ import NavBarItem from "./NavBarItem";
 
 // modules
 import { motion, AnimatePresence } from "framer-motion";
-
-const container = {
-  hidden: {
-    y: "10%",
-  },
-  visible: {
-    y: 0,
-    transition: {
-      delay: 0.2,
-      duration: 1,
-      delayChildren: 0.2,
-      staggerChildren: 0.1,
-    },
-  },
-};
+import { navBar } from "../../../../framer_motion/variants/navBar";
 
 export default function NavBar() {
+  // redux
+  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+
   // useContext
-  const { headerMenusState, windowSize } = useContext(HeaderContext);
+  const { windowSize } = useContext(ScreenSizeContext);
   const { client } = useContext(ShopifyContext);
 
   // useState
-  const [collections, setCollections] = useState<any>();
+  const [collections, setCollections] = useState<any | undefined>();
 
   // useEffect
   useEffect(() => {
@@ -48,19 +45,23 @@ export default function NavBar() {
 
   return (
     <AnimatePresence>
-
-      {!(windowSize === "small") && !(headerMenusState.searchMenu || headerMenusState.basketMenu) && (
-
+      {(((activeMenu === null || activeMenu == "navMenu") &&
+        windowSize === "medium") ||
+        windowSize === "large") && (
         <motion.div
-          variants={container}
+          variants={navBar}
           initial="hidden"
           animate="visible"
-          exit={{ opacity: 0 }}
+          exit="hidden"
           id={navComponentStyles.container}
         >
           {collections &&
-            collections.map((collection: { title: string; id: any }, index: number) => (
-              <NavBarItem key={index} title={collection.title} id={collection.id} />
+            collections.map((collection: { id: string; title: string }) => (
+              <NavBarItem
+                key={collection.id}
+                title={collection.title}
+                id={collection.id}
+              />
             ))}
         </motion.div>
       )}

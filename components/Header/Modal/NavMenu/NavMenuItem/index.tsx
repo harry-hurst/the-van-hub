@@ -10,17 +10,6 @@ import ExpandedContent from "./ExpandedContent";
 // modules
 import { motion, AnimatePresence } from "framer-motion";
 
-const item = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.2,
-      type: "tween",
-    },
-  },
-};
 
 export default function NavMenuItem(props: { title: string, imgSrc: string, stock: boolean, productId: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +19,7 @@ export default function NavMenuItem(props: { title: string, imgSrc: string, stoc
   return (
     <motion.div
       layout
-      variants={item}
+
       onClick={toggleOpen}
       id={navMenuItemStyles.item}
     >

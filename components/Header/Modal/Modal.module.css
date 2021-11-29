@@ -9,11 +9,10 @@
 
 /* modal */
 #modal {
-  height: 46px;
   position: relative;
   box-shadow: var(--modal);
-  border-radius: var(--border-radius);
   transition: all var(--time) ease;
+  border-radius: var(--border-radius);
 }
 
 .modalExpanded {
@@ -25,15 +24,28 @@
   box-shadow: none !important;
 }
 
+.modalBar {
+  height: 46px;
+}
+
 /* modal inner */
-#modalInner {
+#modalCover {
   height: 100%;
   padding: 10px;
   position: relative;
   background: white;
   border-radius: var(--border-radius);
+  transition: padding var(--time) ease;
 }
 
-.modalInnerCollapsed {
+.noPadding {
   padding: 0 !important;
+}
+
+#modalInner {
+  height: 100%;
+}
+
+.overflowHidden {
+  overflow: hidden;
 }

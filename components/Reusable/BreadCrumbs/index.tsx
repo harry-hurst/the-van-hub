@@ -5,7 +5,8 @@ import breadcrumbsStyles from "./BreadCrumbs.module.css";
 import Link from "next/link";
 
 export default function BreadCrumb(props: {
-  productTitle: string | string[] | undefined;
+  productCategory: string | string[] | undefined;
+  productTitle?: string | string[] | undefined;
 }) {
   return (
     <nav aria-label="breadcrumb" id={breadcrumbsStyles.container}>
@@ -13,6 +14,8 @@ export default function BreadCrumb(props: {
         <li className="breadcrumb-item">
           <Link href="/">Home</Link>
         </li>
+
+        <li className="breadcrumb-item">{props.productCategory}</li>
 
         <li className="breadcrumb-item active" aria-current="page">
           {props.productTitle}

@@ -1,9 +1,10 @@
 #container {
-  display: grid;
+  gap: 10px;
   height: 36px;
+  display: flex;
   overflow: auto;
-  grid-template-columns: repeat(11, 180px);
-  grid-gap: 10px;
+  flex-direction: row;
+  /* background-color: rgb(72, 72, 175); */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

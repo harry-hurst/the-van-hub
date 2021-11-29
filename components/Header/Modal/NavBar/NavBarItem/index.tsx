@@ -1,47 +1,31 @@
-// react
-import { useContext } from "react";
-import { HeaderContext } from "../../../../../context/HeaderContextComponent";
-
 // styles
 import navBarItemStyles from "./NavBarItem1.module.css";
 
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import { updateCollectionId } from "../../../../../state/collectionIdSlice";
+import { changeMenu } from "../../../../../state/activeMenuSlice";
+import { RootState } from "../../../../../state/store";
+
 // modules
 import { motion } from "framer-motion";
+import { navBarItem } from "../../../../../framer_motion/variants/navBar";
 
-const navItem = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.2,
-      type: "tween",
-    },
-  },
-};
-
-export default function NavComponentItem(props: { title: string; id: string }) {
-  // useContext
-  const {
-    headerMenusState,
-    changeHeaderMenusState,
-    currentCollectionId,
-    changeCurrentCollectionId,
-  } = useContext(HeaderContext);
+export default function NavBarItem(props: { title: string; id: string }) {
+  // redux
+  const collectionId = useSelector((state: RootState) => state.collectionId.id);
+  const dispatch = useDispatch();
 
   return (
     <motion.div
-      key={props.id}
       id={navBarItemStyles.item}
       className={`${
-        props.id === currentCollectionId &&
-        headerMenusState.navMenu &&
-        `${navBarItemStyles.currentItem}`
+        collectionId === props.id && `${navBarItemStyles.currentItem}`
       }`}
-      variants={navItem}
+      variants={navBarItem}
       onClick={() => {
-        changeCurrentCollectionId(props.id);
-        changeHeaderMenusState("navMenu", true);
+        dispatch(updateCollectionId(props.id));
+        dispatch(changeMenu("navMenu"));
       }}
     >
       {props.title.toUpperCase()}

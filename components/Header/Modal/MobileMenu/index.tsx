@@ -1,7 +1,10 @@
 // react
 import { useContext, useState, useEffect } from "react";
-import { HeaderContext } from "../../../../context/HeaderContextComponent";
-import { ShopifyContext } from "../../../../context/ShopifyContextComponent";
+import { ShopifyContext } from "../../../../context/Shopify";
+
+// redux
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../state/store";
 
 // styles
 import mobileMenuStyles from "./MobileMenu.module.css";
@@ -11,69 +14,60 @@ import MobileMenuItem from "./MobileMenuItem";
 
 // modules
 import { motion, AnimatePresence } from "framer-motion";
-
-const container = {
-  hidden: {
-    opacity: 0,
-    y: "10%",
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      // delay: 0.2,
-      duration: 1,
-      delayChildren: 0.2,
-      staggerChildren: 0.1,
-    },
-  },
-};
+import { mobileMenu } from "../../../../framer_motion/variants/mobileMenu";
 
 export default function MobileMenu() {
+  // redux
+  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+
   // useContext
-  const { headerMenusState } = useContext(HeaderContext);
   const { client } = useContext(ShopifyContext);
 
-  // useState
-  const [collections, setCollections] = useState<any>();
+  // save collections into state.
+  const [collections, setCollections] = useState<any | undefined>();
 
-  const [open, setOpen] = useState(false);
+  // create time delay of 400ms for mounting component:
+  const [present, setPresent] = useState<boolean>(false);
 
   useEffect(() => {
-    if (headerMenusState.mobileMenu) {
+    if (activeMenu === "mobileMenu") {
       setTimeout(() => {
-        setOpen(true);
-      }, 200);
+        setPresent(true);
+      }, 400);
     } else {
-      setOpen(false);
+      setTimeout(() => {
+        setPresent(false);
+      }, 200);
     }
-  }, [headerMenusState.mobileMenu]);
+  }, [activeMenu]);
 
   // useEffect
   useEffect(() => {
     // run once on first component mount
-    client.collection
-      .fetchAllWithProducts()
-      .then((retrievedCollections: any) => {
-        // save to state
-        setCollections(retrievedCollections);
-      });
+    client.collection.fetchAllWithProducts().then((collections: any) => {
+      // save to state
+      setCollections(collections);
+    });
   }, []);
 
   return (
     <AnimatePresence>
-      {open && (
+      {present && (
         <motion.div
-          variants={container}
+          variants={mobileMenu}
           initial="hidden"
           animate="visible"
-          exit={{ opacity: 0 }}
+          exit="hidden"
           id={mobileMenuStyles.mobileMenu}
         >
-          {collections &&
-            collections.map((collection: { title: string; id: any }, index: number) => (
-              <MobileMenuItem key={index} title={collection.title} id={collection.id} />
-            ))}
+          {/* {collections &&
+            collections.map((collection: { id: string; title: string }) => (
+              <MobileMenuItem
+                key={collection.id}
+                title={collection.title}
+                collectionId={collection.id}
+              />
+            ))}  */}
         </motion.div>
       )}
     </AnimatePresence>

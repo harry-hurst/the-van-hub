@@ -1,6 +1,10 @@
 // react
-import { useContext } from "react";
-import { HeaderContext } from "../../../../context/HeaderContextComponent";
+import { useState, useEffect, useContext } from "react";
+import { ScreenSizeContext } from "../../../../context/ScreenSize";
+
+// redux
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../state/store";
 
 // styles
 import logoComponentStyles from "./LogoComponent.module.css";
@@ -13,18 +17,37 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function LogoComponent() {
+  // redux
+  const searchBarStatus = useSelector(
+    (state: RootState) => state.searchBar.status
+  );
+
+  // useState
+  const [visible, setVisible] = useState<boolean>(false);
+
+  // useEffect
+  useEffect(() => {
+    if (searchBarStatus === true) {
+      setVisible(false);
+    } else {
+      setTimeout(() => {
+        setVisible(true);
+      }, 600);
+    }
+  }, [searchBarStatus]);
+
   // useContext
-  const { searchBarState, windowSize } = useContext(HeaderContext);
+  const { windowSize } = useContext(ScreenSizeContext);
 
   return (
     <AnimatePresence initial={false}>
-      {(!searchBarState || windowSize !== "small") && (
+      {(visible || windowSize !== "small") && (
         <Link href="/">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2, delay: 0.2 }}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            
             id={logoComponentStyles.logoContainer}
           >
             <span id={logoComponentStyles.tm}>TM</span>

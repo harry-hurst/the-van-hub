@@ -1,6 +1,6 @@
 // react
 import { useContext } from "react";
-import { ShopifyContext } from "../../../../../context/ShopifyContextComponent";
+import { ShopifyContext } from "../../../../../context/Shopify";
 
 // styles
 import basketItemStyles from "./Basket.module.css";

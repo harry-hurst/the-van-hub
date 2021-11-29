@@ -1,7 +1,11 @@
 // react
-import { useContext, useState, useEffect } from "react";
-import { HeaderContext } from "../../../../context/HeaderContextComponent";
-import { ShopifyContext } from "../../../../context/ShopifyContextComponent";
+import { useContext } from "react";
+import { ScreenSizeContext } from "../../../../context/ScreenSize";
+import { ShopifyContext } from "../../../../context/Shopify";
+
+// redux
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../state/store";
 
 // styles
 import navMenuStyles from "./NavMenu.module.css";
@@ -12,93 +16,50 @@ import NavMenuItem from "./NavMenuItem";
 // modules
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
-const container = {
-  hidden: {
-    opacity: 0,
-    y: "10%",
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      // delay: 0.2,
-      duration: 1,
-    },
-  },
-};
-
 export default function NavMenu() {
+  // redux
+  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+
   // useContext
-  const { headerMenusState, currentCollectionId, windowSize } =
-    useContext(HeaderContext);
+  const { windowSize } = useContext(ScreenSizeContext);
   const { client } = useContext(ShopifyContext);
 
-  // useState
-  const [collection, setCollection] = useState<any>();
+  
 
-  const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    if (headerMenusState.navMenu) {
-      setTimeout(() => {
-        setOpen(true);
-      }, 200);
-    } else {
-      setOpen(false);
-    }
-  }, [headerMenusState.navMenu]);
 
-  // useEffect
-  useEffect(() => {
-    // run once on first component mount
-    client.collection
-      .fetchWithProducts(currentCollectionId)
-      .then((retrievedCollection: any) => {
-        // save to state
-        setCollection(retrievedCollection);
-      });
-  }, [currentCollectionId]);
 
   return (
     <AnimatePresence>
-      {open && (
+      {activeMenu === "navMenu" && (
         <AnimateSharedLayout>
           <motion.div
             layout
-            variants={container}
-            initial="hidden"
-            animate="visible"
-            exit={{ opacity: 0 }}
+
             id={navMenuStyles.container}
             className={`
             ${
               !(windowSize === "small") &&
-              !(headerMenusState.searchMenu || headerMenusState.basketMenu) &&
+              !(activeMenu === "navMenu" || activeMenu === "basketMenu") &&
               `${navMenuStyles.small}`
             }
             
             `}
           >
-            {collection &&
-              collection.products.map(
-                (
-                  product: {
-                    title: string;
-                    variants: any;
-                    availableForSale: boolean;
-                    id: string;
-                  },
-                  index: number
-                ) => (
-                  <NavMenuItem
-                    key={index}
-                    productId={product.id}
-                    stock={product.availableForSale}
-                    title={product.title}
-                    imgSrc={product.variants[0].image.src}
-                  />
-                )
-              )}
+
+temp
+            {/* {collection &&
+              collection.products.map((product, index) => (
+                <NavMenuItem
+                  key={index}
+                  productId={product.id}
+                  stock={product.availableForSale}
+                  title={product.title}
+                  imgSrc={product.variants[0].image.src}
+                />
+              ))} */}
+
+
           </motion.div>
         </AnimateSharedLayout>
       )}

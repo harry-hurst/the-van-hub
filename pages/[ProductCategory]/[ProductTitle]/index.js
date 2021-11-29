@@ -1,13 +1,13 @@
 // react
-import { useState, useEffect, useContext, SetStateAction } from "react";
-import { ShopifyContext } from "../../context/ShopifyContextComponent";
+import { useState, useEffect, useContext} from "react";
+import { ShopifyContext } from "../../../context/Shopify";
 
 // styles
 import productPageStyles from "./ProductPage.module.css";
 
 // components
-import BreadCrumbs from "../../components/Reusable/BreadCrumbs";
-import Spinner from "../../components/Reusable/Spinner";
+import BreadCrumbs from "../../../components/Reusable/BreadCrumbs";
+import Spinner from "../../../components/Reusable/Spinner";
 
 // next components
 import Image from "next/image";
@@ -15,10 +15,10 @@ import { useRouter } from "next/router";
 
 export default function ProductPage() {
   const router = useRouter();
-  const { ProductTitle, productId } = router.query;
+  const { ProductCategory, ProductTitle, productId } = router.query;
 
-  const [product, setProduct] = useState<any>();
-  const [thumbnailIndex, setThumbnailIndex] = useState<number>(0);
+  const [product, setProduct] = useState();
+  const [thumbnailIndex, setThumbnailIndex] = useState(0);
 
   const { client, addToBasket } = useContext(ShopifyContext);
 
@@ -29,7 +29,7 @@ export default function ProductPage() {
   async function fetchProduct() {
     client.product
       .fetch(productId)
-      .then((retrievedProduct: SetStateAction<undefined>) => {
+      .then((retrievedProduct) => {
         // Do something with the product
         setProduct(retrievedProduct);
       });
@@ -37,7 +37,7 @@ export default function ProductPage() {
 
   return (
     <div className="container" id={productPageStyles.container}>
-      <BreadCrumbs productTitle={ProductTitle} />
+      <BreadCrumbs productCategory={ProductCategory} productTitle={ProductTitle} />
 
       {product ? (
         <>
@@ -64,7 +64,7 @@ export default function ProductPage() {
               className="col-sm-12 col-md-2 col-lg-1 p-2"
               id={productPageStyles.secondColumn}
             >
-              {product.images.map((image: any, index: number) => (
+              {product.images.map((image, index) => (
                 <div
                   key={index}
                   className={

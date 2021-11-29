@@ -1,26 +1,38 @@
 // react
 import { useContext } from "react";
-import { HeaderContext } from "../../../../context/HeaderContextComponent";
-import { ShopifyContext } from "../../../../context/ShopifyContextComponent";
+import { ShopifyContext } from "../../../../context/Shopify";
+
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import { changeMenu, clearActiveMenu } from "../../../../state/activeMenuSlice";
+import { RootState } from "../../../../state/store";
 
 // styles
 import basketIconStyles from "./BasketIcon.module.css";
 
 export default function BasketIcon() {
-  // useState
+  // redux
+  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+
+  const dispatch = useDispatch();
 
   // useContext
-  const { headerMenusState, changeHeaderMenusState, basketIcon } =
-    useContext(HeaderContext);
   const { basket } = useContext(ShopifyContext);
+
+  function handleClick() {
+    if (activeMenu !== "basketMenu") {
+      dispatch(changeMenu("basketMenu"));
+    } else {
+      dispatch(clearActiveMenu());
+    }
+  }
 
   return (
     <div
       id={basketIconStyles.container}
       onClick={() => {
-        changeHeaderMenusState("basketMenu", !headerMenusState.basketMenu);
+        handleClick();
       }}
-      ref={basketIcon}
     >
       <div>
         <span id={basketIconStyles.basketCount}>

@@ -9,9 +9,7 @@ import BasketIcon from "./BasketIcon";
 
 export default function TopBar() {
   return (
-    <div
-      id={topBarStyles.container}
-    >
+    <div id={topBarStyles.container}>
       <div id={topBarStyles.topBar} className="container">
         <BurgerIcon />
         <LogoComponent />

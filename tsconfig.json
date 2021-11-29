@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "state/reducers/index.js", "state/reducers/searchBarReducer.js", "state/action-creators/index.js", "pages/state/action-creators/index.js", "pages/store.js"  ],
   "exclude": [
     "node_modules"
   ]

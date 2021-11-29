@@ -3,8 +3,10 @@ import layoutStyles from "./Layout.module.css";
 
 // components
 import Footer from "../Footer";
-import ShopifyContextComponent from "../../context/ShopifyContextComponent";
-import HeaderContextComponent from "../../context/HeaderContextComponent";
+
+import ShopifyContext from "../../context/Shopify";
+import ScreenSizeContext from "../../context/ScreenSize";
+
 import TopBar from "../Header/TopBar";
 import Modal from "../Header/Modal";
 
@@ -24,17 +26,17 @@ export default function Layout(props: { children: React.ReactNode }) {
       </Head>
 
       <main>
-        <ShopifyContextComponent>
-          <HeaderContextComponent>
+        <ShopifyContext>
+          <ScreenSizeContext>
             <TopBar />
             <Modal />
-          </HeaderContextComponent>
+          </ScreenSizeContext>
 
           <div id={layoutStyles.mainContentWrapper}>
             {props.children}
             <Footer />
           </div>
-        </ShopifyContextComponent>
+        </ShopifyContext>
       </main>
     </div>
   );

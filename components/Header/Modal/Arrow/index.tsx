@@ -1,6 +1,6 @@
-// react
-import { useContext } from "react";
-import { HeaderContext } from "../../../../context/HeaderContextComponent";
+// redux
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../state/store";
 
 // styles
 import arrowStyles from "./Arrow.module.css";
@@ -9,13 +9,11 @@ import arrowStyles from "./Arrow.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Arrow() {
-  const { headerMenusState } = useContext(HeaderContext);
+  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
   return (
     <AnimatePresence>
-      {(headerMenusState.mobileMenu ||
-        headerMenusState.searchMenu ||
-        headerMenusState.basketMenu) && (
+      {(activeMenu !== null && activeMenu !== "navMenu") && (
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -23,12 +21,10 @@ export default function Arrow() {
           transition={{ duration: 0.2 }}
           id={arrowStyles.dropdownArrowContainer}
           className={`
-
-${headerMenusState.mobileMenu && `${arrowStyles.left}`}
-${headerMenusState.searchMenu && `${arrowStyles.middle}`}
-${headerMenusState.basketMenu && `${arrowStyles.right}`}
-
-`}
+            ${activeMenu === "mobileMenu" && `${arrowStyles.left}`}
+            ${activeMenu === "searchList" && `${arrowStyles.middle}`}
+            ${activeMenu === "basketMenu" && `${arrowStyles.right}`}
+          `}
         >
           <i id={arrowStyles.dropdownArrow} />
         </motion.div>

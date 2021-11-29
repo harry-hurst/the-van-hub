@@ -1,13 +1,10 @@
 #container {
-  display: grid;
+  gap: 10px;
+  display: flex;
   overflow: auto;
-  grid-gap: 10px;
-  grid-template-columns: 1fr;
-  max-height: 100%;
-}
-
-.small {
-  max-height: calc(100% - 36px) !important;
+  flex-direction: column;
+  height: calc(100% - 36px);
+  /* background-color: lawngreen; */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

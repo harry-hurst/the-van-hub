@@ -1,0 +1,22 @@
+#container {
+  gap: 10px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#imageContainer {
+  flex-grow: 1;
+  position: relative;
+}
+
+#infoContainer {
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+#button {
+}

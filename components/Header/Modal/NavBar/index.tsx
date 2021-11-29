@@ -4,11 +4,7 @@ import { ScreenSizeContext } from "../../../../context/ScreenSize";
 import { ShopifyContext } from "../../../../context/Shopify";
 
 // redux
-import { useSelector, useDispatch } from "react-redux";
-import {
-  updateCollectionId,
-  clearCollectionId,
-} from "../../../../state/collectionIdSlice";
+import { useSelector } from "react-redux";
 import { RootState } from "../../../../state/store";
 
 // styles

@@ -3,8 +3,9 @@ import { useState, useEffect, useContext } from "react";
 import { ScreenSizeContext } from "../../../context/ScreenSize";
 
 // redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../state/store";
+import { clearCollectionId } from "../../../state/collectionIdSlice";
 
 // styles
 import modalStyles from "./Modal.module.css";
@@ -20,6 +21,7 @@ import SearchList from "./SearchList";
 export default function Modal() {
   // redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+  const dispatch = useDispatch();
 
   // global screen size variable.
   const { windowSize } = useContext(ScreenSizeContext);
@@ -32,6 +34,7 @@ export default function Modal() {
     if (activeMenu !== null) {
       setModalState("expanded");
     } else if (activeMenu === null && windowSize !== "small") {
+      dispatch(clearCollectionId());
       setTimeout(() => {
         setModalState("bar");
       }, 500);

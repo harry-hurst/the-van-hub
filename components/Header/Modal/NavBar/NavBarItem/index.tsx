@@ -56,7 +56,7 @@ function handleClick(
   if (collectionId !== id) {
     dispatch(updateCollectionId(id));
   } else {
-    dispatch(clearCollectionId());
+    // dispatch(clearCollectionId());
     dispatch(clearActiveMenu());
   }
 }

@@ -1,6 +1,5 @@
 // react
 import { useState, useEffect, useContext, Key } from "react";
-import { ScreenSizeContext } from "../../../../context/ScreenSize";
 import { ShopifyContext } from "../../../../context/Shopify";
 
 // redux
@@ -23,7 +22,6 @@ export default function NavMenu() {
   const collectionId = useSelector((state: RootState) => state.collectionId.id);
 
   // useContext
-  const { windowSize } = useContext(ScreenSizeContext);
   const { client } = useContext(ShopifyContext);
 
   // fetch collection based on collectionId:
@@ -38,54 +36,32 @@ export default function NavMenu() {
       });
   }, [collectionId]);
 
-    // create time delay of 400ms for mounting component:
-    const [present, setPresent] = useState<boolean>(false);
+  // create time delay of 400ms for mounting component:
+  const [present, setPresent] = useState<boolean>(false);
 
-    useEffect(() => {
-      if (activeMenu === "navMenu") {
-        setTimeout(() => {
-          setPresent(true);
-        }, 400);
-      } else {
-        setTimeout(() => {
-          setPresent(false);
-        }, 200);
-      }
-    }, [activeMenu]);
-
-    // x-offset to pass to variants file:
-    const [offset, setOffset] = useState<string>("100%");
-
-    useEffect(() => {
-      if (activeMenu === "mobileMenu") {
-        setOffset("100%");
-        // alert(" set to 100%");
-      } else if (activeMenu === "basketMenu") {
-        setOffset("-100%");
-        // alert("set to -100%");
-      }
-    }, [activeMenu]);
+  useEffect(() => {
+    if (activeMenu === "navMenu") {
+      setTimeout(() => {
+        setPresent(true);
+      }, 400);
+    } else {
+      setTimeout(() => {
+        setPresent(false);
+      }, 200);
+    }
+  }, [activeMenu]);
 
   return (
     <AnimatePresence>
       {present && (
         <AnimateSharedLayout>
           <motion.div
+            layout
             variants={navMenu}
             initial="hidden"
             animate="visible"
             exit="hidden"
-            custom={offset}
-            // layout
             id={navMenuStyles.container}
-            className={`
-            ${
-              !(windowSize === "small") &&
-              !(activeMenu === "navMenu" || activeMenu === "basketMenu") &&
-              `${navMenuStyles.small}`
-            }
-            
-            `}
           >
             {collection &&
               collection.products.map(

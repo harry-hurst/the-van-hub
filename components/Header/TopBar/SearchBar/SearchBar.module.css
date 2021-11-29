@@ -2,6 +2,7 @@
   height: 40px;
   display: flex;
   padding: 0 1px;
+  flex-shrink: 0;
   overflow: hidden;
   margin-left: auto;
   flex-direction: row;

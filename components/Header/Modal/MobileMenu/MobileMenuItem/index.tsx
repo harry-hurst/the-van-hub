@@ -10,6 +10,7 @@ import Link from "next/link";
 
 // modules
 import { motion } from "framer-motion";
+import { mobileMenuItem } from "../../../../../framer_motion/variants/mobileMenu";
 
 export default function MobileMenuItem(props: {
   title: string;
@@ -21,6 +22,7 @@ export default function MobileMenuItem(props: {
   return (
     <Link href={`/${props.title}?collectionId=${props.collectionId}`}>
       <motion.div
+      variants={mobileMenuItem}
         id={mobileMenuItemStyles.item}
         onClick={() => dispatch(clearActiveMenu())}
       >

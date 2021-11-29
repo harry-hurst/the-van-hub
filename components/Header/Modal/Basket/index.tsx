@@ -50,6 +50,9 @@ export default function Basket() {
         >
           {basket.lineItems && basket.lineItems.length !== 0 ? (
             <>
+
+
+            
               {basket.lineItems.map(
                 (product: {
                   title: string | undefined;
@@ -66,6 +69,9 @@ export default function Basket() {
                   />
                 )
               )}
+
+
+
               <BasketItem title="Total" price={basket.paymentDue} />
               <a href={basket.webUrl} style={{ marginLeft: "auto" }}>
                 <button type="button" className="btn btn-primary">

@@ -8,11 +8,8 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-  transition: var(--time) ease;
   color: var(--main-colour-dark);
   font-family: Nunito Sans Light;
   border-radius: var(--border-radius);
-  box-shadow: var(--nav-component-item);
   border: 1px solid var(--main-colour-medium);
-  transition-property: border, box-shadow, transform;
 }

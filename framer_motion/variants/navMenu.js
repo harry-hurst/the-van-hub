@@ -1,13 +1,13 @@
-export const mobileMenu = {
-    hidden: {
-      x: "-100%",
+export const navMenu = {
+    hidden: (offset) => ({
+      x: offset,
   
       transition: {
         // when: "afterChildren",
         duration: 0.2,
         // staggerChildren: 0.1,
       },
-    },
+    }),
   
     visible: {
       x: 0,
@@ -21,21 +21,17 @@ export const mobileMenu = {
     },
   };
   
-  export const mobileMenuItem = {
-
+  export const navMenuItem = {
     hidden: {
-
       opacity: 0,
       scale: 0.8,
-
+  
       transition: {
         duration: 0.2,
       },
-
     },
   
     visible: {
-
       opacity: 1,
       scale: 1,
   
@@ -43,8 +39,5 @@ export const mobileMenu = {
         duration: 0.2,
       },
     },
-
   };
-  
-  
   

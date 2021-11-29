@@ -13,6 +13,7 @@ import Link from "next/link";
 
 // modules
 import { motion } from "framer-motion";
+import { searchListItem } from "../../../../../framer_motion/variants/searchList";
 
 export default function SeasearchListItem(props: {
   title: string;
@@ -33,8 +34,9 @@ export default function SeasearchListItem(props: {
   }, [props.searchTerm]);
 
   return (
-     <Link  href={`/search/${props.title}?productId=${props.productId}`}>
+    <Link href={`/search/${props.title}?productId=${props.productId}`}>
       <motion.div
+        variants={searchListItem}
         id={searchItemStyles.item}
         onClick={() => dispatch(clearActiveMenu())}
       >
@@ -53,6 +55,6 @@ export default function SeasearchListItem(props: {
             ))}
         </span>
       </motion.div>
-</Link>
+    </Link>
   );
 }

@@ -4,7 +4,6 @@
   display: flex;
   overflow: auto;
   flex-direction: column;
-  background-color: greenyellow;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

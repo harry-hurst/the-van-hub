@@ -60,14 +60,14 @@ export default function MobileMenu() {
           exit="hidden"
           id={mobileMenuStyles.mobileMenu}
         >
-          {/* {collections &&
+          {collections &&
             collections.map((collection: { id: string; title: string }) => (
               <MobileMenuItem
                 key={collection.id}
                 title={collection.title}
                 collectionId={collection.id}
               />
-            ))}  */}
+            ))}
         </motion.div>
       )}
     </AnimatePresence>

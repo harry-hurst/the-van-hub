@@ -73,7 +73,7 @@ export default function SearchList() {
           custom={offset}
           id={searchMenuStyles.container}
         >
-          {/* {allProducts &&
+          {allProducts &&
             allProducts.map((product: { title: string; id: string }) => {
               // condition to return
               return (
@@ -88,7 +88,7 @@ export default function SearchList() {
                   />
                 )
               );
-            })} */}
+            })}
         </motion.div>
       )}
     </AnimatePresence>

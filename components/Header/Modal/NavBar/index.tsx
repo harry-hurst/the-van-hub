@@ -43,11 +43,25 @@ export default function NavBar() {
       });
   }, []);
 
+  // mechanical delay:
+  const [present, setPresent] = useState<boolean>();
+
+  useEffect(() => {
+    if (
+      (activeMenu === null || activeMenu === "navMenu") &&
+      (windowSize === "medium" || windowSize === "large")
+    ) {
+      setTimeout(() => {
+        setPresent(true);
+      }, 800);
+    } else {
+      setPresent(false);
+    }
+  }, [activeMenu, windowSize]);
+
   return (
     <AnimatePresence>
-      {(((activeMenu === null || activeMenu == "navMenu") &&
-        windowSize === "medium") ||
-        windowSize === "large") && (
+      {present && (
         <motion.div
           variants={navBar}
           initial="hidden"

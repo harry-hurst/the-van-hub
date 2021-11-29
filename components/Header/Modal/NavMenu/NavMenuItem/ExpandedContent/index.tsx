@@ -1,5 +1,3 @@
-
-
 // styles
 import expandedContentStyles from "./ExpandedContent.module.css";
 
@@ -10,13 +8,20 @@ import Link from "next/link";
 // modules
 import { motion } from "framer-motion";
 
+// redux
+import { useDispatch } from "react-redux";
+// import { Dispatch } from "redux";
+
+import { clearActiveMenu } from "../../../../../../state/activeMenuSlice";
+import { clearCollectionId } from "../../../../../../state/collectionIdSlice";
+
 export default function ExpandedContent(props: {
   imgSrc: string;
   stock: boolean;
   productId: string;
   title: string;
 }) {
-
+  const dispatch = useDispatch();
   return (
     <motion.div
       layout
@@ -40,11 +45,15 @@ export default function ExpandedContent(props: {
           <span className="badge bg-danger">No Stock</span>
         )}
       </div>
-      <Link href={`/${props.title}?productId=${props.productId}`}>
+      <Link href={`/search/${props.title}?productId=${props.productId}`}>
         <button
           type="button"
           className="btn btn-outline-primary"
           id={expandedContentStyles.button}
+          onClick={() => {
+            dispatch(clearActiveMenu());
+            dispatch(clearCollectionId());
+          }}
         >
           View Product
         </button>

@@ -76,7 +76,7 @@ export default function NavMenu() {
             animate="visible"
             exit="hidden"
             custom={offset}
-            layout
+            // layout
             id={navMenuStyles.container}
             className={`
             ${

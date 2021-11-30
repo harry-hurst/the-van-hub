@@ -112,7 +112,6 @@ export default function SearchBar() {
       <AnimatePresence>
         {(contentsPresent || windowSize === "large") && (
           <>
-
             <motion.input
               variants={placeholder}
               initial="hidden"

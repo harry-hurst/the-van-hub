@@ -9,7 +9,7 @@
   background: white;
   border-radius: 15px;
   align-items: center;
-  transition: all calc(var(--time)/2) ease;
+  transition: all calc(var(--time) / 2) ease;
   border: 2px solid var(--main-colour-light);
 }
 
@@ -68,7 +68,7 @@
 
 @media only screen and (min-width: 768px) {
   #searchBarContainer {
-    margin-left: 30px;
-    margin-right: 22px;
+    margin-left: calc(30px + 10vw);
+    margin-right: calc(22px + 10vw);
   }
 }

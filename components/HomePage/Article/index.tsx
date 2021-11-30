@@ -7,6 +7,9 @@ import ComparisonTable from "./ComparisonTable";
 import ChargingDiagram from "./ChargingDiagram";
 import ChargingGraph from "./ChargingGraph";
 
+// next components
+import Link from "next/link";
+
 export default function BatteryArticle() {
   return (
     <>
@@ -18,6 +21,20 @@ export default function BatteryArticle() {
           life-spans, greater discharge capacity etc.
         </Heading>
         <ComparisonTable />
+
+        <div
+          style={{
+            paddingBottom: "2rem",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Link href="All%20Batteries?collectionId=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3NzExMzU2OTQzMQ==">
+            <button type="button" className="btn btn-primary btn-lg">
+              Buy Batteries
+            </button>
+          </Link>
+        </div>
       </div>
 
       <div id={articleStyles.lightBackground}>

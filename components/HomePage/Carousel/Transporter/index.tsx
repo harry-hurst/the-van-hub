@@ -29,6 +29,8 @@ export default function Transporter(props: { slideIndex: number }) {
               priority
               alt=""
             />
+            
+            <Link href="/Select/SmartSolar%20MPPT%20Solar%20Charge%20Controller?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY5NDgwNTcwMjI2MTU=">
               <motion.div
                 className={transporterStyles.imageContainer}
                 style={{
@@ -47,9 +49,9 @@ export default function Transporter(props: { slideIndex: number }) {
                   alt=""
                 />
               </motion.div>
-          
+            </Link>
 
-            <Link href="/SmartSolar%20MPPT%20Solar%20Charge%20Controller?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY5NDgwNTcwMjI2MTU=">
+            <Link href="/Select/SmartSolar%20MPPT%20Solar%20Charge%20Controller?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY5NDgwNTcwMjI2MTU=">
               <motion.div
                 className={transporterStyles.imageContainer}
                 style={{
@@ -70,7 +72,7 @@ export default function Transporter(props: { slideIndex: number }) {
               </motion.div>
             </Link>
 
-            <Link href="/12V%20100Ah%20Lithium%20LiFePO4%20Leisure%20Battery?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzczNDcyNTAzMjc=">
+            <Link href="/Select/12V%20100Ah%20Lithium%20LiFePO4%20Leisure%20Battery?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzczNDcyNTAzMjc=">
               <motion.div
                 className={transporterStyles.imageContainer}
                 style={{
@@ -91,7 +93,7 @@ export default function Transporter(props: { slideIndex: number }) {
               </motion.div>
             </Link>
 
-            <Link href="/200W%20Monocrystalline%20Rigid%20Framed%20Solar%20Panel?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzcwOTM0ODU0MzcwNzk=">
+            <Link href="/Select/200W%20Monocrystalline%20Rigid%20Framed%20Solar%20Panel?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzcwOTM0ODU0MzcwNzk=">
               <motion.div
                 className={transporterStyles.imageContainer}
                 style={{

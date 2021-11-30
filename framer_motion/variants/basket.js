@@ -26,6 +26,7 @@ export const basketItem = {
   hidden: {
 
     opacity: 0,
+    scale: 0.8,
 
     transition: {
       duration: 0.2,
@@ -36,6 +37,7 @@ export const basketItem = {
   visible: {
 
     opacity: 1,
+    scale: 1,
 
     transition: {
       duration: 0.2,

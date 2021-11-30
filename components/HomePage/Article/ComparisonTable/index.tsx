@@ -4,6 +4,7 @@ import comparisonTableStyles from "./ComparisonTable.module.css";
 export default function ComparisonTable() {
   return (
     <table id={comparisonTableStyles.comparisonTable}>
+
       <thead>
         <tr>
           <th>
@@ -15,6 +16,7 @@ export default function ComparisonTable() {
           </th>
         </tr>
       </thead>
+      
       <tbody>
         <tr>
           <td>2000</td>

@@ -5,16 +5,24 @@
   border-collapse: collapse;
 }
 
+/* table head */
+
+#comparisonTable > thead > tr > th {
+  padding: 1rem;
+}
+
+#comparisonTable > thead > tr > th > span {
+  padding: clamp(0.8rem, 2vw, 1.2rem);
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-family: Nunito Sans Light;
+}
+
+/* table body */
+
 #comparisonTable > tbody > tr > td {
   padding: 0.5rem;
   font-size: 0.9rem;
   text-align: center;
-}
-
-#comparisonTable > thead > tr > th {
-  padding: 0.5rem;
-  font-size: clamp(0.6rem, 2vw, 1rem);
-  font-family: Nunito Sans Light;
 }
 
 .middleColumn {

@@ -2,3 +2,10 @@
   padding: 1rem 0;
   background: var(--main-colour-very-light);
 }
+
+#buyButton {
+  letter-spacing: 0.05rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-family: Nunito Sans Semi Bold;
+}

@@ -3,7 +3,7 @@
 }
 
 #mainContentWrapper {
-  padding-top: 70px; /* offset header */
+  padding-top: 65px; /* offset header */
   position: relative;
   background-color: white;
   min-height: 100vh;
@@ -13,6 +13,6 @@
 
 @media screen and (min-width: 576px) {
   #mainContentWrapper {
-    padding-top: 120px; /* offset header */
+    padding-top: 115px; /* offset header */
   }
 }

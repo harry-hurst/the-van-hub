@@ -23,10 +23,10 @@ export default function ComparisonTable() {
           <td className={comparisonTableStyles.middleColumn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="currentColor"
-              stroke="currentColor"
+              width="40"
+              height="40"
+              fill="#1c88ed"
+              stroke="#1c88ed"
               strokeWidth="0.4px"
               viewBox="0 0 16 16"
             >
@@ -46,15 +46,15 @@ export default function ComparisonTable() {
           <td className={comparisonTableStyles.middleColumn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
+              width="40"
+              height="40"
               viewBox="0 0 640 512"
-              fill="currentColor"
-              stroke="currentColor"
+              fill="#1c88ed"
+              stroke="#1c88ed"
               strokeWidth="0.1px"
             >
               <path
-                fill="currentColor"
+                fill="#1c88ed"
                 d="M104 96H56c-13.3 0-24 10.7-24 24v104H8c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h24v104c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24zm528 128h-24V120c0-13.3-10.7-24-24-24h-48c-13.3 0-24 10.7-24 24v272c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V288h24c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM456 32h-48c-13.3 0-24 10.7-24 24v168H256V56c0-13.3-10.7-24-24-24h-48c-13.3 0-24 10.7-24 24v400c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V288h128v168c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24z"
               ></path>
             </svg>
@@ -68,10 +68,10 @@ export default function ComparisonTable() {
           <td className={comparisonTableStyles.middleColumn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="currentColor"
-              stroke="currentColor"
+              width="40"
+              height="40"
+              fill="#1c88ed"
+              stroke="#1c88ed"
               strokeWidth="0.2px"
               viewBox="0 0 16 16"
             >

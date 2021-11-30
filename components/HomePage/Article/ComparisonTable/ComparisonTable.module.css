@@ -8,25 +8,26 @@
 /* table head */
 
 #comparisonTable > thead > tr > th {
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
 #comparisonTable > thead > tr > th > span {
   padding: clamp(0.8rem, 2vw, 1.2rem);
   font-size: clamp(0.8rem, 2vw, 1.2rem);
-  font-family: Nunito Sans Light;
+  font-family: Nunito Sans Regular;
 }
 
 /* table body */
 
 #comparisonTable > tbody > tr > td {
-  padding: 0.5rem;
-  font-size: 0.9rem;
+  padding: 1rem 0.5rem;
+  font-size: 1.1rem;
   text-align: center;
+  font-family: Nunito Medium;
 }
 
 .middleColumn {
-  font-size: 1rem !important;
+  font-family: Nunito Regular !important;
   border-left: 1px solid var(--border-colour);
   border-right: 1px solid var(--border-colour);
 }

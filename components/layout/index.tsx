@@ -32,7 +32,9 @@ export default function Layout(props: { children: React.ReactNode }) {
             <Modal />
           </ScreenSizeContext>
 
-          <div id={layoutStyles.mainContentWrapper}>
+          <div
+            id={layoutStyles.mainContentWrapper}
+          >
             {props.children}
             <Footer />
           </div>

@@ -30,7 +30,7 @@ export default function BatteryArticle() {
           }}
         >
           <Link href="All%20Batteries?collectionId=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3NzExMzU2OTQzMQ==">
-            <button type="button" id={articleStyles.buyButton} className="btn btn-primary btn-lg">
+            <button type="button" id={articleStyles.buyButton} className="btn btn-secondary btn-lg">
               See Batteries
             </button>
           </Link>

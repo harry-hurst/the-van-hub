@@ -5,7 +5,12 @@
 
 #buyButton {
   letter-spacing: 0.05rem;
-  padding: 0.8rem 1.6rem;
-  font-size: 1rem;
+
   font-family: Nunito Sans Semi Bold;
+
+  padding-left: clamp(2.6rem, 5vw, 3.2rem);
+  padding-right: clamp(2.6rem, 5vw, 3.2rem);
+  padding-top: clamp(0.8rem, 2vw, 1.6rem);
+  padding-bottom: clamp(0.8rem, 2vw, 1.6rem);
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }

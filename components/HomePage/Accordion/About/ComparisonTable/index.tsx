@@ -23,8 +23,8 @@ export default function ComparisonTable() {
           <td className={comparisonTableStyles.middleColumn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
+              width="30"
+              height="30"
               fill="currentColor"
               stroke="currentColor"
               strokeWidth="0.4px"
@@ -46,8 +46,8 @@ export default function ComparisonTable() {
           <td className={comparisonTableStyles.middleColumn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
+              width="30"
+              height="30"
               viewBox="0 0 640 512"
               fill="currentColor"
               stroke="currentColor"
@@ -68,8 +68,8 @@ export default function ComparisonTable() {
           <td className={comparisonTableStyles.middleColumn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
+              width="30"
+              height="30"
               fill="currentColor"
               stroke="currentColor"
               strokeWidth="0.2px"

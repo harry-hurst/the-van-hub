@@ -1,7 +1,7 @@
 #comparisonTable {
   width: 100%;
   margin: 1rem 0 3rem 0;
-  color: var(--grey);
+
   border-collapse: collapse;
 }
 
@@ -23,12 +23,12 @@
   padding: 1rem 0.5rem;
   font-size: 1.1rem;
   text-align: center;
-  font-family: Nunito Medium;
+  font-family: Nunito Light;
 }
 
 .middleColumn {
   color: var(--primary);
-  font-family: Nunito Regular !important;
+  font-family: Nunito Light !important;
   border-left: 1px solid var(--border-colour);
   border-right: 1px solid var(--border-colour);
 }

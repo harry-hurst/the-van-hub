@@ -21,3 +21,11 @@
   line-height: 1.3rem;
   letter-spacing: 0.05rem;
 }
+
+#arrow {
+  transition: transform var(--time) ease;
+}
+
+.rotate {
+  transform: rotate(-180deg);
+}

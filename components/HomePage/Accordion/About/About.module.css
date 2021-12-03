@@ -33,3 +33,11 @@
   padding-bottom: clamp(0.8rem, 2vw, 1.6rem);
   font-size: clamp(0.8rem, 2vw, 1rem);
 }
+
+#arrow {
+  transition: transform var(--time) ease;
+}
+
+.rotate {
+  transform: rotate(-180deg);
+}

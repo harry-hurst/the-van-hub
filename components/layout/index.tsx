@@ -1,6 +1,9 @@
 // styles
 import layoutStyles from "./Layout.module.css";
 
+// react
+import { useEffect, useRef } from "react";
+
 // components
 import ShopifyContext from "../../context/Shopify";
 import ScreenSizeContext from "../../context/ScreenSize";
@@ -10,6 +13,10 @@ import Modal from "../Header/Modal";
 
 import Footer from "../Footer";
 
+// redux
+import { useDispatch } from "react-redux";
+import { clearActiveMenu } from "../../state/activeMenuSlice";
+
 // next components
 import Head from "next/head";
 
@@ -17,6 +24,37 @@ import Head from "next/head";
 import { AnimateSharedLayout } from "framer-motion";
 
 export default function Layout(props: { children: React.ReactNode }) {
+  // click away listener
+  let modal = useRef<any>(null);
+  let burger = useRef<any>(null);
+  let searchBar = useRef<any>(null);
+  let basket = useRef<any>(null);
+
+  const dispatch = useDispatch();
+
+  const handleClickAway = (event: { target: any }) => {
+    if (
+      modal.current &&
+      !(
+        modal.current.contains(event.target) ||
+        burger.current.contains(event.target) ||
+        searchBar.current.contains(event.target) ||
+        basket.current.contains(event.target)
+      )
+    ) {
+      dispatch(clearActiveMenu());
+    }
+  };
+
+  
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickAway, true);
+    return () => {
+      document.removeEventListener("click", handleClickAway, true);
+    };
+  });
+
   return (
     <div id={layoutStyles.appContainer}>
       <Head>
@@ -31,8 +69,8 @@ export default function Layout(props: { children: React.ReactNode }) {
       <main>
         <ShopifyContext>
           <ScreenSizeContext>
-            <TopBar />
-            <Modal />
+            <TopBar burger={burger} searchBar={searchBar} basket={basket} />
+            <Modal modal={modal} />
           </ScreenSizeContext>
 
           <div id={layoutStyles.mainContentWrapper}>

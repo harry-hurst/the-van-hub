@@ -26,7 +26,7 @@ import {
   clearSearchTerm,
 } from "../../../../state/searchTermSlice";
 
-export default function SearchBar() {
+export default function SearchBar(props: { searchBar: any }) {
   // redux
   const searchBarStatus = useSelector(
     (state: RootState) => state.searchBar.status
@@ -88,6 +88,7 @@ export default function SearchBar() {
 
   return (
     <div
+      ref={props.searchBar}
       id={searchBarStyles.searchBarContainer}
       className={`
       ${(open || windowSize === "large") && `${searchBarStyles.searchOpen}`}

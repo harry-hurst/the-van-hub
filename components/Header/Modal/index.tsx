@@ -18,7 +18,7 @@ import MobileMenu from "./MobileMenu";
 import Basket from "./Basket";
 import SearchList from "./SearchList";
 
-export default function Modal() {
+export default function Modal(props: {modal: any}) {
   // redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
   const dispatch = useDispatch();
@@ -49,6 +49,7 @@ export default function Modal() {
     <div id={modalStyles.modalContainer}>
       <div className="container">
         <div
+          ref={props.modal}
           id={modalStyles.modal}
           className={`
           ${modalState === "bar" && `${modalStyles.modalBar}`}

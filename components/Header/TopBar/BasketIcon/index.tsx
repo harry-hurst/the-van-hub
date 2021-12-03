@@ -10,7 +10,7 @@ import { RootState } from "../../../../state/store";
 // styles
 import basketIconStyles from "./BasketIcon.module.css";
 
-export default function BasketIcon() {
+export default function BasketIcon(props: { basket: any }) {
   // redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
@@ -29,6 +29,7 @@ export default function BasketIcon() {
 
   return (
     <div
+      ref={props.basket}
       id={basketIconStyles.container}
       onClick={() => {
         handleClick();

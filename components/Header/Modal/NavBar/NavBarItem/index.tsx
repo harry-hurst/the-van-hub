@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 import {
   updateCollectionId,
-  clearCollectionId,
 } from "../../../../../state/collectionIdSlice";
 import {
   changeMenu,

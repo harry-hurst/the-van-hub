@@ -8,15 +8,19 @@ import SearchBar from "./SearchBar";
 import ShopIcon from "./ShopIcon";
 import BasketIcon from "./BasketIcon";
 
-export default function TopBar() {
+export default function TopBar(props: {
+  burger: any;
+  searchBar: any;
+  basket: any;
+}) {
   return (
     <div id={topBarStyles.container}>
       <div id={topBarStyles.topBar} className="container">
-        <BurgerIcon />
+        <BurgerIcon burger={props.burger} />
         <LogoComponent />
-        <SearchBar />
+        <SearchBar searchBar={props.searchBar} />
         <ShopIcon />
-        <BasketIcon />
+        <BasketIcon basket={props.basket} />
       </div>
     </div>
   );

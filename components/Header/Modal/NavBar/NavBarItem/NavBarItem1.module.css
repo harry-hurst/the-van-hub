@@ -5,19 +5,19 @@
   cursor: pointer;
   font-size: 12px;
   padding: 3px 6px;
+  color: var(--dark);
   align-items: center;
   justify-content: center;
   background-color: white;
   transition: var(--time) ease;
-  color: var(--main-colour-dark);
+  border: 1px solid var(--primary);
   font-family: Nunito Sans Regular;
   border-radius: var(--border-radius);
   box-shadow: var(--nav-component-item);
-  border: 1px solid var(--main-colour-medium);
   transition-property: border, box-shadow;
 }
 
 .currentItem {
-  border: 1px solid var(--main-colour-dark) !important;
+  border: 1px solid var(--dark) !important;
   box-shadow: var(--nav-component-item-hover) !important;
 }

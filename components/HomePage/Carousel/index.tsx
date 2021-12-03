@@ -10,11 +10,14 @@ import Arrow from "./Arrow";
 import Transporter from "./Transporter";
 import Sprinter from "./Sprinter";
 
+// modules
+import { motion } from "framer-motion";
+
 export default function Carousel() {
   const [slideIndex, setSlideIndex] = useState(0);
 
   return (
-    <div className="container">
+    <motion.div layout className="container">
       <div id={carousalStyles.carousalContainer}>
         <Transporter slideIndex={slideIndex} />
         <Sprinter slideIndex={slideIndex} />
@@ -32,6 +35,6 @@ export default function Carousel() {
         />
         
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -74,14 +74,19 @@ a {
 }
 
 :root {
-  --main-colour-dark: #263241;
-  --main-colour-light: #1c88ed;
-  --main-colour-medium: #6dafec;
-  --main-colour-very-light: #effbff;
-  
+  // bootstrap colours
+  --primary: #1d9ae2; //#07689F;
+  --secondary: #c9d6df;
+  --success: #91d101; //#13d3bc;
+  --danger: #dd0922;
+  --warning: #fa6619;
+
+  --light: #effbff;
+  --dark: #003049;
+
   --grey: #505971;
-  --background-grey: rgb(247,248,251);
-  --icon-grey: rgb(106,125,140);
+  --background-grey: rgb(247, 248, 251);
+  --icon-grey: rgb(106, 125, 140);
 
   --text-colour: #666;
   --border-colour: #d5d9d9;
@@ -101,9 +106,16 @@ a {
 $min-contrast-ratio: 0;
 
 // set colours
-$primary: #1c88ed;
-$secondary: #263241;
-$success: #62b16f;
+$primary: #1d9ae2;
+$secondary: #c9d6df;
+$success: #91d101; //#49670e;
+$danger: #dd0922;
+$warning: #fa6619;
+
+$info: #a2d5f2;
+
+$dark: #003049;
+
 $light: #effbff;
 
 // set border radius
@@ -119,15 +131,13 @@ $breadcrumb-font-size: 0.8rem;
 // $btn-padding-x: 0.65em;
 // $btn-padding-y: 0.35em;
 $btn-link-color: white;
-$btn-font-family: Nunito Sans Regular;          
+$btn-font-family: Nunito Sans Regular;
 $btn-font-size: 0.9rem;
-$btn-disabled-opacity: 1;
+
 
 // button close
 $btn-close-padding-x: 1em;
 $btn-close-padding-y: 1em;
-
-// $btn-border-radius: 100px;
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
@@ -145,8 +155,5 @@ $btn-close-padding-y: 1em;
 @import "../node_modules/bootstrap/scss/badge";
 @import "../node_modules/bootstrap/scss/forms";
 
-
-
 // Utilities
 @import "../node_modules/bootstrap/scss/utilities/api";
-

@@ -1,16 +1,15 @@
 #item {
+  padding: 10px;
   display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
-  align-items: center;
+  flex-shrink: 0;
   cursor: pointer;
   font-size: 14px;
   min-height: 30px;
-  padding: 10px;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--main-colour-medium);
+  flex-direction: row;
+  align-items: center;
   background-color: white;
-  flex-shrink: 0;
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
 }
 
 #title {
@@ -19,7 +18,7 @@
 
 .highlighted {
   font-family: Nunito Bold !important;
-  background-color: var(--main-colour-very-light);
+  background-color: var(--light);
 }
 
 #price {

@@ -1,0 +1,35 @@
+#container {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+#heading {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  border-radius: var(--border-radius);
+  background: var(--light);
+}
+
+#paragraph {
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  color: var(--grey);
+  line-height: 1.3rem;
+  letter-spacing: 0.05rem;
+}
+
+#buyButton {
+  letter-spacing: 0.05rem;
+
+  font-family: Nunito Sans Semi Bold;
+
+  padding-left: clamp(2.6rem, 5vw, 3.2rem);
+  padding-right: clamp(2.6rem, 5vw, 3.2rem);
+  padding-top: clamp(0.8rem, 2vw, 1.6rem);
+  padding-bottom: clamp(0.8rem, 2vw, 1.6rem);
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}

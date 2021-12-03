@@ -27,12 +27,10 @@ export default function NavMenuItem(props: {
     <motion.div
       layout
       variants={navMenuItem}
-      onClick={toggleOpen}
       id={navMenuItemStyles.item}
+      onClick={toggleOpen}
     >
-      <motion.div layout>
-        {props.title}
-      </motion.div>
+      <motion.div layout>{props.title}</motion.div>
 
       <AnimatePresence>
         {isOpen && (

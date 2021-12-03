@@ -1,9 +1,12 @@
 // styles
 import footerStyles from "./Footer.module.css";
 
+// modules
+import { motion } from "framer-motion";
+
 export default function Footer() {
   return (
-    <div id={footerStyles.container}>
+    <motion.div layout id={footerStyles.container}>
       <div className="container">
         <div id={footerStyles.sectionOne}>
           <div id={footerStyles.tvh}>TVH</div>
@@ -57,6 +60,6 @@ export default function Footer() {
           <a id={footerStyles.cookiePolicy}>Cookie Policy</a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

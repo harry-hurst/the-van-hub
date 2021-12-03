@@ -1,14 +1,13 @@
 #item {
+  gap: 10px;
   display: flex;
+  padding: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  min-height: 30px;
   flex-direction: column;
   justify-content: center;
-  cursor: pointer;
-  font-size: 14px;
-  min-height: 30px;
-  padding: 10px;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--main-colour-medium);
   background-color: white;
-  flex-shrink: 0;
-  gap: 10px;
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
 }

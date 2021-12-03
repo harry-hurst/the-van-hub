@@ -2,16 +2,19 @@
 import layoutStyles from "./Layout.module.css";
 
 // components
-import Footer from "../Footer";
-
 import ShopifyContext from "../../context/Shopify";
 import ScreenSizeContext from "../../context/ScreenSize";
 
 import TopBar from "../Header/TopBar";
 import Modal from "../Header/Modal";
 
+import Footer from "../Footer";
+
 // next components
 import Head from "next/head";
+
+// modules
+import { AnimateSharedLayout } from "framer-motion";
 
 export default function Layout(props: { children: React.ReactNode }) {
   return (
@@ -32,11 +35,11 @@ export default function Layout(props: { children: React.ReactNode }) {
             <Modal />
           </ScreenSizeContext>
 
-          <div
-            id={layoutStyles.mainContentWrapper}
-          >
-            {props.children}
-            <Footer />
+          <div id={layoutStyles.mainContentWrapper}>
+            <AnimateSharedLayout>
+              {props.children}
+              <Footer />
+            </AnimateSharedLayout>
           </div>
         </ShopifyContext>
       </main>

@@ -4,10 +4,10 @@
 
 #mainContentWrapper {
   padding-top: 65px; /* offset header */
-  position: relative;
-  background-color: white;
   min-height: 100vh;
-  padding-bottom: calc(170px + 5vw); /* offset footer */
+  position: relative;
+  padding-bottom: 170px; /* offset footer */
+  background-color: white;
   transition: padding-top var(--time) ease;
 }
 

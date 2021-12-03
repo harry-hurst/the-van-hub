@@ -8,8 +8,8 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-  color: var(--main-colour-dark);
+  color: var(--dark);
   font-family: Nunito Sans Light;
   border-radius: var(--border-radius);
-  border: 1px solid var(--main-colour-medium);
+  border: 1px solid var(--primary);
 }

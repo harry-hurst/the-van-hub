@@ -27,6 +27,7 @@
 }
 
 .middleColumn {
+  color: var(--primary);
   font-family: Nunito Regular !important;
   border-left: 1px solid var(--border-colour);
   border-right: 1px solid var(--border-colour);

@@ -1,12 +1,17 @@
-#heading {
+#container {
   margin: 1rem 0;
-  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#heading {
+  margin: 0;
+  font-size: 1rem;
   line-height: 2rem;
   font-weight: 400;
   text-align: center;
   letter-spacing: 0.1rem;
   border-radius: var(--border-radius);
-  background: var(--main-colour-very-light);
+  background: var(--light);
 }
 
 #paragraph {

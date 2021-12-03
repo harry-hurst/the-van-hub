@@ -5,15 +5,15 @@
   z-index: 1;
   height: 60px;
   position: fixed;
-  background: var(--main-colour-dark);
-  border-bottom: 2px solid var(--main-colour-light);
+  background: var(--dark);
+  border-bottom: 2px solid var(--primary);
 }
 
 #topBar {
-  gap: 5px;
   height: 100%;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  gap: clamp(0.3rem, 1.5vw, 0.8rem);
 }

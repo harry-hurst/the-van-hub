@@ -2,13 +2,16 @@
 
 // components
 import Carousal from "../components/HomePage/Carousel";
-import Article from "../components/HomePage/Article";
+import Accordion from "../components/HomePage/Accordion";
+
+// modules
+import { AnimateSharedLayout } from "framer-motion";
 
 export default function HomePage() {
   return (
-    <>
+    <AnimateSharedLayout>
       <Carousal />
-      <Article />
-    </>
+      <Accordion />
+    </AnimateSharedLayout>
   );
 }

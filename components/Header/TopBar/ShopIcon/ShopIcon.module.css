@@ -1,0 +1,16 @@
+#container {
+  height: 30px;
+  display: flex;
+  cursor: pointer;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+}
+
+#icon {
+  color: white;
+  letter-spacing: 1px;
+  transform: scaleX(0.85);
+  font-family: Nunito Sans Regular;
+}

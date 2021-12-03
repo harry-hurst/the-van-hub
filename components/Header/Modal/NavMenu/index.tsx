@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect, useContext, Key } from "react";
+import { useState, useEffect, useContext } from "react";
 import { ShopifyContext } from "../../../../context/Shopify";
 
 // redux
@@ -29,7 +29,7 @@ export default function NavMenu() {
 
   useEffect(() => {
     client.collection
-      .fetchWithProducts(collectionId, { productsFirst: 10 })
+      .fetchWithProducts(collectionId)
       .then((collection: { products: any }) => {
         // Do something with the collection
         setCollection(collection);
@@ -54,9 +54,13 @@ export default function NavMenu() {
   return (
     <AnimatePresence>
       {present && (
+
+
+
+
         <AnimateSharedLayout>
           <motion.div
-            layout
+            // layout
             variants={navMenu}
             initial="hidden"
             animate="visible"
@@ -82,6 +86,10 @@ export default function NavMenu() {
               )}
           </motion.div>
         </AnimateSharedLayout>
+
+
+
+
       )}
     </AnimatePresence>
   );

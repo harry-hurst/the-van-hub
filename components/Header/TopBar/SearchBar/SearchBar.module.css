@@ -9,8 +9,8 @@
   background: white;
   border-radius: 15px;
   align-items: center;
+  border: 2px solid var(--primary);
   transition: all calc(var(--time) / 2) ease;
-  border: 2px solid var(--main-colour-light);
 }
 
 .searchOpen {
@@ -22,15 +22,15 @@
 #searchButton {
   z-index: 1;
   color: white;
-  background: var(--main-colour-light);
-  border: 1px solid var(--main-colour-light);
+  background: var(--primary);
+  border: 1px solid var(--primary);
 }
 
 #closeButton {
   z-index: 1;
-  color: var(--main-colour-light);
-  background: var(--main-colour-very-light);
-  border: 1px solid var(--main-colour-light);
+  color: var(--primary);
+  background: var(--light);
+  border: 1px solid var(--primary);
 }
 
 .centeredButton {
@@ -42,17 +42,16 @@
   align-items: center;
   border-radius: 12px;
   justify-content: center;
+  transition: all calc(var(--time) / 2) ease;
 }
 
 /* input */
-
 .searchInput {
   z-index: 0;
-  width: 100%;
+  flex-grow: 1;
   height: 100%;
   border: none;
   outline: none;
-  margin: 0 0.5rem 0;
   background: none;
 }
 
@@ -63,12 +62,5 @@
 
   .centeredButton {
     height: 24px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  #searchBarContainer {
-    margin-left: calc(30px + 10vw);
-    margin-right: calc(22px + 10vw);
   }
 }

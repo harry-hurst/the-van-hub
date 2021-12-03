@@ -4,5 +4,5 @@
   padding-top: 50%;
   position: relative;
   border-radius: var(--border-radius-large);
-  background-color: var(--main-colour-very-light);
+  background-color: var(--light);
 }

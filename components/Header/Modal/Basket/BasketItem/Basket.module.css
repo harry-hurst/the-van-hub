@@ -8,7 +8,7 @@
   min-height: 30px;
   padding: 10px;
   border-radius: var(--border-radius);
-  border: 1px solid var(--main-colour-medium);
+  border: 1px solid var(--primary);
   background-color: white;
   flex-shrink: 0;
   gap: 10px;

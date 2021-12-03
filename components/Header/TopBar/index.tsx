@@ -5,6 +5,7 @@ import topBarStyles from "./TopBar.module.css";
 import BurgerIcon from "./BurgerIcon";
 import LogoComponent from "./LogoComponent";
 import SearchBar from "./SearchBar";
+import ShopIcon from "./ShopIcon";
 import BasketIcon from "./BasketIcon";
 
 export default function TopBar() {
@@ -14,6 +15,7 @@ export default function TopBar() {
         <BurgerIcon />
         <LogoComponent />
         <SearchBar />
+        <ShopIcon />
         <BasketIcon />
       </div>
     </div>

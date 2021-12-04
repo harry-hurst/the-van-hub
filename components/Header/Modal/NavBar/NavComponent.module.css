@@ -1,5 +1,4 @@
 #container {
-  gap: 10px;
   height: 36px;
   display: flex;
   overflow: auto;

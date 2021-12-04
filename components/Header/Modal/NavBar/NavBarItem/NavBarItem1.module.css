@@ -17,6 +17,12 @@
   transition-property: border, box-shadow;
 }
 
+@supports not (gap: 1em) {
+  #item {
+    margin: 0 0.5rem;
+  }
+}
+
 .currentItem {
   border: 1px solid var(--dark) !important;
   box-shadow: var(--nav-component-item-hover) !important;

@@ -15,5 +15,5 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  gap: clamp(0.3rem, 1.5vw, 0.8rem);
+  column-gap: clamp(0.3rem, 1.5vw, 0.8rem);
 }

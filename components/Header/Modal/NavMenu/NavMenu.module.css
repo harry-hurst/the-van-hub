@@ -1,5 +1,5 @@
 #container {
-  gap: 10px;
+  row-gap: 10px;
   display: flex;
   overflow: auto;
   flex-direction: column;

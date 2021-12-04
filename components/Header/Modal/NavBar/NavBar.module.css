@@ -1,8 +1,8 @@
 #container {
-  column-gap: 10px;
   height: 36px;
   display: flex;
   overflow: auto;
+  column-gap: 10px;
   flex-direction: row;
 }
 

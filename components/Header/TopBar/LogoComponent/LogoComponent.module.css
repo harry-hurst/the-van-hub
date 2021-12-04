@@ -4,6 +4,7 @@
   flex-shrink: 0;
   cursor: pointer;
   position: relative;
+  margin: 0 clamp(0.3rem, 1.5vw, 0.8rem)
 }
 
 #tm {

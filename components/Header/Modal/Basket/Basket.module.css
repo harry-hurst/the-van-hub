@@ -1,5 +1,4 @@
 #basket {
-  row-gap: 10px;
   display: flex;
   height: 100%;
   overflow: auto;

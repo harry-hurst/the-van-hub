@@ -1,17 +1,21 @@
 #item {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  padding: 10px;
+  flex-shrink: 0;
   cursor: pointer;
   font-size: 14px;
   min-height: 30px;
-  padding: 10px;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--primary);
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
   background-color: white;
-  flex-shrink: 0;
-  gap: 10px;
+  justify-content: space-between;
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+}
+
+#item:last-child {
+  margin-bottom: 0;
 }
 
 #title {

@@ -1,5 +1,4 @@
 #container {
-  row-gap: 10px;
   height: 100%;
   display: flex;
   overflow: auto;

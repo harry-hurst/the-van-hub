@@ -20,6 +20,7 @@
 @supports not (gap: 1em) {
   #item {
     margin: 0 0.5rem;
+    background-color: red;
   }
 }
 

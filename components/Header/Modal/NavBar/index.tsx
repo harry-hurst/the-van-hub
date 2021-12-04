@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../../state/store";
 
 // styles
-import navComponentStyles from "./NavComponent.module.css";
+import navBarStyles from "./NavBar.module.css";
 
 //components
 import NavBarItem from "./NavBarItem";
@@ -63,7 +63,7 @@ export default function NavBar() {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          id={navComponentStyles.container}
+          id={navBarStyles.container}
         >
           {collections &&
             collections.map((collection: { id: string; title: string }) => (

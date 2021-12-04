@@ -6,7 +6,6 @@
   font-size: 12px;
   padding: 3px 6px;
   color: var(--dark);
-  margin-right: 10px;
   align-items: center;
   justify-content: center;
   background-color: white;
@@ -16,10 +15,6 @@
   border-radius: var(--border-radius);
   box-shadow: var(--nav-component-item);
   transition-property: border, box-shadow;
-}
-
-#item:last-child {
-  margin-right: 0;
 }
 
 .currentItem {

@@ -14,8 +14,9 @@ import Modal from "../Header/Modal";
 import Footer from "../Footer";
 
 // redux
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { clearActiveMenu } from "../../state/activeMenuSlice";
+import { RootState } from "../../state/store";
 
 // next components
 import Head from "next/head";
@@ -30,6 +31,7 @@ export default function Layout(props: { children: React.ReactNode }) {
   let searchBar = useRef<any>(null);
   let basket = useRef<any>(null);
 
+  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
   const dispatch = useDispatch();
 
   const handleClickAway = (event: { target: any }) => {
@@ -40,13 +42,14 @@ export default function Layout(props: { children: React.ReactNode }) {
         burger.current.contains(event.target) ||
         searchBar.current.contains(event.target) ||
         basket.current.contains(event.target)
-      )
+      ) &&
+      (activeMenu === "mobileMenu" ||
+        activeMenu === "basketMenu" ||
+        activeMenu === "searchList")
     ) {
       dispatch(clearActiveMenu());
     }
   };
-
-  
 
   useEffect(() => {
     document.addEventListener("click", handleClickAway, true);

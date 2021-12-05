@@ -4,12 +4,17 @@
   cursor: pointer;
   font-size: 18px;
   min-height: 30px;
+  color: var(--dark);
   padding: 30px 10px;
   align-items: center;
+  margin-bottom: 10px;
   justify-content: center;
   background-color: white;
-  color: var(--dark);
   font-family: Nunito Sans Light;
   border-radius: var(--border-radius);
   border: 1px solid var(--primary);
+}
+
+#item:last-child {
+  margin-bottom: 0;
 }

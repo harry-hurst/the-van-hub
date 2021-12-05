@@ -114,12 +114,14 @@ export default function SearchBar(props: { searchBar: any }) {
         {(contentsPresent || windowSize === "large") && (
           <>
             <motion.input
+
               variants={placeholder}
               initial="hidden"
               animate="visible"
               exit="hidden"
+
               type="text"
-              size={21}
+              size={1}
               placeholder="what are you looking for?"
               id="searchBarInput"
               autoComplete="off"

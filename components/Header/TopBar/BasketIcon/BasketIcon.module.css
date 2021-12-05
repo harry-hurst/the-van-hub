@@ -8,7 +8,6 @@
   align-items: center;
   justify-content: center;
   transition: all var(--time) ease;
-  margin-left: clamp(0.3rem, 1.5vw, 0.8rem);
 }
 
 #basketCount {

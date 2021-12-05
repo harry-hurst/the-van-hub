@@ -5,12 +5,14 @@
   padding: 0 1px;
   flex-shrink: 0;
   overflow: hidden;
-  margin-left: auto;
   flex-direction: row;
   background: white;
   border-radius: 15px;
   align-items: center;
+  justify-content: space-between;
   border: 2px solid var(--primary);
+  margin-left: clamp(0.3rem, 1.5vw, 0.8rem);
+  margin-right: clamp(0.3rem, 1.5vw, 0.8rem);
   transition: all calc(var(--time) / 2) ease;
 }
 
@@ -50,11 +52,11 @@
 /* input */
 .searchInput {
   z-index: 0;
-  flex-grow: 1;
+  width: 100%;
   height: 100%;
   border: none;
   outline: none;
-  flex-shrink: 1;
+  margin: 0 8px;
   background: none;
 }
 

@@ -15,13 +15,13 @@ export default function TopBar(props: {
 }) {
   return (
     <div id={topBarStyles.container}>
-      <div id={topBarStyles.topBar} className="container">
-        <BurgerIcon burger={props.burger} />
-        <LogoComponent />
-        <SearchBar searchBar={props.searchBar} />
-        <ShopIcon />
-        <BasketIcon basket={props.basket} />
-      </div>
+        <div id={topBarStyles.topBar} className="container">
+          <BurgerIcon burger={props.burger} />
+          <LogoComponent />
+          <SearchBar searchBar={props.searchBar} />
+          <ShopIcon />
+          <BasketIcon basket={props.basket} />
+        </div>
     </div>
   );
 }

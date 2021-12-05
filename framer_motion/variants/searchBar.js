@@ -17,7 +17,6 @@ export const closeButton = {
 
 export const placeholder = {
   hidden: {
-    opacity: 0,
     x: "-100%",
 
     transition: {
@@ -26,7 +25,6 @@ export const placeholder = {
   },
 
   visible: {
-    opacity: 1,
     x: 0,
 
     transition: {

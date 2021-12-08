@@ -7,6 +7,10 @@
   position: fixed;
 }
 
+
+
+
+
 /* modal */
 #modal {
   position: relative;
@@ -24,9 +28,16 @@
   box-shadow: none !important;
 }
 
+
+
+
 .modalBar {
-  height: 46px;
+  height: 43px;
 }
+
+
+
+
 
 /* modal inner */
 #modalCover {

@@ -7,32 +7,25 @@ import Link from "next/link";
 
 // modules
 import { motion, AnimatePresence } from "framer-motion";
-const container = {
-  hidden: { x: "100vw" },
-  visible: { x: 0 },
-  transitionEnd: {
-    display: "block",
-  },
-};
+import { container } from "../../../../framer_motion/variants/carousel/sprinter";
 
 export default function Sprinter(props: { slideIndex: number }) {
   return (
     <AnimatePresence>
       {props.slideIndex === 1 && (
         <motion.div
-          id={sprinterStyles.sprinterContainer}
+          id={sprinterStyles.container}
           initial="hidden"
           animate="visible"
           exit="hidden"
           variants={container}
-          transition={{ type: "spring", duration: 0.8 }}
         >
-          <div id={sprinterStyles.carouselContainer}>
+          <div id={sprinterStyles.inner}>
             <Image
               src="/images/sprinter.png"
               layout="fill"
-              quality={20}
-              priority={true}
+              objectFit="contain"
+              quality={50}
               alt=""
             />
             <Link href="/Select/12V%20100Ah%20Lithium%20LiFePO4%20Leisure%20Battery?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzczNDcyNTAzMjc=">
@@ -40,16 +33,17 @@ export default function Sprinter(props: { slideIndex: number }) {
                 className={sprinterStyles.imageContainer}
                 style={{
                   width: "7%",
-                  height: "10.5%",
-                  left: "52.85%",
+                  height: "10.8%",
+                  left: "52.3%",
                   top: "71.5%",
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.4 }}
               >
                 <Image
                   src="/images/battery_graphic.png"
                   layout="fill"
-                  quality={20}
+                  objectFit="contain"
+                  quality={50}
                   priority
                   alt=""
                 />
@@ -60,16 +54,17 @@ export default function Sprinter(props: { slideIndex: number }) {
                 className={sprinterStyles.imageContainer}
                 style={{
                   width: "7%",
-                  height: "10.5%",
-                  left: "61.9%",
+                  height: "10.8%",
+                  left: "60.35%",
                   top: "71.5%",
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.4 }}
               >
                 <Image
                   src="/images/battery_graphic.png"
                   layout="fill"
-                  quality={20}
+                  objectFit="contain"
+                  quality={50}
                   priority
                   alt=""
                 />
@@ -80,17 +75,18 @@ export default function Sprinter(props: { slideIndex: number }) {
               <motion.div
                 className={sprinterStyles.imageContainer}
                 style={{
-                  width: "8%",
+                  width: "7.6%",
                   height: "7.05%",
-                  left: "40.45%",
+                  left: "41.2%",
                   top: "28.4%",
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.4 }}
               >
                 <Image
                   src="/images/inverter_graphic.png"
                   layout="fill"
-                  quality={20}
+                  objectFit="contain"
+                  quality={50}
                   priority
                   alt=""
                 />
@@ -99,14 +95,15 @@ export default function Sprinter(props: { slideIndex: number }) {
                   style={{
                     width: "9%",
                     height: "44%",
-                    left: "0",
+                    left: "2%",
                     top: "50.9%",
                   }}
                 >
                   <Image
                     src="/images/plug.png"
                     layout="fill"
-                    quality={20}
+                    objectFit="contain"
+                    quality={50}
                     priority
                     alt=""
                   />
@@ -119,14 +116,15 @@ export default function Sprinter(props: { slideIndex: number }) {
               style={{
                 height: "31.7%",
                 width: "14.8%",
-                left: "16%",
+                left: "18.4%",
                 top: "72%",
               }}
             >
               <Image
                 src="/images/sprinter-wheel.png"
                 layout="fill"
-                quality={20}
+                objectFit="contain"
+                quality={50}
                 priority
                 alt=""
               />
@@ -136,14 +134,15 @@ export default function Sprinter(props: { slideIndex: number }) {
               style={{
                 height: "31.7%",
                 width: "14.8%",
-                left: "78.7%",
+                left: "75.2%",
                 top: "72%",
               }}
             >
               <Image
                 src="/images/sprinter-wheel-2.png"
                 layout="fill"
-                quality={20}
+                objectFit="contain"
+                quality={50}
                 priority
                 alt=""
               />
@@ -155,15 +154,16 @@ export default function Sprinter(props: { slideIndex: number }) {
                 style={{
                   width: "4.3%",
                   height: "11%",
-                  left: "58.5%",
+                  left: "57.5%",
                   top: "35.6%",
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.4 }}
               >
                 <Image
                   src="/images/b_to_b_charger.png"
                   layout="fill"
-                  quality={20}
+                  objectFit="contain"
+                  quality={50}
                   priority
                   alt=""
                 />

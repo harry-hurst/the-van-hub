@@ -17,8 +17,9 @@ export default function Carousel() {
   const [slideIndex, setSlideIndex] = useState(0);
 
   return (
-    <motion.div layout className="container">
-      <div id={carousalStyles.carousalContainer}>
+    <motion.div className="container">
+      <div id={carousalStyles.container}>
+
         <Transporter slideIndex={slideIndex} />
         <Sprinter slideIndex={slideIndex} />
 

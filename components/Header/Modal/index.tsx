@@ -13,12 +13,21 @@ import modalStyles from "./Modal.module.css";
 // components
 import Arrow from "./Arrow";
 import NavBar from "./NavBar";
+import ShopMenu from "./ShopMenu";
 import NavMenu from "./NavMenu";
 import MobileMenu from "./MobileMenu";
 import Basket from "./Basket";
 import SearchList from "./SearchList";
 
-export default function Modal(props: {modal: any}) {
+// next components
+import { useRouter } from "next/router";
+
+export default function Modal(props: { modal: any }) {
+  
+  // router used for getting data out of the url bar
+  const router = useRouter();
+  const { FirstPositionDomain } = router.query;
+
   // redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
   const dispatch = useDispatch();
@@ -70,7 +79,7 @@ export default function Modal(props: {modal: any}) {
             ${modalState === "expanded" && `${modalStyles.overflowHidden}`}
             `}
             >
-              <NavBar />
+              {FirstPositionDomain === "shop" ? <ShopMenu /> : <NavBar />}
               <MobileMenu />
               <Basket />
               <NavMenu />

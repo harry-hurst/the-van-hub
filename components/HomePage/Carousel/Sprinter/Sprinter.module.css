@@ -1,58 +1,60 @@
-#carouselContainer {
-    position: relative;
-    width: 100%;
-    padding-top: 46.7%;
+#container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+#inner {
+  width: 90%;
+  height: 95%;
+  position: relative;
+}
+
+/* image container */
+
+.imageContainer {
+  position: absolute;
+  cursor: pointer;
+  padding: 0;
+}
+
+.imageContainer div {
+  transition: all 0.2s;
+  display: block !important;
+}
+
+.wheelContainer {
+  position: absolute;
+  animation: rotation 2s infinite linear;
+}
+
+.wheelContainer div {
+  display: block !important;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
   }
-  
-  #sprinterContainer {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    height: 90%;
-    display: flex;
-    align-items: center;
+  to {
+    transform: rotate(359deg);
   }
-  
-  .imageContainer {
-    position: absolute;
-    cursor: pointer;
-    padding: 0;
-  }
-  
-  .imageContainer div {
-    transition: all 0.2s;
-    display: block !important;
-  }
-  
-  .wheelContainer {
-    position: absolute;
-    animation: rotation 2s infinite linear;
-  }
-  
-  .wheelContainer div {
-    display: block !important;
-  }
-  
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
-  }
-  
-  #plugContainer {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translate(-70%, -50%);
-    width: 11%;
-    display: none;
-  }
-  
-  .imageContainer:hover #plugContainer {
-    display: none !important;
-  }
-  
+}
+
+#plugContainer {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-70%, -50%);
+  width: 11%;
+  display: none;
+}
+
+.imageContainer:hover #plugContainer {
+  display: none !important;
+}

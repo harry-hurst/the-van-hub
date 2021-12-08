@@ -1,13 +1,13 @@
 // react
 import { useState, useEffect, useContext} from "react";
-import { ShopifyContext } from "../../../context/Shopify";
+import { ShopifyContext } from "../../../../context/Shopif";
 
 // styles
 import productPageStyles from "./ProductPage.module.css";
 
 // components
-import BreadCrumbs from "../../../components/Reusable/BreadCrumbs";
-import Spinner from "../../../components/Reusable/Spinner";
+import BreadCrumbs from "../../../../components/Reusable/BreadCrumbs";
+import Spinner from "../../../../components/Reusable/Spinner";
 
 // next components
 import Image from "next/image";

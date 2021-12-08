@@ -1,0 +1,19 @@
+#container {
+    height: 33px;
+    display: flex;
+    overflow: auto;
+    flex-direction: row;
+    /* background-color: pink; */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  #container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  #container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  

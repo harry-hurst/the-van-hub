@@ -1,21 +1,21 @@
 // styles
-import navBarStyles from "./NavBar.module.css";
+import shopMenuStyles from "./ShopMenu.module.css";
 
 // react
 import { useContext, useState, useEffect } from "react";
 import { ScreenSizeContext } from "../../../../context/ScreenSize";
+import { ShopifyContext } from "../../../../context/Shopify";
 
 // redux
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../state/store";
 
+//components
+import ShopMenuItem from "./ShopMenuItem";
+
 // modules
 import { motion, AnimatePresence } from "framer-motion";
 import { navBar } from "../../../../framer_motion/variants/navBar";
-import { navBarItem } from "../../../../framer_motion/variants/navBar";
-
-// Next components
-import Link from "next/link";
 
 export default function NavBar() {
   // redux
@@ -23,15 +23,24 @@ export default function NavBar() {
 
   // useContext
   const { windowSize } = useContext(ScreenSizeContext);
+  const { client } = useContext(ShopifyContext);
+
+  // useState
+  const [collections, setCollections] = useState<any | undefined>();
+
+  // useEffect
+  useEffect(() => {
+    // run once on first component mount
+    client.collection
+      .fetchAllWithProducts()
+      .then((retrievedCollections: any) => {
+        // save to state
+        setCollections(retrievedCollections);
+      });
+  }, []);
 
   // mechanical delay:
   const [present, setPresent] = useState<boolean>();
-
-  // import headings array:
-  const headingsModule = require("./headings");
-
-  console.log("headings:");
-  console.log(headingsModule);
 
   useEffect(() => {
     if (
@@ -54,13 +63,16 @@ export default function NavBar() {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          id={navBarStyles.container}
+          id={shopMenuStyles.container}
         >
-          {headingsModule.headings.map((item: any, index: number) => (
-            <Link href={item.link} key={index}>
-              <motion.span variants={navBarItem} id={navBarStyles.heading}>{item.heading}</motion.span>
-            </Link>
-          ))}
+          {collections &&
+            collections.map((collection: { id: string; title: string }) => (
+              <ShopMenuItem
+                key={collection.id}
+                title={collection.title}
+                id={collection.id}
+              />
+            ))}
         </motion.div>
       )}
     </AnimatePresence>

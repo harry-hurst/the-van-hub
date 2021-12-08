@@ -3,16 +3,17 @@
 }
 
 #mainContentWrapper {
-  padding-top: 65px; /* offset header */
+  margin-top: 65px; /* offset header */
   min-height: 100vh;
   position: relative;
   padding-bottom: 170px; /* offset footer */
   background-color: white;
   transition: padding-top var(--time) ease;
+  background-color: rgb(241, 218, 222);
 }
 
 @media screen and (min-width: 576px) {
   #mainContentWrapper {
-    padding-top: 115px; /* offset header */
+    margin-top: 115px; /* offset header */
   }
 }

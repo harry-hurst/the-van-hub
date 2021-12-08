@@ -6,30 +6,28 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { motion, AnimatePresence } from "framer-motion";
-const container = { hidden: { x: "-100vw" }, visible: { x: 0 } };
+import { container } from "../../../../framer_motion/variants/carousel/transporter";
 
 export default function Transporter(props: { slideIndex: number }) {
   return (
     <AnimatePresence>
       {props.slideIndex === 0 && (
         <motion.div
-          id={transporterStyles.transporterContainer}
+          id={transporterStyles.container}
           initial="hidden"
           animate="visible"
           exit="hidden"
           variants={container}
-          transition={{ type: "spring", duration: 0.8 }}
         >
-          <div id={transporterStyles.carouselContainer}>
+          <div id={transporterStyles.inner}>
             <Image
               src="/images/transporter.png"
               layout="fill"
               objectFit="contain"
-              quality={20}
-              priority
+              quality={50}
               alt=""
             />
-            
+
             <Link href="/Select/SmartSolar%20MPPT%20Solar%20Charge%20Controller?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY5NDgwNTcwMjI2MTU=">
               <motion.div
                 className={transporterStyles.imageContainer}
@@ -39,13 +37,13 @@ export default function Transporter(props: { slideIndex: number }) {
                   left: "66.5%",
                   top: "25%",
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.5 }}
               >
                 <Image
                   src="/images/ip22.png"
                   layout="fill"
                   objectFit="contain"
-                  quality={20}
+                  quality={50}
                   alt=""
                 />
               </motion.div>
@@ -58,17 +56,19 @@ export default function Transporter(props: { slideIndex: number }) {
                   width: "6%",
                   height: "10%",
                   left: "58.8%",
-                  top: "24.2%",
+                  top: "24.4%",
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.5 }}
               >
-                <Image
-                  src="/images/solar_controller_graphic.png"
-                  layout="fill"
-                  objectFit="contain"
-                  quality={20}
-                  alt=""
-                />
+                <div className={transporterStyles.imageInner}>
+                  <Image
+                    src="/images/solar_controller_graphic.png"
+                    layout="fill"
+                    objectFit="contain"
+                    quality={50}
+                    alt=""
+                  />
+                </div>
               </motion.div>
             </Link>
 
@@ -79,15 +79,15 @@ export default function Transporter(props: { slideIndex: number }) {
                   width: "6.85%",
                   height: "12%",
                   left: "59.7%",
-                  top: "63.6%",
+                  top: "63.4%",
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.5 }}
               >
                 <Image
                   src="/images/battery_graphic.png"
                   layout="fill"
                   objectFit="contain"
-                  quality={20}
+                  quality={50}
                   alt=""
                 />
               </motion.div>
@@ -102,13 +102,13 @@ export default function Transporter(props: { slideIndex: number }) {
                   left: "9.5%",
                   top: "-1.7%",
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.2 }}
               >
                 <Image
                   src="/images/solar_panel.png"
                   layout="fill"
                   objectFit="contain"
-                  quality={20}
+                  quality={50}
                   alt=""
                 />
               </motion.div>
@@ -127,7 +127,7 @@ export default function Transporter(props: { slideIndex: number }) {
                 src="/images/transporter-wheel.png"
                 layout="fill"
                 objectFit="contain"
-                quality={20}
+                quality={50}
                 alt=""
               />
             </div>
@@ -144,7 +144,7 @@ export default function Transporter(props: { slideIndex: number }) {
                 src="/images/transporter-wheel-2.png"
                 layout="fill"
                 objectFit="contain"
-                quality={20}
+                quality={50}
                 alt=""
               />
             </div>

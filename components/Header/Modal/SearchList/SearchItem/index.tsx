@@ -15,7 +15,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { searchListItem } from "../../../../../framer_motion/variants/searchList";
 
-export default function SeasearchListItem(props: {
+export default function SearchListItem(props: {
   title: string;
   productId: string;
   searchTerm: string;

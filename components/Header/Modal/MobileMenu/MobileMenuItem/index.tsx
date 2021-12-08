@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import { mobileMenuItem } from "../../../../../framer_motion/variants/mobileMenu";
 
 export default function MobileMenuItem(props: {
+  handle: string;
   title: string;
   collectionId: string;
 }) {
@@ -20,9 +21,9 @@ export default function MobileMenuItem(props: {
   const dispatch = useDispatch();
 
   return (
-    <Link href={`/${props.title}?collectionId=${props.collectionId}`}>
+    <Link href={`/shop/${props.handle}?collectionId=${props.collectionId}`}>
       <motion.div
-      variants={mobileMenuItem}
+        variants={mobileMenuItem}
         id={mobileMenuItemStyles.item}
         onClick={() => dispatch(clearActiveMenu())}
       >

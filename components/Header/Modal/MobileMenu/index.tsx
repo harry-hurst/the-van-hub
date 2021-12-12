@@ -51,10 +51,9 @@ export default function MobileMenu() {
         >
           {headingsModule.headings.map(
             (item: { heading: string; link: string }, index: number) => (
-              <Link href={item.link}>
+              <Link href={item.link} key={index}>
                 <div
                   id={mobileMenuStyles.item}
-                  key={index}
                   onClick={() => {
                     dispatch(clearActiveMenu());
                   }}

@@ -1,6 +1,6 @@
 // react
 import { useState, useEffect, useContext} from "react";
-import { ShopifyContext } from "../../../../context/Shopif";
+import { ShopifyContext } from "../../../../context/Shopify";
 
 // styles
 import productPageStyles from "./ProductPage.module.css";

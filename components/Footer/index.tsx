@@ -8,6 +8,7 @@ export default function Footer() {
   return (
     <motion.div layout id={footerStyles.container}>
       <div className="container">
+        
         <div id={footerStyles.sectionOne}>
           <div id={footerStyles.tvh}>TVH</div>
           <a
@@ -59,6 +60,7 @@ export default function Footer() {
           © copyright The Van Hub 2020 |&nbsp;
           <a id={footerStyles.cookiePolicy}>Cookie Policy</a>
         </div>
+
       </div>
     </motion.div>
   );

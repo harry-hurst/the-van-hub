@@ -2,7 +2,6 @@
   bottom: 0;
   width: 100%;
   position: absolute;
-  padding: calc(15px) 0 15px 0;
 }
 
 #sectionOne {
@@ -11,9 +10,9 @@
   display: flex;
   padding: 10px;
   font-size: 16px;
+  color: var(--grey);
   margin-bottom: 10px;
   flex-direction: row;
-  color: var(--icon-grey);
   background: var(--background-grey);
   border-radius: var(--border-radius-large);
 }
@@ -31,13 +30,13 @@
   border-radius: var(--border-radius);
 }
 
-.iconContainer {
+#sectionOne a {
   cursor: pointer;
   align-self: flex-start;
 }
 
-.iconContainer:hover {
-  color: var(--main-colour-light);
+#sectionOne a:hover {
+  color: var(--primary);
 }
 
 #sectionTwo {
@@ -56,5 +55,5 @@
 }
 
 #cookiePolicy:hover {
-  color: var(--main-colour-light);
+  color: var(--primary);
 }

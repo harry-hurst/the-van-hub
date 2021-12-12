@@ -4,14 +4,11 @@
 import Carousal from "../components/HomePage/Carousel";
 import Accordion from "../components/HomePage/Accordion";
 
-// modules
-import { AnimateSharedLayout } from "framer-motion";
-
 export default function HomePage() {
   return (
-    <AnimateSharedLayout>
+    <div>
       <Carousal />
       <Accordion />
-    </AnimateSharedLayout>
+    </div>
   );
 }

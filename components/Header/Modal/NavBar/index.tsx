@@ -28,10 +28,7 @@ export default function NavBar() {
   const [present, setPresent] = useState<boolean>();
 
   // import headings array:
-  const headingsModule = require("./headings");
-
-  console.log("headings:");
-  console.log(headingsModule);
+  const headingsModule = require("../../../../data/headings");
 
   useEffect(() => {
     if (
@@ -56,11 +53,13 @@ export default function NavBar() {
           exit="hidden"
           id={navBarStyles.container}
         >
+          
           {headingsModule.headings.map((item: any, index: number) => (
             <Link href={item.link} key={index}>
               <motion.span variants={navBarItem} id={navBarStyles.heading}>{item.heading}</motion.span>
             </Link>
           ))}
+
         </motion.div>
       )}
     </AnimatePresence>

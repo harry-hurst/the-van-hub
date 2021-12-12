@@ -1,17 +1,24 @@
-#mobileMenu {
+/* container */
+#container {
   height: 100%;
   display: flex;
-  overflow: auto;
   flex-direction: column;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-#mobileMenu::-webkit-scrollbar {
-  display: none;
+#item {
+  display: flex;
+  padding: 1rem;
+  cursor: pointer;
+  color: var(--grey);
+  justify-content: space-between;
+  border-radius: var(--border-radius);
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-#mobileMenu {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+#item > span {
+  color: black;
+}
+
+#item:hover {
+  color: var(--primary);
+  background-color: var(--background-grey);
 }

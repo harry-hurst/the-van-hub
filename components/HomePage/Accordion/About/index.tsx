@@ -2,7 +2,7 @@
 import aboutStyles from "./About.module.css";
 
 // react
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // components
 import ComparisonTable from "./ComparisonTable";
@@ -14,8 +14,21 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { hiddenContent } from "../../../../framer_motion/variants/accordion";
 
-export default function About() {
-  const [open, setOpen] = useState(false);
+export default function About(props: { accordian?: string | string[] }) {
+  const [open, setOpen] = useState<boolean>();
+
+  useEffect(() => {
+    if (props.accordian === "about") {
+      setOpen(true);
+
+      setTimeout(() => {
+        window.scrollTo(0, 175);
+      }, 1000);
+
+    } else {
+      setOpen(false);
+    }
+  }, [props.accordian]);
 
   const toggleOpen = () => {
     setOpen(!open);

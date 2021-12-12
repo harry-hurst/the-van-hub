@@ -1,18 +1,12 @@
 /* main container */
 #searchBarContainer {
-  height: 40px;
+  height: 31px;
   display: flex;
-  padding: 0 1px;
-  flex-shrink: 0;
+  margin: 0 1rem;
   overflow: hidden;
-  flex-direction: row;
   background: white;
   border-radius: 15px;
-  align-items: center;
   justify-content: space-between;
-  border: 2px solid var(--primary);
-  margin-left: clamp(0.3rem, 1.5vw, 0.8rem);
-  margin-right: clamp(0.3rem, 1.5vw, 0.8rem);
   transition: all calc(var(--time) / 2) ease;
 }
 
@@ -23,30 +17,35 @@
 
 /* Buttons */
 
-#searchButton {
+.buttonBorder {
   z-index: 1;
+  border: 2px solid white;
+}
+
+#searchButton {
+  width: 40px;
+  height: 100%;
+  display: flex;
   color: white;
+  cursor: pointer;
+  border-radius: 13px;
+  align-items: center;
+  justify-content: center;
   background: var(--primary);
   border: 1px solid var(--primary);
 }
 
 #closeButton {
-  z-index: 1;
-  color: var(--primary);
-  background: var(--light);
-  border: 1px solid var(--primary);
-}
-
-.centeredButton {
   width: 40px;
-  height: 34px;
+  height: 100%;
   display: flex;
-  flex-shrink: 0;
   cursor: pointer;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 13px;
+  color: var(--primary);
   justify-content: center;
-  transition: all calc(var(--time) / 2) ease;
+  background: var(--light);
+  border: 1px solid var(--primary);
 }
 
 /* input */
@@ -62,10 +61,6 @@
 
 @media only screen and (min-width: 576px) {
   #searchBarContainer {
-    height: 30px;
-  }
-
-  .centeredButton {
-    height: 24px;
+    height: 26px;
   }
 }

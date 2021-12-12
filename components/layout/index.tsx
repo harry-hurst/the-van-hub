@@ -37,15 +37,13 @@ export default function Layout(props: { children: React.ReactNode }) {
   const handleClickAway = (event: { target: any }) => {
     if (
       modal.current &&
+      activeMenu !== null &&
       !(
         modal.current.contains(event.target) ||
         burger.current.contains(event.target) ||
         searchBar.current.contains(event.target) ||
         basket.current.contains(event.target)
-      ) &&
-      (activeMenu === "mobileMenu" ||
-        activeMenu === "basketMenu" ||
-        activeMenu === "searchList")
+      )
     ) {
       dispatch(clearActiveMenu());
     }
@@ -59,7 +57,7 @@ export default function Layout(props: { children: React.ReactNode }) {
   });
 
   return (
-    <div id={layoutStyles.appContainer}>
+    <>
       <Head>
         <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />
@@ -71,24 +69,19 @@ export default function Layout(props: { children: React.ReactNode }) {
 
       <main>
         <ShopifyContext>
-
           <div id={layoutStyles.mainContentWrapper}>
-
             <ScreenSizeContext>
               <TopBar burger={burger} searchBar={searchBar} basket={basket} />
               <Modal modal={modal} />
             </ScreenSizeContext>
 
-            {/* content and footer are all within <AnimateSharedLayout> */}
             <AnimateSharedLayout>
               {props.children}
               <Footer />
             </AnimateSharedLayout>
-
           </div>
-
         </ShopifyContext>
       </main>
-    </div>
+    </>
   );
 }

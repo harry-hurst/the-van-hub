@@ -2,7 +2,7 @@
 import searchBarStyles from "./SearchBar.module.css";
 
 // react
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { ScreenSizeContext } from "../../../../context/ScreenSize";
 
 // modules
@@ -16,11 +16,13 @@ import { RootState } from "../../../../state/store";
 
 import { changeMenu, clearActiveMenu } from "../../../../state/activeMenuSlice";
 
+// open and close searchBar actions:
 import {
   openSearchBar,
   closeSearchBar,
 } from "../../../../state/searchBarSlice";
 
+// update and clear searchTerm actions:
 import {
   updateSearchTerm,
   clearSearchTerm,
@@ -32,57 +34,44 @@ export default function SearchBar(props: { searchBar: any }) {
     (state: RootState) => state.searchBar.status
   );
 
-  const searchTerm = useSelector((state: RootState) => state.searchTerm.term);
-  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
-  const dispatch = useDispatch();
+  // mechanical delay for contents of searchBar:
+  const [open, setOpen] = useState<boolean>(false);
+  const [contents, setContents] = useState<boolean>(false);
 
-  // useState
-  const [open, setOpen] = useState<boolean>();
-  const [contentsPresent, setContentsPresent] = useState<boolean>();
-
-  // useEffect
   useEffect(() => {
     if (searchBarStatus === true) {
       setTimeout(() => {
         setOpen(true);
-      }, 200);
+      }, 400);
+      setTimeout(() => {
+        setContents(true);
+      }, 600);
     } else {
       setTimeout(() => {
         setOpen(false);
-      }, 200);
+      }, 400);
+      setContents(false);
     }
   }, [searchBarStatus]);
 
-  useEffect(() => {
-    if (searchBarStatus === true) {
-      setTimeout(() => {
-        setContentsPresent(true);
-      }, 400);
-    } else {
-      setContentsPresent(false);
-    }
-  }, [searchBarStatus]);
+  const searchTerm = useSelector((state: RootState) => state.searchTerm.term);
+  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+  const dispatch = useDispatch();
 
   // useContext
   const { windowSize } = useContext(ScreenSizeContext);
 
   function setSearchTerm(e: any) {
+    // dispatch new search term:
     dispatch(updateSearchTerm(e.target.value));
     if (e.target.value !== "") {
-      dispatch(changeMenu("searchList"));
+      // set active menu to "searchList" if it not already "searchList":
+      if (activeMenu !== "searchList") {
+        dispatch(changeMenu("searchList"));
+      }
     } else {
+      // if term changed to "" clear active menu:
       dispatch(clearActiveMenu());
-    }
-  }
-
-  function handleClick() {
-    if (activeMenu === "searchList") {
-      dispatch(closeSearchBar());
-      dispatch(clearSearchTerm());
-      dispatch(clearActiveMenu());
-    } else {
-      dispatch(closeSearchBar());
-      dispatch(clearSearchTerm());
     }
   }
 
@@ -94,32 +83,31 @@ export default function SearchBar(props: { searchBar: any }) {
       ${(open || windowSize === "large") && `${searchBarStyles.searchOpen}`}
     `}
     >
-      <div
-        id={searchBarStyles.searchButton}
-        className={searchBarStyles.centeredButton}
-        onClick={() => dispatch(openSearchBar())}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          fill="currentColor"
-          viewBox="0 0 16 16"
+      <div className={searchBarStyles.buttonBorder}>
+        <div
+          id={searchBarStyles.searchButton}
+          onClick={() => dispatch(openSearchBar())}
         >
-          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </div>
       </div>
 
       <AnimatePresence>
-        {(contentsPresent || windowSize === "large") && (
+        {(contents || windowSize === "large") && (
           <>
             <motion.input
-
               variants={placeholder}
               initial="hidden"
               animate="visible"
               exit="hidden"
-
               type="text"
               size={1}
               placeholder="what are you looking for?"
@@ -133,28 +121,26 @@ export default function SearchBar(props: { searchBar: any }) {
               }}
             />
 
-            <motion.div
-              variants={closeButton}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              transition={{ duration: 0.2 }}
-              id={searchBarStyles.closeButton}
-              className={searchBarStyles.centeredButton}
-              onClick={() => {
-                handleClick();
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="27"
-                height="27"
-                fill="currentColor"
-                viewBox="0 0 16 16"
+            <div className={searchBarStyles.buttonBorder}>
+              <motion.div
+                variants={closeButton}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                id={searchBarStyles.closeButton}
+                onClick={() => dispatch(closeSearchBar())}
               >
-                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-              </svg>
-            </motion.div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </motion.div>
+            </div>
           </>
         )}
       </AnimatePresence>

@@ -1,3 +1,6 @@
+// styles
+import logoComponentStyles from "./LogoComponent.module.css";
+
 // react
 import { useState, useEffect, useContext } from "react";
 import { ScreenSizeContext } from "../../../../context/ScreenSize";
@@ -5,9 +8,6 @@ import { ScreenSizeContext } from "../../../../context/ScreenSize";
 // redux
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../state/store";
-
-// styles
-import logoComponentStyles from "./LogoComponent.module.css";
 
 // modules
 import { motion, AnimatePresence } from "framer-motion";
@@ -47,7 +47,7 @@ export default function LogoComponent() {
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             exit={{opacity: 0}}
-            
+            transition={{duration: 0.4}} 
             id={logoComponentStyles.logoContainer}
           >
             <span id={logoComponentStyles.tm}>TM</span>

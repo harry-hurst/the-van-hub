@@ -57,7 +57,7 @@ export default function Layout(props: { children: React.ReactNode }) {
   });
 
   return (
-    <>
+    <div id={layoutStyles.appContainer}>
       <Head>
         <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />
@@ -82,6 +82,6 @@ export default function Layout(props: { children: React.ReactNode }) {
           </div>
         </ShopifyContext>
       </main>
-    </>
+    </div>
   );
 }

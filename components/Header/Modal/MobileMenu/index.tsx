@@ -58,6 +58,7 @@ export default function MobileMenu() {
                     dispatch(clearActiveMenu());
                   }}
                 >
+                  
                   <span>{item.heading}</span>
 
                   <svg

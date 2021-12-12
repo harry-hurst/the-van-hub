@@ -26,9 +26,7 @@ export default function ContextComponent(props) {
   // ====================================================
 
   return (
-    <ScreenSizeContext.Provider
-      value={{windowSize}}
-    >
+    <ScreenSizeContext.Provider value={{ windowSize }}>
       {props.children}
     </ScreenSizeContext.Provider>
   );

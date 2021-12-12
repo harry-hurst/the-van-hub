@@ -14,10 +14,6 @@
   border-radius: var(--border-radius);
 }
 
-#item > span {
-  color: black;
-}
-
 #item:hover {
   color: var(--primary);
   background-color: var(--background-grey);

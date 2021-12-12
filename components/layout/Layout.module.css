@@ -1,3 +1,7 @@
+#appContainer {
+  overflow: hidden;
+}
+
 #mainContentWrapper {
   margin-top: 70px; /* offset header */
   min-height: 100vh;

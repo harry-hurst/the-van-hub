@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 export const ScreenSizeContext = React.createContext();
 
-export default function ContextComponent(props) {
+export default function ScreenSizeContextComponent(props) {
   // window width =======================================
   const [windowSize, setWindowSize] = useState();
 

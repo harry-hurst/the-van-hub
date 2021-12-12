@@ -1,5 +1,16 @@
 #container {
   margin: 1rem 0;
+  position: relative;
+}
+
+#mobileScrollReference {
+  top: -70px;
+  position: absolute;
+}
+
+#scrollReference {
+  top: -120px;
+  position: absolute;
 }
 
 #heading {

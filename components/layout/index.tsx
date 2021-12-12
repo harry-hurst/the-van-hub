@@ -69,17 +69,17 @@ export default function Layout(props: { children: React.ReactNode }) {
 
       <main>
         <ShopifyContext>
-          <div id={layoutStyles.mainContentWrapper}>
-            <ScreenSizeContext>
+          <ScreenSizeContext>
+            <div id={layoutStyles.mainContentWrapper}>
               <TopBar burger={burger} searchBar={searchBar} basket={basket} />
               <Modal modal={modal} />
-            </ScreenSizeContext>
 
-            <AnimateSharedLayout>
-              {props.children}
-              <Footer />
-            </AnimateSharedLayout>
-          </div>
+              <AnimateSharedLayout>
+                {props.children}
+                <Footer />
+              </AnimateSharedLayout>
+            </div>
+          </ScreenSizeContext>
         </ShopifyContext>
       </main>
     </div>

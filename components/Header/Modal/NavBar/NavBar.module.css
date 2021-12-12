@@ -3,16 +3,38 @@
   display: flex;
   font-size: 15px;
   flex-direction: row;
-  font-family: Nunito Regular;
   align-items: center;
+  justify-content: space-between;
 }
 
-#heading {
-  color: var(--grey);
+#item {
+  display: flex;
+  flex-shrink: 0;
   cursor: pointer;
-  transition: color var(--time) ease;
+  color: var(--grey);
+  align-items: center;
+  justify-content: space-between;
 }
 
-#heading:hover {
+#item:last-child {
+  margin-right: clamp(10px, 4.5vw, 50px);
+}
+
+#item > span {
+  font-size: 15px;
+  color: var(--font);
+  font-family: Nunito Light;
+}
+
+#item > svg {
+  margin-left: 5px;
+  transition: stroke-width calc(var(--time) / 2) ease;
+}
+
+#item:hover {
   color: var(--primary);
+}
+
+#item:hover svg {
+  stroke-width: 2px;
 }

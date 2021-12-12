@@ -2,7 +2,8 @@
 import aboutStyles from "./Charging.module.css";
 
 // react
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
+import { ScreenSizeContext } from "../../../../context/ScreenSize";
 
 // components
 import ChargingDiagram from "./ChargingDiagram";
@@ -15,12 +16,24 @@ import { hiddenContent } from "../../../../framer_motion/variants/accordion";
 export default function Charging(props: { accordian?: string | string[] }) {
   const [open, setOpen] = useState<boolean>();
 
+  let mobileReference = useRef<any>(null);
+  let reference = useRef<any>(null);
+
+  const { windowSize } = useContext(ScreenSizeContext);
+
   useEffect(() => {
     if (props.accordian === "charging") {
       setOpen(true);
-      setTimeout(() => {
-        window.scrollTo(0, 225);
-      }, 1000);
+
+      if (windowSize === "small") {
+        setTimeout(() => {
+          mobileReference.current.scrollIntoView();
+        }, 800);
+      } else if (windowSize === "medium") {
+        setTimeout(() => {
+          reference.current.scrollIntoView();
+        }, 800);
+      }
     } else {
       setOpen(false);
     }
@@ -32,6 +45,8 @@ export default function Charging(props: { accordian?: string | string[] }) {
 
   return (
     <motion.div layout id={aboutStyles.container}>
+      <i id={aboutStyles.mobileScrollReference} ref={mobileReference} />
+      <i id={aboutStyles.scrollReference} ref={reference} />
       <motion.h1 layout onClick={toggleOpen} id={aboutStyles.heading}>
         Charging Lithium Ion{" "}
         <svg

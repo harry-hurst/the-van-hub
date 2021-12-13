@@ -12,9 +12,7 @@ const client = Client.buildClient({
 });
 
 export default function ShopifyContextComponent(props) {
-
   const [basket, setBasket] = useState();
-
 
   useEffect(() => {
     createBasket();
@@ -66,7 +64,7 @@ export default function ShopifyContextComponent(props) {
     client.checkout
       .updateLineItems(checkoutId, lineItemsToUpdate)
       .then((checkout) => {
-        setBasket(checkout); 
+        setBasket(checkout);
       });
   }
 

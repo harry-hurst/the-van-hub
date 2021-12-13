@@ -1,8 +1,56 @@
 #container {
+  margin-bottom: 10px;
+  background-color: var(--success);
+}
+
+#inner {
+  height: 30px;
   display: flex;
   color: white;
-  padding: 0.5rem 0;
   font-size: 0.9rem;
+}
+
+/* message */
+
+#message {
+  flex-grow: 1;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
   justify-content: center;
-  background-color: var(--success);
+}
+
+#message span {
+  transition: transform var(--time) ease;
+}
+
+#message span svg {
+  margin-left: 5px;
+  transition: stroke-width var(--time) ease;
+}
+
+#message:hover span {
+  transform: translateX(20%);
+}
+
+#message:hover span svg {
+  stroke-width: 3px;
+}
+
+/* close */
+
+#close {
+  display: flex;
+  padding: 0 5px;
+  cursor: pointer;
+  margin-left: 5px;
+  align-items: center;
+}
+
+#close svg {
+  transition: stroke-width var(--time) ease;
+}
+
+#close:hover svg {
+  stroke-width: 3px;
 }

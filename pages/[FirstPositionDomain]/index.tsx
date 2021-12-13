@@ -8,7 +8,9 @@ export default function Shop() {
 
   return (
     <div className="container" style={{ border: "1px solid orange" }}>
+
       {FirstPositionDomain}
+      
     </div>
   );
 }

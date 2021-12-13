@@ -29,6 +29,7 @@ import {
 } from "../../../../state/searchTermSlice";
 
 export default function SearchBar(props: { searchBar: any }) {
+  
   // redux
   const searchBarStatus = useSelector(
     (state: RootState) => state.searchBar.status

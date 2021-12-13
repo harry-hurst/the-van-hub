@@ -6,6 +6,7 @@ import searchBarReducer from "./searchBarSlice";
 import searchTermReducer from "./searchTermSlice";
 import activeMenuReducer from "./activeMenuSlice";
 import collectionIdReducer from "./collectionIdSlice";
+import bannerStatusReducer from "./bannerStatusSlice";
 
 // export default store with a reducer function inside.
 const store = configureStore({
@@ -14,6 +15,7 @@ const store = configureStore({
     searchTerm: searchTermReducer,
     activeMenu: activeMenuReducer,
     collectionId: collectionIdReducer,
+    bannerStatus: bannerStatusReducer,
   },
 });
 

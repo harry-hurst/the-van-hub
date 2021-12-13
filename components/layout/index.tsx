@@ -11,6 +11,8 @@ import ScreenSizeContext from "../../context/ScreenSize";
 import TopBar from "../Header/TopBar";
 import Modal from "../Header/Modal";
 
+import Banner from "../OfferBanner";
+
 import Footer from "../Footer";
 
 // redux
@@ -70,9 +72,13 @@ export default function Layout(props: { children: React.ReactNode }) {
       <main>
         <ShopifyContext>
           <ScreenSizeContext>
+
+            <TopBar burger={burger} searchBar={searchBar} basket={basket} />
+            <Modal modal={modal} />
+
             <div id={layoutStyles.mainContentWrapper}>
-              <TopBar burger={burger} searchBar={searchBar} basket={basket} />
-              <Modal modal={modal} />
+
+              <Banner />
 
               <AnimateSharedLayout>
                 {props.children}

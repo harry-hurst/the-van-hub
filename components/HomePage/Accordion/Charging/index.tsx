@@ -48,7 +48,7 @@ export default function Charging(props: { accordian?: string | string[] }) {
       <i id={aboutStyles.mobileScrollReference} ref={mobileReference} />
       <i id={aboutStyles.scrollReference} ref={reference} />
       <motion.h4 layout onClick={toggleOpen} id={aboutStyles.heading}>
-        Charging Lithium Ion Batteries{" "}
+        CHARGING Lithium Ion Batteries{" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

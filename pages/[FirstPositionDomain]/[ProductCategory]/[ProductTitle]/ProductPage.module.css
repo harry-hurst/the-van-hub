@@ -7,9 +7,6 @@
     font-size: 2rem;
     padding: 0 0.5rem;
     font-family: Nunito Sans Semi Bold;
-    color: var(--main-colour-dark);
-    background: var(--main-colour-very-light);
-    border-radius: var(--border-radius);
   }
   
   #secondColumn {
@@ -36,7 +33,7 @@
   }
   
   .selectedThumbnail {
-    border: 1px solid var(--main-colour-light);
+    border: 1px solid var(--primary);
   }
   
   #mainImageContainer {

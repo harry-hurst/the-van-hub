@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect, useContext} from "react";
+import { useState, useEffect, useContext } from "react";
 import { ShopifyContext } from "../../../../context/Shopify";
 
 // styles
@@ -27,18 +27,18 @@ export default function ProductPage() {
   }, [productId]);
 
   async function fetchProduct() {
-    client.product
-      .fetch(productId)
-      .then((retrievedProduct) => {
-        // Do something with the product
-        setProduct(retrievedProduct);
-      });
+    client.product.fetch(productId).then((retrievedProduct) => {
+      // Do something with the product
+      setProduct(retrievedProduct);
+    });
   }
 
   return (
     <div className="container" id={productPageStyles.container}>
-      <BreadCrumbs productCategory={ProductCategory} productTitle={ProductTitle} />
-
+      <BreadCrumbs
+        productCategory={ProductCategory}
+        productTitle={ProductTitle}
+      />
       {product ? (
         <>
           <div className="row p-2">

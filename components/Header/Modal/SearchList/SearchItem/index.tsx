@@ -34,7 +34,7 @@ export default function SearchListItem(props: {
   }, [props.searchTerm]);
 
   return (
-    <Link href={`/search/${props.title}?productId=${props.productId}`}>
+    <Link href={`/search/shop/${props.title}?productId=${props.productId}`}>
       <motion.div
         variants={searchListItem}
         id={searchItemStyles.item}

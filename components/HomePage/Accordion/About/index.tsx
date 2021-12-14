@@ -50,7 +50,7 @@ export default function About(props: { accordian?: string | string[] }) {
     <motion.div layout id={aboutStyles.container}>
       <i id={aboutStyles.mobileScrollReference} ref={mobileReference} />
       <i id={aboutStyles.scrollReference} ref={reference} />
-      <motion.h1 layout onClick={toggleOpen} id={aboutStyles.heading}>
+      <motion.h4 layout onClick={toggleOpen} id={aboutStyles.heading}>
         Lead Acid vs Lithium Ion{" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ export default function About(props: { accordian?: string | string[] }) {
             d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
           />
         </svg>
-      </motion.h1>
+      </motion.h4>
 
       <AnimatePresence>
         {open && (

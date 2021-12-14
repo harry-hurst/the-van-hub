@@ -93,7 +93,7 @@ export default function About(props: { accordian?: string | string[] }) {
                 justifyContent: "center",
               }}
             >
-              <Link href="All%20Batteries?collectionId=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3NzExMzU2OTQzMQ==">
+              <Link href="/shop/All%20Batteries?collectionId=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3NzExMzU2OTQzMQ==">
                 <button
                   type="button"
                   id={aboutStyles.buyButton}

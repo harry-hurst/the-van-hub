@@ -47,7 +47,6 @@ export default function CategoryPage() {
   return (
     <div className="container px-2">
       <BreadCrumbs productCategory={ProductCategory} />
-      <span>Product Category</span>
       {collection ? (
         <div className="row gx-2 gy-2">
           {collection.products.map(

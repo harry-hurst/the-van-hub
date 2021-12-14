@@ -51,7 +51,7 @@ export default function About(props: { accordian?: string | string[] }) {
       <i id={aboutStyles.mobileScrollReference} ref={mobileReference} />
       <i id={aboutStyles.scrollReference} ref={reference} />
       <motion.h4 layout onClick={toggleOpen} id={aboutStyles.heading}>
-        Lead Acid vs Lithium Ion{" "}
+        Why Buy Lithium Ion{" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -99,7 +99,7 @@ export default function About(props: { accordian?: string | string[] }) {
                   id={aboutStyles.buyButton}
                   className="btn btn-warning btn-lg"
                 >
-                  See Batteries
+                  Buy Batteries
                 </button>
               </Link>
             </div>

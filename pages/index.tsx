@@ -8,8 +8,9 @@ import Accordion from "../components/HomePage/Accordion";
 export default function HomePage() {
   return (
     <div>
-<Tagline />
+      <Tagline>Quality electrical components for your conversion!</Tagline>
       <Carousal />
+      <Tagline>Upgrade your battery</Tagline>
       <Accordion />
     </div>
   );

@@ -1,6 +1,9 @@
 // styles
 import offerBannerStyles from "./OfferBanner.module.css";
 
+// react
+import React from "react";
+
 // next components
 import Link from "next/link";
 
@@ -23,9 +26,7 @@ export default function Banner() {
       <div id={offerBannerStyles.container}>
         <div id={offerBannerStyles.inner} className="container">
           <Link href="/shop/All%20Batteries?collectionId=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3NzExMzU2OTQzMQ==">
-            <div
-              id={offerBannerStyles.message}
-            >
+            <div id={offerBannerStyles.message}>
               <span>
                 -20% All Batteries!
                 <svg

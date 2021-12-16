@@ -85,6 +85,7 @@ export default function Layout(props: { children: React.ReactNode }) {
                 <Footer />
               </AnimateSharedLayout>
             </div>
+
           </ScreenSizeContext>
         </ShopifyContext>
       </main>

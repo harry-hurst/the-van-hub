@@ -48,6 +48,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  background-color: var(--light);
 }
 
 body {
@@ -90,6 +91,7 @@ a {
 
   --border-radius: 4px;
   --border-radius-large: 8px;
+  --border-colour: #bbbbbb;
   
   --time: 400ms;
 

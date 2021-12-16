@@ -1,20 +1,16 @@
 // styles
 import shopStyles from "./Shop.module.css";
 
+// components
+import Slider from "./Slider";
+
 export default function Shop() {
   return (
-    <div className="container">
-      <div id={shopStyles.container}>
-
-        <div>test</div>
-
-        <div>test</div>
-
-        <div>test</div>
-
-        <div>test</div>
-
+    <>
+      <div className="container">
+        <h3>Main Products</h3>
       </div>
-    </div>
+      <Slider />
+    </>
   );
 }

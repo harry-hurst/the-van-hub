@@ -12,6 +12,9 @@ import basketStyles from "./Basket.module.css";
 // components
 import BasketItem from "./BasketItem";
 
+// next components
+import Link from "next/link";
+
 // modules
 import { motion, AnimatePresence } from "framer-motion";
 import { basketVariants } from "../../../../framer_motion/variants/basket";
@@ -46,13 +49,10 @@ export default function Basket() {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          id={basketStyles.basket}
+          id={basketStyles.container}
         >
           {basket.lineItems && basket.lineItems.length !== 0 ? (
-            <>
-
-
-            
+            <div id={basketStyles.basket}>
               {basket.lineItems.map(
                 (product: {
                   title: string | undefined;
@@ -70,17 +70,25 @@ export default function Basket() {
                 )
               )}
 
-
-
               <BasketItem title="Total" price={basket.paymentDue} />
               <a href={basket.webUrl} style={{ marginLeft: "auto" }}>
                 <button type="button" className="btn btn-primary">
                   Checkout
                 </button>
               </a>
-            </>
+            </div>
           ) : (
-            <span id={basketStyles.emptyBasket}>Basket empty</span>
+            <div id={basketStyles.emptyBasketContainer}>
+              <div>
+                <span>No Items in Basket</span>
+              </div>
+
+              <Link href="/shop">
+                <button type="button" className="btn btn-warning btn-lg">
+                  shop our products
+                </button>
+              </Link>
+            </div>
           )}
         </motion.div>
       )}

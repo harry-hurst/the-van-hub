@@ -1,11 +1,11 @@
 // styles
-import taglineStyles from "./Tagline.module.css";
+import homePageHeadingStyles from "./HomePageHeading.module.css";
 
-export default function Tagline() {
+export default function HomePageHeading(props: { children: React.ReactNode }) {
   return (
-    <div className="container" id={taglineStyles.container}>
-      <h4 id={taglineStyles.tagline}>
-        Quality electrical components for your conversion!
+    <div className="container" id={homePageHeadingStyles.container}>
+      <h4 id={homePageHeadingStyles.tagline}>
+        {props.children}
       </h4>
     </div>
   );

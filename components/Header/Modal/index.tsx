@@ -80,10 +80,12 @@ export default function Modal(props: { modal: any }) {
             `}
             >
               {FirstPositionDomain === "shop" ? <ShopMenu /> : <NavBar />}
+
               <MobileMenu />
               <Basket />
               <NavMenu />
               <SearchList />
+
             </div>
           </div>
         </div>

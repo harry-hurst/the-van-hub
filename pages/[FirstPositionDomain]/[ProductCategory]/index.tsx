@@ -18,7 +18,7 @@ import { useRouter } from "next/router";
 export default function CategoryPage() {
   const { client } = useContext(ShopifyContext);
 
-  const [collection, setCollection] = useState<any | any>();
+  const [collection, setCollection] = useState<any>();
 
   // router used for getting data out of the url bar
   const router = useRouter();

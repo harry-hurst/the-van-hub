@@ -26,7 +26,7 @@ export default function NavBar() {
   const { client } = useContext(ShopifyContext);
 
   // useState
-  const [collections, setCollections] = useState<any | undefined>();
+  const [collections, setCollections] = useState<any[] | undefined>();
 
   // useEffect
   useEffect(() => {

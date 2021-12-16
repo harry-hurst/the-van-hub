@@ -1,6 +1,32 @@
-#basket {
-  display: flex;
+/* full height container used for framer motion animation */
+#container {
   height: 100%;
+}
+
+/* empty basket container */
+#emptyBasketContainer {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#emptyBasketContainer > div {
+  flex-grow: 1;
+  color: var(--grey);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+#emptyBasketContainer > button {
+}
+
+#basket {
+  height: 100%;
+  display: flex;
   overflow: auto;
   flex-direction: column;
 }
@@ -14,8 +40,4 @@
 #basket {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-}
-
-#emptyBasket {
-  color: var(--grey);
 }

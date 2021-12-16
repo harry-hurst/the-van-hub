@@ -5,7 +5,9 @@
 #mainContentWrapper {
   margin-top: 70px;
   position: relative;
-  padding-bottom: 140px;
+
+  /* padding-bottom: 180px; */
+  padding: 20px 0 180px 0;
   background-color: white;
   min-height: calc(100vh - 70px);
   transition: margin-top var(--time) ease;

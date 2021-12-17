@@ -1,59 +1,56 @@
-/* slider container */
-#sliderContainer {
-  overflow: auto;
+#container {
+  overflow-x: auto;
 }
 
-#sliderContainer::-webkit-scrollbar {
+/* Hide scrollbar for Chrome, Safari and Opera */
+#container::-webkit-scrollbar {
   display: none;
 }
 
-#sliderContainer {
+/* Hide scrollbar for IE, Edge and Firefox */
+#container {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
-/* slider */
+#inner {
+  min-width: 540px;
+  position: relative;
+}
+
 #slider {
-  padding: 0 12px;
-  display: inline-block;
-}
-
-@media (min-width: 576px) {
-  #slider {
-    margin: 0 calc((100vw - 540px) / 2);
-  }
-}
-
-@media (min-width: 768px) {
-  #slider {
-    margin: 0 calc((100vw - 720px) / 2);
-  }
-}
-
-@media (min-width: 992px) {
-  #slider {
-    margin: 0 calc((100vw - 960px) / 2);
-  }
-}
-
-@media (min-width: 1200px) {
-  #slider {
-    margin: 0 calc((100vw - 1140px) / 2);
-  }
-}
-
-@media (min-width: 1400px) {
-  #slider {
-    margin: 0 calc((100vw - 1320px) / 2);
-  }
-}
-
-/* sliderInner */
-#sliderInner {
-  display: flex;
-  align-items: stretch;
+  overflow: hidden;
   border-radius: var(--border-radius);
   border: 1px solid var(--border-colour);
 }
 
+#sliderInner {
+  width: 100%;
+  display: inline-grid;
+  transition: transform var(--time) ease;
+  grid-template-columns: 25% 25% 25% 25% 25% 25% 25% 25% 25%;
+}
 
+.pos1 {
+  transform: translateX(-100%);
+}
+
+.pos2 {
+  transform: translateX(-125%);
+}
+
+/* arrow buttons */
+.arrow {
+  padding: 10px;
+  position: absolute;
+  border-radius: 15px;
+  top: calc(50% - 25px);
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}

@@ -74,86 +74,35 @@ a {
 }
 
 :root {
-  // bootstrap colours
-  --primary: #1d9ae2; //#07689F;
-  --secondary: #c9d6df;
-  --success: #91d101; //#13d3bc;
-  --danger: #dd0922;
-  --warning: #fa6619;
+  // BOOTSTRAP COLOURS
 
+  // primary
+  --primary: #1d9ae2; //#07689F;
+  // secondary
+  --secondary: #c9d6df;
+  // success
+  --success: #91d101; //#13d3bc;
+  // danger
+  --danger: #dd0922;
+  // warning
+  --warning: #fa6619;
+  // info
+  //light
   --light: #effbff;
+  //dark
   --dark: #003049;
 
-  --grey: #889596;
-  --background-grey: rgb(247, 248, 251);
-
+  --time: 400ms;
   --font: #171717;
-
+  --grey: #889596;
   --border-radius: 4px;
   --border-radius-large: 8px;
-  --border-colour: #bbbbbb;
-  
-  --time: 400ms;
+  --border-colour: #e5e5e5;
+  --background-grey: #fafafa;
+  --footer-grey: rgb(247, 248, 251);
 
   // box-shadow (x y blur spread)
   --modal: 0 0 5px 1px rgb(65 129 185 / 50%);
   --nav-component-item: 0px 2px 2px rgb(207 211 231);
   --nav-component-item-hover: 5px 5px 5px rgb(159 164 194 / 60%);
 }
-
-// BOOTSTRAP //////////////////////////////////////////////////////////////////
-
-$min-contrast-ratio: 0;
-
-// set colours
-$primary: #1d9ae2;
-$secondary: #c9d6df;
-$success: #91d101; //#49670e;
-$danger: #dd0922;
-$warning: #fa6619;
-
-$info: #a2d5f2;
-
-$dark: #003049;
-
-$light: #effbff;
-
-// set border radius
-$border-radius: 4px;
-
-// badge
-$badge-font-size: 1em;
-
-// breadcrumbs
-$breadcrumb-font-size: 0.8rem;
-
-// buttons
-// $btn-padding-x: 0.65em;
-// $btn-padding-y: 0.35em;
-$btn-link-color: white;
-$btn-font-family: Nunito Sans Regular;
-$btn-font-size: 0.9rem;
-
-
-// button close
-$btn-close-padding-x: 1em;
-$btn-close-padding-y: 1em;
-
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/utilities";
-
-@import "../node_modules/bootstrap/scss/root";
-
-@import "../node_modules/bootstrap/scss/grid";
-@import "../node_modules/bootstrap/scss/containers";
-@import "../node_modules/bootstrap/scss/spinners";
-@import "../node_modules/bootstrap/scss/breadcrumb";
-@import "../node_modules/bootstrap/scss/buttons";
-@import "../node_modules/bootstrap/scss/close";
-@import "../node_modules/bootstrap/scss/badge";
-@import "../node_modules/bootstrap/scss/forms";
-
-// Utilities
-@import "../node_modules/bootstrap/scss/utilities/api";

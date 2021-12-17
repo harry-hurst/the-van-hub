@@ -3,7 +3,8 @@ import { useState, useEffect, useContext } from "react";
 import { ShopifyContext } from "../../../../context/Shopify";
 
 // redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { clearActiveMenu } from "../../../../state/activeMenuSlice";
 import { RootState } from "../../../../state/store";
 
 // styles
@@ -25,6 +26,7 @@ export default function Basket() {
 
   // redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+  const dispatch = useDispatch();
 
   // create time delay of 400ms for mounting component:
   const [present, setPresent] = useState<boolean>(false);
@@ -52,7 +54,7 @@ export default function Basket() {
           id={basketStyles.container}
         >
           {basket.lineItems && basket.lineItems.length !== 0 ? (
-            <div id={basketStyles.basket}>
+            <div id={basketStyles.basketContainer}>
               {basket.lineItems.map(
                 (product: {
                   title: string | undefined;
@@ -84,7 +86,13 @@ export default function Basket() {
               </div>
 
               <Link href="/shop">
-                <button type="button" className="btn btn-warning btn-lg">
+                <button
+                  type="button"
+                  className="btn btn-warning btn-lg"
+                  onClick={() => {
+                    dispatch(clearActiveMenu());
+                  }}
+                >
                   shop our products
                 </button>
               </Link>

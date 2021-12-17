@@ -36,7 +36,6 @@ export default function SliderItem(props: { productId: string }) {
             />
           </div>
         </Link>
-
         <Link
           href={`/shop/all-batteries/${product.handle}?productId=${product.id}`}
         >

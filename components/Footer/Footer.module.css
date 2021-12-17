@@ -14,7 +14,7 @@
   color: var(--grey);
   margin-bottom: 10px;
   flex-direction: row;
-  background: var(--background-grey);
+  background: var(--footer-grey);
   border-radius: var(--border-radius-large);
 }
 
@@ -47,7 +47,7 @@
   align-items: center;
   justify-content: center;
   font-family: Nunito Regular;
-  background-color: var(--background-grey);
+  background-color: var(--footer-grey);
   border-radius: var(--border-radius-large);
 }
 

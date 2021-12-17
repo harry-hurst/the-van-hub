@@ -24,7 +24,7 @@
 }
 
 .sliderArrow svg {
-  transition: stroke-width 0.1s;
+  transition: stroke-width calc(var(--time)/2);
 }
 
 #leftArrow {

@@ -1,20 +1,89 @@
 // styles
 import sliderStyles from "./Slider.module.css";
 
+// react
+import { useState } from "react";
+
 // components
 import SliderItem from "./SliderItem";
 
+// svg
+import RightArrow from "../../../assets/svg/RightArrow";
+import LeftArrow from "../../../assets/svg/LeftArrow";
+
+// modules
+import { motion, AnimatePresence } from "framer-motion";
+import { scaleUp } from "../../../framer_motion/variants/general/scaleUp";
+
 export default function Slider() {
+  const [position, setPosition] = useState<number>(0);
+
+  function arrowClick(arrow: string) {
+    if (arrow === "left" && position > 0) {
+      setPosition(position - 1);
+    } else if (arrow === "right" && position < 2) {
+      setPosition(position + 1);
+    }
+  }
+
   return (
-    <div id={sliderStyles.sliderContainer}>
-      <div id={sliderStyles.slider}>
-        <div id={sliderStyles.sliderInner}>
-          <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NjUxNzMwODYzNTk=" />
-          <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzczNDcyNTAzMjc=" />
-          <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzQ1MTYxNjA2NjM=" />
-          <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzcxNzI2NjI0MjM=" />
-          <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzcyODg3NTk0NDc=" />
+    <div id={sliderStyles.container}>
+      <div className="container" id={sliderStyles.inner}>
+        <div id={sliderStyles.slider}>
+          <div
+            id={sliderStyles.sliderInner}
+            className={`
+            ${position === 1 && `${sliderStyles.pos1}`}
+            ${position === 2 && `${sliderStyles.pos2}`}
+            `}
+          >
+            <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NjUxNzMwODYzNTk=" />
+            <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzczNDcyNTAzMjc=" />
+            <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzQ1MTYxNjA2NjM=" />
+            <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzcxNzI2NjI0MjM=" />
+            <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzcxNzI2NjI0MjM=" />
+            <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzQ1MTYxNjA2NjM=" />
+            <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzcxNzI2NjI0MjM=" />
+            <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzcxNzI2NjI0MjM=" />
+            <SliderItem productId="Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzcxNzI2NjI0MjM=" />
+          </div>
         </div>
+
+        <AnimatePresence>
+          {position !== 0 && (
+            <motion.button
+              variants={scaleUp}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              type="button"
+              className={`${sliderStyles.arrow} ${sliderStyles.left} btn btn-secondary`}
+              onClick={() => {
+                arrowClick("left");
+              }}
+            >
+              <LeftArrow width="20" height="20" strokeWidth="0px" />
+            </motion.button>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {position !== 2 && (
+            <motion.button
+              variants={scaleUp}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              type="button"
+              className={`${sliderStyles.arrow} ${sliderStyles.right} btn btn-secondary`}
+              onClick={() => {
+                arrowClick("right");
+              }}
+            >
+              <RightArrow width="20" height="20" strokeWidth="0px" />
+            </motion.button>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

@@ -23,11 +23,11 @@ export default function SliderItem(props: { productId: string }) {
 
   if (product) {
     return (
-      <div className={sliderItemStyles.sliderItem}>
+      <div id={sliderItemStyles.sliderItem}>
         <Link
           href={`/shop/all-batteries/${product.handle}?productId=${product.id}`}
         >
-          <div className={sliderItemStyles.imageContainer}>
+          <div id={sliderItemStyles.imageContainer}>
             <Image
               src={product.images[0].src}
               layout="fill"
@@ -39,8 +39,13 @@ export default function SliderItem(props: { productId: string }) {
         <Link
           href={`/shop/all-batteries/${product.handle}?productId=${product.id}`}
         >
-          <div className={sliderItemStyles.descriptionContainer}>
-            <div className={sliderItemStyles.title}>{product.title}</div>
+
+
+
+          <div id={sliderItemStyles.descriptionContainer}>
+
+            <span id={sliderItemStyles.title} style={{ marginBottom: "10px" }} >{product.title}</span>
+
             {product.availableForSale ? (
               <div
                 id={sliderItemStyles.inStock}
@@ -56,7 +61,11 @@ export default function SliderItem(props: { productId: string }) {
                 Out of Stock
               </div>
             )}
+
           </div>
+
+
+
         </Link>
       </div>
     );

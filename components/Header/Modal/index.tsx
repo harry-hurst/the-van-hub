@@ -12,8 +12,10 @@ import modalStyles from "./Modal.module.css";
 
 // components
 import Arrow from "./Arrow";
-import NavBar from "./NavBar";
-import ShopMenu from "./ShopMenu";
+
+import NavBar from "./Headers/NavBar";
+import ShopMenu from "./Headers/ShopMenu";
+
 import NavMenu from "./NavMenu";
 import MobileMenu from "./MobileMenu";
 import Basket from "./Basket";
@@ -22,8 +24,47 @@ import SearchList from "./SearchList";
 // next components
 import { useRouter } from "next/router";
 
+// modules
+import { AnimatePresence } from "framer-motion";
+
+function returnHeader(am: string | null, fpd: string | string[] | undefined, windowSize: string) {
+  switch (true) {
+
+    case fpd === "shop" && am === "navMenu" && windowSize !== "small":
+      return <ShopMenu key={"shopMenu"} />;
+
+      case fpd === "shop" && am === null && windowSize !== "small":
+        return <ShopMenu key={"shopMenu"} />;
+
+      case am === null && windowSize !== "small":
+        return <NavBar key={"navBar"} />;
+
+
+    default:
+      return null;
+  }
+}
+
+function returnContent(am: string | null) {
+  switch (am) {
+    case "navMenu":
+      return <NavMenu key={"navMenu"} />;
+
+    case "mobileMenu":
+      return <MobileMenu key={"mobileMenu"} />;
+
+    case "basketMenu":
+      return <Basket key={"basket"} />;
+
+    case "searchList":
+      return <SearchList key={"searchList"} />;
+
+    default:
+      return null;
+  }
+}
+
 export default function Modal(props: { modal: any }) {
-  
   // router used for getting data out of the url bar
   const router = useRouter();
   const { FirstPositionDomain } = router.query;
@@ -40,17 +81,27 @@ export default function Modal(props: { modal: any }) {
 
   // update modal state:
   useEffect(() => {
+    // if there is an active menu, expand:
     if (activeMenu !== null) {
       setModalState("expanded");
+
+      // if there is not an active menu an screen is not small:
     } else if (activeMenu === null && windowSize !== "small") {
       dispatch(clearCollectionId());
-      setTimeout(() => {
+
+      if (modalState === "expanded") {
+        setTimeout(() => {
+          setModalState("bar");
+        }, 400);
+      } else {
         setModalState("bar");
-      }, 500);
+      }
+
+      // if there is not an active menu and screen is small:
     } else {
       setTimeout(() => {
         setModalState("collapsed");
-      }, 500);
+      }, 400);
     }
   }, [activeMenu, windowSize]);
 
@@ -61,7 +112,6 @@ export default function Modal(props: { modal: any }) {
           ref={props.modal}
           id={modalStyles.modal}
           className={`
-          ${modalState === "bar" && `${modalStyles.modalBar}`}
             ${modalState === "expanded" && `${modalStyles.modalExpanded}`}
             ${modalState === "collapsed" && `${modalStyles.modalCollapsed}`}
           `}
@@ -70,22 +120,14 @@ export default function Modal(props: { modal: any }) {
           <div
             id={modalStyles.modalCover}
             className={`
-            ${modalState === "collapsed" && `${modalStyles.noPadding}`}
-            `}
+              ${modalState === "collapsed" && `${modalStyles.noPadding}`}
+             `}
           >
-            <div
-              id={modalStyles.modalInner}
-              className={`
-            ${modalState === "expanded" && `${modalStyles.overflowHidden}`}
-            `}
-            >
-              {FirstPositionDomain === "shop" ? <ShopMenu /> : <NavBar />}
-
-              <MobileMenu />
-              <Basket />
-              <NavMenu />
-              <SearchList />
-
+            <div id={modalStyles.modalInner}>
+              <AnimatePresence>
+                {returnHeader(activeMenu, FirstPositionDomain, windowSize)}
+                {returnContent(activeMenu)}
+              </AnimatePresence>
             </div>
           </div>
         </div>

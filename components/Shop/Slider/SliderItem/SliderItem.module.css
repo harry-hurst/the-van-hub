@@ -1,28 +1,20 @@
 /* sliderItem */
-.sliderItem {
+#sliderItem {
   padding: 10px;
-  display: inline-block;
-  flex-direction: column;
-  /* border-right: 1px solid var(--border-colour); */
+  border-right: 1px solid var(--border-colour);
 }
 
-.imageContainer {
+#imageContainer {
   padding-top: 100%;
   cursor: pointer;
   position: relative;
   margin-bottom: 10px;
 }
 
-.descriptionContainer {
-  cursor: pointer;
+#descriptionContainer {
   display: flex;
-  flex-grow: 1;
+  cursor: pointer;
   flex-direction: column;
-  overflow: hidden;
-}
-
-.title {
-  margin-bottom: 10px;
 }
 
 .stock {
@@ -50,7 +42,5 @@
 }
 
 #noStock {
-  font-family: Nunito Medium;
-  font-size: 0.85rem;
   color: var(--danger);
 }

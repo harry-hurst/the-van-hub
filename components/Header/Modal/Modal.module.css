@@ -9,6 +9,7 @@
 
 /* modal */
 #modal {
+  height: 43px;
   position: relative;
   box-shadow: var(--modal);
   transition: all var(--time) ease;
@@ -23,14 +24,6 @@
   height: 0 !important;
   box-shadow: none !important;
 }
-
-.modalBar {
-  height: 43px;
-}
-
-
-
-
 
 /* modal inner */
 #modalCover {
@@ -48,8 +41,6 @@
 
 #modalInner {
   height: 100%;
-}
-
-.overflowHidden {
-  overflow: hidden;
+  /* overflow: hidden; */
+  position: relative;
 }

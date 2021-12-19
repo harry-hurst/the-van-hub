@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 export const ScreenSizeContext = React.createContext();
 
 export default function ScreenSizeContextComponent(props) {
-  // window width =======================================
   const [windowSize, setWindowSize] = useState();
 
   // set the window size
@@ -12,8 +11,10 @@ export default function ScreenSizeContextComponent(props) {
         setWindowSize("small");
       } else if (576 <= window.innerWidth && window.innerWidth < 768) {
         setWindowSize("medium");
-      } else if (768 <= window.innerWidth) {
+      } else if (768 <= window.innerWidth && window.innerWidth < 1200) {
         setWindowSize("large");
+      } else if (1200 <= window.innerWidth) {
+        setWindowSize("extraLarge");
       }
     }
 
@@ -23,7 +24,6 @@ export default function ScreenSizeContextComponent(props) {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  // ====================================================
 
   return (
     <ScreenSizeContext.Provider value={{ windowSize }}>

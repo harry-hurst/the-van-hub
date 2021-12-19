@@ -3,9 +3,7 @@ export const searchList = {
     x: offset,
 
     transition: {
-      // when: "afterChildren",
-      duration: 0.2,
-      // staggerChildren: 0.1,
+      duration: 0.4,
     },
   }),
 
@@ -13,7 +11,6 @@ export const searchList = {
     x: 0,
 
     transition: {
-      // delay: 0.4,
       duration: 0.4,
       delayChildren: 0.1,
       staggerChildren: 0.1,

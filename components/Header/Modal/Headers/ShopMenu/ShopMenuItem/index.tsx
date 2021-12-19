@@ -6,16 +6,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 import {
   updateCollectionId,
-} from "../../../../../state/collectionIdSlice";
+} from "../../../../../../state/collectionIdSlice";
 import {
   changeMenu,
   clearActiveMenu,
-} from "../../../../../state/activeMenuSlice";
-import { RootState } from "../../../../../state/store";
+} from "../../../../../../state/activeMenuSlice";
+import { RootState } from "../../../../../../state/store";
 
 // modules
 import { motion } from "framer-motion";
-import { navBarItem } from "../../../../../framer_motion/variants/navBar";
+import { navBarItem } from "../../../../../../framer_motion/variants/navBar";
 
 
 export default function NavBarItem(props: { title: string; id: string }) {

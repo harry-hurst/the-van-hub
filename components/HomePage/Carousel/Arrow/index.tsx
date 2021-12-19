@@ -32,9 +32,9 @@ export default function Arrow(props: {
       onClick={props.type === "left" ? leftArrowHandler : rightArrowHandler}
     >
       {props.type === "left" ? (
-        <LeftArrow width="50" height="50" stroke="black" />
+        <LeftArrow width="50" height="50" stroke="black" strokeWidth="0px" />
       ) : (
-        <RightArrow width="50" height="50" stroke="black" />
+        <RightArrow width="50" height="50" stroke="black" strokeWidth="0px" />
       )}
     </div>
   );

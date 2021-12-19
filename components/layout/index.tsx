@@ -81,8 +81,10 @@ export default function Layout(props: { children: React.ReactNode }) {
               <Banner />
 
               <AnimateSharedLayout>
+
                 {props.children}
                 <Footer />
+
               </AnimateSharedLayout>
             </div>
 

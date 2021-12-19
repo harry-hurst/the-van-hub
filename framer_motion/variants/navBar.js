@@ -4,9 +4,7 @@ export const navBar = {
     opacity: 0,
 
     transition: {
-      // when: "afterChildren",
       duration: 0.4,
-      // staggerChildren: 0.1,
     },
   },
 
@@ -16,9 +14,6 @@ export const navBar = {
     transition: {
       
       duration: 0.4,
-
-      // delay: 0.4,
-      // delayChildren: 0.4,
       staggerChildren: 0.1,
     },
   },

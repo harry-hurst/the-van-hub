@@ -5,10 +5,6 @@ import { ShopifyContext } from "../../../../../context/Shopify";
 // styles
 import basketItemStyles from "./Basket.module.css";
 
-// modules
-import { motion } from "framer-motion";
-import { basketItem } from "../../../../../framer_motion/variants/basket";
-
 export default function BasketItem(props: {
   title?: string;
   quantity?: number;
@@ -18,7 +14,7 @@ export default function BasketItem(props: {
   const { updateBasket } = useContext(ShopifyContext);
 
   return (
-    <motion.div variants={basketItem} id={basketItemStyles.item}>
+    <div id={basketItemStyles.item}>
       <div id={basketItemStyles.title}>{props.title}</div>
 
       {props.quantity && (
@@ -48,6 +44,6 @@ export default function BasketItem(props: {
           }}
         ></button>
       )}
-    </motion.div>
+    </div>
   );
 }

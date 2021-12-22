@@ -27,50 +27,15 @@ import { useRouter } from "next/router";
 // modules
 import { AnimatePresence } from "framer-motion";
 
-function returnHeader(am: string | null, fpd: string | string[] | undefined, windowSize: string) {
-  switch (true) {
-
-    case fpd === "shop" && am === "navMenu" && windowSize !== "small":
-      return <ShopMenu key={"shopMenu"} />;
-
-      case fpd === "shop" && am === null && windowSize !== "small":
-        return <ShopMenu key={"shopMenu"} />;
-
-      case am === null && windowSize !== "small":
-        return <NavBar key={"navBar"} />;
-
-
-    default:
-      return null;
-  }
-}
-
-function returnContent(am: string | null) {
-  switch (am) {
-    case "navMenu":
-      return <NavMenu key={"navMenu"} />;
-
-    case "mobileMenu":
-      return <MobileMenu key={"mobileMenu"} />;
-
-    case "basketMenu":
-      return <Basket key={"basket"} />;
-
-    case "searchList":
-      return <SearchList key={"searchList"} />;
-
-    default:
-      return null;
-  }
-}
-
 export default function Modal(props: { modal: any }) {
   // router used for getting data out of the url bar
   const router = useRouter();
   const { FirstPositionDomain } = router.query;
 
   // redux
+
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+
   const dispatch = useDispatch();
 
   // global screen size variable.
@@ -105,6 +70,16 @@ export default function Modal(props: { modal: any }) {
     }
   }, [activeMenu, windowSize]);
 
+  const [activeMenuDelayed, setActiveMenuDelayed] = useState<
+    string | null | undefined
+  >();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setActiveMenuDelayed(activeMenu);
+    }, 400);
+  }, [activeMenu]);
+
   return (
     <div id={modalStyles.modalContainer}>
       <div className="container">
@@ -126,7 +101,7 @@ export default function Modal(props: { modal: any }) {
             <div id={modalStyles.modalInner}>
               <AnimatePresence>
                 {returnHeader(activeMenu, FirstPositionDomain, windowSize)}
-                {returnContent(activeMenu)}
+                {returnContent(activeMenu, activeMenuDelayed)}
               </AnimatePresence>
             </div>
           </div>
@@ -134,4 +109,43 @@ export default function Modal(props: { modal: any }) {
       </div>
     </div>
   );
+}
+
+function returnHeader(
+  am: string | null | undefined,
+  fpd: string | string[] | undefined,
+  windowSize: string
+) {
+  switch (true) {
+    case fpd === "shop" && am === "navMenu" && windowSize !== "small":
+      return <ShopMenu key={"shopMenu"} />;
+
+    case fpd === "shop" && am === null && windowSize !== "small":
+      return <ShopMenu key={"shopMenu"} />;
+
+    case am === null && windowSize !== "small":
+      return <NavBar key={"navBar"} />;
+
+    default:
+      return null;
+  }
+}
+
+function returnContent(am: string | null, amd: string | null | undefined) {
+  switch (amd) {
+    case "basketMenu":
+      return <Basket key={"basket"} />;
+
+    case "navMenu":
+      return <NavMenu key={"navMenu"} />;
+
+    case "mobileMenu":
+      return <MobileMenu key={"mobileMenu"} />;
+
+    case "searchList":
+      return <SearchList key={"searchList"} am={am} />;
+
+    default:
+      return null;
+  }
 }

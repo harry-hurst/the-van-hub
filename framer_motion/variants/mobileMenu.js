@@ -1,37 +1,28 @@
-export const mobileMenu = {
+export const container = {
+  hidden: {},
+
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+export const item = {
   hidden: {
     x: "-100%",
 
     transition: {
       duration: 0.4,
+      type: "tween",
     },
   },
-
-  visible: {
+  show: {
     x: 0,
 
     transition: {
       duration: 0.4,
+      type: "tween",
     },
   },
 };
-
-// export const mobileMenuItem = {
-//   hidden: {
-//     opacity: 0,
-//     scale: 0.8,
-
-//     transition: {
-//       duration: 0.2,
-//     },
-//   },
-
-//   visible: {
-//     opacity: 1,
-//     scale: 1,
-
-//     transition: {
-//       duration: 0.2,
-//     },
-//   },
-// };

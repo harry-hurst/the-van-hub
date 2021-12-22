@@ -1,9 +1,9 @@
 #container {
   width: 100%;
   height: 100%;
-  position: absolute;
   display: flex;
-  overflow: auto;
+  overflow-y: auto;
+  position: absolute;
   flex-direction: column;
 }
 
@@ -18,6 +18,4 @@
   scrollbar-width: none; /* Firefox */
 }
 
-#noResults {
-  color: var(--icon-grey);
-}
+

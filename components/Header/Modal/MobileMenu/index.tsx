@@ -10,7 +10,7 @@ import Link from "next/link";
 
 // modules
 import { motion } from "framer-motion";
-import { mobileMenu } from "../../../../framer_motion/variants/mobileMenu";
+import { container, item } from "../../../../framer_motion/variants/mobileMenu";
 
 export default function MobileMenu() {
   // redux
@@ -21,23 +21,25 @@ export default function MobileMenu() {
 
   return (
     <motion.div
-      variants={mobileMenu}
-      key="mobileMenu"
+      variants={container}
       initial="hidden"
-      animate="visible"
+      animate="show"
       exit="hidden"
       id={mobileMenuStyles.container}
     >
       {headingsModule.headings.map(
-        (item: { heading: string; link: string }, index: number) => (
-          <Link href={item.link} key={index}>
-            <div
+        (heading: { heading: string; link: string }, index: number) => (
+          <Link href={heading.link} key={index}>
+
+            <motion.div
+              variants={item}
               id={mobileMenuStyles.item}
               onClick={() => {
                 dispatch(clearActiveMenu());
               }}
             >
-              <span>{item.heading}</span>
+
+              <span>{heading.heading}</span>
 
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +56,7 @@ export default function MobileMenu() {
                   d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                 />
               </svg>
-            </div>
+            </motion.div>
           </Link>
         )
       )}

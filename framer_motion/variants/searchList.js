@@ -1,39 +1,23 @@
-export const searchList = {
+export const container = {
+  initial: { y: "100%" },
+
+  show: {
+    y: 0,
+
+    transition: {
+      delay: 0.4,
+      duration: 0.8,
+      delayChildren: 0.8,
+      type: "tween",
+    },
+  },
+
   hidden: (offset) => ({
     x: offset,
 
     transition: {
       duration: 0.4,
+      type: "tween",
     },
   }),
-
-  visible: {
-    x: 0,
-
-    transition: {
-      duration: 0.4,
-      delayChildren: 0.1,
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-export const searchListItem = {
-  hidden: {
-    opacity: 0,
-    scale: 0.8,
-
-    transition: {
-      duration: 0.2,
-    },
-  },
-
-  visible: {
-    opacity: 1,
-    scale: 1,
-
-    transition: {
-      duration: 0.2,
-    },
-  },
 };

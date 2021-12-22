@@ -29,7 +29,6 @@ import {
 } from "../../../../state/searchTermSlice";
 
 export default function SearchBar(props: { searchBar: any }) {
-  
   // redux
   const searchBarStatus = useSelector(
     (state: RootState) => state.searchBar.status
@@ -65,14 +64,10 @@ export default function SearchBar(props: { searchBar: any }) {
   function setSearchTerm(e: any) {
     // dispatch new search term:
     dispatch(updateSearchTerm(e.target.value));
-    if (e.target.value !== "") {
-      // set active menu to "searchList" if it not already "searchList":
-      if (activeMenu !== "searchList") {
-        dispatch(changeMenu("searchList"));
-      }
-    } else {
-      // if term changed to "" clear active menu:
-      dispatch(clearActiveMenu());
+
+    // set active menu to "searchList" if it not already "searchList":
+    if (activeMenu !== "searchList") {
+      dispatch(changeMenu("searchList"));
     }
   }
 

@@ -1,4 +1,4 @@
-#item {
+.item {
   padding: 10px;
   display: flex;
   flex-shrink: 0;
@@ -13,22 +13,11 @@
   border-radius: var(--border-radius);
 }
 
-#item:last-child {
+.item:last-child {
   margin-bottom: 0;
-}
-
-#title {
-  font-size: 16px;
 }
 
 .highlighted {
   font-family: Nunito Bold !important;
   background-color: var(--light);
-}
-
-#price {
-  font-family: Nunito Sans Regular;
-}
-#quantity {
-  flex-shrink: 0;
 }

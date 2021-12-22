@@ -12,6 +12,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { container, item } from "../../../../framer_motion/variants/mobileMenu";
 
+// svg
+import RightArrow from "../../../../assets/svg/RightArrow";
+
 export default function MobileMenu() {
   // redux
   const dispatch = useDispatch();
@@ -41,21 +44,11 @@ export default function MobileMenu() {
 
               <span>{heading.heading}</span>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                stroke="currentColor"
-                strokeWidth="1px"
-                className="bi bi-chevron-right"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                />
-              </svg>
+
+
+
+              <RightArrow />
+
             </motion.div>
           </Link>
         )

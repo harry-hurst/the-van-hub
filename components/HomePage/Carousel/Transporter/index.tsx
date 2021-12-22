@@ -20,6 +20,10 @@ export default function Transporter(props: { slideIndex: number }) {
           variants={container}
         >
           <div id={transporterStyles.inner}>
+
+
+
+
             <Image
               src="/images/transporter.png"
               layout="fill"
@@ -147,7 +151,11 @@ export default function Transporter(props: { slideIndex: number }) {
                 quality={50}
                 alt=""
               />
-            </div>
+            </div> 
+  
+
+
+
           </div>
         </motion.div>
       )}

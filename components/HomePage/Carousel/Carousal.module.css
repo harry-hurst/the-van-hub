@@ -1,7 +1,8 @@
 #container {
   margin: 1rem 0;
-  /* set aspect ratio of 2:1 */
-  padding-top: 40%;
+  /* set aspect ratio of 1:0.4 */
+  overflow: hidden;
+  padding-top: 43%;
   position: relative;
   background-color: var(--light);
   border-radius: var(--border-radius-large);

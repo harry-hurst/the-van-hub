@@ -1,8 +1,8 @@
-// react
-import React, { useState } from "react";
-
 // styles
 import carousalStyles from "./Carousal.module.css";
+
+// react
+import { useState } from "react";
 
 // components
 import Arrow from "./Arrow";
@@ -10,32 +10,27 @@ import Arrow from "./Arrow";
 import Transporter from "./Transporter";
 import Sprinter from "./Sprinter";
 
-// modules
-import { motion } from "framer-motion";
-
 export default function Carousel() {
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [slideIndex, setSlideIndex] = useState<number>(0);
 
   return (
-    <motion.div className="container">
+    <div className="container">
       <div id={carousalStyles.container}>
-
         <Transporter slideIndex={slideIndex} />
         <Sprinter slideIndex={slideIndex} />
 
         <Arrow
-          type={"left"}
+          type="left"
           slideIndex={slideIndex}
           setSlideIndex={setSlideIndex}
         />
 
         <Arrow
-          type={"right"}
+          type="right"
           slideIndex={slideIndex}
           setSlideIndex={setSlideIndex}
         />
-        
       </div>
-    </motion.div>
+    </div>
   );
 }

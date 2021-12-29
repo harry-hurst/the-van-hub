@@ -57,6 +57,15 @@
   outline: none;
   margin: 0 4px;
   background: none;
+  font-size: 15px;
+  color: var(--font);
+  font-family: Nunito Sans Light;
+}
+
+#searchBarContainer ::placeholder {
+  font-size: 15px;
+  color: var(--font);
+  font-family: Nunito Sans Regular;
 }
 
 @media only screen and (min-width: 576px) {

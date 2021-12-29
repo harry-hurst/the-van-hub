@@ -11,11 +11,13 @@ import Transporter from "./Transporter";
 import Sprinter from "./Sprinter";
 
 export default function Carousel() {
+
   const [slideIndex, setSlideIndex] = useState<number>(0);
 
   return (
     <div className="container">
-      <div id={carousalStyles.container}>
+      <div id={carousalStyles.container} >
+        
         <Transporter slideIndex={slideIndex} />
         <Sprinter slideIndex={slideIndex} />
 

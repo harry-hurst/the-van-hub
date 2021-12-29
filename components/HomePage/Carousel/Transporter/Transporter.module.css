@@ -1,52 +1,16 @@
 #container {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: absolute;
-}
-
-#inner {
+  top: 5%;
+  left: 6%;
   width: 90%;
   height: 90%;
-  margin: auto;
-  position: relative;
-  border-radius: 10vw;
-  background-color: white;
-  box-shadow: inset 0 0 60px 1px var(--primary);
+  position: absolute;
 }
-
 
 .imageContainer {
   position: absolute;
+  /* background-color: rgba(128, 0, 128, 0.431); */
+}
+
+.pointer {
   cursor: pointer;
-}
-
-.imageContainer div {
-  transition: all 0.2s;
-  display: block !important;
-}
-
-.imageInner {
-  position: relative;
-  height: 100%;
-}
-
-.wheelContainer {
-  position: absolute;
-  animation: rotation 2s infinite linear;
-}
-
-.wheelContainer div {
-  display: block !important;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
 }

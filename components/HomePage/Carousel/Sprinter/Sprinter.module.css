@@ -1,62 +1,30 @@
 #container {
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: absolute;
-}
-
-#inner {
+  left: 7%;
   width: 90%;
   height: 90%;
-  margin: auto;
-  position: relative;
-  border-radius: 10vw;
-  background-color: white;
-  box-shadow: inset 0 0 60px 1px var(--primary);
+  position: absolute;
+  /* border: 1px solid orange; */
 }
-
-/* image container */
 
 .imageContainer {
   position: absolute;
-  cursor: pointer;
-  padding: 0;
-}
-
-.imageContainer div {
-  transition: all 0.2s;
-  display: block !important;
-}
-
-.wheelContainer {
-  position: absolute;
-  animation: rotation 2s infinite linear;
-}
-
-.wheelContainer div {
-  display: block !important;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
+  /* background-color: rgba(128, 0, 128, 0.459); */
 }
 
 #plugContainer {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate(-70%, -50%);
+  top: 25%;
   width: 11%;
-  display: none;
+  left: -5.5%;
+  height: 50%;
+  position: absolute;
+  /* background-color: rgba(0, 128, 0, 0.479); */
 }
 
 .imageContainer:hover #plugContainer {
   display: none !important;
+}
+
+.pointer {
+  cursor: pointer;
 }

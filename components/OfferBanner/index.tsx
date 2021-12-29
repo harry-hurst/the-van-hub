@@ -32,7 +32,7 @@ export default function Banner() {
           <Link href="/shop/All%20Batteries?collectionId=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3NzExMzU2OTQzMQ==">
             <div id={offerBannerStyles.message}>
               <span>
-                -20% All Batteries!
+                -15% All Batteries!
                 <RightArrow />
               </span>
             </div>

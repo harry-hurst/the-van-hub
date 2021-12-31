@@ -10,9 +10,14 @@ import Link from "next/link";
 
 // modules
 import { motion } from "framer-motion";
+import {
+  animate,
+  transition,
+  transition2,
+} from "../../../../framer_motion/wheels/transition";
 
-export default function Sprinter(props: { slideIndex: number }) {
-  const [displacement, setDisplacement] = useState<string>("100vw");
+export default function Sprinter(props) {
+  const [displacement, setDisplacement] = useState("100vw");
 
   useEffect(() => {
     if (props.slideIndex === 0) {
@@ -135,25 +140,8 @@ export default function Sprinter(props: { slideIndex: number }) {
       </Link>
 
       <motion.div
-        animate={{
-          y: "-10%",
-          rotate: 360,
-        }}
-        transition={{
-          delay: 0.8,
-          duration: 0.5,
-          type: "spring",
-          damping: 8,
-
-          repeat: Infinity,
-          repeatDelay: 1,
-          repeatType: "mirror",
-          rotate: {
-            duration: 2,
-            ease: "linear",
-            repeat: Infinity,
-          },
-        }}
+        animate={animate}
+        transition={transition}
         className={sprinterStyles.imageContainer}
         style={{
           height: "34.5%",
@@ -173,24 +161,8 @@ export default function Sprinter(props: { slideIndex: number }) {
       </motion.div>
 
       <motion.div
-        animate={{
-          y: "-10%",
-          rotate: 360,
-        }}
-        transition={{
-          duration: 0.5,
-          type: "spring",
-          damping: 8,
-
-          repeat: Infinity,
-          repeatDelay: 1,
-          repeatType: "mirror",
-          rotate: {
-            duration: 2,
-            ease: "linear",
-            repeat: Infinity,
-          },
-        }}
+        animate={animate}
+        transition={transition2}
         className={sprinterStyles.imageContainer}
         style={{
           height: "34.5%",

@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "state/reducers/index.js", "state/reducers/searchBarReducer.js", "state/action-creators/index.js", "pages/state/action-creators/index.js", "pages/store.js", "components/Header/Modal/NavBar/headings.js", "pages/shop"  ],
+, "state/reducers/index.js", "state/reducers/searchBarReducer.js", "state/action-creators/index.js", "pages/state/action-creators/index.js", "pages/store.js", "components/Header/Modal/Headers/NavBar/headings.js", "pages/shop"  ],
   "exclude": [
     "node_modules"
   ]

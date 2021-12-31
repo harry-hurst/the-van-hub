@@ -9,9 +9,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
+import {
+  animate,
+  transition,
+  transition2,
+} from "../../../../framer_motion/wheels/transition";
 
-export default function Transporter(props: { slideIndex: number }) {
-  const [displacement, setDisplacement] = useState<string>("0");
+export default function Transporter(props) {
+  const [displacement, setDisplacement] = useState("0");
 
   useEffect(() => {
     if (props.slideIndex === 0) {
@@ -120,31 +125,17 @@ export default function Transporter(props: { slideIndex: number }) {
       </Link>
 
       <motion.div
-        animate={{
-          y: "-10%",
-          rotate: 360,
-        }}
-        transition={{
-          delay: 0.8,
-          duration: 0.5,
-          type: "spring",
-          damping: 8,
 
-          repeat: Infinity,
-          repeatDelay: 1,
-          repeatType: "mirror",
-          rotate: {
-            duration: 2,
-            ease: "linear",
-            repeat: Infinity,
-          },
-        }}
+        animate={animate}
+
+        transition={transition}
+
         className={transporterStyles.imageContainer}
         style={{
           width: "14.5%",
           height: "34.3%",
           left: "12.8%",
-          top: "75%",
+          top: "77%",
         }}
       >
         <Image
@@ -158,29 +149,15 @@ export default function Transporter(props: { slideIndex: number }) {
 
       <motion.div
         className={transporterStyles.imageContainer}
-        animate={{
-          y: "-10%",
-          rotate: 360,
-        }}
-        transition={{
-          duration: 0.5,
-          type: "spring",
-          damping: 8,
+        animate={animate}
 
-          repeat: Infinity,
-          repeatDelay: 1,
-          repeatType: "mirror",
-          rotate: {
-            duration: 2,
-            ease: "linear",
-            repeat: Infinity,
-          },
-        }}
+        transition={transition2}
+
         style={{
           width: "14.5%",
           height: "34.3%",
           left: "75.5%",
-          top: "75%",
+          top: "77%",
         }}
       >
         <Image

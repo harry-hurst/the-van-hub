@@ -2,8 +2,8 @@
 import arrowStyles from "./Arrow.module.css";
 
 // svg
-import LeftArrow from "../../../../assets/svg/LeftArrow";
-import RightArrow from "../../../../assets/svg/RightArrow";
+import LeftArrow from "../../../../../../assets/svg/LeftArrow";
+import RightArrow from "../../../../../../assets/svg/RightArrow";
 
 export default function Arrow(props: {
   slideIndex: number;

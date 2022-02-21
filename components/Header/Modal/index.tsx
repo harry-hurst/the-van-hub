@@ -51,7 +51,7 @@ export default function Modal(props: { modal: any }) {
       setModalState("expanded");
 
       // if there is not an active menu an screen is not small:
-    } else if (activeMenu === null && windowSize !== "small") {
+    } else if (activeMenu === null && windowSize !== "tiny") {
       dispatch(clearCollectionId());
 
       if (modalState === "expanded") {
@@ -81,30 +81,27 @@ export default function Modal(props: { modal: any }) {
   }, [activeMenu]);
 
   return (
-    <div id={modalStyles.modalContainer}>
-      <div className="container">
-        <div
-          ref={props.modal}
-          id={modalStyles.modal}
-          className={`
+    <div
+      ref={props.modal}
+      id={modalStyles.modal}
+      className={`
             ${modalState === "expanded" && `${modalStyles.modalExpanded}`}
             ${modalState === "collapsed" && `${modalStyles.modalCollapsed}`}
           `}
-        >
-          <Arrow />
-          <div
-            id={modalStyles.modalCover}
-            className={`
+    >
+      <Arrow />
+
+      <div
+        id={modalStyles.modalCover}
+        className={`
               ${modalState === "collapsed" && `${modalStyles.noPadding}`}
              `}
-          >
-            <div id={modalStyles.modalInner}>
-              <AnimatePresence>
-                {returnHeader(activeMenu, FirstPositionDomain, windowSize)}
-                {returnContent(activeMenu, activeMenuDelayed)}
-              </AnimatePresence>
-            </div>
-          </div>
+      >
+        <div id={modalStyles.modalInner}>
+          <AnimatePresence>
+            {returnHeader(activeMenu, FirstPositionDomain, windowSize)}
+            {returnContent(activeMenu, activeMenuDelayed)}
+          </AnimatePresence>
         </div>
       </div>
     </div>
@@ -117,13 +114,13 @@ function returnHeader(
   windowSize: string
 ) {
   switch (true) {
-    case fpd === "shop" && am === "navMenu" && windowSize !== "small":
+    case fpd === "shop" && am === "navMenu" && windowSize !== "tiny":
       return <ShopMenu key={"shopMenu"} />;
 
-    case fpd === "shop" && am === null && windowSize !== "small":
+    case fpd === "shop" && am === null && windowSize !== "tiny":
       return <ShopMenu key={"shopMenu"} />;
 
-    case am === null && windowSize !== "small":
+    case am === null && windowSize !== "tiny":
       return <NavBar key={"navBar"} />;
 
     default:

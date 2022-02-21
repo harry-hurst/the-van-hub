@@ -1,5 +1,15 @@
+#container {
+  margin-left: auto;
+}
+
+/* when open */
+.searchOpen {
+  flex-basis: 50%;
+  margin-left: 0 !important;
+}
+
 /* main container */
-#searchBarContainer {
+#searchBar {
   padding: 2px;
   height: 31px;
   display: flex;
@@ -9,13 +19,7 @@
   background: white;
   border-radius: 15px;
   justify-content: space-between;
-  margin: 0 clamp(0.3rem, 1.5vw, 0.8rem);
   transition: all calc(var(--time) / 2) ease;
-}
-
-/* when open */
-.searchOpen {
-  flex-grow: 1;
 }
 
 /* Buttons */
@@ -62,20 +66,20 @@
   font-family: Nunito Sans Light;
 }
 
-#searchBarContainer ::placeholder {
+#searchBar ::placeholder {
   font-size: 15px;
   color: var(--font);
-  font-family: Nunito Sans Regular;
+  font-family: Nunito Sans Light;
 }
 
 @media only screen and (min-width: 576px) {
-  #searchBarContainer {
+  #searchBar {
     height: 26px;
   }
 }
 
-@media only screen and (min-width: 992px) {
-  #searchBarContainer {
-    margin: 0 auto;
+@media only screen and (max-width: 576px) {
+  #container {
+    /* margin-left: auto; */
   }
 }

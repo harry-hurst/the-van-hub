@@ -1,14 +1,13 @@
 // styles
-import sprinterStyles from "./Sprinter.module.css";
+import transporterStyles from "./Transporter.module.css";
 
 // react
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // next components
 import Image from "next/image";
 import Link from "next/link";
 
-// modules
 import { motion } from "framer-motion";
 import {
   // van structure
@@ -27,9 +26,9 @@ import {
   transitionItem2,
   transitionItem3,
   transitionItem4,
-} from "../../../../framer_motion/wheels/transition";
+} from "../../../../../../framer_motion/wheels/transition";
 
-export default function Sprinter(props) {
+export default function Transporter(props) {
   const [displacement, setDisplacement] = useState("100vw");
 
   useEffect(() => {
@@ -39,12 +38,12 @@ export default function Sprinter(props) {
       setDisplacement("0");
     }
   }, [props.slideIndex]);
+
   return (
     <motion.div
-      initial={false}
       animate={{ x: displacement }}
       transition={{ duration: 0.4, type: "spring", damping: 15 }}
-      id={sprinterStyles.container}
+      id={transporterStyles.container}
     >
       <motion.div
         animate={animateVan}
@@ -55,90 +54,74 @@ export default function Sprinter(props) {
         }}
       >
         <Image
-          src="/images/sprinter.png"
+          src="/images/transporter.png"
           layout="fill"
           objectFit="contain"
           quality={50}
           alt=""
         />
 
-        <Link href="/Select/SYGG-1500%201500W%20Pure%20Sine%20Wave%20Inverter?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzczMDUwNzc5MTE=">
+        <Link href="/shop/200W%20Monocrystalline%20Rigid%20Framed%20Solar%20Panel?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzcwOTM0ODU0MzcwNzk=">
           <motion.div
             animate={animateItem}
             transition={transitionItem1}
-            className={`${sprinterStyles.imageContainer} ${sprinterStyles.pointer}`}
+            className={`${transporterStyles.imageContainer} ${transporterStyles.pointer}`}
             style={{
-              width: "8.6%",
-              height: "8%",
-              left: "40.2%",
-              top: "33.35%",
+              width: "54%",
+              height: "3%",
+              left: "9.5%",
+              top: "6.3%",
             }}
-            whileHover={{ scale: 1.4 }}
           >
             <Image
-              src="/images/inverter_graphic.png"
+              src="/images/solar_panel.png"
               layout="fill"
               objectFit="contain"
               quality={50}
-              priority
               alt=""
             />
-            <div id={sprinterStyles.plugContainer}>
-              <Image
-                src="/images/plug.png"
-                layout="fill"
-                objectFit="contain"
-                quality={50}
-                priority
-                alt=""
-              />
-            </div>
           </motion.div>
         </Link>
 
-        <Link href="/Select/Pro%20Batt%20Ultra%20Battery%20to%20Battery%20Charger?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY5NTQ3MTkyMTU3Njc=">
+        <Link href="/Select/SmartSolar%20MPPT%20Solar%20Charge%20Controller?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY5NDgwNTcwMjI2MTU=">
           <motion.div
             animate={animateItem}
             transition={transitionItem2}
-            className={`${sprinterStyles.imageContainer} ${sprinterStyles.pointer}`}
+            className={`${transporterStyles.imageContainer} ${transporterStyles.pointer}`}
             style={{
-              width: "4.3%",
-              height: "11%",
-              left: "58.5%",
-              top: "42.2%",
+              width: "5%",
+              height: "15%",
+              left: "66.5%",
+              top: "29.5%",
             }}
-            whileHover={{ scale: 1.4 }}
           >
             <Image
-              src="/images/b_to_b_charger.png"
+              src="/images/ip22.png"
               layout="fill"
               objectFit="contain"
               quality={50}
-              priority
               alt=""
             />
           </motion.div>
         </Link>
 
-        <Link href="/Select/12V%20100Ah%20Lithium%20LiFePO4%20Leisure%20Battery?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY4NzczNDcyNTAzMjc=">
+        <Link href="/Select/SmartSolar%20MPPT%20Solar%20Charge%20Controller?productId=Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY5NDgwNTcwMjI2MTU=">
           <motion.div
             animate={animateItem}
             transition={transitionItem3}
-            className={`${sprinterStyles.imageContainer} ${sprinterStyles.pointer}`}
+            className={`${transporterStyles.imageContainer} ${transporterStyles.pointer}`}
             style={{
-              width: "7.3%",
-              height: "11.5%",
-              left: "52.7%",
-              top: "80.3%",
+              width: "6%",
+              height: "10%",
+              left: "58.8%",
+              top: "32.5%",
             }}
-            whileHover={{ scale: 1.4 }}
           >
             <Image
-              src="/images/battery_graphic.png"
+              src="/images/solar_controller_graphic.png"
               layout="fill"
               objectFit="contain"
               quality={50}
-              priority
               alt=""
             />
           </motion.div>
@@ -148,21 +131,19 @@ export default function Sprinter(props) {
           <motion.div
             animate={animateItem}
             transition={transitionItem4}
-            className={`${sprinterStyles.imageContainer} ${sprinterStyles.pointer}`}
+            className={`${transporterStyles.imageContainer} ${transporterStyles.pointer}`}
             style={{
-              width: "7.3%",
-              height: "11.5%",
-              left: "61.7%",
-              top: "80.3%",
+              width: "6.85%",
+              height: "12%",
+              left: "59.7%",
+              top: "71%",
             }}
-            whileHover={{ scale: 1.4 }}
           >
             <Image
               src="/images/battery_graphic.png"
               layout="fill"
               objectFit="contain"
               quality={50}
-              priority
               alt=""
             />
           </motion.div>
@@ -171,20 +152,19 @@ export default function Sprinter(props) {
         <motion.div
           animate={animateWheelL}
           transition={transitionWheelL}
-          className={sprinterStyles.imageContainer}
+          className={transporterStyles.imageContainer}
           style={{
-            height: "34.5%",
-            width: "14.8%",
-            left: "15.9%",
-            top: "82%",
+            width: "14.5%",
+            height: "34.3%",
+            left: "12.8%",
+            top: "76%",
           }}
         >
           <Image
-            src="/images/sprinter-wheel.png"
+            src="/images/transporter-wheel.png"
             layout="fill"
             objectFit="contain"
             quality={50}
-            priority
             alt=""
           />
         </motion.div>
@@ -192,20 +172,18 @@ export default function Sprinter(props) {
         <motion.div
           animate={animateWheelR}
           transition={transitionWheelR}
-          className={sprinterStyles.imageContainer}
+          className={transporterStyles.imageContainer}
           style={{
-            height: "34.5%",
-            width: "14.8%",
-            left: "78.6%",
-            top: "82%",
+            width: "14.5%",
+            height: "34.3%",
+            left: "75.5%",
+            top: "76%",
           }}
         >
           <Image
-            src="/images/sprinter-wheel-2.png"
+            src="/images/transporter-wheel-2.png"
             layout="fill"
-            objectFit="contain"
             quality={50}
-            priority
             alt=""
           />
         </motion.div>

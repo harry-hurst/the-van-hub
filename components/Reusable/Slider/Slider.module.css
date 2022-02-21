@@ -14,13 +14,14 @@
 }
 
 #inner {
-  padding: 10px;
+  padding: 30px 10px;
   min-width: 540px;
   position: relative;
 }
 
 #slider {
   overflow: hidden;
+  background-color: white;
   border-radius: var(--border-radius);
   border: 1px solid var(--border-colour);
 }

@@ -96,10 +96,10 @@ export default function About(props: { accordian?: string | string[] }) {
               <Link href="/shop/all-batteries?collectionId=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3NzExMzU2OTQzMQ==">
                 <button
                   type="button"
-                  id={aboutStyles.buyButton}
-                  className="btn btn-warning btn-lg"
+                  className="btn btn-success btn-lg"
+                  style={{ color: "var(--dark)"}}
                 >
-                  Buy Batteries
+                  Shop our batteries
                 </button>
               </Link>
             </div>

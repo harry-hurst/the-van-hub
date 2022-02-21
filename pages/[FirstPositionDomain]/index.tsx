@@ -12,7 +12,7 @@ export default function FirstPositionDomain() {
   if (FirstPositionDomain === "shop") {
     return <Shop />;
   } else if (FirstPositionDomain === "about") {
-    return <span>about span</span>;
+    return <span></span>;
   } else {
     return null;
   }

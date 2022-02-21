@@ -6,8 +6,10 @@ import { useState, useEffect, useContext, useRef } from "react";
 import { ScreenSizeContext } from "../../../../context/ScreenSize";
 
 // components
-import ChargingDiagram from "./ChargingDiagram";
-import ChargingGraph from "./ChargingGraph";
+import Carousel from "./Carousel";
+
+// next components
+import Image from "next/image";
 
 // modules
 import { motion, AnimatePresence } from "framer-motion";
@@ -83,8 +85,37 @@ export default function Charging(props: { accordian?: string | string[] }) {
               directly to the alternator.
             </p>
 
-            <ChargingDiagram />
-            <ChargingGraph />
+            <Carousel />
+
+            <p id={aboutStyles.paragraph}>
+              Battery-to-Battery chargers draw current from the starter battery
+              and step up the voltage to charge the second leisure battery. They
+              provide a much deeper and faster re-charge than connecting
+              directly to the alternator.
+            </p>
+
+            <div className="row">
+              <div className="col-md-5">
+                <Image
+                  src="/images/B2B.png"
+                  layout="responsive"
+                  width={4130}
+                  height={2537}
+                  quality={10}
+                  alt="Battery charging diagram"
+                />
+              </div>
+              <div className="col-md-7">
+                <Image
+                  src="/images/charge-curve.png"
+                  layout="responsive"
+                  height={669}
+                  width={2048}
+                  quality={10}
+                  alt="Charging voltage curve"
+                />
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

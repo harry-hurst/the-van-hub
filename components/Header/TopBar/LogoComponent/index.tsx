@@ -48,7 +48,7 @@ export default function LogoComponent() {
             animate={{opacity: 1}}
             exit={{opacity: 0}}
             transition={{duration: 0.4}} 
-            id={logoComponentStyles.logoContainer}
+            id={logoComponentStyles.container}
           >
             <span id={logoComponentStyles.tm}>TM</span>
             <Image

@@ -1,17 +1,11 @@
 #container {
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
   height: 60px;
-  position: fixed;
-  background: var(--dark);
-  border-bottom: 2px solid var(--primary);
-}
-
-#topBar {
-  height: 100%;
   display: flex;
+  margin: 0 -0.75rem 6px -0.75rem;
   align-items: center;
-  flex-direction: row;
+  justify-content: space-between;
+  background: var(--dark);
+  padding: 0 10px;
+  border-bottom: 2px solid var(--primary);
+
 }

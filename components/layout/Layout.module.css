@@ -1,18 +1,13 @@
-#appContainer {
-  overflow: hidden;
-}
-
 #mainContentWrapper {
-  margin-top: 70px;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-top: 80px;
   position: relative;
-  padding: 20px 0 180px 0;
-  min-height: calc(100vh - 70px);
-  transition: margin-top var(--time) ease;
+  padding-bottom: 190px;
 }
 
 @media screen and (min-width: 576px) {
   #mainContentWrapper {
-    margin-top: 120px;
-    min-height: calc(100vh - 120px);
+    padding-top: 140px;
   }
 }

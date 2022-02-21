@@ -1,16 +1,17 @@
 // import type { NextPage } from "next";
 
 // components
-import Tagline from "../components/HomePage/Tagline";
-import Carousal from "../components/HomePage/Carousel";
 import Accordion from "../components/HomePage/Accordion";
+import HeroBanner from "../components/Banners/Hero Banners";
+import OfferBanner from "../components/Banners/OfferBanner";
+import Slider from "../components/Reusable/Slider";
 
 export default function HomePage() {
   return (
     <div>
-      <Tagline>Quality electrical components for your conversion!</Tagline>
-      <Carousal />
-      <Tagline>Upgrade your battery</Tagline>
+      <HeroBanner />
+      <OfferBanner />
+      <Slider />
       <Accordion />
     </div>
   );

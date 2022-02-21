@@ -1,10 +1,9 @@
-#logoContainer {
+#container {
   width: 140px;
   height: 40px;
   flex-shrink: 0;
   cursor: pointer;
   position: relative;
-  margin-right: auto;
 }
 
 #tm {
@@ -20,11 +19,5 @@
   #logoContainer {
     width: 163px;
     height: 45px;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  #logoContainer {
-    margin-right: 0;
   }
 }

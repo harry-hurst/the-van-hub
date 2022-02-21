@@ -1,5 +1,5 @@
 #item {
-  height: 23px;
+  height: 43px;
   display: flex;
   flex-shrink: 0;
   cursor: pointer;
@@ -9,13 +9,9 @@
   margin-right: 10px;
   align-items: center;
   justify-content: center;
-  background-color: white;
   transition: var(--time) ease;
   border: 1px solid var(--primary);
-  font-family: Nunito Sans Regular;
   border-radius: var(--border-radius);
-  box-shadow: var(--nav-component-item);
-  transition-property: border, box-shadow;
 }
 
 #item:last-child {

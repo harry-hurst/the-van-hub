@@ -8,11 +8,7 @@ import { useEffect, useRef } from "react";
 import ShopifyContext from "../../context/Shopify";
 import ScreenSizeContext from "../../context/ScreenSize";
 
-import TopBar from "../Header/TopBar";
-import Modal from "../Header/Modal";
-
-import Banner from "../OfferBanner";
-
+import Header from "../Header";
 import Footer from "../Footer";
 
 // redux
@@ -59,7 +55,7 @@ export default function Layout(props: { children: React.ReactNode }) {
   });
 
   return (
-    <div id={layoutStyles.appContainer}>
+    <>
       <Head>
         <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />
@@ -72,25 +68,22 @@ export default function Layout(props: { children: React.ReactNode }) {
       <main>
         <ShopifyContext>
           <ScreenSizeContext>
-
-            <TopBar burger={burger} searchBar={searchBar} basket={basket} />
-            <Modal modal={modal} />
-
             <div id={layoutStyles.mainContentWrapper}>
-
-              <Banner />
+              <Header
+                burger={burger}
+                searchBar={searchBar}
+                basket={basket}
+                modal={modal}
+              />
 
               <AnimateSharedLayout>
-
                 {props.children}
-                <Footer /> 
-
+                <Footer />
               </AnimateSharedLayout>
             </div>
-
           </ScreenSizeContext>
         </ShopifyContext>
       </main>
-    </div>
+    </>
   );
 }

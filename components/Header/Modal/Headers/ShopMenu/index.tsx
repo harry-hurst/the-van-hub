@@ -9,7 +9,7 @@ import { ShopifyContext } from "../../../../../context/Shopify";
 import ShopMenuItem from "./ShopMenuItem";
 
 // modules
-import { motion,} from "framer-motion";
+import { motion } from "framer-motion";
 import { navBar } from "../../../../../framer_motion/variants/navBar";
 
 export default function NavBar() {
@@ -30,11 +30,11 @@ export default function NavBar() {
   }, []);
 
   return (
-    <motion.div
-      variants={navBar}
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
+    <ul
+      // variants={navBar}
+      // initial="hidden"
+      // animate="visible"
+      // exit="hidden"
       id={shopMenuStyles.container}
     >
       {collections &&
@@ -45,6 +45,6 @@ export default function NavBar() {
             id={collection.id}
           />
         ))}
-    </motion.div>
+    </ul>
   );
 }

@@ -7,7 +7,9 @@ export default function ScreenSizeContextComponent(props) {
   // set the window size
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 576) {
+      if (window.innerWidth < 400) {
+        setWindowSize("tiny");
+      } else if (400 <= window.innerWidth && window.innerWidth < 576) {
         setWindowSize("small");
       } else if (576 <= window.innerWidth && window.innerWidth < 768) {
         setWindowSize("medium");

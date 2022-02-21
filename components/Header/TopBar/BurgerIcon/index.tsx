@@ -6,7 +6,7 @@ import { RootState } from "../../../../state/store";
 // styles
 import burgerIconStyles from "./BurgerIcon.module.css";
 
-export default function BurgerIcon(props: {burger: any}) {
+export default function BurgerIcon(props: { burger: any }) {
   // redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
   const dispatch = useDispatch();
@@ -20,7 +20,11 @@ export default function BurgerIcon(props: {burger: any}) {
   }
 
   return (
-    <div ref={props.burger} id={burgerIconStyles.container} onClick={() => handleClick()}>
+    <div
+      ref={props.burger}
+      id={burgerIconStyles.container}
+      onClick={() => handleClick()}
+    >
       {activeMenu === "mobileMenu" ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

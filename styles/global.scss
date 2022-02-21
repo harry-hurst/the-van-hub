@@ -80,7 +80,7 @@ a {
   // secondary
   --secondary: #c9d6df;
   // success
-  --success: #91d101; 
+  --success: #c6d41f;
   // danger
   --danger: #dd0922;
   // warning
@@ -94,6 +94,7 @@ a {
   --time: 400ms;
   --font: #171717;
   --grey: #889596;
+  --grey-2: #666666;
   --border-radius: 4px;
   --border-radius-large: 8px;
   --border-colour: #e5e5e5;
@@ -103,4 +104,9 @@ a {
   --modal: 0 0 5px 1px rgb(65 129 185 / 50%);
   --nav-component-item: 0px 2px 2px rgb(207 211 231);
   --nav-component-item-hover: 5px 5px 5px rgb(159 164 194 / 60%);
+}
+
+/* global classes */
+.nun-sans {
+  font-family: "Nunito Sans Regular";
 }

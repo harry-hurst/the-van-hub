@@ -24,8 +24,6 @@
 }
 
 #paragraph {
-  margin: 1rem 0;
-  font-size: 0.8rem;
   color: var(--font);
   line-height: 1.3rem;
   letter-spacing: 0.05rem;

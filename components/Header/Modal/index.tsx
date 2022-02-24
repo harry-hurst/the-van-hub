@@ -108,6 +108,7 @@ export default function Modal(props: { modal: any }) {
   );
 }
 
+// for the header of the modal (when the modal is a bar):
 function returnHeader(
   am: string | null | undefined,
   fpd: string | string[] | undefined,
@@ -128,6 +129,7 @@ function returnHeader(
   }
 }
 
+//  for the bulk of the modal content (when modal is opened):
 function returnContent(am: string | null, amd: string | null | undefined) {
   switch (amd) {
     case "basketMenu":

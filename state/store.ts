@@ -10,6 +10,7 @@ import bannerStatusReducer from "./bannerStatusSlice";
 
 // export default store with a reducer function inside.
 const store = configureStore({
+
   reducer: {
     searchBar: searchBarReducer,
     searchTerm: searchTermReducer,
@@ -17,6 +18,7 @@ const store = configureStore({
     collectionId: collectionIdReducer,
     bannerStatus: bannerStatusReducer,
   },
+  
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

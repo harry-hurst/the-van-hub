@@ -3,7 +3,7 @@
   display: flex;
   flex-shrink: 0;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 15px;
   padding: 3px 6px;
   color: var(--dark);
   margin-right: 10px;
@@ -20,5 +20,4 @@
 
 .currentItem {
   border: 1px solid var(--dark) !important;
-  box-shadow: var(--nav-component-item-hover) !important;
 }

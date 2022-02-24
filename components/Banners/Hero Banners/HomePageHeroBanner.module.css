@@ -1,7 +1,7 @@
 #imageContainer {
   /* z-index: -1; */
   position: relative;
-  min-height: 300px;
+  min-height: 400px;
 }
 
 #panel {

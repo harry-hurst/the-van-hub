@@ -56,6 +56,7 @@ export default function Layout(props: { children: React.ReactNode }) {
       <ShopifyContext>
         <ScreenSizeContext>
           <div id={layoutStyles.mainContentWrapper}>
+
             <Header
               burger={burger}
               searchBar={searchBar}
@@ -64,7 +65,7 @@ export default function Layout(props: { children: React.ReactNode }) {
             />
 
             <AnimateSharedLayout>
-              {props.children}
+              <div>{props.children}</div>
               <Footer />
             </AnimateSharedLayout>
           </div>

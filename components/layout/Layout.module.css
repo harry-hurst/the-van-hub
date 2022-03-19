@@ -6,7 +6,7 @@
   padding-bottom: 190px;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 415px) {
   #mainContentWrapper {
     padding-top: 140px;
   }

@@ -1,4 +1,4 @@
-// styles
+// global styles for used accross all pages:
 import "../styles/global.scss";
 import "../styles/bootstrap.scss";
 // import type { AppProps } from "next/app";

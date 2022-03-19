@@ -1,5 +1,6 @@
 // components
 import Shop from "../../components/Shop";
+import ErrorPage from "../error_page";
 
 // next components
 import { useRouter } from "next/router";
@@ -12,8 +13,8 @@ export default function FirstPositionDomain() {
   if (FirstPositionDomain === "shop") {
     return <Shop />;
   } else if (FirstPositionDomain === "about") {
-    return <span></span>;
+    return <span>about</span>;
   } else {
-    return null;
+    return <ErrorPage />;
   }
 }

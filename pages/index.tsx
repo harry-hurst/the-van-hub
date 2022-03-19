@@ -8,11 +8,11 @@ import Slider from "../components/Reusable/Slider";
 
 export default function HomePage() {
   return (
-    <div>
+    <>
       <HeroBanner />
       <OfferBanner />
       <Slider />
       <Accordion />
-    </div>
+    </>
   );
 }

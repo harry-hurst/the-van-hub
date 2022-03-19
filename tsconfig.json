@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "state/reducers/index.js", "state/reducers/searchBarReducer.js", "state/action-creators/index.js", "pages/state/action-creators/index.js", "pages/store.js", "components/Header/Modal/Headers/NavBar/headings.js", "pages/shop", "components/HomePage/Accordion/Charging/Carousel/Sprinter/index.js", "components/HomePage/Accordion/Charging/Carousel/Transporter/index.js"  ],
+, "state/reducers/index.js", "state/reducers/searchBarReducer.js", "state/action-creators/index.js", "pages/state/action-creators/index.js", "pages/store.js", "components/layout/Header/Modal/Headers/NavBar/headings.js", "pages/shop", "components/HomePage/Accordion/Charging/Carousel/Sprinter/index.js", "components/HomePage/Accordion/Charging/Carousel/Transporter/index.js"  ],
   "exclude": [
     "node_modules"
   ]

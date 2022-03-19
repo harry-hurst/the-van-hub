@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 import ShopifyContext from "../../context/Shopify";
 import ScreenSizeContext from "../../context/ScreenSize";
 
-import Header from "../Header";
+import Header from "./Header";
 import Footer from "../Footer";
 
 // redux

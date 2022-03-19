@@ -1,19 +1,24 @@
 // NavBar ==============================================
 export const navBar = {
-  hidden: {
+  exit: {
+    y: "-43px",
     opacity: 0,
 
+    transition: {
+      type: "tween",
+    }
+  },
+
+  hidden: {
     transition: {
       duration: 0.4,
     },
   },
 
   visible: {
-    opacity: 1,
-
     transition: {
-      
       duration: 0.4,
+      delayChildren: 0.8,
       staggerChildren: 0.1,
     },
   },
@@ -22,17 +27,20 @@ export const navBar = {
 export const navBarItem = {
   hidden: {
     x: "50vw",
+    opacity: 0,
+
     transition: {
-      // takes 0.2 seconds to animate out:
       duration: 0.2,
     },
   },
 
   visible: {
     x: 0,
+    opacity: 1,
 
     transition: {
       duration: 0.2,
+      type: "spring",
     },
   },
 };

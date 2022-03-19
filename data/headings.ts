@@ -4,4 +4,5 @@ export const headings = [
   { heading: "Charging", link: "/?accordian=charging" },
   { heading: "Shop", link: "/shop"},
   { heading: "About us", link: "/about"},
+  { heading: "About us", link: "/about"},
 ];

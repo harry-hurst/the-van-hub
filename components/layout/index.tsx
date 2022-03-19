@@ -16,9 +16,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { clearActiveMenu } from "../../state/activeMenuSlice";
 import { RootState } from "../../state/store";
 
-// next components
-import Head from "next/head";
-
 // modules
 import { AnimateSharedLayout } from "framer-motion";
 
@@ -55,35 +52,24 @@ export default function Layout(props: { children: React.ReactNode }) {
   });
 
   return (
-    <>
-      <Head>
-        <title>The Van Hub</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
-        />
-      </Head>
+    <main>
+      <ShopifyContext>
+        <ScreenSizeContext>
+          <div id={layoutStyles.mainContentWrapper}>
+            <Header
+              burger={burger}
+              searchBar={searchBar}
+              basket={basket}
+              modal={modal}
+            />
 
-      <main>
-        <ShopifyContext>
-          <ScreenSizeContext>
-            <div id={layoutStyles.mainContentWrapper}>
-              <Header
-                burger={burger}
-                searchBar={searchBar}
-                basket={basket}
-                modal={modal}
-              />
-
-              <AnimateSharedLayout>
-                {props.children}
-                <Footer />
-              </AnimateSharedLayout>
-            </div>
-          </ScreenSizeContext>
-        </ShopifyContext>
-      </main>
-    </>
+            <AnimateSharedLayout>
+              {props.children}
+              <Footer />
+            </AnimateSharedLayout>
+          </div>
+        </ScreenSizeContext>
+      </ShopifyContext>
+    </main>
   );
 }

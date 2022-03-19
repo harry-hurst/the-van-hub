@@ -10,8 +10,8 @@ import Image from "next/image";
 export default function HomeHeroBanner() {
   return (
     <div
-      className="row"
-      style={{ margin: "0", marginTop: "-140px" }}
+      className="row mx-0"
+      style={{ marginTop: "-140px" }}
     >
       <div
         className="col-sm-5 order-sm-2"
@@ -27,7 +27,7 @@ export default function HomeHeroBanner() {
       </div>
 
       <div className="col-sm-7 order-sm-1" id={offerBannerStyles.panel}>
-        <div className={offerBannerStyles.wedge} />
+        <div id={offerBannerStyles.wedge} />
         <div className="container">
           <h2 className="nun-sans">
             High quality Lithium Ion Batteries and electrical parts for your

@@ -2,7 +2,7 @@
 
 // components
 import Accordion from "../components/HomePage/Accordion";
-import HeroBanner from "../components/Banners/Hero Banners";
+import HeroBanner from "../components/Banners/HeroBanners";
 import OfferBanner from "../components/Banners/OfferBanner";
 import Slider from "../components/Reusable/Slider";
 

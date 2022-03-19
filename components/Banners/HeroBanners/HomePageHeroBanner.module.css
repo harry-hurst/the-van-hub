@@ -12,12 +12,12 @@
 
 @media screen and (min-width: 576px) {
   #panel {
-    padding-top: 120px;
+    padding-top: 130px;
   }
 }
 
-.wedge {
-  top: -50px;
+#wedge {
+  top: -49px;
   right: 0px;
   position: absolute;
   border-left: 576px solid var(--dark);
@@ -25,10 +25,9 @@
 }
 
 @media screen and (min-width: 576px) {
-  .wedge {
+  #wedge {
     bottom: 0;
     right: -79px;
-    position: absolute;
     border-left: 80px solid var(--dark);
     border-bottom: 420px solid transparent;
     border-top: 0;

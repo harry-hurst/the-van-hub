@@ -2,7 +2,6 @@
   margin: 0;
   width: 100%;
   display: flex;
-  flex-shrink: 0;
   position: absolute;
   flex-direction: row;
   justify-content: space-between;
@@ -10,19 +9,18 @@
 }
 
 .item {
-  display: flex;
+  /* display: flex;
+  flex-shrink: 0; */
   cursor: pointer;
-  font-size: 16px;
-  line-height: 39px;
-  color: var(--grey-2);
-  align-items: center;
-  border-bottom: 4px solid var(--primary);
-}
+  line-height: 39px; 
+  /* align-items: center; */
+
+} 
 
 .item:hover {
-  line-height: 31px;
-  border-bottom: 8px solid var(--primary);
-  border-top: 4px solid transparent;
+  line-height: 29px;
+  border-bottom: 8px solid #003049 !important;
+  border-top: 5px solid transparent !important;
 }
 
 .item > svg {

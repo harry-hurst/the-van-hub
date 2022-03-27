@@ -119,10 +119,10 @@ function returnHeader(
 ) {
   switch (true) {
     case fpd === "shop" && am === "navMenu" && windowSize !== "tiny":
-      return <ShopMenu key={"shopMenu"} />;
+      return <ShopMenu />;
 
     case fpd === "shop" && am === null && windowSize !== "tiny":
-      return <ShopMenu key={"shopMenu"} />;
+      return <ShopMenu />;
 
     case am === null && windowSize !== "tiny":
       return <NavBar key={"navBar"} />;

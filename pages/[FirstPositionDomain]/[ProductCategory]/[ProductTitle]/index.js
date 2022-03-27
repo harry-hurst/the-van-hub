@@ -95,9 +95,10 @@ export default function ProductPage() {
               ))}
             </div>
 
-            <div className="col-md-12 col-lg-4 p-2">
-              <span>{product.description}</span>
-            </div>
+            <div
+              className="col-md-12 col-lg-4 p-2"
+              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+            />
           </div>
 
           <div id={productPageStyles.callToActionContainer}>

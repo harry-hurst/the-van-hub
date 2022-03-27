@@ -72,25 +72,29 @@ a {
   color: inherit;
 }
 
+input {
+  border: none;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+// BOOTSTRAP SPECIFIC OVERIDES
+ul {
+  list-style: none;
+}
+
+.list-group {
+  margin-top: 0 !important;
+}
+
+.list-group-item:first-child {
+  text-align: center;
+}
+
 :root {
-  // BOOTSTRAP COLOURS
-
-  // primary
-  --primary: #1d9ae2; //#07689F;
-  // secondary
-  --secondary: #c9d6df;
-  // success
-  --success: #c6d41f;
-  // danger
-  --danger: #dd0922;
-  // warning
-  --warning: #fa6619;
-  // info
-  //light
-  --light: #effbff;
-  //dark
-  --dark: #003049;
-
+  // GLOBAL VALUES
   --time: 400ms;
   --font: #171717;
   --grey: #889596;
@@ -102,10 +106,10 @@ a {
 
   // box-shadow (x y blur spread)
   --modal: 0 0 5px 1px rgb(65 129 185 / 50%);
-
 }
 
-/* global classes */
+/* GLOBAL CLASSES */
 .nun-sans {
   font-family: "Nunito Sans Regular";
 }
+

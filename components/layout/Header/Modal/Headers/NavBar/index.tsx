@@ -26,18 +26,17 @@ export default function NavBar() {
       exit="exit"
       id={navBarStyles.container}
     >
-      {headingsModule.headings.map((item: any, index: number) => (
-        <Link href={item.link} key={index}>
+      {headingsModule.headings.map((item: { link: string; heading: string; index: number }) => (
+        <Link href={item.link} key={item.index}>
           <motion.li
             variants={navBarItem}
             className={`
-          nun-sans
+          nun-sans text-muted border-dark border-top-0 border-bottom border-2
             ${navBarStyles.item}
-
           `}
           >
             {item.heading}
-            {(index === 1 || index === 2) && <DownArrow />}
+            {(item.index === 1 || item.index === 2) && <DownArrow />}
           </motion.li>
         </Link>
       ))}

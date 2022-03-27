@@ -39,7 +39,7 @@ export default function BasketIcon(props: { basket: any }) {
       }}
     >
       <div>
-        <span id={basketIconStyles.basketCount}>
+        <span id={basketIconStyles.basketCount} className="bg-primary">
           {basket && basket.lineItems ? basket.lineItems.length : 0}
         </span>
 

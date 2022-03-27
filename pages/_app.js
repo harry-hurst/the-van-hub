@@ -1,6 +1,6 @@
 // global styles for used accross all pages:
 import "../styles/global.scss";
-import "../styles/bootstrap.scss";
+import "../styles/bootstrapCustom.scss";
 // import type { AppProps } from "next/app";
 
 // components
@@ -17,6 +17,10 @@ function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+        />
         <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />
         <meta

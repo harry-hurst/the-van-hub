@@ -1,13 +1,10 @@
 #imageContainer {
-  /* z-index: -1; */
   position: relative;
   min-height: 400px;
 }
 
 #panel {
-  color: white;
   position: relative;
-  background-color: var(--dark);
 }
 
 @media screen and (min-width: 576px) {
@@ -20,15 +17,15 @@
   top: -49px;
   right: 0px;
   position: absolute;
-  border-left: 576px solid var(--dark);
   border-top: 50px solid transparent;
+  background-color: #004568;
 }
 
 @media screen and (min-width: 576px) {
   #wedge {
     bottom: 0;
     right: -79px;
-    border-left: 80px solid var(--dark);
+    border-left: 80px solid #004568;
     border-bottom: 420px solid transparent;
     border-top: 0;
     top: initial;

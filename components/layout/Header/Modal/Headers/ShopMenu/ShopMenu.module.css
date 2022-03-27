@@ -16,3 +16,29 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+
+
+.item {
+  height: 43px;
+  display: flex;
+  flex-shrink: 0;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 6px;
+  color: var(--dark);
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: var(--time) ease;
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+}
+
+.item:last-child {
+  margin-right: 0;
+}
+
+.currentItem {
+  border: 1px solid var(--dark) !important;
+}

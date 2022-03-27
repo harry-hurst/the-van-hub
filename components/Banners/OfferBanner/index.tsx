@@ -27,7 +27,7 @@ export default function Banner() {
 
   if (bannerStatus)
     return (
-      <div id={offerBannerStyles.container}>
+      <div id={offerBannerStyles.container} className="bg-success">
         <div className="container">
           <div id={offerBannerStyles.inner}>
 

@@ -14,18 +14,18 @@
 }
 
 #wedge {
-  top: -49px;
+  top: -50px;
   right: 0px;
   position: absolute;
   border-top: 50px solid transparent;
-  background-color: #004568;
+  border-left: 567px solid #003049; 
 }
 
 @media screen and (min-width: 576px) {
   #wedge {
     bottom: 0;
-    right: -79px;
-    border-left: 80px solid #004568;
+    right: -80px;
+    border-left: 80px solid #003049;
     border-bottom: 420px solid transparent;
     border-top: 0;
     top: initial;

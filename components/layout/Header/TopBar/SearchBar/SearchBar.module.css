@@ -40,11 +40,10 @@
   font-size: 14px;
 }
 
-/* #searchBar ::placeholder {
+#searchBar ::placeholder {
   font-size: 15px;
-  color: var(--font);
   font-family: Nunito Sans Light;
-} */
+}
 
 @media only screen and (min-width: 576px) {
   #searchBar {

@@ -58,7 +58,7 @@ export default function ShopMenu() {
         collectionss.map((collection: any, index: number) => (
           <motion.li
             key={index}
-            className={`${shopMenuStyles.item} ${
+            className={` nun-sans border rounded-1 border-primary mx-1 ${shopMenuStyles.item} ${
               collectionId === collection.id && `${shopMenuStyles.currentItem}`
             }`}
             variants={navBarItem}

@@ -1,10 +1,6 @@
 // styles
 import arrowStyles from "./Arrow.module.css";
 
-// svg
-import LeftArrow from "../../../../../../assets/svg/LeftArrow";
-import RightArrow from "../../../../../../assets/svg/RightArrow";
-
 export default function Arrow(props: {
   slideIndex: number;
   type: string;
@@ -32,21 +28,9 @@ export default function Arrow(props: {
       onClick={props.type === "left" ? leftArrowHandler : rightArrowHandler}
     >
       {props.type === "left" ? (
-        <LeftArrow
-          width="70"
-          height="70"
-          fill="var(--dark)"
-          stroke="var(--dark)"
-          strokeWidth="0px"
-        />
+        <i className="bi bi-chevron-left"></i>
       ) : (
-        <RightArrow
-          width="70"
-          height="70"
-          fill="var(--dark)"
-          stroke="var(--dark)"
-          strokeWidth="0px"
-        />
+        <i className="bi bi-chevron-right"></i>
       )}
     </div>
   );

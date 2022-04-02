@@ -9,26 +9,19 @@
 }
 
 .item {
-  /* display: flex;
-  flex-shrink: 0; */
-  cursor: pointer;
-  line-height: 39px; 
-  /* align-items: center; */
-
-} 
+  line-height: 39px;
+}
 
 .item:hover {
   line-height: 29px;
-  border-bottom: 8px solid #003049 !important;
+  border-bottom: 8px solid #1d9ae2 !important;
   border-top: 5px solid transparent !important;
 }
 
-.item > svg {
-  margin-left: 5px;
-  transition: stroke-width calc(var(--time) / 2) ease;
+.item i:before {
+  transform: translate(2px, 2px);
 }
 
-.item:hover svg {
-  stroke-width: 2px;
-  color: var(--primary);
+.item:hover i:before {
+  font-weight: bold !important;
 }

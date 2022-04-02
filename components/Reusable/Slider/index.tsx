@@ -8,10 +8,6 @@ import { ScreenSizeContext } from "../../../context/ScreenSize";
 // components
 import SliderItem from "./SliderItem";
 
-// svg
-import RightArrow from "../../../assets/svg/RightArrow";
-import LeftArrow from "../../../assets/svg/LeftArrow";
-
 // modules
 import { motion, AnimatePresence } from "framer-motion";
 import { scaleUp } from "../../../framer_motion/variants/general/scaleUp";
@@ -32,7 +28,7 @@ export default function Slider() {
   return (
     <div id={sliderStyles.container}>
       <div className="container" id={sliderStyles.inner}>
-        <div id={sliderStyles.slider}>
+        <div className="border rounded" id={sliderStyles.slider}>
           <div
             id={sliderStyles.sliderInner}
             className={`
@@ -77,13 +73,13 @@ export default function Slider() {
               animate="visible"
               exit="hidden"
               type="button"
-              className={`${sliderStyles.arrow} btn btn-secondary`}
+              className={`${sliderStyles.arrow} btn btn-primary rounded`}
               style={{ left: "0" }}
               onClick={() => {
                 arrowClick("left");
               }}
             >
-              <LeftArrow width="20" height="20" strokeWidth="0px" />
+              <i className="bi bi-chevron-left"></i>
             </motion.button>
           )}
         </AnimatePresence>
@@ -101,13 +97,13 @@ export default function Slider() {
               animate="visible"
               exit="hidden"
               type="button"
-              className={`${sliderStyles.arrow} btn btn-secondary`}
+              className={`${sliderStyles.arrow} btn btn-primary rounded`}
               style={{ right: "0" }}
               onClick={() => {
                 arrowClick("right");
               }}
             >
-              <RightArrow width="20" height="20" strokeWidth="0px" />
+              <i className="bi bi-chevron-right"></i>
             </motion.button>
           )}
         </AnimatePresence>

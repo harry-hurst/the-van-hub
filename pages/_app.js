@@ -40,7 +40,7 @@ function App({ Component, pageProps }) {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-F22NHNMFCL', { page_path: window.location.pathname });
-            `,
+            `
           }}
         />
       </Head>

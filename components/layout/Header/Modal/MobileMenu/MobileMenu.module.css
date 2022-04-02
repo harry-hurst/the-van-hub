@@ -8,18 +8,11 @@
 
 #item {
   display: flex;
-  color: var(--grey);
   padding: 1rem;
   cursor: pointer;
   justify-content: space-between;
-  border-radius: var(--border-radius);
 }
 
-#item > span {
-  color: var(--font);
-}
-
-#item:hover {
-  color: var(--primary);
-  background-color: var(--background-grey);
+#item:hover i:before {
+  font-weight: bolder !important;
 }

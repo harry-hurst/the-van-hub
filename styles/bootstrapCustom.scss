@@ -11,7 +11,7 @@ $light: #effbff;
 $dark: #003049;
 
 // set border radius
-$border-radius: 4px;
+// $border-radius: 4px;
 
 // badge
 $badge-font-size: 1em;
@@ -40,7 +40,10 @@ $border-widths: (
   4: 8px,
   5: 10px
 );
-$border-radius: 8px;
+$border-radius: 0.5rem;
+$border-radius-sm:            0.25rem;
+$border-radius-lg:            1rem;
+$border-radius-pill:          50rem;
 
 // mb-0 etc.
 @import "../node_modules/bootstrap/scss/utilities";

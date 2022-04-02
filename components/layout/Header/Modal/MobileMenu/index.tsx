@@ -10,10 +10,10 @@ import Link from "next/link";
 
 // modules
 import { motion } from "framer-motion";
-import { container, item } from "../../../../../framer_motion/variants/mobileMenu";
-
-// svg
-import RightArrow from "../../../../../assets/svg/RightArrow";
+import {
+  container,
+  item,
+} from "../../../../../framer_motion/variants/mobileMenu";
 
 export default function MobileMenu() {
   // redux
@@ -33,7 +33,6 @@ export default function MobileMenu() {
       {headingsModule.headings.map(
         (heading: { heading: string; link: string }, index: number) => (
           <Link href={heading.link} key={index}>
-
             <motion.div
               variants={item}
               id={mobileMenuStyles.item}
@@ -41,14 +40,9 @@ export default function MobileMenu() {
                 dispatch(clearActiveMenu());
               }}
             >
-
               <span>{heading.heading}</span>
 
-
-
-
-              <RightArrow />
-
+              <i className="bi bi-chevron-right"></i>
             </motion.div>
           </Link>
         )

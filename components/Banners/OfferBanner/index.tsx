@@ -13,11 +13,7 @@ import { RootState } from "../../../state/store";
 
 import { hideBanner } from "../../../state/bannerStatusSlice";
 
-// svg
-import RightArrow from "../../../assets/svg/RightArrow";
-import Close from "../../../assets/svg/Close";
-
-export default function Banner() {
+export default function OfferBanner() {
   // redux
   const bannerStatus = useSelector(
     (state: RootState) => state.bannerStatus.status
@@ -28,14 +24,13 @@ export default function Banner() {
   if (bannerStatus)
     return (
       <div id={offerBannerStyles.container} className="bg-success">
-        <div className="container">
+        <div className="container text-dark">
           <div id={offerBannerStyles.inner}>
-
-            <Link href="/shop/All%20Batteries?collectionId=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3NzExMzU2OTQzMQ==">
+            <Link href="/shop/all-batteries?collectionId=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3NzExMzU2OTQzMQ==">
               <div id={offerBannerStyles.message}>
                 <span className="nun-sans">
-                  - 15% All Batteries!
-                  <RightArrow />
+                  — 15% All Batteries!
+                  <i className="bi bi-chevron-right"></i>
                 </span>
               </div>
             </Link>
@@ -46,9 +41,8 @@ export default function Banner() {
                 dispatch(hideBanner());
               }}
             >
-              <Close />
+              <i className="bi bi-x-lg"></i>
             </div>
-            
           </div>
         </div>
       </div>

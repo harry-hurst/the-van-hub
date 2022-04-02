@@ -1,46 +1,8 @@
-/* sliderItem */
-#sliderItem {
-  padding: 10px;
-  border-right: 1px solid var(--border-colour);
-}
-
 #imageContainer {
   padding-top: 100%;
-  cursor: pointer;
   position: relative;
-  margin-bottom: 10px;
 }
 
-#descriptionContainer {
-  display: flex;
-  cursor: pointer;
-  flex-direction: column;
-}
-
-.stock {
-  font-family: Nunito Medium;
-  font-size: 0.85rem;
-  position: relative;
-  padding-left: 15px;
-}
-
-.stock:before {
-  left: 0;
-  top: 50%;
-  width: 8px;
-  height: 8px;
-  content: "";
-  border-radius: 4px;
-  position: absolute;
-  display: inline-block;
-  transform: translateY(-50%);
-  background-color: currentColor;
-}
-
-#inStock {
-  color: var(--success);
-}
-
-#noStock {
-  color: var(--danger);
+#descriptionContainer span{
+  display: block;
 }

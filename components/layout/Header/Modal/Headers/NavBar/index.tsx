@@ -8,9 +8,6 @@ import { motion } from "framer-motion";
 import { navBar } from "../../../../../../framer_motion/variants/navBar";
 import { navBarItem } from "../../../../../../framer_motion/variants/navBar";
 
-// components
-import DownArrow from "../../../../../../assets/svg/DownArrow";
-
 // Next components
 import Link from "next/link";
 
@@ -26,20 +23,26 @@ export default function NavBar() {
       exit="exit"
       id={navBarStyles.container}
     >
-      {headingsModule.headings.map((item: { link: string; heading: string; index: number }) => (
-        <Link href={item.link} key={item.index}>
-          <motion.li
-            variants={navBarItem}
-            className={`
-          nun-sans text-muted border-dark border-top-0 border-bottom border-2
+      {headingsModule.headings.map(
+        (item: { link: string; heading: string; dropdown: boolean; index: number }) => (
+          <Link href={item.link} key={item.index}>
+            <a>
+              <motion.li
+                variants={navBarItem}
+                className={`
+          nun-sans text-muted border-primary border-top-0 border-bottom border-2
             ${navBarStyles.item}
           `}
-          >
-            {item.heading}
-            {(item.index === 1 || item.index === 2) && <DownArrow />}
-          </motion.li>
-        </Link>
-      ))}
+              >
+                {item.heading}
+                {item.dropdown && (
+                  <i className="bi bi-chevron-down"></i>
+                )}
+              </motion.li>
+            </a>
+          </Link>
+        )
+      )}
     </motion.ul>
   );
 }

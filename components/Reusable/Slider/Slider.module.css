@@ -21,9 +21,6 @@
 
 #slider {
   overflow: hidden;
-  background-color: white;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-colour);
 }
 
 #sliderInner {
@@ -55,13 +52,5 @@
 .arrow {
   padding: 10px;
   position: absolute;
-  border-radius: 15px;
   top: calc(50% - 25px);
-  transition-duration: calc(var(--time) / 2);
-  transition-property: border-color, background-color;
-}
-
-.arrow:hover {
-  border-color: var(--primary);
-  background-color: var(--primary);
 }

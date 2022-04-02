@@ -1,7 +1,6 @@
 #inner {
   display: flex;
   height: 40px;
-  color: var(--dark);
 }
 
 #message {
@@ -16,17 +15,8 @@
   transition: transform var(--time) ease;
 }
 
-#message span svg {
-  margin-left: 5px;
-  transition: stroke-width var(--time) ease;
-}
-
 #message:hover span {
   transform: translateX(20%);
-}
-
-#message:hover span svg {
-  stroke-width: 3px;
 }
 
 /* close */
@@ -40,10 +30,14 @@
   justify-content: center;
 }
 
-#close svg {
-  transition: stroke-width var(--time) ease;
+#message i:before {
+  font-weight: bold !important;
 }
 
-#close:hover svg {
-  stroke-width: 3px;
+#message:hover i:before {
+  font-weight: bolder !important;
+}
+
+#close:hover i:before {
+  font-weight: bolder !important;
 }

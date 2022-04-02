@@ -19,9 +19,8 @@ export default function Accordion() {
 
   return (
     <motion.div layout id={accordionStyles.container} className="container">
-      <About accordian={accordian}/>
-      <Charging accordian={accordian}/>
+      <About accordian={accordian} />
+      <Charging accordian={accordian} />
     </motion.div>
   );
-
 }

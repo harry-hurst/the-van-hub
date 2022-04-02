@@ -85,7 +85,7 @@ export default function Modal(props: { modal: any }) {
     <div
       ref={props.modal}
       id={modalStyles.modal}
-      className={`
+      className={` rounded-2
             ${modalState === "expanded" && `${modalStyles.modalExpanded}`}
             ${modalState === "collapsed" && `${modalStyles.modalCollapsed}`}
           `}
@@ -94,7 +94,7 @@ export default function Modal(props: { modal: any }) {
 
       <div
         id={modalStyles.modalCover}
-        className={`
+        className={`rounded-2
               ${modalState === "collapsed" && `${modalStyles.noPadding}`}
              `}
       >

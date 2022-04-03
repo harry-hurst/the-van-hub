@@ -119,6 +119,7 @@ export default function Slider() {
                   availableForSale: boolean;
                 }) => (
                   <SliderItem
+                    key={product.id}
                     handle={product.handle}
                     id={product.id}
                     title={product.title}

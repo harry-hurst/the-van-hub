@@ -21,6 +21,14 @@ function App({ Component, pageProps }) {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
         />
+
+        {/* <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous"
+        /> */}
+
         <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -40,7 +48,7 @@ function App({ Component, pageProps }) {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-F22NHNMFCL', { page_path: window.location.pathname });
-            `
+            `,
           }}
         />
       </Head>

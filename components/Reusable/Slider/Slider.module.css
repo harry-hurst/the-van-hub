@@ -50,7 +50,6 @@
 
 /* arrow buttons */
 .arrow {
-  padding: 10px;
   position: absolute;
   top: calc(50% - 25px);
 }

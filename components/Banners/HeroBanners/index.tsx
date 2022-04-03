@@ -26,15 +26,15 @@ export default function HomeHeroBanner() {
         />
       </div>
 
-      <div className="col-sm-7 order-sm-1 bg-dark" id={offerBannerStyles.panel}>
+      <div className="col-sm-7 order-sm-1 bg-light" id={offerBannerStyles.panel}>
         <div id={offerBannerStyles.wedge} />
         <div className="container">
-          <h2 className="nun-sans text-white">
+          <h2 className="nun-sans text-dark">
             High quality Lithium Ion Batteries and electrical parts for your
             conversion.
           </h2>
 
-          <p className="text-white">
+          <p className="text-muted">
             We stock the best Quality LiFePO4 leisure batteries in various sizes
             as well as various other electrical parts and accessories that are
             essential for any good conversion.

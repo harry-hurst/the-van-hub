@@ -73,7 +73,7 @@ export default function Slider() {
               animate="visible"
               exit="hidden"
               type="button"
-              className={`${sliderStyles.arrow} btn btn-primary rounded`}
+              className={`${sliderStyles.arrow} btn btn-dark rounded p-3`}
               style={{ left: "0" }}
               onClick={() => {
                 arrowClick("left");
@@ -97,7 +97,7 @@ export default function Slider() {
               animate="visible"
               exit="hidden"
               type="button"
-              className={`${sliderStyles.arrow} btn btn-primary rounded`}
+              className={`${sliderStyles.arrow} btn btn-dark rounded p-3`}
               style={{ right: "0" }}
               onClick={() => {
                 arrowClick("right");

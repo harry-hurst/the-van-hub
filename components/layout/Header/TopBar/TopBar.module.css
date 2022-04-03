@@ -1,16 +1,7 @@
 #container {
   height: 60px;
   display: flex;
-  margin: 0 -0.75rem 6px -0.75rem;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-}
-
-@media screen and (min-width: 1200px) {
-  #container {
-    border-radius: 0 0 10px 10px;
-    border-left: 2px solid var(--primary);
-    border-right: 2px solid var(--primary);
-  }
 }

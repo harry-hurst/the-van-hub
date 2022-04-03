@@ -22,7 +22,7 @@ export default function TopBar(props: {
   const { windowSize } = useContext(ScreenSizeContext);
 
   return (
-    <div id={topBarStyles.container} className="bg-dark border border-1 border-primary border-top-0 rounded-bottom">
+    <div id={topBarStyles.container} className="bg-dark mb-1 rounded-bottom">
       <BurgerIcon burger={props.burger} />
 
       <LogoComponent />

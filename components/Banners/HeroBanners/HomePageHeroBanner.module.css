@@ -18,14 +18,14 @@
   right: 0px;
   position: absolute;
   border-top: 50px solid transparent;
-  border-left: 567px solid #003049; 
+  border-left: 567px solid #e4f1f9; 
 }
 
 @media screen and (min-width: 576px) {
   #wedge {
     bottom: 0;
     right: -80px;
-    border-left: 80px solid #003049;
+    border-left: 80px solid #e4f1f9;
     border-bottom: 420px solid transparent;
     border-top: 0;
     top: initial;

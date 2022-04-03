@@ -15,7 +15,6 @@
 
 #inner {
   padding: 30px 10px;
-  min-width: 540px;
   position: relative;
 }
 
@@ -26,26 +25,79 @@
 #sliderInner {
   display: inline-grid;
   width: calc(100% + 1px);
-  grid-template-columns: repeat(10, 25%);
+  grid-template-columns: repeat(10, 100%);
   transition: transform var(--time) ease;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 415px) {
+  #sliderInner {
+    grid-template-columns: repeat(10, calc(100% / 3));
+  }
+
+  #inner {
+    min-width: 540px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  #sliderInner {
+    grid-template-columns: repeat(10, 25%);
+  }
+}
+
+@media screen and (min-width: 768px) {
   #sliderInner {
     grid-template-columns: repeat(10, 20%);
   }
 }
 
-.pos1Large {
+.tiny1 {
   transform: translateX(-100%);
 }
-
-.pos1ExtraLarge {
-  transform: translateX(-100%);
+.tiny2 {
+  transform: translateX(-200%);
+}
+.tiny3 {
+  transform: translateX(-300%);
+}
+.tiny4 {
+  transform: translateX(-400%);
+}
+.tiny5 {
+  transform: translateX(-500%);
+}
+.tiny6 {
+  transform: translateX(-600%);
+}
+.tiny7 {
+  transform: translateX(-700%);
+}
+.tiny8 {
+  transform: translateX(-800%);
+}
+.tiny9 {
+  transform: translateX(-900%);
 }
 
-.pos2Large {
+.small1 {
+  transform: translateX(-100%);
+}
+.small2 {
+  transform: translateX(-200%);
+}
+.small3 {
+  transform: translateX(-233.33%);
+}
+
+.medium1 {
+  transform: translateX(-100%);
+}
+.medium2 {
   transform: translateX(-150%);
+}
+
+.large1 {
+  transform: translateX(-100%);
 }
 
 /* arrow buttons */

@@ -44,27 +44,73 @@ export default function Slider() {
 
   return (
     <div id={sliderStyles.container}>
+      <h1>{windowSize}</h1>
+      <h2>{position}</h2>
       <div className="container" id={sliderStyles.inner}>
         <div className="border rounded" id={sliderStyles.slider}>
           <div
             id={sliderStyles.sliderInner}
             className={`
+
             ${
-              windowSize !== "extraLarge" &&
-              position === 1 &&
-              `${sliderStyles.pos1Large}`
+              windowSize === "tiny" && position === 1 && `${sliderStyles.tiny1}`
             }
             ${
-              windowSize !== "extraLarge" &&
+              windowSize === "tiny" && position === 2 && `${sliderStyles.tiny2}`
+            }
+            ${
+              windowSize === "tiny" && position === 3 && `${sliderStyles.tiny3}`
+            }
+            ${
+              windowSize === "tiny" && position === 4 && `${sliderStyles.tiny4}`
+            }
+            ${
+              windowSize === "tiny" && position === 5 && `${sliderStyles.tiny5}`
+            }
+            ${
+              windowSize === "tiny" && position === 6 && `${sliderStyles.tiny6}`
+            }
+            ${
+              windowSize === "tiny" && position === 7 && `${sliderStyles.tiny7}`
+            }
+            ${
+              windowSize === "tiny" && position === 8 && `${sliderStyles.tiny8}`
+            }
+            ${
+              windowSize === "tiny" && position === 9 && `${sliderStyles.tiny9}`
+            }
+            ${
+              windowSize === "small" &&
+              position === 1 &&
+              `${sliderStyles.small1}`
+            }
+            ${
+              windowSize === "small" &&
               position === 2 &&
-              `${sliderStyles.pos2Large}`
+              `${sliderStyles.small2}`
             }
             ${
-              windowSize === "extraLarge" &&
+              windowSize === "small" &&
+              position === 3 &&
+              `${sliderStyles.small3}`
+            }
+            ${
+              windowSize === "medium" &&
               position === 1 &&
-              `${sliderStyles.pos1ExtraLarge}`
+              `${sliderStyles.medium1}`
+            }
+            ${
+              windowSize === "medium" &&
+              position === 2 &&
+              `${sliderStyles.medium2}`
+            }
+            ${
+              windowSize === "large" &&
+              position === 1 &&
+              `${sliderStyles.large1}`
             }
             `}
+            
           >
             {collection &&
               collection.products.map(
@@ -111,8 +157,10 @@ export default function Slider() {
             </motion.button>
           )}
 
-          {((windowSize !== "extraLarge" && position !== 2) ||
-            (windowSize === "extraLarge" && position !== 1)) && (
+          {((windowSize == "tiny" && position !== 9) ||
+            (windowSize === "small" && position !== 3) ||
+            (windowSize === "medium" && position !== 2) ||
+            (windowSize === "large" && position !== 1)) && (
             <motion.button
               whileHover={{ scale: 1.2 }}
               whileTap={{

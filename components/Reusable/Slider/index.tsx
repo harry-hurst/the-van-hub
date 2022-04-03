@@ -44,14 +44,11 @@ export default function Slider() {
 
   return (
     <div id={sliderStyles.container}>
-      <h1>{windowSize}</h1>
-      <h2>{position}</h2>
       <div className="container" id={sliderStyles.inner}>
         <div className="border rounded" id={sliderStyles.slider}>
           <div
             id={sliderStyles.sliderInner}
             className={`
-
             ${
               windowSize === "tiny" && position === 1 && `${sliderStyles.tiny1}`
             }
@@ -110,7 +107,6 @@ export default function Slider() {
               `${sliderStyles.large1}`
             }
             `}
-            
           >
             {collection &&
               collection.products.map(

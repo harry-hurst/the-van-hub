@@ -51,6 +51,12 @@
   }
 }
 
+/* arrow buttons */
+.arrow {
+  position: absolute;
+  top: calc(50% - 25px);
+}
+
 .tiny1 {
   transform: translateX(-100%);
 }
@@ -100,8 +106,4 @@
   transform: translateX(-100%);
 }
 
-/* arrow buttons */
-.arrow {
-  position: absolute;
-  top: calc(50% - 25px);
-}
+

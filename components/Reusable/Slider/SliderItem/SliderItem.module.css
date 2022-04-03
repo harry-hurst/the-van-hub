@@ -3,6 +3,14 @@
   position: relative;
 }
 
-#descriptionContainer span{
+#descriptionContainer span {
   display: block;
+}
+
+#noStock i {
+  font-size: 0.9em;
+}
+
+#price {
+  line-height: 2rem;
 }

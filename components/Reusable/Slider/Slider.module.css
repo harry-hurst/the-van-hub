@@ -26,13 +26,13 @@
 #sliderInner {
   display: inline-grid;
   width: calc(100% + 1px);
-  grid-template-columns: repeat(9, 25%);
+  grid-template-columns: repeat(10, 25%);
   transition: transform var(--time) ease;
 }
 
 @media screen and (min-width: 1200px) {
   #sliderInner {
-    grid-template-columns: repeat(9, 20%);
+    grid-template-columns: repeat(10, 20%);
   }
 }
 
@@ -41,11 +41,11 @@
 }
 
 .pos1ExtraLarge {
-  transform: translateX(-80%);
+  transform: translateX(-100%);
 }
 
 .pos2Large {
-  transform: translateX(-125%);
+  transform: translateX(-150%);
 }
 
 /* arrow buttons */

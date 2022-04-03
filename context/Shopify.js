@@ -11,6 +11,11 @@ const client = Client.buildClient({
   storefrontAccessToken: "d69edb3953e7404359569864e924ef79",
 });
 
+client.collection.fetchAllWithProducts().then((collections) => {
+  // Do something with the collections
+  console.log(collections);
+});
+
 export default function ShopifyContextComponent(props) {
   const [basket, setBasket] = useState();
 

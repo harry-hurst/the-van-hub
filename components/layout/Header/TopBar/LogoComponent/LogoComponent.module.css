@@ -1,6 +1,6 @@
 #container {
-  width: 140px;
-  height: 40px;
+  width: 130px;
+  height: 35px;
   flex-shrink: 0;
   cursor: pointer;
   position: relative;
@@ -15,9 +15,9 @@
   transform: translateX(100%);
 }
 
-@media only screen and (min-width: 576px) {
-  #logoContainer {
-    width: 163px;
-    height: 45px;
+@media only screen and (min-width: 415px) {
+  #container {
+    width: 140px;
+    height: 40px;
   }
 }

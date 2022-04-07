@@ -13,14 +13,12 @@ export default function Header(props: {
 }) {
   return (
     <div id={headerStyles.container}>
-      <div className="container-xl">
-        <TopBar
-          burger={props.burger}
-          searchBar={props.searchBar}
-          basket={props.basket}
-        />
-        <Modal modal={props.modal} />
-      </div>
+      <TopBar
+        burger={props.burger}
+        searchBar={props.searchBar}
+        basket={props.basket}
+      />
+      <Modal modal={props.modal} />
     </div>
   );
 }

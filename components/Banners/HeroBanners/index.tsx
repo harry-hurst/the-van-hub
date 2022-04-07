@@ -9,10 +9,7 @@ import Image from "next/image";
 
 export default function HomeHeroBanner() {
   return (
-    <div
-      className="row mx-0"
-      style={{ marginTop: "-140px" }}
-    >
+    <div className="row mx-0" style={{ marginTop: "-140px" }}>
       <div
         className="col-sm-5 order-sm-2"
         id={offerBannerStyles.imageContainer}
@@ -26,15 +23,18 @@ export default function HomeHeroBanner() {
         />
       </div>
 
-      <div className="col-sm-7 order-sm-1 bg-light" id={offerBannerStyles.panel}>
+      <div
+        className="col-sm-7 order-sm-1 text-white"
+        id={offerBannerStyles.panel}
+      >
         <div id={offerBannerStyles.wedge} />
         <div className="container">
-          <h2 className="nun-sans text-dark">
+          <h2 className="nun-sans">
             High quality Lithium Ion Batteries and electrical parts for your
             conversion.
           </h2>
 
-          <p className="text-muted">
+          <p>
             We stock the best Quality LiFePO4 leisure batteries in various sizes
             as well as various other electrical parts and accessories that are
             essential for any good conversion.

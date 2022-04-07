@@ -1,5 +1,4 @@
 #container {
-  margin: 1rem 0;
   position: relative;
 }
 
@@ -14,25 +13,17 @@
 }
 
 #heading {
-  margin: 0;
   cursor: pointer;
   line-height: 2rem;
   text-align: center;
   letter-spacing: 0.1rem;
-  border-radius: var(--border-radius);
-  background: var(--light);
 }
 
 #paragraph {
-  color: var(--font);
   line-height: 1.3rem;
   letter-spacing: 0.05rem;
 }
 
-#arrow {
-  transition: transform var(--time) ease;
-}
-
-.rotate {
+.rotate:before {
   transform: rotate(-180deg);
 }

@@ -16,7 +16,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { hiddenContent } from "../../../../framer_motion/variants/accordion";
 
 export default function About(props: { accordian?: string | string[] }) {
-
   const [open, setOpen] = useState<boolean>();
 
   let mobileReference = useRef<any>(null);
@@ -47,32 +46,22 @@ export default function About(props: { accordian?: string | string[] }) {
   };
 
   return (
-    <motion.div layout id={aboutStyles.container}>
+    <motion.div layout id={aboutStyles.container} className="bg-light rounded">
       <i id={aboutStyles.mobileScrollReference} ref={mobileReference} />
       <i id={aboutStyles.scrollReference} ref={reference} />
       <motion.h4 layout onClick={toggleOpen} id={aboutStyles.heading}>
         WHY Buy Lithium Ion{" "}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="0.5px"
-          id={aboutStyles.arrow}
-          className={`${open && `${aboutStyles.rotate}`} bi bi-chevron-down`}
-          viewBox="0 0 16 16"
-        >
-          <path
-            fillRule="evenodd"
-            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-          />
-        </svg>
+        <i
+          className={`bi bi-chevron-down
+            ${open && `${aboutStyles.rotate}`}
+            `}
+        ></i>
       </motion.h4>
 
       <AnimatePresence>
         {open && (
           <motion.div
+          className="p-3"
             layout
             variants={hiddenContent}
             initial="hidden"
@@ -97,7 +86,7 @@ export default function About(props: { accordian?: string | string[] }) {
                 <button
                   type="button"
                   className="btn btn-success btn-lg"
-                  style={{ color: "var(--dark)"}}
+                  style={{ color: "var(--dark)" }}
                 >
                   Shop our batteries
                 </button>

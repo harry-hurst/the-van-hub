@@ -11,9 +11,10 @@ import { navBarItem } from "../../../../../../framer_motion/variants/navBar";
 // Next components
 import Link from "next/link";
 
+import { headingsDesk } from "../../../../../../data/headings";
+
 export default function NavBar() {
   // import headings array:
-  const headingsModule = require("../../../../../../data/headings");
 
   return (
     <motion.ul
@@ -23,21 +24,22 @@ export default function NavBar() {
       exit="exit"
       id={navBarStyles.container}
     >
-      {headingsModule.headings.map(
-        (item: { link: string; heading: string; dropdown: boolean; index: number }) => (
-          <Link href={item.link} key={item.index}>
+      {headingsDesk.map(
+        (
+          heading: { heading: string; link: string; dropdown: boolean },
+          index: number
+        ) => (
+          <Link href={heading.link} key={index}>
             <a>
               <motion.li
                 variants={navBarItem}
                 className={`
-          nun-sans text-muted border-primary border-top-0 border-bottom border-2
-            ${navBarStyles.item}
-          `}
+        nun-sans text-muted border-primary border-top-0 border-bottom border-2
+          ${navBarStyles.item}
+        `}
               >
-                {item.heading}
-                {item.dropdown && (
-                  <i className="bi bi-chevron-down"></i>
-                )}
+                {heading.heading}
+                {heading.dropdown && <i className="bi bi-chevron-down"></i>}
               </motion.li>
             </a>
           </Link>

@@ -29,10 +29,6 @@
   letter-spacing: 0.05rem;
 }
 
-#arrow {
-  transition: transform var(--time) ease;
-}
-
-.rotate {
+.rotate:before {
   transform: rotate(-180deg);
 }

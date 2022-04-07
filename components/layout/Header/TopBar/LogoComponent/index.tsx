@@ -2,7 +2,7 @@
 import logoComponentStyles from "./LogoComponent.module.css";
 
 // react
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { ScreenSizeContext } from "../../../../../context/ScreenSize";
 
 // redux
@@ -22,44 +22,29 @@ export default function LogoComponent() {
     (state: RootState) => state.searchBar.status
   );
 
-  // useState
-  const [visible, setVisible] = useState<boolean>(false);
-
-  // useEffect
-  useEffect(() => {
-    if (searchBarStatus === true) {
-      setVisible(false);
-    } else {
-      setTimeout(() => {
-        setVisible(true);
-      }, 600);
-    }
-  }, [searchBarStatus]);
-
   // useContext
   const { windowSize } = useContext(ScreenSizeContext);
 
   return (
     <AnimatePresence initial={false}>
-      {(visible || windowSize !== "small") && (
-        <Link href="/">
-          <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            exit={{opacity: 0}}
-            transition={{duration: 0.4}} 
-            id={logoComponentStyles.container}
-          >
-            <span id={logoComponentStyles.tm}>TM</span>
-            <Image
-              src="/images/logo.png"
-              layout="fill"
-              objectFit="contain"
-              alt="Logo"
-            />
-          </motion.div>
-        </Link>
-      )}
+      <Link href="/">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
+          id={logoComponentStyles.container}
+          className="me-3"
+        >
+          <span id={logoComponentStyles.tm}>TM</span>
+          <Image
+            src="/images/logo.png"
+            layout="fill"
+            objectFit="contain"
+            alt="Logo"
+          />
+        </motion.div>
+      </Link>
     </AnimatePresence>
   );
 }

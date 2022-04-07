@@ -82,29 +82,31 @@ export default function Modal(props: { modal: any }) {
   }, [activeMenu]);
 
   return (
-    <div
-      ref={props.modal}
-      id={modalStyles.modal}
-      className={` rounded-2
+    <div className="container">
+      <div
+        ref={props.modal}
+        id={modalStyles.modal}
+        className={` rounded-2
             ${modalState === "expanded" && `${modalStyles.modalExpanded}`}
             ${modalState === "collapsed" && `${modalStyles.modalCollapsed}`}
           `}
-    >
-      <Arrow />
+      >
+        <Arrow />
 
-      <div
-        id={modalStyles.modalCover}
-        className={`rounded-2
+        <div
+          id={modalStyles.modalCover}
+          className={`rounded-2
               ${modalState === "collapsed" && `${modalStyles.noPadding}`}
              `}
-      >
-        <div id={modalStyles.modalInner}>
-          <AnimatePresence>
-            {/* Return header component directly into modalInner */}
-            {returnHeader(activeMenu, FirstPositionDomain, windowSize)}
-            {/* Return content component directly into modalInner */}
-            {returnContent(activeMenu, activeMenuDelayed)}
-          </AnimatePresence>
+        >
+          <div id={modalStyles.modalInner}>
+            <AnimatePresence>
+              {/* Return header component directly into modalInner */}
+              {returnHeader(activeMenu, FirstPositionDomain, windowSize)}
+              {/* Return content component directly into modalInner */}
+              {returnContent(activeMenu, activeMenuDelayed)}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </div>

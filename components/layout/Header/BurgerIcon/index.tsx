@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   changeMenu,
   clearActiveMenu,
-} from "../../../../../state/activeMenuSlice";
-import { RootState } from "../../../../../state/store";
+} from "../../../../state/activeMenuSlice";
+import { RootState } from "../../../../state/store";
 
 // styles
 import burgerIconStyles from "./BurgerIcon.module.css";

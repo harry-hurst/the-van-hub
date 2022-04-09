@@ -30,31 +30,6 @@ export default function MobileMenu() {
       exit="hidden"
       id={mobileMenuStyles.container}
     >
-          {/* <motion.ul
-      variants={navBar}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      id={navBarStyles.container}
-    >
-      {headingsDesk.map((item) => (
-        <Link href={item.link} key={item.heading}>
-          <a>
-            <motion.li
-              variants={navBarItem}
-              className={`
-        nun-sans text-muted border-primary border-top-0 border-bottom border-2
-          ${navBarStyles.item}
-        `}
-            >
-              {item.heading}
-              {item.dropdown && <i className="bi bi-chevron-down"></i>}
-            </motion.li>
-          </a>
-        </Link>
-      ))}
-    </motion.ul> */}
-
       {headingsMob.map(
         (heading: { heading: string; link: string }, index: number) => (
           <Link href={heading.link} key={index}>

@@ -1,68 +1,36 @@
 // styles
-import searchBarStyles from "./SearchBar.module.css";
-
-// react
-import { useState, useContext, useEffect } from "react";
-import { ScreenSizeContext } from "../../../../../context/ScreenSize";
-
-// modules
-import { motion, AnimatePresence } from "framer-motion";
-import { closeButton } from "../../../../../framer_motion/variants/searchBar";
-import { placeholder } from "../../../../../framer_motion/variants/searchBar";
+import searchBarDeskStyles from "./SearchBarDesk.module.css";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../../../../state/store";
+import { RootState } from "../../../../state/store";
+
+// modules
+import { motion, AnimatePresence } from "framer-motion";
+import { closeButton } from "../../../../framer_motion/variants/searchBar";
+import { placeholder } from "../../../../framer_motion/variants/searchBar";
 
 import {
   changeMenu,
   clearActiveMenu,
-} from "../../../../../state/activeMenuSlice";
+} from "../../../../state/activeMenuSlice";
 
 // open and close searchBar actions:
 import {
   openSearchBar,
   closeSearchBar,
-} from "../../../../../state/searchBarSlice";
+} from "../../../../state/searchBarSlice";
 
 // update and clear searchTerm actions:
 import {
   updateSearchTerm,
   clearSearchTerm,
-} from "../../../../../state/searchTermSlice";
+} from "../../../../state/searchTermSlice";
 
-export default function SearchBar(props: { searchBar: any }) {
-  // redux
-  const searchBarStatus = useSelector(
-    (state: RootState) => state.searchBar.status
-  );
-
-  // mechanical delay for contents of searchBar:
-  const [open, setOpen] = useState<boolean>(false);
-  const [contents, setContents] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (searchBarStatus === true) {
-      setTimeout(() => {
-        setOpen(true);
-      }, 400);
-      setTimeout(() => {
-        setContents(true);
-      }, 600);
-    } else {
-      setTimeout(() => {
-        setOpen(false);
-      }, 400);
-      setContents(false);
-    }
-  }, [searchBarStatus]);
-
+export default function SearchBar(props: { open: boolean; searchBar?: any }) {
   const searchTerm = useSelector((state: RootState) => state.searchTerm.term);
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
   const dispatch = useDispatch();
-
-  // useContext
-  const { windowSize } = useContext(ScreenSizeContext);
 
   function setSearchTerm(e: any) {
     // dispatch new search term:
@@ -76,31 +44,26 @@ export default function SearchBar(props: { searchBar: any }) {
 
   return (
     <div
-      id={searchBarStyles.container}
-      className={`
-    ${
-      (open || windowSize === "large" || windowSize === "extraLarge") &&
-      `${searchBarStyles.searchOpen}`
-    }
-  `}
+      id={searchBarDeskStyles.container}
+      className={` my-1 ${props.open && searchBarDeskStyles.opened}`}
     >
-      <div ref={props.searchBar} id={searchBarStyles.searchBar}>
+      <div ref={props.searchBar} id={searchBarDeskStyles.searchBar}>
         <button
           type="button"
-          className="btn btn-primary"
+          className={` btn btn-primary
+          ${`${searchBarDeskStyles.buttonCustom}`}
+        `}
           onClick={() => dispatch(openSearchBar())}
         >
           <i
             className={` bi bi-search
-          ${`${searchBarStyles.searchIcon}`}
+          ${`${searchBarDeskStyles.searchIcon}`}
         `}
           ></i>
         </button>
 
         <AnimatePresence>
-          {(contents ||
-            windowSize === "large" ||
-            windowSize === "extraLarge") && (
+          {props.open && (
             <>
               <motion.input
                 variants={placeholder}
@@ -109,7 +72,7 @@ export default function SearchBar(props: { searchBar: any }) {
                 exit="hidden"
                 type="search"
                 size={1}
-                placeholder="What are you looking for?"
+                placeholder="what are you looking for?"
                 id="searchBarInput"
                 autoComplete="off"
                 autoCorrect="off"
@@ -126,7 +89,9 @@ export default function SearchBar(props: { searchBar: any }) {
                 animate="visible"
                 exit="hidden"
                 type="button"
-                className="btn btn-primary"
+                className={` btn btn-primary
+                ${`${searchBarDeskStyles.buttonCustom}`}
+              `}
                 onClick={() => {
                   dispatch(closeSearchBar());
                   dispatch(clearActiveMenu());
@@ -135,7 +100,7 @@ export default function SearchBar(props: { searchBar: any }) {
               >
                 <i
                   className={` bi bi-x-lg
-          ${`${searchBarStyles.closeIcon}`}
+          ${`${searchBarDeskStyles.closeIcon}`}
         `}
                 ></i>
               </motion.button>

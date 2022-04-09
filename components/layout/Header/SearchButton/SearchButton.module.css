@@ -1,0 +1,11 @@
+#container {
+  margin-left: auto;
+}
+
+.searchIcon {
+  font-size: 22px;
+}
+
+.searchIcon:before {
+  transform: translateY(1px);
+}

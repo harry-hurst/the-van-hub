@@ -1,15 +1,15 @@
 // react
 import { useContext } from "react";
-import { ShopifyContext } from "../../../../../context/Shopify";
-import { ScreenSizeContext } from "../../../../../context/ScreenSize";
+import { ShopifyContext } from "../../../../context/Shopify";
+import { ScreenSizeContext } from "../../../../context/ScreenSize";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import {
   changeMenu,
   clearActiveMenu,
-} from "../../../../../state/activeMenuSlice";
-import { RootState } from "../../../../../state/store";
+} from "../../../../state/activeMenuSlice";
+import { RootState } from "../../../../state/store";
 
 // styles
 import basketIconStyles from "./BasketIcon.module.css";

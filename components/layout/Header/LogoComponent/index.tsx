@@ -1,14 +1,6 @@
 // styles
 import logoComponentStyles from "./LogoComponent.module.css";
 
-// react
-import { useContext } from "react";
-import { ScreenSizeContext } from "../../../../../context/ScreenSize";
-
-// redux
-import { useSelector } from "react-redux";
-import { RootState } from "../../../../../state/store";
-
 // modules
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -17,13 +9,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function LogoComponent() {
-  // redux
-  const searchBarStatus = useSelector(
-    (state: RootState) => state.searchBar.status
-  );
-
-  // useContext
-  const { windowSize } = useContext(ScreenSizeContext);
 
   return (
     <AnimatePresence initial={false}>

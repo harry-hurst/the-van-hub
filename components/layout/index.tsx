@@ -56,14 +56,12 @@ export default function Layout(props: { children: React.ReactNode }) {
       <ShopifyContext>
         <ScreenSizeContext>
           <div id={layoutStyles.mainContentWrapper}>
-
             <Header
               burger={burger}
               searchBar={searchBar}
               basket={basket}
               modal={modal}
             />
-
             <AnimateSharedLayout>
               <div>{props.children}</div>
               <Footer />

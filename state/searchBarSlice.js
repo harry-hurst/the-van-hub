@@ -22,7 +22,7 @@ export const searchBarSlice = createSlice({
     },
 
     toggleSearchBar: (state) => {
-      state.status = !state;
+      state.status = !state.status;
     },
   },
 });

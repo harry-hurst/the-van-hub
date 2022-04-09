@@ -12,10 +12,19 @@ import bannerStatusReducer from "./bannerStatusSlice";
 const store = configureStore({
 
   reducer: {
+    // is the search bar open?
     searchBar: searchBarReducer,
+
+    // what is the search term?
     searchTerm: searchTermReducer,
+
+    // what is the active menu?
     activeMenu: activeMenuReducer,
+
+    // what is the current collectin id?
     collectionId: collectionIdReducer,
+
+    // is the promo banner open or dismissed?
     bannerStatus: bannerStatusReducer,
   },
   

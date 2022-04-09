@@ -1,14 +1,16 @@
+// styles
+import modalStyles from "./Modal.module.css";
+
 // react
 import { useState, useEffect, useContext } from "react";
+
+// context
 import { ScreenSizeContext } from "../../../../context/ScreenSize";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../../state/store";
 import { clearCollectionId } from "../../../../state/collectionIdSlice";
-
-// styles
-import modalStyles from "./Modal.module.css";
 
 // components
 import Arrow from "./Arrow";

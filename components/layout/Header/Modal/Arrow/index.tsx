@@ -1,6 +1,6 @@
 // redux
 import { useSelector } from "react-redux";
-import { RootState } from "../../../../../state/store";
+import { RootState } from "../../../../../../state/store";
 
 // styles
 import arrowStyles from "./Arrow.module.css";

@@ -10,10 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { closeButton } from "../../../../framer_motion/variants/searchBar";
 import { placeholder } from "../../../../framer_motion/variants/searchBar";
 
-import {
-  changeMenu,
-  clearActiveMenu,
-} from "../../../../state/activeMenuSlice";
+import { changeMenu, clearActiveMenu } from "../../../../state/activeMenuSlice";
 
 // open and close searchBar actions:
 import {
@@ -45,12 +42,16 @@ export default function SearchBar(props: { open: boolean; searchBar?: any }) {
   return (
     <div
       id={searchBarDeskStyles.container}
-      className={` my-1 ${props.open && searchBarDeskStyles.opened}`}
+      className={` my-1 border${props.open && searchBarDeskStyles.opened}`}
     >
-      <div ref={props.searchBar} id={searchBarDeskStyles.searchBar}>
+      <div
+        ref={props.searchBar}
+        id={searchBarDeskStyles.searchBar}
+        className="border border-primary border-1 rounded-3"
+      >
         <button
           type="button"
-          className={` btn btn-primary
+          className={` btn btn-primary rounded-1
           ${`${searchBarDeskStyles.buttonCustom}`}
         `}
           onClick={() => dispatch(openSearchBar())}
@@ -66,6 +67,7 @@ export default function SearchBar(props: { open: boolean; searchBar?: any }) {
           {props.open && (
             <>
               <motion.input
+                // style={{ border: "1px solid red" }}
                 variants={placeholder}
                 initial="hidden"
                 animate="visible"
@@ -89,7 +91,7 @@ export default function SearchBar(props: { open: boolean; searchBar?: any }) {
                 animate="visible"
                 exit="hidden"
                 type="button"
-                className={` btn btn-primary
+                className={` btn btn-primary rounded-1
                 ${`${searchBarDeskStyles.buttonCustom}`}
               `}
                 onClick={() => {

@@ -14,13 +14,11 @@
   display: flex;
   overflow: hidden;
   background: white;
-  border-radius: 15px;
   justify-content: space-between;
   transition: all calc(var(--time) / 2) ease;
 }
 
 #searchBar button {
-  border-radius: 13px;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -36,12 +34,12 @@
 }
 
 .searchIcon {
-  font-size: 19px;
+  font-size: 18px;
 }
 
-.searchIcon:before {
-  transform: translateY(1px);
-}
+/* .searchIcon:before {
+  transform: translateY(10%);
+} */
 
 .closeIcon {
   font-size: 14px;

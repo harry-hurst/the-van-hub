@@ -42,16 +42,16 @@ export default function SearchBar(props: { open: boolean; searchBar?: any }) {
   return (
     <div
       id={searchBarDeskStyles.container}
-      className={` my-1 border${props.open && searchBarDeskStyles.opened}`}
+      className={` my-1 me-2 ${props.open && searchBarDeskStyles.opened}`}
     >
       <div
         ref={props.searchBar}
         id={searchBarDeskStyles.searchBar}
-        className="border border-primary border-1 rounded-3"
+        className="border border-primary border-1 rounded-3 bg-white"
       >
         <button
           type="button"
-          className={` btn btn-primary rounded-1
+          className={` btn btn-primary rounded-2 p-0
           ${`${searchBarDeskStyles.buttonCustom}`}
         `}
           onClick={() => dispatch(openSearchBar())}
@@ -91,7 +91,7 @@ export default function SearchBar(props: { open: boolean; searchBar?: any }) {
                 animate="visible"
                 exit="hidden"
                 type="button"
-                className={` btn btn-primary rounded-1
+                className={` btn btn-primary rounded-2 p-0
                 ${`${searchBarDeskStyles.buttonCustom}`}
               `}
                 onClick={() => {

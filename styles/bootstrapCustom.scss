@@ -1,6 +1,7 @@
-// make button text colour white
+// make button text colour white by setting low contrast ratio:
 $min-contrast-ratio: 0;
 
+// define colour theme:
 $primary: #1d9ae2; // #0069b4
 $secondary: #c9d6df;
 $success: #c6d41f;
@@ -10,29 +11,20 @@ $info: #519cc7; // #a2d5f2
 $light: #e4f1f9;
 $dark: #003049;
 
-// set border radius
-// $border-radius: 4px;
-
-// badge
+// BADGES:
 $badge-font-size: 1em;
 
-// breadcrumbs
+// BREADCRUMBS:
 $breadcrumb-font-size: 0.8rem;
 
-// buttons
-// $btn-padding-x: 0.65em;
-// $btn-padding-y: 0.35em;
-// $btn-link-color: white;
+// BUTTONS:
 $btn-font-family: Nunito Sans Semi Bold;
-// $btn-font-size: 0.9rem;
-
-// button close
-$btn-close-padding-x: 1em;
-$btn-close-padding-y: 1em;
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
+
+// BORDER WIDTHS:
 $border-widths: (
   1: 2px,
   2: 4px,
@@ -40,13 +32,15 @@ $border-widths: (
   4: 8px,
   5: 10px,
 );
-$border-radius: 4px;
-$border-radius-sm: 12px;
-$border-radius-md: 12px;
-$border-radius-lg: 16px;
+
+//BORDER RADIUS'S:
+// .rounded-0 will remove radius
+$border-radius-sm: 4px; // .rounded-1
+$border-radius: 12px; // .rounded-2
+$border-radius-lg: 16px; // .rounded-3
 $border-radius-pill: 50rem;
 
-// mb-0 etc.
+// utilities sheet for "mb-0" etc:
 @import "../node_modules/bootstrap/scss/utilities";
 
 @import "../node_modules/bootstrap/scss/root";

@@ -5,25 +5,13 @@
 }
 
 #basketContainer {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-shrink: 0;
-  color: white;
-  cursor: pointer;
   position: relative;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--time) ease;
 }
 
 #basketCount {
   top: 0;
   right: 0;
-  color: white;
   padding: 0 0.3rem;
   font-size: 0.9rem;
   position: absolute;
-  border-radius: 4px;
-  transform: translateX(20%);
 }

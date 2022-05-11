@@ -29,16 +29,19 @@ export default function SearchList(props: { am: string | null }) {
 
   // make a list of filtered search results that updates on change of searchTerm:
   useEffect(() => {
-    // allProducts should exist at this point as was created in ShopifyContext
-    setFilteredProducts(null);
+    // only set the filtered products when allProducts has been defined
+    if (allProducts) {
+      setFilteredProducts(null);
 
-    var filteredProducts = allProducts.filter((product: { title: string }) =>
-      product.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+      // allProducts not defined when trying to use it
+      var filteredProducts = allProducts.filter((product: { title: string }) =>
+        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
 
-    setTimeout(() => {
-      setFilteredProducts(filteredProducts);
-    }, 200);
+      setTimeout(() => {
+        setFilteredProducts(filteredProducts);
+      }, 200);
+    }
   }, [searchTerm]);
 
   function returnOffset() {

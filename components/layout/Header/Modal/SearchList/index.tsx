@@ -54,7 +54,7 @@ export default function SearchList(props: { am: string | null }) {
       </AnimateSharedLayout>
     ) : (
       <span id={searchListStyles.noResultsMessage} className="mt-5">
-        No products found for "{searchTerm}"
+        No products found for {searchTerm}
       </span>
     );
   }

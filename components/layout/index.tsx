@@ -79,7 +79,7 @@ export default function Layout(props: { children: React.ReactNode }) {
               <Footer />
             </AnimateSharedLayout>
 
-            <div
+            {/* <div
               style={{
                 position: "fixed",
                 top: "130px",
@@ -98,7 +98,8 @@ export default function Layout(props: { children: React.ReactNode }) {
               <br />
               bannerStatus: {bannerStatus.toString()}
               <br />
-            </div>
+            </div> */}
+            
           </div>
         </ScreenSizeContext>
       </ShopifyContext>

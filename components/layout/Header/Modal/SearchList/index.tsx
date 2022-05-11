@@ -2,7 +2,7 @@
 import searchListStyles from "./SearchMenu.module.css";
 
 // react
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { ShopifyContext } from "../../../../../context/Shopify";
 
 // redux
@@ -24,23 +24,6 @@ export default function SearchList(props: { am: string | null }) {
   // useContext
   const { allProducts } = useContext(ShopifyContext);
 
-  // useState
-  const [filteredProducts, setFilteredProducts] = useState<any>(null);
-
-  // make a list of filtered search results that updates on change of searchTerm:
-  useEffect(() => {
-   
-      // allProducts not defined when trying to use it
-      var filteredProducts = allProducts.filter((product: { title: string }) =>
-        product.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-
-      setTimeout(() => {
-        setFilteredProducts(filteredProducts);
-      }, 200);
-    
-  }, [searchTerm]);
-
   function returnOffset() {
     // component mounting
     if (props.am === "searchList") {
@@ -52,6 +35,30 @@ export default function SearchList(props: { am: string | null }) {
     }
   }
 
+  function returnResults() {
+    // first create filteredProducts:
+    var filteredProducts = allProducts.filter((product: { title: string }) =>
+      product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    return filteredProducts.length > 0 ? (
+      <AnimateSharedLayout>
+        {filteredProducts.map((product: { title: string; id: string }) => (
+          <SearchItem
+            title={product.title}
+            searchTerm={searchTerm}
+            id={product.id}
+            key={product.id}
+          />
+        ))}
+      </AnimateSharedLayout>
+    ) : (
+      <span id={searchListStyles.noResultsMessage} className="mt-5">
+        No products found for "{searchTerm}"
+      </span>
+    );
+  }
+
   return (
     <motion.div
       variants={container}
@@ -61,26 +68,7 @@ export default function SearchList(props: { am: string | null }) {
       exit="hidden"
       id={searchListStyles.container}
     >
-      {filteredProducts ? (
-        filteredProducts.length > 0 ? (
-          <AnimateSharedLayout>
-            {filteredProducts.map((product: { title: string; id: string }) => (
-              <SearchItem
-                title={product.title}
-                searchTerm={searchTerm}
-                id={product.id}
-                key={product.id}
-              />
-            ))}
-          </AnimateSharedLayout>
-        ) : (
-          <span id={searchListStyles.noResultsMessage} className="mt-5">
-            No products found for "{searchTerm}"
-          </span>
-        )
-      ) : (
-        <Spinner />
-      )}
+      {allProducts ? returnResults() : <Spinner />}
     </motion.div>
   );
 }

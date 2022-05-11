@@ -18,4 +18,6 @@
   scrollbar-width: none; /* Firefox */
 }
 
-
+#noResultsMessage {
+  text-align: center;
+}

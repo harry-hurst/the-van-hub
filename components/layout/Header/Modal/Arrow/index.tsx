@@ -9,6 +9,7 @@ import arrowStyles from "./Arrow.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Arrow() {
+  
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
   return (

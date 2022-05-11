@@ -3,7 +3,6 @@
   display: flex;
   flex-shrink: 0;
   cursor: pointer;
-  font-size: 14px;
   min-height: 30px;
   margin-bottom: 10px;
   flex-direction: row;
@@ -11,6 +10,14 @@
   background-color: white;
   border: 1px solid var(--primary);
   border-radius: var(--border-radius);
+}
+
+.item span {
+  letter-spacing: 0.03rem;
+}
+
+.item:hover {
+  background-color: var(--footer-grey);
 }
 
 .item:last-child {

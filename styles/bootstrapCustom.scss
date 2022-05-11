@@ -2,14 +2,15 @@
 $min-contrast-ratio: 0;
 
 // define colour theme:
-$primary: #1d9ae2; // #0069b4
-$secondary: #c9d6df;
+$primary: #1d9ae2;
+$secondary: #003049;
 $success: #c6d41f;
 $danger: #d22329;
 $warning: #fa6619;
-$info: #519cc7; // #a2d5f2
+$info: #519cc7;
+
 $light: #e4f1f9;
-$dark: #003049;
+$dark: #56484d;
 
 // BADGES:
 $badge-font-size: 1em;
@@ -36,8 +37,8 @@ $border-widths: (
 //BORDER RADIUS'S:
 // .rounded-0 will remove radius
 $border-radius-sm: 4px; // .rounded-1
-$border-radius: 12px; // .rounded-2
-$border-radius-lg: 16px; // .rounded-3
+$border-radius: 8px; // .rounded-2
+$border-radius-lg: 12px; // .rounded-3
 $border-radius-pill: 50rem;
 
 // utilities sheet for "mb-0" etc:

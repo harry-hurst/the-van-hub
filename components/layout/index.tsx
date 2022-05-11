@@ -26,7 +26,16 @@ export default function Layout(props: { children: React.ReactNode }) {
   let searchBar = useRef<any>(null);
   let basket = useRef<any>(null);
 
+  const searchBarOpen = useSelector(
+    (state: RootState) => state.searchBar.status
+  );
+  const searchTerm = useSelector((state: RootState) => state.searchTerm.term);
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+  const collectionId = useSelector((state: RootState) => state.collectionId.id);
+  const bannerStatus = useSelector(
+    (state: RootState) => state.bannerStatus.status
+  );
+
   const dispatch = useDispatch();
 
   const handleClickAway = (event: { target: any }) => {
@@ -55,17 +64,41 @@ export default function Layout(props: { children: React.ReactNode }) {
     <main>
       <ShopifyContext>
         <ScreenSizeContext>
-          <div id={layoutStyles.mainContentWrapper}>
+          <div
+            id={layoutStyles.mainContentWrapper}
+          >
             <Header
               burger={burger}
-              searchBar={searchBar}
+              search={searchBar}
               basket={basket}
               modal={modal}
             />
+
             <AnimateSharedLayout>
               <div>{props.children}</div>
               <Footer />
             </AnimateSharedLayout>
+
+            <div
+              style={{
+                position: "fixed",
+                top: "130px",
+                right: "20px",
+                border: "1px solid red",
+                backgroundColor: "white",
+              }}
+            >
+              searchBar: {searchBarOpen.toString()}
+              <br />
+              searchTerm: {searchTerm}
+              <br />
+              activeMenu: {activeMenu === null ? "null" : activeMenu}
+              <br />
+              collectionId: {collectionId === null ? "null" : collectionId}
+              <br />
+              bannerStatus: {bannerStatus.toString()}
+              <br />
+            </div>
           </div>
         </ScreenSizeContext>
       </ShopifyContext>

@@ -22,14 +22,13 @@ export default function SearchItem(props: {
   // redux
   const dispatch = useDispatch();
 
-  const [splitTitleArray, setSplitTitleArray] = useState<string[]>([]);
+  // create string array to store the sections of product title around search term:
+  const [splitTitleArray, setSplitTitleArray] = useState<string[]>();
 
   // when search term changes
   useEffect(() => {
-    const Array = props.title
-      .toLowerCase()
-      .split(props.searchTerm.toLowerCase());
-    setSplitTitleArray(Array);
+    var array = props.title.toLowerCase().split(props.searchTerm.toLowerCase());
+    setSplitTitleArray(array);
   }, [props.searchTerm]);
 
   return (
@@ -40,21 +39,18 @@ export default function SearchItem(props: {
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className={searchItemStyles.item}
+        className={`rounded-1 nun-sans ${searchItemStyles.item}`}
         onClick={() => dispatch(clearActiveMenu())}
       >
-        <span>
-          {splitTitleArray.map((titleFragment, index) => (
+        {splitTitleArray &&
+          splitTitleArray.map((titleFragment, index) => (
             <>
-              {titleFragment}
-              {index + 1 < splitTitleArray.length && (
-                <span className={searchItemStyles.highlighted}>
-                  {props.searchTerm}
-                </span>
+              <span>{titleFragment}</span>
+              {index < splitTitleArray.length - 1 && (
+                <span className="nun-sans-bold">{props.searchTerm}</span>
               )}
             </>
           ))}
-        </span>
       </motion.div>
     </Link>
   );

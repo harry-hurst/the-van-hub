@@ -11,3 +11,22 @@
   align-items: center;
   justify-content: space-between;
 }
+
+#searchContainer {
+  margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+  #searchContainer {
+    margin-left: 0;
+    flex-basis: 50%;
+  }
+}
+
+.centered {
+  margin-left: 0 !important;
+}
+
+.flexGrow {
+  flex-grow: 1;
+}

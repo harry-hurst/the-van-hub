@@ -23,7 +23,7 @@ import Modal from "./Modal";
 
 export default function Header(props: {
   burger: any;
-  searchBar: any;
+  search: any;
   basket: any;
   modal: any;
 }) {
@@ -36,40 +36,47 @@ export default function Header(props: {
 
   return (
     <div id={headerStyles.container}>
-      <div className="bg-dark mb-1">
+      <div className="bg-secondary mb-1">
         <div id={headerStyles.navContainer} className="px-3 container">
           <BurgerIcon burger={props.burger} />
           <LogoComponent />
 
-          {windowSize === "medium" ||
-          windowSize === "large" ||
-          windowSize === "extraLarge" ? (
-            <SearchBar
-              open={
-                searchBarStatus ||
-                windowSize === "large" ||
-                windowSize === "extraLarge"
-              }
-              searchBar={props.searchBar}
-            />
-          ) : (
-            <SearchButton />
-          )}
+          <div
+            ref={props.search}
+            id={headerStyles.searchContainer}
+            className={`${
+              windowSize === "medium" &&
+              searchBarStatus &&
+              headerStyles.flexGrow
+            }`}
+          >
+            {windowSize === "medium" ||
+            windowSize === "large" ||
+            windowSize === "extraLarge" ? (
+              <SearchBar
+                open={
+                  searchBarStatus ||
+                  windowSize === "large" ||
+                  windowSize === "extraLarge"
+                }
+              />
+            ) : (
+              <SearchButton />
+            )}
+          </div>
 
           <BasketIcon basket={props.basket} />
         </div>
-
-        <div className="px-3 container border border-dark">
-          {searchBarStatus &&
-            (windowSize === "tiny" || windowSize === "small") && (
-              <SearchBar
-                open={
-                  searchBarStatus &&
-                  (windowSize === "tiny" || windowSize === "small")
-                }
-              />
-            )}
-        </div>
+        {searchBarStatus && (windowSize === "tiny" || windowSize === "small") && (
+          <div className="px-3 py-1 container">
+            <SearchBar
+              open={
+                searchBarStatus &&
+                (windowSize === "tiny" || windowSize === "small")
+              }
+            />
+          </div>
+        )}
       </div>
       <Modal modal={props.modal} />
     </div>

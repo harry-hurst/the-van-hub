@@ -14,11 +14,11 @@
 }
 
 .left {
-  left: 20px;
+  left: 25px;
 }
 .middle {
   left: 50%;
 }
 .right {
-  left: calc(100% - 20px);
+  left: calc(100% - 32px);
 }

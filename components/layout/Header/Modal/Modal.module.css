@@ -1,7 +1,7 @@
 /* modal */
 #modal {
   padding: 0;
-  height: 63px;
+  height: 50px;
   position: relative;
   box-shadow: var(--modal);
   transition: all var(--time) ease;
@@ -23,6 +23,7 @@
   padding: 10px;
   position: relative;
   background: white;
+  
   border-radius: var(--border-radius);
   transition: padding var(--time) ease;
 }

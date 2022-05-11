@@ -34,9 +34,9 @@ export default function BasketIcon(props: { basket: any }) {
 
   return (
     <div id={basketIconStyles.container}>
-      {windowSize !== "tiny" && (
+      {(windowSize === "large" || windowSize === "extraLarge")  && (
         <Link href="/shop">
-          <button type="button" className="btn btn-success ms-1 text-dark">
+          <button type="button" className="btn btn-success text-secondary">
             SHOP
           </button>
         </Link>

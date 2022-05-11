@@ -11,16 +11,18 @@ const client = Client.buildClient({
   storefrontAccessToken: "d69edb3953e7404359569864e924ef79",
 });
 
-client.collection.fetchAllWithProducts().then((collections) => {
-  // Do something with the collections
-  console.log(collections);
-});
-
 export default function ShopifyContextComponent(props) {
   const [basket, setBasket] = useState();
+  const [allProducts, setAllProducts] = useState();
 
   useEffect(() => {
     createBasket();
+  }, []);
+
+  useEffect(() => {
+    client.product.fetchAll().then((products) => {
+      setAllProducts(products);
+    });
   }, []);
 
   async function createBasket() {
@@ -75,7 +77,7 @@ export default function ShopifyContextComponent(props) {
 
   return (
     <ShopifyContext.Provider
-      value={{ client, basket, addToBasket, updateBasket }}
+      value={{ client, allProducts, basket, addToBasket, updateBasket }}
     >
       {props.children}
     </ShopifyContext.Provider>

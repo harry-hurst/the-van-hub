@@ -24,7 +24,7 @@ import {
   clearSearchTerm,
 } from "../../../../state/searchTermSlice";
 
-export default function SearchBar(props: { open: boolean; searchBar?: any }) {
+export default function SearchBar(props: { open: boolean }) {
   const searchTerm = useSelector((state: RootState) => state.searchTerm.term);
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
   const dispatch = useDispatch();
@@ -41,75 +41,68 @@ export default function SearchBar(props: { open: boolean; searchBar?: any }) {
 
   return (
     <div
-      id={searchBarDeskStyles.container}
-      className={` my-1 me-2 ${props.open && searchBarDeskStyles.opened}`}
+      id={searchBarDeskStyles.searchBar}
+      className="border border-primary border-1 rounded-3 bg-white"
     >
-      <div
-        ref={props.searchBar}
-        id={searchBarDeskStyles.searchBar}
-        className="border border-primary border-1 rounded-3 bg-white"
-      >
-        <button
-          type="button"
-          className={` btn btn-primary rounded-2 p-0
+      <button
+        type="button"
+        className={` btn btn-primary rounded-2 p-0
           ${`${searchBarDeskStyles.buttonCustom}`}
         `}
-          onClick={() => dispatch(openSearchBar())}
-        >
-          <i
-            className={` bi bi-search
+        onClick={() => dispatch(openSearchBar())}
+      >
+        <i
+          className={` bi bi-search
           ${`${searchBarDeskStyles.searchIcon}`}
         `}
-          ></i>
-        </button>
+        ></i>
+      </button>
 
-        <AnimatePresence>
-          {props.open && (
-            <>
-              <motion.input
-                // style={{ border: "1px solid red" }}
-                variants={placeholder}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                type="search"
-                size={1}
-                placeholder="what are you looking for?"
-                id="searchBarInput"
-                autoComplete="off"
-                autoCorrect="off"
-                value={searchTerm}
-                className="input-group mx-1"
-                onChange={(e) => {
-                  setSearchTerm(e);
-                }}
-              />
+      <AnimatePresence>
+        {props.open && (
+          <>
+            <motion.input
+              variants={placeholder}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              type="search"
+              size={1}
+              placeholder="what are you looking for?"
+              id="searchBarInput"
+              autoComplete="off"
+              autoCorrect="off"
+              value={searchTerm}
+              className={`input-group mx-1 ${`${searchBarDeskStyles.searchInput}`}`}
+              onChange={(e) => {
+                setSearchTerm(e);
+              }}
+            />
 
-              <motion.button
-                variants={closeButton}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                type="button"
-                className={` btn btn-primary rounded-2 p-0
+            <motion.button
+              variants={closeButton}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              type="button"
+              className={` btn btn-primary rounded-2 p-0
                 ${`${searchBarDeskStyles.buttonCustom}`}
               `}
-                onClick={() => {
-                  dispatch(closeSearchBar());
-                  dispatch(clearActiveMenu());
-                  dispatch(clearSearchTerm());
-                }}
-              >
-                <i
-                  className={` bi bi-x-lg
+              onClick={() => {
+                dispatch(closeSearchBar());
+                dispatch(clearActiveMenu());
+                dispatch(clearSearchTerm());
+              }}
+            >
+              <i
+                className={` bi bi-x-lg
           ${`${searchBarDeskStyles.closeIcon}`}
         `}
-                ></i>
-              </motion.button>
-            </>
-          )}
-        </AnimatePresence>
-      </div>
+              ></i>
+            </motion.button>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

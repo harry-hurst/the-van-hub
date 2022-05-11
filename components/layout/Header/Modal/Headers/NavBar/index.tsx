@@ -34,7 +34,7 @@ export default function NavBar() {
               <motion.li
                 variants={navBarItem}
                 className={`
-        nun-sans text-muted border-primary border-top-0 border-bottom border-2
+        nun-sans text-secondary
           ${navBarStyles.item}
         `}
               >

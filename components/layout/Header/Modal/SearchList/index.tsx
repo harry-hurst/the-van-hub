@@ -36,7 +36,7 @@ export default function SearchList(props: { am: string | null }) {
   }
 
   function returnResults() {
-    // first create filteredProducts:
+    // create filteredProducts:
     var filteredProducts = allProducts.filter((product: { title: string }) =>
       product.title.toLowerCase().includes(searchTerm.toLowerCase())
     );

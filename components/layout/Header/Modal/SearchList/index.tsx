@@ -29,10 +29,7 @@ export default function SearchList(props: { am: string | null }) {
 
   // make a list of filtered search results that updates on change of searchTerm:
   useEffect(() => {
-    // only set the filtered products when allProducts has been defined
-    if (allProducts) {
-      setFilteredProducts(null);
-
+   
       // allProducts not defined when trying to use it
       var filteredProducts = allProducts.filter((product: { title: string }) =>
         product.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -41,7 +38,7 @@ export default function SearchList(props: { am: string | null }) {
       setTimeout(() => {
         setFilteredProducts(filteredProducts);
       }, 200);
-    }
+    
   }, [searchTerm]);
 
   function returnOffset() {

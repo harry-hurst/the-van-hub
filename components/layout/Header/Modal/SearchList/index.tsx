@@ -14,7 +14,7 @@ import SearchItem from "./SearchItem";
 import Spinner from "../../../../Reusable/Spinner";
 
 // modules
-import { motion, AnimateSharedLayout } from "framer-motion";
+import { motion } from "framer-motion";
 import { container } from "../../../../../framer_motion/variants/searchList";
 
 export default function SearchList(props: { am: string | null }) {
@@ -42,7 +42,7 @@ export default function SearchList(props: { am: string | null }) {
     );
 
     return filteredProducts.length > 0 ? (
-      <AnimateSharedLayout>
+      <ul className="m-0 p-0">
         {filteredProducts.map((product: { title: string; id: string }) => (
           <SearchItem
             title={product.title}
@@ -51,7 +51,7 @@ export default function SearchList(props: { am: string | null }) {
             key={product.id}
           />
         ))}
-      </AnimateSharedLayout>
+      </ul>
     ) : (
       <span id={searchListStyles.noResultsMessage} className="mt-5">
         No products found for {searchTerm}

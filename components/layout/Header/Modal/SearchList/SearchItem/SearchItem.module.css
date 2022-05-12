@@ -1,19 +1,12 @@
 .item {
   padding: 10px;
-  display: flex;
-  flex-shrink: 0;
+  display: block;
   cursor: pointer;
   min-height: 30px;
   margin-bottom: 10px;
-  flex-direction: row;
-  align-items: center;
   background-color: white;
   border: 1px solid var(--primary);
   border-radius: var(--border-radius);
-}
-
-.item span {
-  letter-spacing: 0.03rem;
 }
 
 .item:hover {
@@ -22,9 +15,4 @@
 
 .item:last-child {
   margin-bottom: 0;
-}
-
-.highlighted {
-  font-family: Nunito Bold !important;
-  background-color: var(--light);
 }

@@ -9,12 +9,12 @@ import arrowStyles from "./Arrow.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Arrow() {
-  
+
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
   return (
     <AnimatePresence>
-      {(activeMenu !== null && activeMenu !== "navMenu") && (
+      {activeMenu !== null && (
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -22,7 +22,7 @@ export default function Arrow() {
           transition={{ duration: 0.2 }}
           id={arrowStyles.dropdownArrowContainer}
           className={`
-            ${activeMenu === "mobileMenu" && `${arrowStyles.left}`}
+            ${activeMenu === "navMenu" && `${arrowStyles.left}`}
             ${activeMenu === "searchList" && `${arrowStyles.middle}`}
             ${activeMenu === "basketMenu" && `${arrowStyles.right}`}
           `}

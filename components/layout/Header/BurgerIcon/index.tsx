@@ -15,8 +15,8 @@ export default function BurgerIcon(props: { burger: any }) {
   const dispatch = useDispatch();
 
   function handleClick() {
-    if (activeMenu !== "mobileMenu") {
-      dispatch(changeMenu("mobileMenu"));
+    if (activeMenu !== "navMenu") {
+      dispatch(changeMenu("navMenu"));
     } else {
       dispatch(clearActiveMenu());
     }
@@ -28,7 +28,7 @@ export default function BurgerIcon(props: { burger: any }) {
       id={burgerIconStyles.container}
       onClick={() => handleClick()}
     >
-      {activeMenu === "mobileMenu" ? (
+      {activeMenu === "navMenu" ? (
         <i className="bi bi-x"></i>
       ) : (
         <i className="bi bi-list"></i>

@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 // open and close searchBar actions:
 import {
   toggleSearchBar,
-} from "../../../../state/searchBarSlice";
+} from "../../../../state/searchBarStateSlice";
 
 export default function SearchBarMob() {
 

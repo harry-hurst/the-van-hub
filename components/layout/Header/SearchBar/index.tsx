@@ -16,7 +16,7 @@ import { changeMenu, clearActiveMenu } from "../../../../state/activeMenuSlice";
 import {
   openSearchBar,
   closeSearchBar,
-} from "../../../../state/searchBarSlice";
+} from "../../../../state/searchBarStateSlice";
 
 // update and clear searchTerm actions:
 import {

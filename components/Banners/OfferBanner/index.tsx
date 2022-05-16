@@ -11,12 +11,12 @@ import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../state/store";
 
-import { hideBanner } from "../../../state/bannerStatusSlice";
+import { hideBanner } from "../../../state/bannerStateSlice";
 
 export default function OfferBanner() {
   // redux
   const bannerStatus = useSelector(
-    (state: RootState) => state.bannerStatus.status
+    (state: RootState) => state.bannerState.status
   );
 
   const dispatch = useDispatch();

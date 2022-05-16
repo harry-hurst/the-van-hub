@@ -15,27 +15,14 @@ import { clearCollectionId } from "../../../../state/collectionIdSlice";
 // components
 import Arrow from "./Arrow";
 
-import NavBar from "./Headers/NavBar"; // main navigation bar component
-import MobileMenu from "./MobileMenu"; // mobile navigation bar component
-
-import ShopMenu from "./Headers/ShopMenu"; // shop navigation bar component
+import NavBar from "./NavBar"; // main navigation bar component
 
 import NavMenu from "./NavMenu"; // pop-up secondary menu in /shop
 import Basket from "./Basket"; // basket component
 import SearchList from "./SearchList"; // search result component
 
-// next components
-import { useRouter } from "next/router";
-
-// modules
-import { AnimatePresence } from "framer-motion";
-
 export default function Modal(props: { modal: any }) {
   // router used for getting data out of the url bar
-  const router = useRouter();
-  const { FirstPositionDomain } = router.query;
-
-  // redux
 
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
@@ -49,7 +36,8 @@ export default function Modal(props: { modal: any }) {
 
   // update modal state:
   useEffect(() => {
-    // if there is an active menu, expand:
+    // if there is an active menu that is not "navMenu", expand:
+
     if (activeMenu !== null) {
       setModalState("expanded");
 
@@ -102,12 +90,8 @@ export default function Modal(props: { modal: any }) {
              `}
         >
           <div id={modalStyles.modalInner}>
-            <AnimatePresence>
-              {/* Return header component directly into modalInner */}
-              {returnHeader(activeMenu, FirstPositionDomain, windowSize)}
-              {/* Return content component directly into modalInner */}
-              {returnContent(activeMenu, activeMenuDelayed)}
-            </AnimatePresence>
+            {(windowSize !== "tiny" || activeMenu === "navMenu") && <NavBar windowSize={windowSize} />}
+            {returnContent(activeMenu, activeMenuDelayed)}
           </div>
         </div>
       </div>
@@ -115,38 +99,10 @@ export default function Modal(props: { modal: any }) {
   );
 }
 
-// for the header of the modal (when the modal is a bar):
-function returnHeader(
-  am: string | null | undefined,
-  fpd: string | string[] | undefined,
-  windowSize: string
-) {
-  switch (true) {
-    case fpd === "shop" && am === "navMenu" && windowSize !== "tiny":
-      return <ShopMenu />;
-
-    case fpd === "shop" && am === null && windowSize !== "tiny":
-      return <ShopMenu />;
-
-    case am === null && windowSize !== "tiny":
-      return <NavBar key={"navBar"} />;
-
-    default:
-      return null;
-  }
-}
-
-//  for the bulk of the modal content (when modal is opened):
 function returnContent(am: string | null, amd: string | null | undefined) {
   switch (amd) {
     case "basketMenu":
       return <Basket key={"basket"} />;
-
-    case "navMenu":
-      return <NavMenu key={"navMenu"} />;
-
-    case "mobileMenu":
-      return <MobileMenu key={"mobileMenu"} />;
 
     case "searchList":
       return <SearchList key={"searchList"} am={am} />;

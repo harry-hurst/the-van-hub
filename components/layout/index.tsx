@@ -14,6 +14,7 @@ import Footer from "../Footer";
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import { clearActiveMenu } from "../../state/activeMenuSlice";
+import { closeSearchBar } from "../../state/searchBarStateSlice";
 import { RootState } from "../../state/store";
 
 // modules
@@ -26,19 +27,13 @@ export default function Layout(props: { children: React.ReactNode }) {
   let searchBar = useRef<any>(null);
   let basket = useRef<any>(null);
 
-  const searchBarOpen = useSelector(
-    (state: RootState) => state.searchBar.status
-  );
-  const searchTerm = useSelector((state: RootState) => state.searchTerm.term);
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
-  const collectionId = useSelector((state: RootState) => state.collectionId.id);
-  const bannerStatus = useSelector(
-    (state: RootState) => state.bannerStatus.status
-  );
 
   const dispatch = useDispatch();
 
+  // clickaway listener on layout component.
   const handleClickAway = (event: { target: any }) => {
+    // if click was not in any of the components, clear the active menu:
     if (
       modal.current &&
       activeMenu !== null &&
@@ -50,6 +45,7 @@ export default function Layout(props: { children: React.ReactNode }) {
       )
     ) {
       dispatch(clearActiveMenu());
+      dispatch(closeSearchBar());
     }
   };
 
@@ -64,9 +60,7 @@ export default function Layout(props: { children: React.ReactNode }) {
     <main>
       <ShopifyContext>
         <ScreenSizeContext>
-          <div
-            id={layoutStyles.mainContentWrapper}
-          >
+          <div id={layoutStyles.mainContentWrapper}>
             <Header
               burger={burger}
               search={searchBar}
@@ -78,28 +72,6 @@ export default function Layout(props: { children: React.ReactNode }) {
               <div>{props.children}</div>
               <Footer />
             </AnimateSharedLayout>
-
-            {/* <div
-              style={{
-                position: "fixed",
-                top: "130px",
-                right: "20px",
-                border: "1px solid red",
-                backgroundColor: "white",
-              }}
-            >
-              searchBar: {searchBarOpen.toString()}
-              <br />
-              searchTerm: {searchTerm}
-              <br />
-              activeMenu: {activeMenu === null ? "null" : activeMenu}
-              <br />
-              collectionId: {collectionId === null ? "null" : collectionId}
-              <br />
-              bannerStatus: {bannerStatus.toString()}
-              <br />
-            </div> */}
-            
           </div>
         </ScreenSizeContext>
       </ShopifyContext>

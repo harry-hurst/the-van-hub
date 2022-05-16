@@ -23,7 +23,6 @@
   padding: 10px;
   position: relative;
   background: white;
-  
   border-radius: var(--border-radius);
   transition: padding var(--time) ease;
 }
@@ -34,6 +33,6 @@
 
 #modalInner {
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
 }

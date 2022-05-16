@@ -51,6 +51,7 @@ export default function NavBar(props: { windowSize: string }) {
           index: number
         ) => (
           <motion.li
+            key={index}
             variants={navBarItem}
             className={`
         nun-sans text-secondary
@@ -58,7 +59,7 @@ export default function NavBar(props: { windowSize: string }) {
           ${props.windowSize !== "tiny" && navBarStyles.itemDesktop}
         `}
           >
-            <Link href={heading.link} key={index}>
+            <Link href={heading.link}>
               <a>
                 {heading.heading}
                 {heading.dropdown && <i className="bi bi-chevron-down"></i>}

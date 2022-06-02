@@ -1,9 +1,9 @@
-export const headingsDesk = [
-  { heading: "Home", link: "/", dropdown: false },
+export const navHeadings = [
+  { heading: "Home", link: "", dropdown: false },
   { heading: "Shop", link: "/shop", dropdown: false },
-  { heading: "Batteries", link: "/?accordian=about", dropdown: true },
-  { heading: "Charging", link: "/?accordian=charging", dropdown: true },
-  { heading: "About Us", link: "/about", dropdown: false},
+  { heading: "Batteries", link: "", dropdown: true },
+  { heading: "Charging", link: "", dropdown: true },
+  { heading: "About Us", link: "/about-us", dropdown: false},
 ];
 
 export const shopHeadings = [

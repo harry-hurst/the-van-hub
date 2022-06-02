@@ -22,6 +22,7 @@ export default function ProductPage() {
 
   const { client, addToBasket } = useContext(ShopifyContext);
 
+  // componentDidUpdate()
   useEffect(() => {
     fetchProduct();
   }, [productId]);

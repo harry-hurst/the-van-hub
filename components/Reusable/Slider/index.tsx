@@ -1,12 +1,12 @@
 // styles
 import sliderStyles from "./Slider.module.css";
 
-// context
-import { ShopifyContext } from "../../../context/Shopify";
-
 // react
 import { useState, useEffect, useContext } from "react";
 import { ScreenSizeContext } from "../../../context/ScreenSize";
+
+// context
+import { ShopifyContext } from "../../../context/Shopify";
 
 // components
 import SliderItem from "./SliderItem";
@@ -16,21 +16,27 @@ import { motion, AnimatePresence } from "framer-motion";
 import { scaleUp } from "../../../framer_motion/variants/general/scaleUp";
 
 export default function Slider() {
+  // context
   const { client } = useContext(ShopifyContext);
   const { windowSize } = useContext(ScreenSizeContext);
 
-  const [collection, setCollection] = useState<any>();
-  const [position, setPosition] = useState<number>(0);
-
+  // custom js
   const collectionId = "Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI4MzgzMjUxNjc1OQ==";
 
-  // fetch collection from shopify:
+  // react
+  const [sliderProducts, setSliderProducts] = useState<undefined | any[]>(
+    undefined
+  );
+
+  const [position, setPosition] = useState<number>(0);
+
+  // componentDidMount()
   useEffect(() => {
+    // async method:
     client.collection
       .fetchWithProducts(collectionId, { productsFirst: 10 })
       .then((collection: any) => {
-        // Do something with the collection
-        setCollection(collection);
+        setSliderProducts(collection.products);
       });
   }, []);
 
@@ -50,72 +56,66 @@ export default function Slider() {
             id={sliderStyles.sliderInner}
             className={`
             ${
-              windowSize === "tiny" && position === 1 && `${sliderStyles.tiny1}`
-            }
-            ${
-              windowSize === "tiny" && position === 2 && `${sliderStyles.tiny2}`
-            }
-            ${
-              windowSize === "tiny" && position === 3 && `${sliderStyles.tiny3}`
-            }
-            ${
-              windowSize === "tiny" && position === 4 && `${sliderStyles.tiny4}`
-            }
-            ${
-              windowSize === "tiny" && position === 5 && `${sliderStyles.tiny5}`
-            }
-            ${
-              windowSize === "tiny" && position === 6 && `${sliderStyles.tiny6}`
-            }
-            ${
-              windowSize === "tiny" && position === 7 && `${sliderStyles.tiny7}`
-            }
-            ${
-              windowSize === "tiny" && position === 8 && `${sliderStyles.tiny8}`
-            }
-            ${
-              windowSize === "tiny" && position === 9 && `${sliderStyles.tiny9}`
-            }
-            ${
-              windowSize === "small" &&
+              windowSize === "mobile" &&
               position === 1 &&
-              `${sliderStyles.small1}`
+              `${sliderStyles.tiny1}`
             }
             ${
-              windowSize === "small" &&
+              windowSize === "mobile" &&
               position === 2 &&
-              `${sliderStyles.small2}`
+              `${sliderStyles.tiny2}`
             }
             ${
-              windowSize === "small" &&
+              windowSize === "mobile" &&
               position === 3 &&
-              `${sliderStyles.small3}`
+              `${sliderStyles.tiny3}`
             }
             ${
-              windowSize === "medium" &&
-              position === 1 &&
-              `${sliderStyles.medium1}`
+              windowSize === "mobile" &&
+              position === 4 &&
+              `${sliderStyles.tiny4}`
             }
             ${
-              windowSize === "medium" &&
-              position === 2 &&
-              `${sliderStyles.medium2}`
+              windowSize === "mobile" &&
+              position === 5 &&
+              `${sliderStyles.tiny5}`
             }
             ${
-              windowSize === "large" &&
+              windowSize === "mobile" &&
+              position === 6 &&
+              `${sliderStyles.tiny6}`
+            }
+            ${
+              windowSize === "mobile" &&
+              position === 7 &&
+              `${sliderStyles.tiny7}`
+            }
+            ${
+              windowSize === "mobile" &&
+              position === 8 &&
+              `${sliderStyles.tiny8}`
+            }
+            ${
+              windowSize === "mobile" &&
+              position === 9 &&
+              `${sliderStyles.tiny9}`
+            }
+            
+            ${
+              windowSize === "laptop" &&
               position === 1 &&
               `${sliderStyles.large1}`
             }
             `}
           >
-            {collection &&
-              collection.products.map(
+            {sliderProducts !== undefined &&
+              sliderProducts.map(
                 (product: {
                   handle: string;
                   id: string;
                   title: string;
-                  images: any;
-                  variants: any;
+                  images: any[];
+                  variants: any[];
                   availableForSale: boolean;
                 }) => (
                   <SliderItem
@@ -144,8 +144,8 @@ export default function Slider() {
               animate="visible"
               exit="hidden"
               type="button"
-              className={`${sliderStyles.arrow} btn btn-dark rounded p-3`}
-              style={{ left: "0" }}
+              className={`${sliderStyles.arrow} btn btn-info rounded p-3`}
+              style={{ left: "-20px" }}
               onClick={() => {
                 arrowClick("left");
               }}
@@ -154,10 +154,9 @@ export default function Slider() {
             </motion.button>
           )}
 
-          {((windowSize == "tiny" && position !== 9) ||
-            (windowSize === "small" && position !== 3) ||
-            (windowSize === "medium" && position !== 2) ||
-            (windowSize === "large" && position !== 1)) && (
+          {((windowSize == "mobile" && position !== 9) ||
+            (windowSize === "tablet" && position !== 3) ||
+            (windowSize === "laptop" && position !== 1)) && (
             <motion.button
               whileHover={{ scale: 1.2 }}
               whileTap={{
@@ -168,8 +167,8 @@ export default function Slider() {
               animate="visible"
               exit="hidden"
               type="button"
-              className={`${sliderStyles.arrow} btn btn-dark rounded p-3`}
-              style={{ right: "0" }}
+              className={`${sliderStyles.arrow} btn btn-info rounded p-3`}
+              style={{ right: "-20px" }}
               onClick={() => {
                 arrowClick("right");
               }}

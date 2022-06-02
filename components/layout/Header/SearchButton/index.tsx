@@ -9,7 +9,7 @@ import {
   toggleSearchBar,
 } from "../../../../state/searchBarStateSlice";
 
-export default function SearchBarMob() {
+export default function SearchButton() {
 
   const dispatch = useDispatch();
 

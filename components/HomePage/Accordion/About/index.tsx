@@ -23,17 +23,14 @@ export default function About(props: { accordian?: string | string[] }) {
 
   const { windowSize } = useContext(ScreenSizeContext);
 
+  // componentDidUpdate
   useEffect(() => {
     if (props.accordian === "about") {
       setOpen(true);
 
-      if (windowSize === "small") {
+      if (windowSize === "tablet") {
         setTimeout(() => {
           mobileReference.current.scrollIntoView();
-        }, 800);
-      } else if (windowSize === "medium") {
-        setTimeout(() => {
-          reference.current.scrollIntoView();
         }, 800);
       }
     } else {
@@ -61,7 +58,7 @@ export default function About(props: { accordian?: string | string[] }) {
       <AnimatePresence>
         {open && (
           <motion.div
-          className="p-3"
+            className="p-3"
             layout
             variants={hiddenContent}
             initial="hidden"

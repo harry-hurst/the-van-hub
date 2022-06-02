@@ -1,7 +1,7 @@
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import {
-  changeMenu,
+  changeActiveMenu,
   clearActiveMenu,
 } from "../../../../state/activeMenuSlice";
 import { RootState } from "../../../../state/store";
@@ -12,11 +12,12 @@ import burgerIconStyles from "./BurgerIcon.module.css";
 export default function BurgerIcon(props: { burger: any }) {
   // redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+
   const dispatch = useDispatch();
 
   function handleClick() {
-    if (activeMenu !== "navMenu") {
-      dispatch(changeMenu("navMenu"));
+    if (activeMenu !== "mobileNav") {
+      dispatch(changeActiveMenu("mobileNav"));
     } else {
       dispatch(clearActiveMenu());
     }

@@ -12,13 +12,16 @@ const client = Client.buildClient({
 });
 
 export default function ShopifyContextComponent(props) {
+  
   const [basket, setBasket] = useState();
   const [allProducts, setAllProducts] = useState();
 
+  // componentDidMount()
   useEffect(() => {
     createBasket();
   }, []);
 
+  // componentDidMount()
   useEffect(() => {
     client.product.fetchAll().then((products) => {
       setAllProducts(products);

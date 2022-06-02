@@ -70,7 +70,7 @@ export default function Basket() {
           <Link href="/shop">
             <button
               type="button"
-              className="btn btn-warning btn-lg"
+              className="btn btn-success btn-lg"
               onClick={() => {
                 dispatch(clearActiveMenu());
               }}

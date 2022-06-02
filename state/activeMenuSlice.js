@@ -9,7 +9,7 @@ export const activeMenuSlice = createSlice({
 
   reducers: {
 
-    changeMenu: (state, action) => {
+    changeActiveMenu: (state, action) => {
       state.menu = action.payload;
     },
 
@@ -20,6 +20,6 @@ export const activeMenuSlice = createSlice({
   },
 });
 
-export const { changeMenu, clearActiveMenu } = activeMenuSlice.actions;
+export const { changeActiveMenu, clearActiveMenu } = activeMenuSlice.actions;
 
 export default activeMenuSlice.reducer;

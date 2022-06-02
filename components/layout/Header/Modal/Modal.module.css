@@ -5,7 +5,6 @@
   position: relative;
   box-shadow: var(--modal);
   transition: all var(--time) ease;
-  border-radius: var(--border-radius);
 }
 
 .modalExpanded {
@@ -33,6 +32,6 @@
 
 #modalInner {
   height: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
   position: relative;
 }

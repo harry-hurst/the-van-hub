@@ -10,7 +10,6 @@ import bannerStateReducer from "./bannerStateSlice";
 
 // export default store with a reducer function inside.
 const store = configureStore({
-
   reducer: {
     // is the search bar open?
     searchBar: searchBarStateReducer,
@@ -27,7 +26,6 @@ const store = configureStore({
     // is the promo banner open or dismissed?
     bannerState: bannerStateReducer,
   },
-  
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

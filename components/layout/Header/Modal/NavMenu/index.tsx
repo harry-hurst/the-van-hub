@@ -26,6 +26,7 @@ export default function NavMenu() {
   // fetch collection based on collectionId:
   const [collection, setCollection] = useState<any>();
 
+  // componentDidUpdate()
   useEffect(() => {
     client.collection
       .fetchWithProducts(collectionId)
@@ -38,6 +39,7 @@ export default function NavMenu() {
   return (
     <AnimateSharedLayout>
       <motion.div
+        style={{ border: "1px solid green" }}
         variants={navMenu}
         initial="hidden"
         animate="visible"

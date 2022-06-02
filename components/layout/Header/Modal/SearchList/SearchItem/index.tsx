@@ -22,7 +22,7 @@ export default function SearchItem(props: {
   // create string array to store the sections of product title around search term:
   const [splitTitleArray, setSplitTitleArray] = useState<string[]>();
 
-  // when search term changes
+  // componentDidUpdate()
   useEffect(() => {
     var array = props.title.toLowerCase().split(props.searchTerm.toLowerCase());
     setSplitTitleArray(array);

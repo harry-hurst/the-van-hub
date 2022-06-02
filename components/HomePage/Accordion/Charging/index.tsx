@@ -23,17 +23,14 @@ export default function Charging(props: { accordian?: string | string[] }) {
 
   const { windowSize } = useContext(ScreenSizeContext);
 
+  // componentDidUpdate
   useEffect(() => {
     if (props.accordian === "charging") {
       setOpen(true);
 
-      if (windowSize === "small") {
+      if (windowSize === "tablet") {
         setTimeout(() => {
           mobileReference.current.scrollIntoView();
-        }, 800);
-      } else if (windowSize === "medium") {
-        setTimeout(() => {
-          reference.current.scrollIntoView();
         }, 800);
       }
     } else {

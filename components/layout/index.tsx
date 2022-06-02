@@ -4,39 +4,37 @@ import layoutStyles from "./Layout.module.css";
 // react
 import { useEffect, useRef } from "react";
 
-// components
+// redux
+import { clearActiveMenu } from "../../state/activeMenuSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../state/store";
+
+// context
 import ShopifyContext from "../../context/Shopify";
 import ScreenSizeContext from "../../context/ScreenSize";
 
+// components
 import Header from "./Header";
 import Footer from "../Footer";
-
-// redux
-import { useSelector, useDispatch } from "react-redux";
-import { clearActiveMenu } from "../../state/activeMenuSlice";
-import { closeSearchBar } from "../../state/searchBarStateSlice";
-import { RootState } from "../../state/store";
 
 // modules
 import { AnimateSharedLayout } from "framer-motion";
 
 export default function Layout(props: { children: React.ReactNode }) {
+  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+
   // click away listener
   let modal = useRef<any>(null);
   let burger = useRef<any>(null);
   let searchBar = useRef<any>(null);
   let basket = useRef<any>(null);
 
-  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
-
   const dispatch = useDispatch();
 
-  // clickaway listener on layout component.
   const handleClickAway = (event: { target: any }) => {
-    // if click was not in any of the components, clear the active menu:
     if (
-      modal.current &&
       activeMenu !== null &&
+      modal.current &&
       !(
         modal.current.contains(event.target) ||
         burger.current.contains(event.target) ||
@@ -45,10 +43,10 @@ export default function Layout(props: { children: React.ReactNode }) {
       )
     ) {
       dispatch(clearActiveMenu());
-      dispatch(closeSearchBar());
     }
   };
 
+  // componentWillUnmount()
   useEffect(() => {
     document.addEventListener("click", handleClickAway, true);
     return () => {
@@ -67,7 +65,6 @@ export default function Layout(props: { children: React.ReactNode }) {
               basket={basket}
               modal={modal}
             />
-
             <AnimateSharedLayout>
               <div>{props.children}</div>
               <Footer />

@@ -4,19 +4,17 @@ export const ScreenSizeContext = React.createContext();
 export default function ScreenSizeContextComponent(props) {
   const [windowSize, setWindowSize] = useState();
 
-  // set the window size
+  // ccomponentDidMount()
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 415) {
-        setWindowSize("tiny");
-      } else if (415 <= window.innerWidth && window.innerWidth < 576) {
-        setWindowSize("small");
-      } else if (576 <= window.innerWidth && window.innerWidth < 768) {
-        setWindowSize("medium");
-      } else if (768 <= window.innerWidth && window.innerWidth < 1200) {
-        setWindowSize("large");
-      } else if (1200 <= window.innerWidth) {
-        setWindowSize("extraLarge");
+        setWindowSize("mobile");
+      } else if (415 <= window.innerWidth && window.innerWidth < 912) {
+        setWindowSize("tablet");
+      } else if (912 <= window.innerWidth && window.innerWidth < 1240) {
+        setWindowSize("laptop");
+      } else if (1240 <= window.innerWidth) {
+        setWindowSize("desktop");
       }
     }
 

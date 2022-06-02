@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { closeButton } from "../../../../framer_motion/variants/searchBar";
 import { placeholder } from "../../../../framer_motion/variants/searchBar";
 
-import { changeMenu, clearActiveMenu } from "../../../../state/activeMenuSlice";
+import { changeActiveMenu, clearActiveMenu } from "../../../../state/activeMenuSlice";
 
 // open and close searchBar actions:
 import {
@@ -35,7 +35,7 @@ export default function SearchBar(props: { open: boolean }) {
 
     // set active menu to "searchList" if it not already "searchList":
     if (activeMenu !== "searchList") {
-      dispatch(changeMenu("searchList"));
+      dispatch(changeActiveMenu("searchList"));
     }
   }
 

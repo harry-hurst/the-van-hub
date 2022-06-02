@@ -32,6 +32,7 @@ import {
 export default function Sprinter(props) {
   const [displacement, setDisplacement] = useState("0");
 
+  // componentDidUpdate
   useEffect(() => {
     if (props.slideIndex === 0) {
       setDisplacement("0");
@@ -39,6 +40,7 @@ export default function Sprinter(props) {
       setDisplacement("-100vw");
     }
   }, [props.slideIndex]);
+
   return (
     <motion.div
       initial={false}

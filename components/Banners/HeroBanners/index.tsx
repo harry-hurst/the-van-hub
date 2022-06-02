@@ -24,7 +24,7 @@ export default function HomeHeroBanner() {
       </div>
 
       <div
-        className="col-sm-7 order-sm-1 text-white"
+        className="col-sm-7 order-sm-1 text-white bg-info" 
         id={offerBannerStyles.panel}
       >
         <div id={offerBannerStyles.wedge} />

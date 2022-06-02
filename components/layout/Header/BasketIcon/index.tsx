@@ -5,7 +5,10 @@ import { ScreenSizeContext } from "../../../../context/ScreenSize";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { changeMenu, clearActiveMenu } from "../../../../state/activeMenuSlice";
+import {
+  changeActiveMenu,
+  clearActiveMenu,
+} from "../../../../state/activeMenuSlice";
 import { RootState } from "../../../../state/store";
 
 // styles
@@ -25,8 +28,9 @@ export default function BasketIcon(props: { basket: any }) {
   const { windowSize } = useContext(ScreenSizeContext);
 
   function handleClick() {
+    // change active meny to "basketMenu" if it isn't already, otherwise clear it:
     if (activeMenu !== "basketMenu") {
-      dispatch(changeMenu("basketMenu"));
+      dispatch(changeActiveMenu("basketMenu"));
     } else {
       dispatch(clearActiveMenu());
     }
@@ -34,7 +38,7 @@ export default function BasketIcon(props: { basket: any }) {
 
   return (
     <div id={basketIconStyles.container}>
-      {(windowSize === "large" || windowSize === "extraLarge")  && (
+      {(windowSize === "laptop" || windowSize === "desktop") && (
         <Link href="/shop">
           <button type="button" className="btn btn-success text-secondary">
             SHOP

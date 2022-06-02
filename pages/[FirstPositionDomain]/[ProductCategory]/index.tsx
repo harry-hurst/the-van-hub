@@ -26,7 +26,7 @@ export default function CategoryPage() {
   // use router.query to get from url bar
   const { ProductCategory, collectionId } = router.query;
 
-  // when collectionId changes, fetchCollection
+  // componentDidUpdate()
   useEffect(() => {
     fetchCollection();
   }, [collectionId]);

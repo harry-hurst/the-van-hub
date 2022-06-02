@@ -41,23 +41,13 @@ export default function Header(props: {
           <BurgerIcon burger={props.burger} />
           <LogoComponent />
 
-          <div
-            ref={props.search}
-            id={headerStyles.searchContainer}
-            className={`${
-              windowSize === "medium" &&
-              searchBarStatus &&
-              headerStyles.flexGrow
-            }`}
-          >
-            {windowSize === "medium" ||
-            windowSize === "large" ||
-            windowSize === "extraLarge" ? (
+          <div ref={props.search} id={headerStyles.searchContainer}>
+            {windowSize === "laptop" || windowSize === "desktop" ? (
               <SearchBar
                 open={
                   searchBarStatus ||
-                  windowSize === "large" ||
-                  windowSize === "extraLarge"
+                  windowSize === "laptop" ||
+                  windowSize === "desktop"
                 }
               />
             ) : (
@@ -67,16 +57,17 @@ export default function Header(props: {
 
           <BasketIcon basket={props.basket} />
         </div>
-        {searchBarStatus && (windowSize === "tiny" || windowSize === "small") && (
-          <div className="px-3 py-1 container">
-            <SearchBar
-              open={
-                searchBarStatus &&
-                (windowSize === "tiny" || windowSize === "small")
-              }
-            />
-          </div>
-        )}
+        {searchBarStatus &&
+          (windowSize === "mobile" || windowSize === "tablet") && (
+            <div className="px-3 py-1 container">
+              <SearchBar
+                open={
+                  searchBarStatus &&
+                  (windowSize === "mobile" || windowSize === "tablet")
+                }
+              />
+            </div>
+          )}
       </div>
       <Modal modal={props.modal} />
     </div>

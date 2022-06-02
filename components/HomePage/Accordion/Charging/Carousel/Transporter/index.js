@@ -31,6 +31,7 @@ import {
 export default function Transporter(props) {
   const [displacement, setDisplacement] = useState("100vw");
 
+  // componentDidUpdate
   useEffect(() => {
     if (props.slideIndex === 0) {
       setDisplacement("100vw");

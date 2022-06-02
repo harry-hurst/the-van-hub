@@ -1,5 +1,7 @@
 // styles
 import navStyles from "./Nav.module.css";
+
+// react hooks
 import { useState, useEffect } from "react";
 
 // redux
@@ -7,23 +9,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../../state/store";
 import { changeActiveMenu } from "../../../../../state/activeMenuSlice";
 
-// modules
-import { motion } from "framer-motion";
-
-// variants
-import { navBar } from "../../../../../framer_motion/variants/navBar";
-import { navBarItem } from "../../../../../framer_motion/variants/navBar";
-
 // Next components
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+// modules
+import { motion } from "framer-motion";
+import { navBar } from "../../../../../framer_motion/variants/navBar";
+import { navBarItem } from "../../../../../framer_motion/variants/navBar";
 
 // use navHeadings for homepage and shopHeadings when in /shop:
 import { navHeadings, shopHeadings } from "../../../../../data/headings";
 
-// next components
-import { useRouter } from "next/router";
-
+// destructure the windowSize prop:
 export default function Nav(props: { windowSize: string }) {
+  
   //redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 

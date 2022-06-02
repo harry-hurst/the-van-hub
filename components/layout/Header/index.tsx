@@ -22,10 +22,10 @@ import Modal from "./Modal";
 // import { motion } from "framer-motion";
 
 export default function Header(props: {
-  burger: any;
-  search: any;
-  basket: any;
-  modal: any;
+  burgerRef: any;
+  searchRef: any;
+  basketRef: any;
+  modalRef: any;
 }) {
   const searchBarStatus = useSelector(
     (state: RootState) => state.searchBar.status
@@ -38,10 +38,10 @@ export default function Header(props: {
     <div id={headerStyles.container}>
       <div className="bg-secondary mb-1">
         <div id={headerStyles.navContainer} className="px-3 container">
-          <BurgerIcon burger={props.burger} />
+          <BurgerIcon burger={props.burgerRef} />
           <LogoComponent />
 
-          <div ref={props.search} id={headerStyles.searchContainer}>
+          <div ref={props.searchRef} id={headerStyles.searchContainer}>
             {windowSize === "laptop" || windowSize === "desktop" ? (
               <SearchBar
                 open={
@@ -55,7 +55,7 @@ export default function Header(props: {
             )}
           </div>
 
-          <BasketIcon basket={props.basket} />
+          <BasketIcon basket={props.basketRef} />
         </div>
         {searchBarStatus &&
           (windowSize === "mobile" || windowSize === "tablet") && (
@@ -69,7 +69,7 @@ export default function Header(props: {
             </div>
           )}
       </div>
-      <Modal modal={props.modal} />
+      <Modal modal={props.modalRef} />
     </div>
   );
 }

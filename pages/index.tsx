@@ -6,7 +6,7 @@ import HeroBanner from "../components/Banners/HeroBanners";
 import OfferBanner from "../components/Banners/OfferBanner";
 import Slider from "../components/Reusable/Slider";
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <>
       <HeroBanner />
@@ -15,4 +15,6 @@ export default function HomePage() {
       <Accordion />
     </>
   );
-}
+};
+
+export default HomePage;

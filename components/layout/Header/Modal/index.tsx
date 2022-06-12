@@ -17,7 +17,7 @@ import Nav from "./Nav";
 import Basket from "./Basket";
 import SearchList from "./SearchList";
 
-export default function Modal(props: { modal: any }) {
+export default function Modal(props: { modalRef: any }) {
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
   // global screen size variable.
@@ -26,7 +26,7 @@ export default function Modal(props: { modal: any }) {
   return (
     <div className="container">
       <div
-        ref={props.modal}
+        ref={props.modalRef}
         id={modalStyles.modal}
         className={`rounded-2
         ${activeMenu !== null && `${modalStyles.modalExpanded}`}

@@ -1,3 +1,6 @@
+// styles
+import basketIconStyles from "./BasketIcon.module.css";
+
 // react
 import { useContext } from "react";
 import { ShopifyContext } from "../../../../context/Shopify";
@@ -11,13 +14,11 @@ import {
 } from "../../../../state/activeMenuSlice";
 import { RootState } from "../../../../state/store";
 
-// styles
-import basketIconStyles from "./BasketIcon.module.css";
 
 // next components
 import Link from "next/link";
 
-export default function BasketIcon(props: { basket: any }) {
+export default function BasketIcon(props: { basketRef: any }) {
   // redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
@@ -48,7 +49,7 @@ export default function BasketIcon(props: { basket: any }) {
 
       <button
         className="btn text-white"
-        ref={props.basket}
+        ref={props.basketRef}
         id={basketIconStyles.basketContainer}
         onClick={() => {
           handleClick();

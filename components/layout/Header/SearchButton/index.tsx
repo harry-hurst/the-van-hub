@@ -5,12 +5,9 @@ import searchBarMobStyles from "./SearchButton.module.css";
 import { useDispatch } from "react-redux";
 
 // open and close searchBar actions:
-import {
-  toggleSearchBar,
-} from "../../../../state/searchBarStateSlice";
+import { toggleSearchBar } from "../../../../state/searchBarStateSlice";
 
-export default function SearchButton() {
-
+const SearchButton = () => {
   const dispatch = useDispatch();
 
   return (
@@ -26,4 +23,6 @@ export default function SearchButton() {
       ></i>
     </button>
   );
-}
+};
+
+export default SearchButton;

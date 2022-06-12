@@ -10,7 +10,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { closeButton } from "../../../../framer_motion/variants/searchBar";
 import { placeholder } from "../../../../framer_motion/variants/searchBar";
 
-import { changeActiveMenu, clearActiveMenu } from "../../../../state/activeMenuSlice";
+import {
+  changeActiveMenu,
+  clearActiveMenu,
+} from "../../../../state/activeMenuSlice";
 
 // open and close searchBar actions:
 import {
@@ -24,7 +27,10 @@ import {
   clearSearchTerm,
 } from "../../../../state/searchTermSlice";
 
-export default function SearchBar(props: { open: boolean }) {
+export default function SearchBar(props: {
+  open: boolean;
+  searchBarRef?: any;
+}) {
   const searchTerm = useSelector((state: RootState) => state.searchTerm.term);
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
   const dispatch = useDispatch();
@@ -41,6 +47,7 @@ export default function SearchBar(props: { open: boolean }) {
 
   return (
     <div
+      ref={props.searchBarRef}
       id={searchBarDeskStyles.searchBar}
       className="border border-primary border-1 rounded-3 bg-white"
     >

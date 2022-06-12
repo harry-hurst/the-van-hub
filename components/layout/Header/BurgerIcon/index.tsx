@@ -1,3 +1,6 @@
+// styles
+import burgerIconStyles from "./BurgerIcon.module.css";
+
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -6,10 +9,7 @@ import {
 } from "../../../../state/activeMenuSlice";
 import { RootState } from "../../../../state/store";
 
-// styles
-import burgerIconStyles from "./BurgerIcon.module.css";
-
-export default function BurgerIcon(props: { burger: any }) {
+export default function BurgerIcon(props: { burgerRef: any }) {
   // redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
@@ -25,7 +25,7 @@ export default function BurgerIcon(props: { burger: any }) {
 
   return (
     <div
-      ref={props.burger}
+      ref={props.burgerRef}
       id={burgerIconStyles.container}
       onClick={() => handleClick()}
     >

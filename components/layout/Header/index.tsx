@@ -1,7 +1,7 @@
 // styles
 import headerStyles from "./Header.module.css";
 
-// react
+// react hooks
 import { useContext } from "react";
 
 // redux
@@ -15,33 +15,31 @@ import { ScreenSizeContext } from "../../../context/ScreenSize";
 import BurgerIcon from "./BurgerIcon";
 import LogoComponent from "./LogoComponent";
 import SearchBar from "./SearchBar";
-import SearchButton from "./SearchButton";
 import BasketIcon from "./BasketIcon";
 import Modal from "./Modal";
+import SearchButton from "./SearchButton";
 
-// import { motion } from "framer-motion";
-
-export default function Header(props: {
+const Header = (props: {
   burgerRef: any;
-  searchRef: any;
+  searchBoxRef: any;
   basketRef: any;
   modalRef: any;
-}) {
+  searchBarRef: any;
+}) => {
   const searchBarStatus = useSelector(
     (state: RootState) => state.searchBar.status
   );
 
-  // global screen size variable.
   const { windowSize } = useContext(ScreenSizeContext);
 
   return (
     <div id={headerStyles.container}>
       <div className="bg-secondary mb-1">
         <div id={headerStyles.navContainer} className="px-3 container">
-          <BurgerIcon burger={props.burgerRef} />
+          <BurgerIcon burgerRef={props.burgerRef} />
           <LogoComponent />
 
-          <div ref={props.searchRef} id={headerStyles.searchContainer}>
+          <div ref={props.searchBoxRef} id={headerStyles.searchContainer}>
             {windowSize === "laptop" || windowSize === "desktop" ? (
               <SearchBar
                 open={
@@ -55,21 +53,19 @@ export default function Header(props: {
             )}
           </div>
 
-          <BasketIcon basket={props.basketRef} />
+          <BasketIcon basketRef={props.basketRef} />
         </div>
+
         {searchBarStatus &&
           (windowSize === "mobile" || windowSize === "tablet") && (
             <div className="px-3 py-1 container">
-              <SearchBar
-                open={
-                  searchBarStatus &&
-                  (windowSize === "mobile" || windowSize === "tablet")
-                }
-              />
+              <SearchBar open={true} searchBarRef={props.searchBarRef} />
             </div>
           )}
       </div>
-      <Modal modal={props.modalRef} />
+      <Modal modalRef={props.modalRef} />
     </div>
   );
-}
+};
+
+export default Header;

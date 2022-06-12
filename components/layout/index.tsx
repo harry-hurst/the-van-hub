@@ -22,36 +22,38 @@ const Layout = (props: { children: React.ReactNode }) => {
   // activeMenu determines which menu component will be displayed within the multi-use "Modal" component:
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
-  // click away listener
-  let modalRef = useRef<HTMLDivElement>(null);
-  let burgerRef = useRef<HTMLDivElement>(null);
-  let searchBarRef = useRef<HTMLDivElement>(null);
-  let basketRef = useRef<HTMLDivElement>(null);
+  // references for click away listener
+  const modalRef = useRef<HTMLDivElement>(null);
+  const burgerRef = useRef<HTMLDivElement>(null);
+  const searchBoxRef = useRef<HTMLDivElement>(null);
+  const basketRef = useRef<HTMLDivElement>(null);
+  const searchBarRef = useRef<HTMLDivElement>(null);
 
   const dispatch = useDispatch();
 
+  // click away function:
   const handleClickAway = (event: { target: any }) => {
     // if there is an active menu i.e menu is open:
     if (activeMenu !== null) {
-      // to prevent " Object is possibly 'null' " error:
+      // to prevent "Object is possibly 'null' " error:
+
+      // if click is outside of modal, burger icon, search bar and basket icon:
       if (
-        modalRef.current !== null &&
-        burgerRef.current !== null &&
-        searchBarRef.current !== null &&
-        basketRef.current !== null
+        !(
+          (modalRef.current !== null &&
+            modalRef.current.contains(event.target)) ||
+          (burgerRef.current !== null &&
+            burgerRef.current.contains(event.target)) ||
+          (searchBoxRef.current !== null &&
+            searchBoxRef.current.contains(event.target)) ||
+          (basketRef.current !== null &&
+            basketRef.current.contains(event.target)) ||
+          (searchBarRef.current !== null &&
+            searchBarRef.current.contains(event.target))
+        )
       ) {
-        // if click is outside of modal, burger icon, search bar and basket icon:
-        if (
-          !(
-            modalRef.current.contains(event.target) ||
-            burgerRef.current.contains(event.target) ||
-            searchBarRef.current.contains(event.target) ||
-            basketRef.current.contains(event.target)
-          )
-        ) {
-          // set activeMenu to 'null':
-          dispatch(clearActiveMenu());
-        }
+        // set activeMenu to 'null':
+        dispatch(clearActiveMenu());
       }
     }
   };
@@ -71,9 +73,10 @@ const Layout = (props: { children: React.ReactNode }) => {
           <div id={layoutStyles.mainContentWrapper}>
             <Header
               burgerRef={burgerRef}
-              searchRef={searchBarRef}
+              searchBoxRef={searchBoxRef}
               basketRef={basketRef}
               modalRef={modalRef}
+              searchBarRef={searchBarRef}
             />
             <AnimateSharedLayout>
               <div>{props.children}</div>

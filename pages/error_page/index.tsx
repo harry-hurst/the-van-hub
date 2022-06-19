@@ -1,4 +1,4 @@
-export default function ErrorPage() {
+const ErrorPage = () => {
   return (
     <div className="container">
       <div
@@ -11,12 +11,12 @@ export default function ErrorPage() {
           height="24"
           role="img"
           aria-label="Warning:"
-        >
-          {/* <use xlink:href="#exclamation-triangle-fill" /> */}
-        </svg>
+        ></svg>
 
-        <div>404 Error - Page not found</div>
+        <div>404 Error - not found</div>
       </div>
     </div>
   );
-}
+};
+
+export default ErrorPage;

@@ -11,17 +11,26 @@ import { ScreenSizeContext } from "../../../../context/ScreenSize";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../state/store";
 
+// use navHeadings for homepage and shopHeadings when in /shop:
+import { navHeadings, shopHeadings } from "../../../../data/headings";
+
 // components
 import Arrow from "./Arrow";
 import Nav from "./Nav";
 import Basket from "./Basket";
 import SearchList from "./SearchList";
 
-export default function Modal(props: { modalRef: any }) {
+// next components
+import { useRouter } from "next/router";
+
+const Modal = (props: { modalRef: any }) => {
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
   // global screen size variable.
   const { windowSize } = useContext(ScreenSizeContext);
+
+  const router = useRouter();
+  const { FirstPositionDomain } = router.query;
 
   return (
     <div className="container">
@@ -50,15 +59,21 @@ export default function Modal(props: { modalRef: any }) {
              `}
         >
           <div id={modalStyles.modalInner}>
-            {returnContent(activeMenu, windowSize)}
+            {returnModalContent(activeMenu, windowSize, FirstPositionDomain)}
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-function returnContent(am: string | null, ws: string) {
+export default Modal;
+
+function returnModalContent(
+  am: string | null,
+  ws: string,
+  FirstPositionDomain: string | string[] | undefined
+) {
   switch (am) {
     case "basketMenu":
       return <Basket key={"basket"} />;
@@ -67,6 +82,11 @@ function returnContent(am: string | null, ws: string) {
       return <SearchList key={"searchList"} am={am} />;
 
     default:
-      return <Nav windowSize={ws} />;
+      return (
+        <Nav
+          windowSize={ws}
+          headings={FirstPositionDomain === "shop" ? shopHeadings : navHeadings}
+        />
+      );
   }
 }

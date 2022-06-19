@@ -13,9 +13,6 @@ import { Provider } from "react-redux";
 import store from "../state/store";
 
 const App = ({ Component, pageProps }) => {
-
-
-
   return (
     <>
       <Head>
@@ -24,7 +21,6 @@ const App = ({ Component, pageProps }) => {
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
         />
 
-        <title>The Van Hub</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="viewport"
@@ -48,16 +44,15 @@ const App = ({ Component, pageProps }) => {
         />
       </Head>
 
+      {/* Provider from react-redux wraps entire app to provide 'store': */}
       <Provider store={store}>
+        {/* Layout component includes header (navigation) and footer for app: */}
         <Layout>
           <Component {...pageProps} />
         </Layout>
       </Provider>
     </>
   );
-
-
-
 };
 
 export default App;

@@ -40,7 +40,7 @@ export default function BasketIcon(props: { basketRef: any }) {
   return (
     <div id={basketIconStyles.container}>
       {(windowSize === "laptop" || windowSize === "desktop") && (
-        <Link href="/shop">
+        <Link as="/shop" href="/[FirstPositionDomain]">
           <button type="button" className="btn btn-success text-secondary">
             SHOP
           </button>

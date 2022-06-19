@@ -4,17 +4,33 @@ import ErrorPage from "../error_page";
 
 // next components
 import { useRouter } from "next/router";
+import Head from "next/head";
 
-export default function FirstPositionDomain() {
-  // router used for getting data out of the url bar
+const FirstPositionDomain = () => {
   const router = useRouter();
-  const { FirstPositionDomain } = router.query;
 
-  if (FirstPositionDomain === "shop") {
-    return <Shop />;
-  } else if (FirstPositionDomain === "about") {
-    return <span>about</span>;
-  } else {
-    return <ErrorPage />;
-  }
+  const area = router.query.FirstPositionDomain;
+
+  return (
+    <>
+      <Head>
+        {typeof area === "string" && (
+          <title>The Van Hub - {area.slice(0, 1).toUpperCase() + area.slice(1)}</title>
+        )}
+      </Head>
+      {returnPageContent(area)}
+    </>
+  );
 }
+
+export default FirstPositionDomain;
+
+const returnPageContent = (area: string | string[] | undefined) => {
+  switch (area) {
+    case "shop":
+      return <Shop />;
+
+    default:
+      return <ErrorPage />;
+  }
+};

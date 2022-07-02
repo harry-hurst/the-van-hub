@@ -7,7 +7,7 @@ import Head from "next/head";
 import Accordion from "../components/HomePage/Accordion";
 import HeroBanner from "../components/Banners/HeroBanners";
 import OfferBanner from "../components/Banners/OfferBanner";
-import Slider from "../components/Reusable/Slider";
+import Slider from "../components/Reusable/ProductSlider";
 
 const HomePage = () => {
   return (
@@ -18,7 +18,7 @@ const HomePage = () => {
       <HeroBanner />
       <OfferBanner />
       <Slider />
-      <Accordion />
+      {/* <Accordion /> */}
     </>
   );
 };

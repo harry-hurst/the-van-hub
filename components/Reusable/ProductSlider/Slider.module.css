@@ -39,13 +39,13 @@
   }
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 912px) {
   #sliderInner {
     grid-template-columns: repeat(10, 25%);
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1240px) {
   #sliderInner {
     grid-template-columns: repeat(10, 20%);
   }
@@ -57,53 +57,51 @@
   top: calc(50% - 25px);
 }
 
-.tiny1 {
+.mobile1 {
   transform: translateX(-100%);
 }
-.tiny2 {
+.mobile2 {
   transform: translateX(-200%);
 }
-.tiny3 {
+.mobile3 {
   transform: translateX(-300%);
 }
-.tiny4 {
+.mobile4 {
   transform: translateX(-400%);
 }
-.tiny5 {
+.mobile5 {
   transform: translateX(-500%);
 }
-.tiny6 {
+.mobile6 {
   transform: translateX(-600%);
 }
-.tiny7 {
+.mobile7 {
   transform: translateX(-700%);
 }
-.tiny8 {
+.mobile8 {
   transform: translateX(-800%);
 }
-.tiny9 {
+.mobile9 {
   transform: translateX(-900%);
 }
 
-.small1 {
+.tablet1 {
   transform: translateX(-100%);
 }
-.small2 {
+.tablet2 {
   transform: translateX(-200%);
 }
-.small3 {
-  transform: translateX(-233.33%);
+.tablet3 {
+  transform: translateX(calc(-200% + (-100% / 3)));
 }
 
-.medium1 {
+.laptop1 {
   transform: translateX(-100%);
 }
-.medium2 {
+.laptop2 {
   transform: translateX(-150%);
 }
 
-.large1 {
+.desktop1 {
   transform: translateX(-100%);
 }
-
-

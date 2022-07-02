@@ -1,43 +1,37 @@
-// styles
 import sliderStyles from "./Slider.module.css";
 
-// react
 import { useState, useEffect, useContext } from "react";
+
+import { ShopifyContext } from "../../../context/Shopify";
 import { ScreenSizeContext } from "../../../context/ScreenSize";
 
-// context
-import { ShopifyContext } from "../../../context/Shopify";
-
-// components
 import SliderItem from "./SliderItem";
 
-// modules
 import { motion, AnimatePresence } from "framer-motion";
 import { scaleUp } from "../../../framer_motion/variants/general/scaleUp";
 
-export default function Slider() {
-  // context
+const ProductSlider = () => {
   const { client } = useContext(ShopifyContext);
   const { windowSize } = useContext(ScreenSizeContext);
 
-  // custom js
+  // collection id for slider items:
   const collectionId = "Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI4MzgzMjUxNjc1OQ==";
 
-  // react
-  const [sliderProducts, setSliderProducts] = useState<undefined | any[]>(
-    undefined
-  );
+  const [sliderProducts, setSliderProducts] = useState<any[]>([]);
 
   const [position, setPosition] = useState<number>(0);
 
   // componentDidMount()
   useEffect(() => {
-    // async method:
-    client.collection
-      .fetchWithProducts(collectionId, { productsFirst: 10 })
-      .then((collection: any) => {
-        setSliderProducts(collection.products);
+    const fetchProducts = async () => {
+      const result = await client.collection.fetchWithProducts(collectionId, {
+        productsFirst: 10,
       });
+
+      setSliderProducts(result.products);
+    };
+
+    fetchProducts().catch(console.error);
   }, []);
 
   function arrowClick(arrow: string) {
@@ -55,80 +49,109 @@ export default function Slider() {
           <div
             id={sliderStyles.sliderInner}
             className={`
+            
             ${
               windowSize === "mobile" &&
               position === 1 &&
-              `${sliderStyles.tiny1}`
+              `${sliderStyles.mobile1}`
             }
             ${
               windowSize === "mobile" &&
               position === 2 &&
-              `${sliderStyles.tiny2}`
+              `${sliderStyles.mobile2}`
             }
             ${
               windowSize === "mobile" &&
               position === 3 &&
-              `${sliderStyles.tiny3}`
+              `${sliderStyles.mobile3}`
             }
             ${
               windowSize === "mobile" &&
               position === 4 &&
-              `${sliderStyles.tiny4}`
+              `${sliderStyles.mobile4}`
             }
             ${
               windowSize === "mobile" &&
               position === 5 &&
-              `${sliderStyles.tiny5}`
+              `${sliderStyles.mobile5}`
             }
             ${
               windowSize === "mobile" &&
               position === 6 &&
-              `${sliderStyles.tiny6}`
+              `${sliderStyles.mobile6}`
             }
             ${
               windowSize === "mobile" &&
               position === 7 &&
-              `${sliderStyles.tiny7}`
+              `${sliderStyles.mobile7}`
             }
             ${
               windowSize === "mobile" &&
               position === 8 &&
-              `${sliderStyles.tiny8}`
+              `${sliderStyles.mobile8}`
             }
             ${
               windowSize === "mobile" &&
               position === 9 &&
-              `${sliderStyles.tiny9}`
+              `${sliderStyles.mobile9}`
             }
             
             ${
+              windowSize === "tablet" &&
+              position === 1 &&
+              `${sliderStyles.tablet1}`
+            }
+            ${
+              windowSize === "tablet" &&
+              position === 2 &&
+              `${sliderStyles.tablet2}`
+            }
+            ${
+              windowSize === "tablet" &&
+              position === 3 &&
+              `${sliderStyles.tablet3}`
+            }
+
+            ${
               windowSize === "laptop" &&
               position === 1 &&
-              `${sliderStyles.large1}`
+              `${sliderStyles.laptop1}`
             }
+            ${
+              windowSize === "laptop" &&
+              position === 2 &&
+              `${sliderStyles.laptop2}`
+            }
+
+            ${
+              windowSize === "desktop" &&
+              position === 1 &&
+              `${sliderStyles.desktop1}`
+            }
+
+
             `}
           >
-            {sliderProducts !== undefined &&
-              sliderProducts.map(
-                (product: {
-                  handle: string;
-                  id: string;
-                  title: string;
-                  images: any[];
-                  variants: any[];
-                  availableForSale: boolean;
-                }) => (
-                  <SliderItem
-                    key={product.id}
-                    handle={product.handle}
-                    id={product.id}
-                    title={product.title}
-                    imgSrc={product.images[0].src}
-                    price={product.variants[0].price}
-                    availableForSale={product.availableForSale}
-                  />
-                )
-              )}
+            {sliderProducts.map(
+              (product: {
+                handle: string;
+                id: string;
+                title: string;
+                images: any[];
+                variants: any[];
+                availableForSale: boolean;
+              }) => (
+                <SliderItem
+                  key={product.id}
+                  handle={product.handle}
+                  id={product.id}
+                  title={product.title}
+                  imgSrc={product.images[0].src}
+                  price={product.variants[0].price}
+                  availableForSale={product.availableForSale}
+                />
+              )
+            )}
           </div>
         </div>
 
@@ -156,7 +179,8 @@ export default function Slider() {
 
           {((windowSize == "mobile" && position !== 9) ||
             (windowSize === "tablet" && position !== 3) ||
-            (windowSize === "laptop" && position !== 1)) && (
+            (windowSize === "laptop" && position !== 2) ||
+            (windowSize == "desktop" && position !== 1)) && (
             <motion.button
               whileHover={{ scale: 1.2 }}
               whileTap={{
@@ -180,4 +204,6 @@ export default function Slider() {
       </div>
     </div>
   );
-}
+};
+
+export default ProductSlider;

@@ -22,10 +22,12 @@ export default function Nav(props: {
   //redux
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
-
-
   // redux
   const dispatch = useDispatch();
+
+  const openDropdown = () => {
+    dispatch(changeActiveMenu("navMenu"));
+  };
 
   if (
     (props.windowSize === "mobile" && activeMenu === "mobileNav") ||
@@ -62,13 +64,9 @@ export default function Nav(props: {
         `}
             >
               <Link as={heading.as} href={heading.href}>
-                <a
-                  onClick={() => {
-                    dispatch(changeActiveMenu("navMenu"));
-                  }}
-                >
+                <a onClick={heading.dropdown ? openDropdown : undefined}>
                   {heading.heading}
-                  <i className="bi bi-chevron-down"></i>
+                  {heading.dropdown && <i className="bi bi-chevron-down"></i>}
                 </a>
               </Link>
             </motion.li>

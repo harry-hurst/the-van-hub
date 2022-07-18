@@ -1,7 +1,7 @@
 // create slice creates a slice of state for a specific purpose:
 import { createSlice } from "@reduxjs/toolkit";
 
-// create a search bar slice that determines whether search bar is open or closed:
+  // wether promo banner is visable or dismissed:
 export const bannerStatusSlice = createSlice({
   // name of slice
   name: "bannerStatus",

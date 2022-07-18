@@ -1,22 +1,21 @@
-const ErrorPage = () => {
+const ErrorPage = (props: { errorMessage?: string | string[] | undefined }) => {
+  
   return (
     <div className="container">
       <div
         className="alert alert-warning d-flex align-items-center"
         role="alert"
       >
-        <svg
-          className="bi flex-shrink-0 me-2"
-          width="24"
-          height="24"
-          role="img"
-          aria-label="Warning:"
-        ></svg>
+        <i className="bi bi-exclamation-square"></i>
 
-        <div>404 Error - not found</div>
+        <div>&nbsp;{props.errorMessage}</div>
       </div>
     </div>
   );
+};
+
+ErrorPage.defaultProps = {
+  errorMessage: "Page not found",
 };
 
 export default ErrorPage;

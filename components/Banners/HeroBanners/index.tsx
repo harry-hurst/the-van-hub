@@ -24,12 +24,12 @@ export default function HomeHeroBanner() {
       </div>
 
       <div
-        className="col-sm-7 order-sm-1 text-white bg-info" 
+        className="text-white col-sm-7 order-sm-1"
         id={offerBannerStyles.panel}
       >
         <div id={offerBannerStyles.wedge} />
         <div className="container">
-          <h2 className="nun-sans">
+          <h2 className="nun-sans mt-1">
             High quality Lithium Ion Batteries and electrical parts for your
             conversion.
           </h2>

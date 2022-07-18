@@ -5,9 +5,14 @@
   position: fixed;
 }
 
+#header {
+  overflow: hidden;
+}
+
 #navContainer {
   height: 60px;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
 }
@@ -29,4 +34,20 @@
 
 .flexGrow {
   flex-grow: 1;
+}
+
+#circle {
+  top: -140px;
+  right: -140px;
+  width: 280px;
+  height: 280px;
+  /* opacity: 0.5; */
+  position: absolute;
+  border-radius: 140px;
+}
+
+@media only screen and (min-width: 912px) {
+  #circle {
+    width: 305px;
+  }
 }

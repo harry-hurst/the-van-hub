@@ -16,7 +16,6 @@
   margin-bottom: 10px;
   flex-direction: row;
   background: var(--footer-grey);
-  border-radius: var(--border-radius-large);
 }
 
 #tvh {
@@ -49,7 +48,6 @@
   justify-content: center;
   font-family: Nunito Regular;
   background-color: var(--footer-grey);
-  border-radius: var(--border-radius-large);
 }
 
 #cookiePolicy {

@@ -9,7 +9,7 @@ export default function Footer() {
     <motion.div layout id={footerStyles.container}>
       <div className="container">
         
-        <div id={footerStyles.sectionOne}>
+        <div id={footerStyles.sectionOne} className="rounded-2">
           <div id={footerStyles.tvh}>TVH</div>
           <a
             href="https://www.facebook.com/TheVanHub"
@@ -56,7 +56,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <div id={footerStyles.sectionTwo}>
+        <div id={footerStyles.sectionTwo} className="rounded-2">
           © copyright The Van Hub 2020 |&nbsp;
           <a id={footerStyles.cookiePolicy}>Cookie Policy</a>
         </div>

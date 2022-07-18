@@ -14,7 +14,6 @@ import {
 } from "../../../../state/activeMenuSlice";
 import { RootState } from "../../../../state/store";
 
-
 // next components
 import Link from "next/link";
 
@@ -41,7 +40,7 @@ export default function BasketIcon(props: { basketRef: any }) {
     <div id={basketIconStyles.container}>
       {(windowSize === "laptop" || windowSize === "desktop") && (
         <Link as="/shop" href="/[FirstPositionDomain]">
-          <button type="button" className="btn btn-success text-secondary">
+          <button type="button" className="btn btn-success text-secondary rounded-2 btn-sm">
             SHOP
           </button>
         </Link>
@@ -50,14 +49,13 @@ export default function BasketIcon(props: { basketRef: any }) {
       <button
         className="btn text-white"
         ref={props.basketRef}
-        id={basketIconStyles.basketContainer}
         onClick={() => {
           handleClick();
         }}
       >
         <span
           id={basketIconStyles.basketCount}
-          className="bg-primary rounded-1"
+          className="bg-secondary rounded-1"
         >
           {basket && basket.lineItems ? basket.lineItems.length : 0}
         </span>

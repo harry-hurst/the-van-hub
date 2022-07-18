@@ -168,7 +168,7 @@ const ProductSlider = () => {
               exit="hidden"
               type="button"
               className={`${sliderStyles.arrow} btn btn-info rounded p-3`}
-              style={{ left: "-20px" }}
+              style={{ left: "0" }}
               onClick={() => {
                 arrowClick("left");
               }}
@@ -192,7 +192,7 @@ const ProductSlider = () => {
               exit="hidden"
               type="button"
               className={`${sliderStyles.arrow} btn btn-info rounded p-3`}
-              style={{ right: "-20px" }}
+              style={{ right: "0" }}
               onClick={() => {
                 arrowClick("right");
               }}

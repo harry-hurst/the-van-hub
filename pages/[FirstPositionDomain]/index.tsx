@@ -3,7 +3,7 @@ import ProductSlider from "../../components/Reusable/ProductSlider";
 import ErrorPage from "../error_page";
 
 // next components
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"; // useRouter from next used in first position domain page:
 import Head from "next/head";
 
 const FirstPositionDomain = () => {
@@ -38,7 +38,10 @@ const returnPageContent = (area: string | string[] | undefined) => {
         </>
       );
 
+    case "about-us":
+      return <ErrorPage errorMessage="About us page coming soon" />;
+
     default:
-      return <ErrorPage />;
+      return <ErrorPage errorMessage={"thevanhub.co.uk/" + area + " not found!"} />;
   }
 };

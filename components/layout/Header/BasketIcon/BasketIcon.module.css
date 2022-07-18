@@ -2,9 +2,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-#basketContainer {
   position: relative;
 }
 

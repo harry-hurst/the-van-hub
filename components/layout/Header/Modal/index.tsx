@@ -1,26 +1,21 @@
-// styles
 import modalStyles from "./Modal.module.css";
 
-// react
 import { useContext } from "react";
 
-// context
 import { ScreenSizeContext } from "../../../../context/ScreenSize";
 
-// redux
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../state/store";
 
-// use navHeadings for homepage and shopHeadings when in /shop:
 import { navHeadings, shopHeadings } from "../../../../data/headings";
 
-// components
 import Arrow from "./Arrow";
 import Nav from "./Nav";
 import Basket from "./Basket";
 import SearchList from "./SearchList";
+import About from "../../../../components/HomePage/Accordion/About";
+import Charging from "../../../../components/HomePage/Accordion/About";
 
-// next components
 import { useRouter } from "next/router";
 
 const Modal = (props: { modalRef: any }) => {
@@ -80,6 +75,14 @@ function returnModalContent(
 
     case "searchList":
       return <SearchList key={"searchList"} am={am} />;
+
+    case "navMenu":
+      return (
+        <>
+          <About />
+          <Charging />
+        </>
+      );
 
     default:
       return (

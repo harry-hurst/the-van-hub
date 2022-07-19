@@ -34,12 +34,8 @@ const Header = (props: {
 
   return (
     <div id={headerStyles.container}>
-      <div
-        className="bg-secondary mb-1"
-        id={headerStyles.header}
-      >
+      <div className="bg-secondary mb-1" id={headerStyles.header}>
         <div id={headerStyles.navContainer} className="px-3 container">
-          
           <div className="bg-primary" id={headerStyles.circle}></div>
 
           <BurgerIcon burgerRef={props.burgerRef} />
@@ -63,15 +59,19 @@ const Header = (props: {
           <BasketIcon basketRef={props.basketRef} />
         </div>
 
-        {searchBarStatus &&
-          (windowSize === "mobile" || windowSize === "tablet") && (
-            <div
-              className="px-3 py-1 container"
-              style={{ position: "relative" }}
-            >
+        <div
+          id={headerStyles.searchBarContainer}
+          className={`container  ${
+            searchBarStatus &&
+            (windowSize === "mobile" || windowSize === "tablet") &&
+            `${headerStyles.opened}`
+          }`}
+        >
+          {searchBarStatus &&
+            (windowSize === "mobile" || windowSize === "tablet") && (
               <SearchBar open={true} searchBarRef={props.searchBarRef} />
-            </div>
-          )}
+            )}
+        </div>
       </div>
       <Modal modalRef={props.modalRef} />
     </div>

@@ -51,3 +51,21 @@
     width: 305px;
   }
 }
+
+#searchBarContainer {
+  height: 0;
+  position: relative;
+  transition-property: height, padding-top;
+  transition-duration: var(--time);
+}
+
+.opened {
+  padding-top: 4px;
+  height: 48px !important;
+}
+
+@media only screen and (min-width: 415px) {
+  .opened {
+    height: 43px !important;
+  }
+}

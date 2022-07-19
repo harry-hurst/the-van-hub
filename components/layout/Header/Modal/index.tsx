@@ -7,8 +7,6 @@ import { ScreenSizeContext } from "../../../../context/ScreenSize";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../state/store";
 
-import { navHeadings, shopHeadings } from "../../../../data/headings";
-
 import Arrow from "./Arrow";
 import Nav from "./Nav";
 import Basket from "./Basket";
@@ -16,16 +14,11 @@ import SearchList from "./SearchList";
 import About from "../../../../components/HomePage/Accordion/About";
 import Charging from "../../../../components/HomePage/Accordion/About";
 
-import { useRouter } from "next/router";
-
 const Modal = (props: { modalRef: any }) => {
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
 
   // global screen size variable.
   const { windowSize } = useContext(ScreenSizeContext);
-
-  const router = useRouter();
-  const { FirstPositionDomain } = router.query;
 
   return (
     <div className="container">
@@ -54,7 +47,7 @@ const Modal = (props: { modalRef: any }) => {
              `}
         >
           <div id={modalStyles.modalInner}>
-            {returnModalContent(activeMenu, windowSize, FirstPositionDomain)}
+            {returnModalContent(activeMenu, windowSize)}
           </div>
         </div>
       </div>
@@ -64,11 +57,7 @@ const Modal = (props: { modalRef: any }) => {
 
 export default Modal;
 
-function returnModalContent(
-  am: string | null,
-  ws: string,
-  FirstPositionDomain: string | string[] | undefined
-) {
+function returnModalContent(am: string | null, ws: string) {
   switch (am) {
     case "basketMenu":
       return <Basket key={"basket"} />;
@@ -85,11 +74,6 @@ function returnModalContent(
       );
 
     default:
-      return (
-        <Nav
-          windowSize={ws}
-          headings={FirstPositionDomain === "shop" ? shopHeadings : navHeadings}
-        />
-      );
+      return <Nav windowSize={ws} />;
   }
 }

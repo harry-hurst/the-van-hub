@@ -1,7 +1,7 @@
 export const navHeadings = [
   { heading: "Shop", as: "/shop", href: "/[FirstPositionDomain]", dropdown: false },
-  { heading: "Batteries", dropdown: true },
-  { heading: "Charging", dropdown: true },
+  { heading: "Batteries", as: "/", href: "/", dropdown: true },
+  { heading: "Charging", as: "/", href: "/", dropdown: true },
   { heading: "About Us", as: "/about-us", href: "/[FirstPositionDomain]", dropdown: false },
 ];
 

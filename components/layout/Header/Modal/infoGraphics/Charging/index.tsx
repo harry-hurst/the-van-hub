@@ -3,7 +3,7 @@ import aboutStyles from "./Charging.module.css";
 
 // react
 import { useState, useEffect, useContext, useRef } from "react";
-import { ScreenSizeContext } from "../../../../context/ScreenSize";
+import { ScreenSizeContext } from "../../../../../../context/ScreenSize";
 
 // components
 import Carousel from "./Carousel";
@@ -13,7 +13,7 @@ import Image from "next/image";
 
 // modules
 import { motion, AnimatePresence } from "framer-motion";
-import { hiddenContent } from "../../../../framer_motion/variants/accordion";
+import { hiddenContent } from "../../../../../../framer_motion/variants/accordion";
 
 export default function Charging(props: { accordian?: string | string[] }) {
   const [open, setOpen] = useState<boolean>();

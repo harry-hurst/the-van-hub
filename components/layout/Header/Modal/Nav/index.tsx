@@ -4,7 +4,10 @@ import { useState, useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../../state/store";
-import { changeActiveMenu } from "../../../../../state/activeMenuSlice";
+import {
+  changeActiveMenu,
+  clearActiveMenu,
+} from "../../../../../state/activeMenuSlice";
 
 import Link from "next/link";
 
@@ -24,6 +27,8 @@ export interface headingsTypes {
 }
 
 export default function Nav(props: { windowSize: string }) {
+  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
+
   const router = useRouter();
   const { FirstPositionDomain } = router.query;
 
@@ -39,22 +44,17 @@ export default function Nav(props: { windowSize: string }) {
     }
   }, [FirstPositionDomain]);
 
-  const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
-
   const dispatch = useDispatch();
 
-  const openDropdown = () => {
-    dispatch(changeActiveMenu("navMenu"));
+  const openDropdown = (heading: string) => {
+    dispatch(changeActiveMenu(heading));
   };
 
-  // Return Nav component if:
-  // (1) mobile view and mobileNav selected
-  // (2) not mobile view and no menu selected
-  if (
-    headings !== undefined &&
-    ((props.windowSize === "mobile" && activeMenu === "mobileNav") ||
-      (props.windowSize !== "mobile" && activeMenu === null))
-  ) {
+  const closeDropdown = () => {
+    dispatch(clearActiveMenu());
+  };
+
+  if (headings !== undefined) {
     return (
       <motion.ul
         variants={navBar}
@@ -83,16 +83,17 @@ export default function Nav(props: { windowSize: string }) {
         nun-sans text-secondary
           ${navStyles.item}
           ${props.windowSize !== "mobile" && navStyles.itemDesktop}
+          ${activeMenu === heading.heading && navStyles.active}
         `}
             >
               {heading.dropdown ? (
-                <a onClick={heading.dropdown && openDropdown}>
+                <a onClick={() => openDropdown(heading.heading)}>
                   {heading.heading}
                   <i className="bi bi-chevron-down"></i>
                 </a>
               ) : (
                 <Link as={heading.as} href={heading.href}>
-                  <a>{heading.heading}</a>
+                  <a onClick={closeDropdown}>{heading.heading}</a>
                 </Link>
               )}
             </motion.li>

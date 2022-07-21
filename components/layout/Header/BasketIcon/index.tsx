@@ -40,13 +40,17 @@ export default function BasketIcon(props: { basketRef: any }) {
     <div id={basketIconStyles.container}>
       {(windowSize === "laptop" || windowSize === "desktop") && (
         <Link as="/shop" href="/[FirstPositionDomain]">
-          <button type="button" className="btn btn-success text-secondary rounded-2 btn-sm">
+          <a
+            role="button"
+            className="btn btn-success text-secondary rounded-2 btn-sm"
+          >
             SHOP
-          </button>
+          </a>
         </Link>
       )}
 
       <button
+        type="button"
         className="btn text-white"
         ref={props.basketRef}
         onClick={() => {

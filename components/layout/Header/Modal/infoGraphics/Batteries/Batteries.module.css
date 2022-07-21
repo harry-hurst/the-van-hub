@@ -1,0 +1,30 @@
+#container {
+  height: calc(100% - 30px);
+}
+
+#table {
+  width: 100%;
+  height: 100%;
+}
+
+#table tr td {
+  text-align: center;
+}
+
+#table tr td i {
+  transition: font-size var(--time);
+  font-size: 2rem;
+}
+
+#table tr td:last-child,
+#table tr td:first-child {
+  border-bottom: 3px solid #1d9ae2;
+}
+
+#table tr:last-child td {
+  border-bottom: none !important;
+}
+
+.test:before {
+  content: "\F130";
+}

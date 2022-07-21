@@ -12,6 +12,7 @@ const SearchButton = () => {
 
   return (
     <button
+    type="button"
       id={searchBarMobStyles.container}
       className="btn"
       onClick={() => dispatch(toggleSearchBar())}

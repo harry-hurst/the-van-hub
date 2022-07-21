@@ -39,7 +39,6 @@ export default function NavMenu() {
   return (
     <AnimateSharedLayout>
       <motion.div
-        style={{ border: "1px solid green" }}
         variants={navMenu}
         initial="hidden"
         animate="visible"

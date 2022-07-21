@@ -11,8 +11,8 @@ import Arrow from "./Arrow";
 import Nav from "./Nav";
 import Basket from "./Basket";
 import SearchList from "./SearchList";
-import About from "../../../../components/HomePage/Accordion/About";
-import Charging from "../../../../components/HomePage/Accordion/About";
+import Batteries from "./infoGraphics/Batteries";
+import Charging from "./infoGraphics/Charging";
 
 const Modal = (props: { modalRef: any }) => {
   const activeMenu = useSelector((state: RootState) => state.activeMenu.menu);
@@ -65,13 +65,11 @@ function returnModalContent(am: string | null, ws: string) {
     case "searchList":
       return <SearchList key={"searchList"} am={am} />;
 
-    case "navMenu":
-      return (
-        <>
-          <About />
-          <Charging />
-        </>
-      );
+    case "Batteries":
+      return <><Nav windowSize={ws} /><Batteries /></>;
+
+    case "Charging":
+      return <><Nav windowSize={ws} /><Charging /></>;
 
     default:
       return <Nav windowSize={ws} />;

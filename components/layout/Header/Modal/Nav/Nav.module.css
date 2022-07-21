@@ -35,9 +35,12 @@
   white-space: nowrap;
 }
 
-.item a:hover {
+.item:hover {
   border-bottom: 3px solid #1d9ae2;
-  border-top: 3px solid transparent;
+}
+
+.active {
+  border-bottom: 3px solid #1d9ae2;
 }
 
 .item i:before {

@@ -26,7 +26,7 @@ import {
   transitionItem2,
   transitionItem3,
   transitionItem4,
-} from "../../../../../../framer_motion/wheels/transition";
+} from "../../../../../../../../framer_motion/wheels/transition";
 
 export default function Transporter(props) {
   const [displacement, setDisplacement] = useState("100vw");

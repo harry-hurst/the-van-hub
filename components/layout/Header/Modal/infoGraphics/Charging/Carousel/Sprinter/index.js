@@ -27,7 +27,7 @@ import {
   transitionItem2,
   transitionItem3,
   transitionItem4,
-} from "../../../../../../framer_motion/wheels/transition";
+} from "../../../../../../../../framer_motion/wheels/transition";
 
 export default function Sprinter(props) {
   const [displacement, setDisplacement] = useState("0");

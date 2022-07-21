@@ -11,7 +11,7 @@ import { RootState } from "../../state/store";
 
 // components
 import Header from "./Header";
-import Footer from "../Footer";
+import Footer from "./Footer";
 import ShopifyContext from "../../context/Shopify";
 import ScreenSizeContext from "../../context/ScreenSize";
 
